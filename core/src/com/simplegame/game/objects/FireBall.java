@@ -1,5 +1,8 @@
 package com.simplegame.game.objects;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -22,8 +25,11 @@ public class FireBall extends GameObject {
     private float density;
     private float restitution;
     private float friction;
+    private ParticleEffect particleEffect;
+    private OrthographicCamera box2DCam;
 
-    public FireBall(World world, GameEntry gameEntry, JsonValue data) {
+    public FireBall(World world, GameEntry gameEntry, JsonValue data, OrthographicCamera camera) {
+        this.box2DCam = camera;
         this.gameEntry = gameEntry;
         this.world = world;
         this.id = data.getString("id");
@@ -44,11 +50,22 @@ public class FireBall extends GameObject {
                 friction,
                 restitution,
                 id);
+
+        particleEffect = new ParticleEffect();
+        particleEffect.load(Gdx.files.internal("particle/fire.json"), Gdx.files.internal("particle"));
+        particleEffect.getEmitters().first().setPosition(this.getPosition().x, this.getPosition().y);
+        particleEffect.start();
     }
+
+    public void setRadius(float radius) {
+        this.radius = radius;
+    }
+
 
     public void setId(String id) {
         this.id = id;
     }
+
     @Override
     public float getWidth() {
         return this.width;
@@ -87,7 +104,12 @@ public class FireBall extends GameObject {
 
     @Override
     public void drawGui() {
-        Own.box2d.gui.drawCircleWithRotation(gameEntry.batch, "FIREBALL", this.body);
+//        Own.box2d.gui.drawCircleWithRotation(gameEntry.batch, "FIREBALL", this.body);
+        Vector3 pos = this.box2DCam.project(new Vector3(new Vector2(this.getPosition().x, this.getPosition().y), 0));
+        particleEffect.setPosition(pos.x, pos.y);
+        particleEffect.setDuration(50);
+        particleEffect.draw(this.gameEntry.batch, Gdx.graphics.getDeltaTime());
+        if (particleEffect.isComplete()) particleEffect.reset();
     }
 
     public Vector2 getVelocity() {
