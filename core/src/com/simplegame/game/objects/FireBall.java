@@ -42,7 +42,7 @@ public class FireBall extends GameObject {
 
     public void create() {
         Own.box2d.factory.setWorld(this.world);
-        this.body = Own.box2d.factory.getCircleBody(BodyDef.BodyType.DynamicBody,
+        this.body = Own.box2d.factory.getCircleBody(BodyDef.BodyType.KinematicBody,
                 position,
                 0,
                 radius,
@@ -51,12 +51,16 @@ public class FireBall extends GameObject {
                 restitution,
                 id);
 
+        this.body.setLinearVelocity(new Vector2(0, -5f));
         particleEffect = new ParticleEffect();
         particleEffect.load(Gdx.files.internal("particle/fire.json"), Gdx.files.internal("particle"));
         particleEffect.getEmitters().first().setPosition(this.getPosition().x, this.getPosition().y);
         particleEffect.start();
     }
 
+    public float getRadius() {
+        return this.radius;
+    }
     public void setRadius(float radius) {
         this.radius = radius;
     }
@@ -68,7 +72,7 @@ public class FireBall extends GameObject {
 
     @Override
     public float getWidth() {
-        return this.width;
+        return 0;
     }
 
     @Override
@@ -100,6 +104,7 @@ public class FireBall extends GameObject {
 
     @Override
     public void update(float deltaTime) {
+
     }
 
     @Override

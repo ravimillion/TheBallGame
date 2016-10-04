@@ -169,7 +169,6 @@ public class LevelOne extends LevelScreen {
 
     @Override
     public void show() {
-
     }
 
     private void drawBox2DGui() {
@@ -181,6 +180,7 @@ public class LevelOne extends LevelScreen {
         for (int i = 0; i < obstacleArray.size(); i++) {
             obstacleArray.get(i).drawGui();
         }
+
         if (treeStump != null) treeStump.drawGui();
         if (ball != null) ball.drawGui();
 
@@ -276,17 +276,17 @@ public class LevelOne extends LevelScreen {
     }
 
     @Override
-    public void touchDown(int screenX, int screenY) {
+    public void touchDown(int screenX, int screenY, int pointer) {
         ball.getBody().setLinearVelocity(new Vector2(0, 30f));
     }
 
     @Override
-    public void touchUp(int screenX, int screenY) {
+    public void touchUp(int screenX, int screenY, int pointer) {
 
     }
 
     @Override
-    public void touchDragged(int screenX, int screenY) {
+    public void touchDragged(int screenX, int screenY, int pointer) {
 
     }
 }

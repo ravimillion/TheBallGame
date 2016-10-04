@@ -19,6 +19,7 @@ import ownLib.Own;
 public class GUI {
     public void putOffScreen(GameObject gameObject, OrthographicCamera box2DCam) {
         if (gameObject.getPosition().x + gameObject.getWidth() < box2DCam.position.x - box2DCam.viewportWidth/2) {
+            Own.log("Setting now");
             gameObject.setPosition(new Vector2(box2DCam.position.x + box2DCam.viewportWidth / 2, gameObject.getPosition().y));
         }
     }

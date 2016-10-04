@@ -59,7 +59,7 @@ public class IO implements InputProcessor {
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         for (int i = 0; i < this.onTouchListener.size(); i++) {
-            this.onTouchListener.get(i).touchDown(screenX, screenY);
+            this.onTouchListener.get(i).touchDown(screenX, screenY, pointer);
         }
         return true;
     }
@@ -67,7 +67,7 @@ public class IO implements InputProcessor {
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
         for (int i = 0; i < this.onTouchListener.size(); i++) {
-            this.onTouchListener.get(i).touchUp(screenX, screenY);
+            this.onTouchListener.get(i).touchUp(screenX, screenY, pointer);
         }
         return true;
     }
@@ -75,7 +75,7 @@ public class IO implements InputProcessor {
     @Override
     public boolean touchDragged(int screenX, int screenY, int pointer) {
         for (int i = 0; i < this.onTouchListener.size(); i++) {
-            this.onTouchListener.get(i).touchDragged(screenX, screenY);
+            this.onTouchListener.get(i).touchDragged(screenX, screenY, pointer);
         }
         return true;
     }

@@ -280,17 +280,17 @@ public class LevelTwo extends LevelScreen {
     }
 
     @Override
-    public void touchDown(int screenX, int screenY) {
+    public void touchDown(int screenX, int screenY, int pointer) {
         Own.box2d.gui.applyForceFromSource(200f, balloon.getBody(),box2DCam.unproject(new Vector3(screenX, screenY, 0)), true);
     }
 
     @Override
-    public void touchUp(int screenX, int screenY) {
+    public void touchUp(int screenX, int screenY, int pointer) {
 
     }
 
     @Override
-    public void touchDragged(int screenX, int screenY) {
+    public void touchDragged(int screenX, int screenY, int pointer) {
 
     }
 }

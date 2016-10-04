@@ -2,6 +2,7 @@ package com.simplegame.game.screens;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.input.GestureDetector;
 
 /**
  * Created by ravi on 20.08.16.

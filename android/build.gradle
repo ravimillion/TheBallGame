@@ -134,7 +134,6 @@ idea {
     }
 }
 dependencies {
-    compile files('/home/ravi/Projects/GDXProject/test/libs/gdx-natives.jar')
     compile 'com.firebase:firebase-client-android:2.3.1'
     compile 'com.firebase:firebase-client-android:2.3.1'
     compile 'com.google.android.gms:play-services-auth:9.4.0'

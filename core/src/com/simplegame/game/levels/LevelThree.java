@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
+import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
@@ -26,20 +27,14 @@ import java.util.HashMap;
 import ownLib.BodyContact;
 import ownLib.Own;
 
-public class LevelThree extends LevelScreen {
+public class LevelThree extends LevelScreen{
     private String TAG = "LevelThree";
     private Balloon balloon;
     private Ball ball;
     private FireBall fireBall;
     private FireBall fireBall1;
     private FireBall fireBall2;
-    ParticleEffect particleEffect;
-    private Icicle icicle;
-    private Icicle icicle2;
-
-    private ArrayList<Stone> obstacleArray = null;
-    private BitmapFont font;
-
+    private boolean isTouchAndHold = false;
     private BodyContact bodyContact = null;
     private float ballPosMaxX;
 
@@ -160,21 +155,21 @@ public class LevelThree extends LevelScreen {
         fireBall.setId("fireball");
         fireBall.setRadius(1);
         fireBall.create();
-        fireBall.setPosition(new Vector2(15f, 10f));
+        fireBall.setPosition(new Vector2(20f, 10f));
         fireBall.setDamping(5f);
 
         fireBall1 = new FireBall(world, game, levelObjects.get("fireball"), box2DCam);
         fireBall1.setRadius(1);
         fireBall1.setId("fireball1");
         fireBall1.create();
-        fireBall1.setPosition(new Vector2(20f, 5f));
+        fireBall1.setPosition(new Vector2(30f, 5f));
         fireBall1.setDamping(7f);
 //
         fireBall2 = new FireBall(world, game, levelObjects.get("fireball"), box2DCam);
         fireBall2.setRadius(1);
         fireBall2.setId("fireball2");
         fireBall2.create();
-        fireBall2.setPosition(new Vector2(25f, 15f));
+        fireBall2.setPosition(new Vector2(40f, 15f));
         fireBall2.setDamping(9f);
     }
 
@@ -229,7 +224,22 @@ public class LevelThree extends LevelScreen {
 //        particleEffect.update(Gdx.graphics.getDeltaTime());
 
         ball.update(Gdx.graphics.getDeltaTime());
+        if (fireBall.getPosition().y < 4) {
+            fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - fireBall.getRadius()));
+        }
 
+        if (fireBall1.getPosition().y < 4) {
+            fireBall1.setPosition(new Vector2(fireBall1.getPosition().x, WORLD_HEIGHT - fireBall1.getRadius()));
+        }
+
+
+        if (fireBall2.getPosition().y < 4) {
+            fireBall2.setPosition(new Vector2(fireBall2.getPosition().x, WORLD_HEIGHT - fireBall2.getRadius()));
+        }
+
+        Own.box2d.gui.putOffScreen(fireBall, box2DCam);
+        Own.box2d.gui.putOffScreen(fireBall1, box2DCam);
+        Own.box2d.gui.putOffScreen(fireBall2, box2DCam);
 
 //      advance the world
         world.step(Gdx.graphics.getDeltaTime(), 8, 2);
@@ -250,10 +260,17 @@ public class LevelThree extends LevelScreen {
 
 
     public void handleInput() {
+        Vector3 touchPoint = box2DCam.unproject(new Vector3(new Vector2(Gdx.input.getX(), Gdx.input.getY()), 0));
         if (Gdx.input.justTouched()) {
-            fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - 2));
-            Vector3 touchPoint = box2DCam.unproject(new Vector3(new Vector2(Gdx.input.getX(), Gdx.input.getY()), 0));
             ball.handleInput(touchPoint);
+        }
+
+        if (isTouchAndHold) {
+            if (touchPoint.x > ball.getPosition().x) {
+                ball.getBody().applyTorque(5, true);
+            } else {
+                ball.getBody().applyTorque(-5, true);
+            }
         }
     }
 
@@ -291,16 +308,17 @@ public class LevelThree extends LevelScreen {
     }
 
     @Override
-    public void touchDown(int screenX, int screenY) {
+    public void touchDown(int screenX, int screenY, int pointer) {
+        isTouchAndHold = true;
     }
 
     @Override
-    public void touchUp(int screenX, int screenY) {
-
+    public void touchUp(int screenX, int screenY, int pointer) {
+        isTouchAndHold = false;
     }
 
     @Override
-    public void touchDragged(int screenX, int screenY) {
+    public void touchDragged(int screenX, int screenY, int pointer) {
 
     }
 }
