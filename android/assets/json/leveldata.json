@@ -60,7 +60,7 @@
       "id": "icicle",
       "x": 5,
       "y": 20,
-      "angle":0,
+      "angle": 0,
       "width": 8,
       "height": 4,
       "restitution": 0,
@@ -78,16 +78,44 @@
       "density": 0.01,
       "friction": 0.3
     },
-    "fireball": {
-      "id": "fireball",
-      "radius": 0.01,
-      "x": 7,
-      "y": 7,
-      "restitution": 0,
-      "density": 0.01,
-      "friction": 0.3
-    }
-
+    "fireballs": [
+      {
+        "id": "fireball1",
+        "radius": 1,
+        "x": 10,
+        "y": 15,
+        "restitution": 0,
+        "density": 0.01,
+        "friction": 0.3
+      },
+      {
+        "id": "fireball2",
+        "radius": 1,
+        "x": 20,
+        "y": 25,
+        "restitution": 0,
+        "density": 0.01,
+        "friction": 0.3
+      },
+      {
+        "id": "fireball3",
+        "radius": 1,
+        "x": 30,
+        "y": 35,
+        "restitution": 0,
+        "density": 0.01,
+        "friction": 0.3
+      },
+      {
+        "id": "fireball4",
+        "radius": 2,
+        "x": 40,
+        "y": 35,
+        "restitution": 0,
+        "density": 0.01,
+        "friction": 0.3
+      }
+    ]
   },
   "4": {},
   "5": {},

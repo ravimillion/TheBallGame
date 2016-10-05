@@ -3,44 +3,34 @@ package com.simplegame.game.levels;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.ParticleEffect;
-import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
 import com.simplegame.game.objects.Ball;
-import com.simplegame.game.objects.Balloon;
 import com.simplegame.game.objects.FireBall;
-import com.simplegame.game.objects.Icicle;
-import com.simplegame.game.objects.Stone;
 import com.simplegame.game.objects.WorldBoundry;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.userdata.UserData;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-
 import ownLib.BodyContact;
 import ownLib.Own;
 
 public class LevelThree extends LevelScreen{
     private String TAG = "LevelThree";
-    private Balloon balloon;
     private Ball ball;
-    private FireBall fireBall;
-    private FireBall fireBall1;
-    private FireBall fireBall2;
-    private boolean isTouchAndHold = false;
+    private Array<FireBall> fireballsArray;
     private BodyContact bodyContact = null;
+    private boolean isTouchAndHold = false;
     private float ballPosMaxX;
+
+
 
     public LevelThree(GameEntry gameEntry) {
         this.game = gameEntry;
-
         gravityX = 0;
         gravityY = -98f;
         setScreenResolution();
@@ -69,37 +59,20 @@ public class LevelThree extends LevelScreen{
     }
 
     @Override
-    public void contactListener(UserData userDataA, UserData userDataB, float normalImpulse) {
+    public void contactListener(final UserData userDataA, UserData userDataB, float normalImpulse) {
 
-        if (userDataA.getId().equals("fireball") && userDataB.getId().equals("bottom") ||
-                userDataB.getId().equals("fireball") && userDataA.getId().equals("bottom")) {
+        if (userDataA.getId().startsWith("fireball") && userDataB.getId().equals("bottom") ||
+                userDataB.getId().startsWith("fireball") && userDataA.getId().equals("bottom")) {
             Own.log(TAG, userDataA.getId() + " + " + userDataB.getId());
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - 2));
-                }
-            });
-        }
+                    for (FireBall fireBall: fireballsArray) {
+                        if (fireBall.getId().equals(userDataA.getId())) {
+                            fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - 2));
+                        }
+                    }
 
-        if (userDataA.getId().equals("fireball1") && userDataB.getId().equals("bottom") ||
-                userDataB.getId().equals("fireball1") && userDataA.getId().equals("bottom")) {
-            Own.log(TAG, userDataA.getId() + " + " + userDataB.getId());
-            Gdx.app.postRunnable(new Runnable() {
-                @Override
-                public void run() {
-                    fireBall1.setPosition(new Vector2(fireBall1.getPosition().x, WORLD_HEIGHT - 2));
-                }
-            });
-        }
-
-        if (userDataA.getId().equals("fireball2") && userDataB.getId().equals("bottom") ||
-                userDataB.getId().equals("fireball2") && userDataA.getId().equals("bottom")) {
-            Own.log(TAG, userDataA.getId() + " + " + userDataB.getId());
-            Gdx.app.postRunnable(new Runnable() {
-                @Override
-                public void run() {
-                    fireBall2.setPosition(new Vector2(fireBall2.getPosition().x, WORLD_HEIGHT - 2));
                 }
             });
         }
@@ -120,17 +93,11 @@ public class LevelThree extends LevelScreen{
 //        }
     }
 
-    private HashMap<String, JsonValue> loadLevelData() {
-        HashMap<String, JsonValue> levelObjects = new HashMap<String, JsonValue>();
-
+    private JsonValue loadLevelData() {
         JsonReader jsonReader = new JsonReader();
         JsonValue store = jsonReader.parse(Gdx.files.internal("json/leveldata.json"));
-
         JsonValue levelData = store.get("3");
-        levelObjects.put("ball", levelData.get("ball"));
-        levelObjects.put("fireball", levelData.get("fireball"));
-
-        return levelObjects;
+        return levelData;
     }
 
     @Override
@@ -142,39 +109,31 @@ public class LevelThree extends LevelScreen{
         world.setContactListener(bodyContact);
 
         debugRenderer = new Box2DDebugRenderer();
-        HashMap<String, JsonValue> levelObjects = loadLevelData();
-        createBall(levelObjects);
-        createFireBall(levelObjects);
+        JsonValue levelData = loadLevelData();
+        createBall(levelData);
+        createFireballs(levelData);
 
         drawBorder();
         Own.io.setOnTouchListener(this);
     }
 
-    private void createFireBall(HashMap<String, JsonValue> levelObjects) {
-        fireBall = new FireBall(world, game, levelObjects.get("fireball"), box2DCam);
-        fireBall.setId("fireball");
-        fireBall.setRadius(1);
-        fireBall.create();
-        fireBall.setPosition(new Vector2(20f, 10f));
-        fireBall.setDamping(5f);
+    private void createFireballs(JsonValue levelData) {
+        JsonValue fireballs = levelData.get("fireballs");
+        fireballsArray = new Array<FireBall>();
+        for (int i = 0; i < fireballs.size; i++) {
+            FireBall fireBall = new FireBall(world, game, fireballs.get(i), box2DCam);
 
-        fireBall1 = new FireBall(world, game, levelObjects.get("fireball"), box2DCam);
-        fireBall1.setRadius(1);
-        fireBall1.setId("fireball1");
-        fireBall1.create();
-        fireBall1.setPosition(new Vector2(30f, 5f));
-        fireBall1.setDamping(7f);
-//
-        fireBall2 = new FireBall(world, game, levelObjects.get("fireball"), box2DCam);
-        fireBall2.setRadius(1);
-        fireBall2.setId("fireball2");
-        fireBall2.create();
-        fireBall2.setPosition(new Vector2(40f, 15f));
-        fireBall2.setDamping(9f);
+            fireBall.setId("fireball");
+            fireBall.setRadius(fireballs.get(i).getInt("radius"));
+            fireBall.create();
+            fireBall.setPosition(new Vector2(fireballs.get(i).getFloat("x"), fireballs.get(i).getFloat("y")));
+            fireBall.setDamping(5f);
+            fireballsArray.add(fireBall);
+        }
     }
 
-    private void createBall(HashMap<String, JsonValue> levelObjects) {
-        ball = new Ball(world, game, levelObjects.get("ball"));
+    private void createBall(JsonValue levelData) {
+        ball = new Ball(world, game, levelData.get("ball"));
         ball.create();
         ball.setPosition(new Vector2(5f, 10f));
         ball.setDamping(1f);
@@ -195,15 +154,16 @@ public class LevelThree extends LevelScreen{
         }
 
         if (ball != null) ball.drawGui();
-
         game.batch.end();
 
         game.batch.setProjectionMatrix(orthoCam.combined);
         game.batch.begin();
         Own.text.draw(game.batch, "Score: 00000", new Vector2(10, ORTHO_HEIGHT - 20), Own.text.SCORE);
-        if (fireBall != null) fireBall.drawGui();
-        if (fireBall1 != null) fireBall1.drawGui();
-        if (fireBall2 != null) fireBall2.drawGui();
+        for (FireBall fireBall: fireballsArray) {
+            fireBall.drawGui();
+        }
+
+
         orthoCam.update();
         game.batch.end();
 
@@ -215,31 +175,14 @@ public class LevelThree extends LevelScreen{
         gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         updateCamera();
 
-//        fireBall.setPosition(new Vector2(fireBall.getPosition().x, fireBall.getPosition().y - .5f));
-
-//        if (fireBall.getPosition().y < 0) {
-//            fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT + 1));
-//        }
-
-//        particleEffect.update(Gdx.graphics.getDeltaTime());
-
         ball.update(Gdx.graphics.getDeltaTime());
-        if (fireBall.getPosition().y < 4) {
-            fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - fireBall.getRadius()));
+
+        for (FireBall fireBall: fireballsArray) {
+            if (fireBall.getPosition().y < 4) {
+                fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - fireBall.getRadius()));
+            }
+            Own.box2d.gui.putOffScreen(fireBall, box2DCam);
         }
-
-        if (fireBall1.getPosition().y < 4) {
-            fireBall1.setPosition(new Vector2(fireBall1.getPosition().x, WORLD_HEIGHT - fireBall1.getRadius()));
-        }
-
-
-        if (fireBall2.getPosition().y < 4) {
-            fireBall2.setPosition(new Vector2(fireBall2.getPosition().x, WORLD_HEIGHT - fireBall2.getRadius()));
-        }
-
-        Own.box2d.gui.putOffScreen(fireBall, box2DCam);
-        Own.box2d.gui.putOffScreen(fireBall1, box2DCam);
-        Own.box2d.gui.putOffScreen(fireBall2, box2DCam);
 
 //      advance the world
         world.step(Gdx.graphics.getDeltaTime(), 8, 2);
@@ -309,6 +252,7 @@ public class LevelThree extends LevelScreen{
 
     @Override
     public void touchDown(int screenX, int screenY, int pointer) {
+
         isTouchAndHold = true;
     }
 
@@ -319,6 +263,11 @@ public class LevelThree extends LevelScreen{
 
     @Override
     public void touchDragged(int screenX, int screenY, int pointer) {
+
+    }
+
+    @Override
+    public void touchHold(int screenX, int screenY, int pointer) {
 
     }
 }

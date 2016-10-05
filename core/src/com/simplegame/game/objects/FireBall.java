@@ -61,10 +61,14 @@ public class FireBall extends GameObject {
     public float getRadius() {
         return this.radius;
     }
+
     public void setRadius(float radius) {
         this.radius = radius;
     }
 
+    public String getId() {
+        return this.id;
+    }
 
     public void setId(String id) {
         this.id = id;
