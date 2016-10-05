@@ -265,9 +265,4 @@ public class LevelThree extends LevelScreen{
     public void touchDragged(int screenX, int screenY, int pointer) {
 
     }
-
-    @Override
-    public void touchHold(int screenX, int screenY, int pointer) {
-
-    }
 }
