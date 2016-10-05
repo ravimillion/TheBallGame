@@ -24,6 +24,7 @@ public class Splash implements Screen {
     public void setProgress(float progress) {
         this.progress = progress;
     }
+
     @Override
     public void show() {
 

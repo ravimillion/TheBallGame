@@ -5,6 +5,8 @@ package ownLib.listener;
  */
 public interface OnTouchListener {
     void touchDown(int screenX, int screenY, int pointer);
+
     void touchUp(int screenX, int screenY, int pointer);
+
     void touchDragged(int screenX, int screenY, int pointer);
 }

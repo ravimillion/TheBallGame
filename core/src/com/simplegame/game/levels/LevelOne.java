@@ -66,13 +66,15 @@ public class LevelOne extends LevelScreen {
         box2DCam.update();
     }
 
+    private void gameOver() {
+        isGameOver = true;
+    }
+
     @Override
     public void contactListener(UserData userDataA, UserData userDataB, float normalImpulse) {
-        Own.log(TAG, userDataA.getId() + " " + userDataB.getId());
-        if (normalImpulse > 500) {
-            GL20 gl = Gdx.gl;
-            gl.glClearColor(1, 0, 0, 1);
-            gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        if (normalImpulse > 100) Own.log(TAG, "Impulse: " + normalImpulse);
+        if (normalImpulse > 450) {
+            gameOver();
         }
 
         if (userDataA.getId().equals("ball") && userDataB.getId().equals("right")
@@ -138,6 +140,11 @@ public class LevelOne extends LevelScreen {
         Own.io.setOnTouchListener(this);
     }
 
+    @Override
+    protected void levelComplete() {
+
+    }
+
     private void createTreeStump(HashMap<String, JsonValue> levelObjects) {
         treeStump = new TreeStump(world, game, levelObjects.get("treestump"));
         treeStump.create();
@@ -201,9 +208,7 @@ public class LevelOne extends LevelScreen {
     }
 
     public void drawBox2DWorld() {
-        GL20 gl = Gdx.gl;
-        gl.glClearColor(0, 0, 0, 1f);
-        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        if (isGameOver) return;
 
         try {
             Vector3 values = Own.device.getAccMeter();
@@ -245,6 +250,10 @@ public class LevelOne extends LevelScreen {
 
     @Override
     public void render(float delta) {
+        GL20 gl = Gdx.gl;
+        gl.glClearColor(0, 0, 0, 1f);
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         drawBox2DWorld();
         drawBox2DGui();
     }

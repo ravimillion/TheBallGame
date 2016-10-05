@@ -10,24 +10,23 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
+import com.simplegame.game.MainMenuScreen;
 import com.simplegame.game.objects.Ball;
 import com.simplegame.game.objects.FireBall;
 import com.simplegame.game.objects.WorldBoundry;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.userdata.UserData;
-import java.util.HashMap;
+
 import ownLib.BodyContact;
 import ownLib.Own;
 
-public class LevelThree extends LevelScreen{
+public class LevelThree extends LevelScreen {
     private String TAG = "LevelThree";
     private Ball ball;
     private Array<FireBall> fireballsArray;
     private BodyContact bodyContact = null;
     private boolean isTouchAndHold = false;
     private float ballPosMaxX;
-
-
 
     public LevelThree(GameEntry gameEntry) {
         this.game = gameEntry;
@@ -60,22 +59,43 @@ public class LevelThree extends LevelScreen{
 
     @Override
     public void contactListener(final UserData userDataA, UserData userDataB, float normalImpulse) {
+        String idA = userDataA.getId();
+        String idB = userDataB.getId();
 
-        if (userDataA.getId().startsWith("fireball") && userDataB.getId().equals("bottom") ||
-                userDataB.getId().startsWith("fireball") && userDataA.getId().equals("bottom")) {
-            Own.log(TAG, userDataA.getId() + " + " + userDataB.getId());
+
+        if (idA.startsWith("fireball") && idB.equals("bottom") || idB.startsWith("fireball") && idA.equals("bottom")) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    for (FireBall fireBall: fireballsArray) {
+                    for (FireBall fireBall : fireballsArray) {
                         if (fireBall.getId().equals(userDataA.getId())) {
                             fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - 2));
                         }
                     }
-
                 }
             });
         }
+
+        if (idA.startsWith("fireball") && idB.equals("ball") || idB.startsWith("fireball") && idA.equals("ball")) {
+            Own.log(TAG, idA + " " + idB);
+            Gdx.app.postRunnable(new Runnable() {
+                @Override
+                public void run() {
+                    Own.log(TAG, "Game Over!!!");
+                    gameOver();
+                }
+            });
+        }
+
+        if (idA.startsWith("ball") && idB.equals("right") || idB.startsWith("ball") && idA.equals("right")) {
+            Gdx.app.postRunnable(new Runnable() {
+                @Override
+                public void run() {
+                    levelComplete();
+                }
+            });
+        }
+
 //
 //        if (normalImpulse > 500) {
 //            GL20 gl = Gdx.gl;
@@ -91,6 +111,10 @@ public class LevelThree extends LevelScreen{
 //                }
 //            });
 //        }
+    }
+
+    private void gameOver() {
+        isGameOver = true;
     }
 
     private JsonValue loadLevelData() {
@@ -115,6 +139,11 @@ public class LevelThree extends LevelScreen{
 
         drawBorder();
         Own.io.setOnTouchListener(this);
+    }
+
+    @Override
+    protected void levelComplete() {
+        this.game.setScreen(new MainMenuScreen(this.game));
     }
 
     private void createFireballs(JsonValue levelData) {
@@ -159,34 +188,26 @@ public class LevelThree extends LevelScreen{
         game.batch.setProjectionMatrix(orthoCam.combined);
         game.batch.begin();
         Own.text.draw(game.batch, "Score: 00000", new Vector2(10, ORTHO_HEIGHT - 20), Own.text.SCORE);
-        for (FireBall fireBall: fireballsArray) {
+        for (FireBall fireBall : fireballsArray) {
             fireBall.drawGui();
         }
-
-
         orthoCam.update();
         game.batch.end();
-
     }
 
     public void drawBox2DWorld() {
-        GL20 gl = Gdx.gl;
-        gl.glClearColor(0, 0, 0, 1f);
-        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        if (isGameOver) return;
+
         updateCamera();
-
         ball.update(Gdx.graphics.getDeltaTime());
-
-        for (FireBall fireBall: fireballsArray) {
+        for (FireBall fireBall : fireballsArray) {
             if (fireBall.getPosition().y < 4) {
                 fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - fireBall.getRadius()));
             }
             Own.box2d.gui.putOffScreen(fireBall, box2DCam);
         }
 
-//      advance the world
         world.step(Gdx.graphics.getDeltaTime(), 8, 2);
-//         debug renderer
         debugRenderer.render(world, box2DCam.combined);
     }
 
@@ -219,6 +240,10 @@ public class LevelThree extends LevelScreen{
 
     @Override
     public void render(float delta) {
+        GL20 gl = Gdx.gl;
+        gl.glClearColor(0, 0, 0, 1f);
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         handleInput();
         drawBox2DWorld();
         drawBox2DGUI();

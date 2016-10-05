@@ -148,32 +148,6 @@ public class BodyEditorLoader {
     // Json Models
     // -------------------------------------------------------------------------
 
-    public static class Model {
-        public final Map<String, RigidBodyModel> rigidBodies = new HashMap<String, RigidBodyModel>();
-    }
-
-    public static class RigidBodyModel {
-        public String name;
-        public String imagePath;
-        public final Vector2 origin = new Vector2();
-        public final List<PolygonModel> polygons = new ArrayList<PolygonModel>();
-        public final List<CircleModel> circles = new ArrayList<CircleModel>();
-    }
-
-    public static class PolygonModel {
-        public final List<Vector2> vertices = new ArrayList<Vector2>();
-        private Vector2[] buffer; // used to avoid allocation in attachFixture()
-    }
-
-    public static class CircleModel {
-        public final Vector2 center = new Vector2();
-        public float radius;
-    }
-
-    // -------------------------------------------------------------------------
-    // Json reading process
-    // -------------------------------------------------------------------------
-
     private Model readJson(String str) {
         Model m = new Model();
 
@@ -251,15 +225,41 @@ public class BodyEditorLoader {
         return rbModel;
     }
 
-    // -------------------------------------------------------------------------
-    // Helpers
-    // -------------------------------------------------------------------------
-
     private Vector2 newVec() {
         return vectorPool.isEmpty() ? new Vector2() : vectorPool.remove(0);
     }
 
     private void free(Vector2 v) {
         vectorPool.add(v);
+    }
+
+    // -------------------------------------------------------------------------
+    // Json reading process
+    // -------------------------------------------------------------------------
+
+    public static class Model {
+        public final Map<String, RigidBodyModel> rigidBodies = new HashMap<String, RigidBodyModel>();
+    }
+
+    public static class RigidBodyModel {
+        public final Vector2 origin = new Vector2();
+        public final List<PolygonModel> polygons = new ArrayList<PolygonModel>();
+        public final List<CircleModel> circles = new ArrayList<CircleModel>();
+        public String name;
+        public String imagePath;
+    }
+
+    // -------------------------------------------------------------------------
+    // Helpers
+    // -------------------------------------------------------------------------
+
+    public static class PolygonModel {
+        public final List<Vector2> vertices = new ArrayList<Vector2>();
+        private Vector2[] buffer; // used to avoid allocation in attachFixture()
+    }
+
+    public static class CircleModel {
+        public final Vector2 center = new Vector2();
+        public float radius;
     }
 }

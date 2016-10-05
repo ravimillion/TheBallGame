@@ -9,7 +9,9 @@ import com.simplegame.game.levels.LevelOne;
 import com.simplegame.game.levels.LevelThree;
 import com.simplegame.game.levels.LevelTwo;
 import com.simplegame.game.screens.GameScreen;
+
 import java.util.ArrayList;
+
 import ownLib.Own;
 
 public class MainMenuScreen extends GameScreen {
@@ -87,7 +89,7 @@ public class MainMenuScreen extends GameScreen {
 
             for (int i = 0; i < levelGrid.size(); i++) {
                 if (levelGrid.get(i).contains(touchPoint.x, touchPoint.y)) {
-                    switch(i) {
+                    switch (i) {
                         case 0:
                             game.setScreen(new LevelOne(game));
                             break;
@@ -123,7 +125,7 @@ public class MainMenuScreen extends GameScreen {
         game.batch.draw(Own.assets.getTexture("BGMM"), 0, 0, ORTHO_WIDTH, ORTHO_HEIGHT);
         for (int i = 0; i < levelGrid.size(); i++) {
             Rectangle rect = levelGrid.get(i);
-            game.batch.draw(Own.assets.getTextureRegion(String.valueOf(i+1)), rect.getX(), rect.getY(), tileWidth, tileHeight);
+            game.batch.draw(Own.assets.getTextureRegion(String.valueOf(i + 1)), rect.getX(), rect.getY(), tileWidth, tileHeight);
         }
 
         game.batch.end();

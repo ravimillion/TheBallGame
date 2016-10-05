@@ -93,13 +93,13 @@ public class FireBall extends GameObject {
         return this.body.getPosition();
     }
 
-    public void setDamping(float dampFactor) {
-        this.body.setLinearDamping(dampFactor);
-    }
-
     @Override
     public void setPosition(Vector2 pos) {
         this.body.setTransform(pos, 0);
+    }
+
+    public void setDamping(float dampFactor) {
+        this.body.setLinearDamping(dampFactor);
     }
 
     @Override

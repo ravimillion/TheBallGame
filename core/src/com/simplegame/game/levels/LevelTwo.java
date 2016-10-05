@@ -17,7 +17,6 @@ import com.badlogic.gdx.utils.JsonValue;
 import com.simplegame.game.MainMenuScreen;
 import com.simplegame.game.objects.Ball;
 import com.simplegame.game.objects.Balloon;
-import com.simplegame.game.objects.GameObject;
 import com.simplegame.game.objects.Icicle;
 import com.simplegame.game.objects.Stone;
 import com.simplegame.game.objects.WorldBoundry;
@@ -75,19 +74,24 @@ public class LevelTwo extends LevelScreen {
 
     @Override
     public void contactListener(UserData userDataA, UserData userDataB, float normalImpulse) {
-        Own.log(TAG, userDataA.getId() + " " + userDataB.getId());
+        String idA = userDataA.getId();
+        String idB = userDataB.getId();
 
-        if (normalImpulse > 500) {
-            GL20 gl = Gdx.gl;
-            gl.glClearColor(1, 0, 0, 1);
-            gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        }
-
-        if (userDataA.getId().equals("ball") && userDataB.getId().equals("right") || userDataA.getId().equals("right") && userDataB.getId().equals("ball")) {
+//        level complete
+        if (idA.equals("ball") && idB.equals("right") || idA.equals("right") && idB.equals("ball")) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    game.setScreen(new MainMenuScreen(game));
+                    levelComplete();
+                }
+            });
+        }
+//        game over
+        if (idA.equals("balloon") && idB.equals("icicle") || idA.equals("icicle") && idB.equals("balloon")) {
+            Gdx.app.postRunnable(new Runnable() {
+                @Override
+                public void run() {
+                    gameOver();
                 }
             });
         }
@@ -124,6 +128,15 @@ public class LevelTwo extends LevelScreen {
         createRopeJoint();
         drawBorder();
         Own.io.setOnTouchListener(this);
+    }
+
+    @Override
+    protected void levelComplete() {
+        game.setScreen(new MainMenuScreen(game));
+    }
+
+    private void gameOver() {
+        isGameOver = true;
     }
 
     private void createIcicle(JsonValue objectData) {
@@ -214,9 +227,7 @@ public class LevelTwo extends LevelScreen {
     }
 
     public void drawBox2DWorld() {
-        GL20 gl = Gdx.gl;
-        gl.glClearColor(0, 0, 0, 1f);
-        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        if (isGameOver) return;
         updateCamera();
         if (icicle != null) Own.box2d.gui.putOffScreen(icicle, box2DCam);
         if (icicle2 != null) Own.box2d.gui.putOffScreen(icicle2, box2DCam);
@@ -248,6 +259,10 @@ public class LevelTwo extends LevelScreen {
 
     @Override
     public void render(float delta) {
+        GL20 gl = Gdx.gl;
+        gl.glClearColor(0, 0, 0, 1f);
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         handleInput();
         drawBox2DWorld();
         drawBox2DGUI();
@@ -281,7 +296,7 @@ public class LevelTwo extends LevelScreen {
 
     @Override
     public void touchDown(int screenX, int screenY, int pointer) {
-        Own.box2d.gui.applyForceFromSource(200f, balloon.getBody(),box2DCam.unproject(new Vector3(screenX, screenY, 0)), true);
+        Own.box2d.gui.applyForceFromSource(200f, balloon.getBody(), box2DCam.unproject(new Vector3(screenX, screenY, 0)), true);
     }
 
     @Override

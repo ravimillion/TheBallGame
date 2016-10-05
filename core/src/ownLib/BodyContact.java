@@ -33,12 +33,13 @@ public class BodyContact implements ContactListener {
         Fixture fixtureB = contact.getFixtureB();
 
         float[] impulseArray = impulse.getNormalImpulses();
-        notifyListener((UserData)fixtureA.getBody().getUserData(), (UserData)fixtureB.getBody().getUserData(), impulseArray[0]);
+        notifyListener((UserData) fixtureA.getBody().getUserData(), (UserData) fixtureB.getBody().getUserData(), impulseArray[0]);
     }
 
     public void notifyListener(UserData userDataA, UserData userDataB, float normalImpulse) {
         levelScreen.contactListener(userDataA, userDataB, normalImpulse);
     }
+
     public void setContactListener(LevelScreen screen) {
         levelScreen = screen;
     }

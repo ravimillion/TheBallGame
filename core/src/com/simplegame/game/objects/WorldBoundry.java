@@ -21,8 +21,15 @@ public class WorldBoundry {
     private Body bottom = null;
     private Body right = null;
 
+    public WorldBoundry(float WORLD_WIDTH, float WORLD_HEIGHT) {
+        bottom = Own.box2d.factory.getEdgeBody(BodyDef.BodyType.StaticBody, new Vector2(0, 1), 0, 0, 0, WORLD_WIDTH, 0, 0.5f, 0.5f, 0.5f, "bottom");
+        left = Own.box2d.factory.getEdgeBody(BodyDef.BodyType.StaticBody, new Vector2(0, 1), 0, 0, 0, 0, WORLD_HEIGHT, 0.5f, 0.5f, 0.5f, "left");
+        right = Own.box2d.factory.getEdgeBody(BodyDef.BodyType.StaticBody, new Vector2(0, 1), 0, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT, 0.5f, 0.5f, 0.5f, "right");
+        top = Own.box2d.factory.getEdgeBody(BodyDef.BodyType.StaticBody, new Vector2(0, 1), 0, 0, WORLD_HEIGHT, WORLD_WIDTH, WORLD_HEIGHT, 0.5f, 0.5f, 0.5f, "top");
+    }
+
     public void updateWorldBoundry(int type, Vector2 point, float angle) {
-        switch(type) {
+        switch (type) {
             case WorldBoundry.LEFT:
                 left.setTransform(point, angle);
                 break;
@@ -38,13 +45,5 @@ public class WorldBoundry {
             default:
                 break;
         }
-    }
-
-
-    public WorldBoundry(float WORLD_WIDTH, float WORLD_HEIGHT) {
-        bottom = Own.box2d.factory.getEdgeBody(BodyDef.BodyType.StaticBody, new Vector2(0, 1), 0, 0, 0, WORLD_WIDTH, 0, 0.5f, 0.5f, 0.5f, "bottom");
-        left = Own.box2d.factory.getEdgeBody(BodyDef.BodyType.StaticBody, new Vector2(0, 1), 0, 0, 0, 0, WORLD_HEIGHT, 0.5f, 0.5f, 0.5f, "left");
-        right = Own.box2d.factory.getEdgeBody(BodyDef.BodyType.StaticBody, new Vector2(0, 1), 0, WORLD_WIDTH, 0, WORLD_WIDTH, WORLD_HEIGHT, 0.5f, 0.5f, 0.5f, "right");
-        top = Own.box2d.factory.getEdgeBody(BodyDef.BodyType.StaticBody, new Vector2(0, 1), 0, 0, WORLD_HEIGHT, WORLD_WIDTH, WORLD_HEIGHT, 0.5f, 0.5f, 0.5f, "top");
     }
 }

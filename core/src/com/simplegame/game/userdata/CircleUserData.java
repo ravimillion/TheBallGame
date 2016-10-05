@@ -15,6 +15,7 @@ public class CircleUserData extends UserData {
         this.shape = circleShape;
         this.radius = radius;
     }
+
     public float getRadius() {
         return this.radius;
     }

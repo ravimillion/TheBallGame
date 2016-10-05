@@ -124,9 +124,9 @@ public class Assets extends AssetManager {
         FreeTypeFontGenerator generator = null;
 
         Iterator<String> iter = fontAssets.keys();
-        while(iter.hasNext()) {
+        while (iter.hasNext()) {
             try {
-                String  key = iter.next(); // key would be the name of the font in capital letters
+                String key = iter.next(); // key would be the name of the font in capital letters
                 if (fontName.equals(key)) {
                     generator = this.get(fontAssets.getString(key));
                     fontObjects.put(fontType, generator.generateFont(parameter));
@@ -141,7 +141,7 @@ public class Assets extends AssetManager {
     private void loadJsonAssets() {
         // with reference to the chart on this link - http://reeddesign.co.uk/test/points-pixels.html
         Iterator<String> iter = jsonAssets.keys();
-        while(iter.hasNext()) {
+        while (iter.hasNext()) {
             try {
                 String key = iter.next(); // key would be the name of the font in capital letters
                 jsonObjects.put(key, Gdx.files.internal(jsonAssets.getString(key)));
@@ -179,7 +179,6 @@ public class Assets extends AssetManager {
     }
 
 
-
     public void createImageAssets() {
 //        Own.log(TAG, "Loading assets");
         Iterator<String> iterator = imageAssets.keys();
@@ -192,7 +191,7 @@ public class Assets extends AssetManager {
                 switch (obj.getInt("type")) {
                     case AssetsMap.TEXTURE_REGION:
                         textureRegionObjects.put(key, new TextureRegion(
-                                (Texture)this.get(obj.getString("uri")),
+                                (Texture) this.get(obj.getString("uri")),
                                 obj.getInt("x"),
                                 obj.getInt("y"),
                                 obj.getInt("w"),
@@ -200,7 +199,7 @@ public class Assets extends AssetManager {
                         );
                         break;
                     case AssetsMap.TEXTURE:
-                        textureObjects.put(key, (Texture)this.get(obj.getString("uri")));
+                        textureObjects.put(key, (Texture) this.get(obj.getString("uri")));
                         break;
                 }
             } catch (JSONException e) {

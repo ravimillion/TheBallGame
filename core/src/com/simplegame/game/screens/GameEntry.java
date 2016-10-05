@@ -4,18 +4,14 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.simplegame.game.AdHandler;
 import com.simplegame.game.MainMenuScreen;
-import com.simplegame.game.levels.LevelThree;
-import com.simplegame.game.levels.LevelTwo;
 
 import ownLib.Own;
 
 public class GameEntry extends Game {
+    public SpriteBatch batch;
     private String TAG = "GameEntry";
     private Splash splashScreen;
     private float progress = 0.0f;
-
-
-    public SpriteBatch batch;
     private AdHandler handler = null;
 
     public GameEntry(AdHandler handler) {

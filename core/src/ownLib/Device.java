@@ -9,9 +9,8 @@ import com.badlogic.gdx.math.Vector3;
  * Created by ravi on 10.07.16.
  */
 public class Device {
-    private String TAG = this.getClass().getName();
     public static final int DURATION_INFINITE = 1000 * 60 * 60; // 1 HOUR
-
+    private String TAG = this.getClass().getName();
 
     public int getAndroidVersion() {
         return Gdx.app.getVersion();
@@ -44,10 +43,11 @@ public class Device {
     public float getScreenRatio() {
         float h = this.getScreenHeight();
         float w = this.getScreenWidth();
-        float ratio = h/w;
+        float ratio = h / w;
         Own.log(TAG, "Ratio: " + ratio);
         return ratio;
     }
+
     public int getFPS() {
         return Gdx.graphics.getFramesPerSecond();
     }

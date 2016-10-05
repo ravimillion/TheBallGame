@@ -18,12 +18,18 @@ public abstract class GameObject {
     protected Vector2 position;
 
     public abstract Vector2 getPosition();
+
     public abstract void setPosition(Vector2 pos);
 
     public abstract void handleInput(Vector3 touchPoint);
+
     public abstract void update(float deltaTime);
+
     public abstract void drawGui();
+
     public abstract void create();
+
     public abstract float getWidth();
+
     public abstract float getHeight();
 }

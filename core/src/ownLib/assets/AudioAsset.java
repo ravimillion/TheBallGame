@@ -11,6 +11,7 @@ public class AudioAsset {
         this.key = key;
         this.uri = uri;
     }
+
     public String getUri() {
         return uri;
     }
@@ -18,7 +19,6 @@ public class AudioAsset {
     public void setUri(String uri) {
         this.uri = uri;
     }
-
 
 
 }

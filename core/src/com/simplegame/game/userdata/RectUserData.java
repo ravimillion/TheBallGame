@@ -6,7 +6,7 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 /**
  * Created by ravi on 01.09.16.
  */
-public class RectUserData extends UserData{
+public class RectUserData extends UserData {
     private float width;
     private float height;
     private PolygonShape shape;
@@ -29,6 +29,7 @@ public class RectUserData extends UserData{
     public float getHeight() {
         return height;
     }
+
     public void setHeight(float height) {
         this.height = height;
     }

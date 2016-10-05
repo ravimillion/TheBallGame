@@ -10,7 +10,7 @@ public abstract class UserData {
     protected String type = "";
     protected Vector2 pos;
 
-    public UserData(String id, String type, Vector2 pos){
+    public UserData(String id, String type, Vector2 pos) {
         this.id = id;
         this.type = type;
         this.pos = pos;
