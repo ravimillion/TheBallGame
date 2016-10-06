@@ -11,10 +11,12 @@ import com.badlogic.gdx.math.Vector2;
  * Created by ravi on 11.09.16.
  */
 public class Text {
+    private String TAG = "Text";
     public String GOUDY_PAR = "GOUDY_PAR";
     public String DESYREL_PAR = "DESYREL_PAR";
     public String SCORE = "SCORE";
-    private String TAG = "Text";
+    public String MENU = "MENU";
+
     private BitmapFont font;
     private FreeTypeFontGenerator.FreeTypeFontParameter parameter;
 
@@ -31,6 +33,11 @@ public class Text {
         parameter.size = (int) (24 * Gdx.graphics.getDensity());
         parameter.color = Color.FIREBRICK;
         Own.assets.createFontAssets(SCORE, "ACTOR", parameter);
+
+        // Menu fonts
+        parameter.size = (int) (48 * Gdx.graphics.getDensity());
+        parameter.color = Color.WHITE;
+        Own.assets.createFontAssets(MENU, "ACTOR", parameter);
     }
 
     public void draw(SpriteBatch batch, String msg, Vector2 pos, String fontType) {

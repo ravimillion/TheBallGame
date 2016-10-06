@@ -12,6 +12,7 @@ import ownLib.listener.OnTouchListener;
 
 public abstract class LevelScreen extends GameScreen implements OnTouchListener {
     protected World world;
+    protected GameState gameState = GameState.RUNNING;
     protected WorldBoundry worldBoundry = null;
     protected Box2DDebugRenderer debugRenderer;
     protected float WORLD_WIDTH = 0;
@@ -22,7 +23,7 @@ public abstract class LevelScreen extends GameScreen implements OnTouchListener 
 
     protected abstract void setupLevel();
 
-    protected abstract void levelComplete();
+    protected abstract void levelEnd();
 
     public abstract void contactListener(UserData bodyA, UserData bodyB, float normalImpulse);
 

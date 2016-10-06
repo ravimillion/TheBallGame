@@ -141,7 +141,7 @@ public class LevelOne extends LevelScreen {
     }
 
     @Override
-    protected void levelComplete() {
+    protected void levelEnd() {
 
     }
 

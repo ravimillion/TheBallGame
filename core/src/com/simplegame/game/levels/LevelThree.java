@@ -20,6 +20,9 @@ import com.simplegame.game.userdata.UserData;
 import ownLib.BodyContact;
 import ownLib.Own;
 
+import static com.simplegame.game.levels.GameState.GAME_OVER;
+import static com.simplegame.game.levels.GameState.LEVEL_END;
+
 public class LevelThree extends LevelScreen {
     private String TAG = "LevelThree";
     private Ball ball;
@@ -81,8 +84,7 @@ public class LevelThree extends LevelScreen {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    Own.log(TAG, "Game Over!!!");
-                    gameOver();
+                    gameState = GAME_OVER;
                 }
             });
         }
@@ -91,7 +93,7 @@ public class LevelThree extends LevelScreen {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    levelComplete();
+                    gameState = LEVEL_END;
                 }
             });
         }
@@ -111,10 +113,6 @@ public class LevelThree extends LevelScreen {
 //                }
 //            });
 //        }
-    }
-
-    private void gameOver() {
-        isGameOver = true;
     }
 
     private JsonValue loadLevelData() {
@@ -142,7 +140,8 @@ public class LevelThree extends LevelScreen {
     }
 
     @Override
-    protected void levelComplete() {
+    protected void levelEnd() {
+        gameState = LEVEL_END;
         this.game.setScreen(new MainMenuScreen(this.game));
     }
 
@@ -151,7 +150,6 @@ public class LevelThree extends LevelScreen {
         fireballsArray = new Array<FireBall>();
         for (int i = 0; i < fireballs.size; i++) {
             FireBall fireBall = new FireBall(world, game, fireballs.get(i), box2DCam);
-
             fireBall.setId("fireball");
             fireBall.setRadius(fireballs.get(i).getInt("radius"));
             fireBall.create();
@@ -173,7 +171,7 @@ public class LevelThree extends LevelScreen {
 
     }
 
-    private void drawBox2DGUI() {
+    private void drawWorld() {
         game.batch.setProjectionMatrix(box2DCam.combined);
         game.batch.begin();
 //        game.batch.draw(Own.assets.getTexture("BGL3"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
@@ -187,7 +185,9 @@ public class LevelThree extends LevelScreen {
 
         game.batch.setProjectionMatrix(orthoCam.combined);
         game.batch.begin();
+
         Own.text.draw(game.batch, "Score: 00000", new Vector2(10, ORTHO_HEIGHT - 20), Own.text.SCORE);
+
         for (FireBall fireBall : fireballsArray) {
             fireBall.drawGui();
         }
@@ -195,11 +195,36 @@ public class LevelThree extends LevelScreen {
         game.batch.end();
     }
 
-    public void drawBox2DWorld() {
-        if (isGameOver) return;
+    private void updateGui() {
+        GL20 gl = Gdx.gl;
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+        drawWorld();
+
+        game.batch.begin();
+        switch (gameState) {
+            case RUNNING:
+                drawRunning();
+                break;
+            case GAME_OVER:
+                drawGameOver();
+                break;
+        }
+        game.batch.end();
+    }
+
+    private void drawRunning() {
+        Own.text.draw(game.batch, "Pause", new Vector2(orthoCam.position.x + 400, ORTHO_HEIGHT - 100), Own.text.MENU);
+    }
+
+    private void drawGameOver() {
+        Own.text.draw(game.batch, "Game Over", new Vector2(orthoCam.position.x - 200, ORTHO_HEIGHT / 2), Own.text.MENU);
+    }
+
+    private void updateRunning(float delta) {
         updateCamera();
-        ball.update(Gdx.graphics.getDeltaTime());
+        ball.update(delta);
+
         for (FireBall fireBall : fireballsArray) {
             if (fireBall.getPosition().y < 4) {
                 fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - fireBall.getRadius()));
@@ -209,6 +234,36 @@ public class LevelThree extends LevelScreen {
 
         world.step(Gdx.graphics.getDeltaTime(), 8, 2);
         debugRenderer.render(world, box2DCam.combined);
+    }
+
+    public void updateWorld() {
+        switch (gameState) {
+            case RUNNING:
+                updateRunning(Gdx.graphics.getDeltaTime());
+                break;
+            case GAME_OVER:
+                updateGameOver();
+                break;
+            case PAUSED:
+                updatePaused();
+                break;
+            case LEVEL_END:
+                updateLevelEnd();
+        }
+    }
+
+    private void updateLevelEnd() {
+        game.setScreen(new MainMenuScreen(game));
+    }
+
+    private void updatePaused() {
+
+    }
+
+    private void updateGameOver() {
+        if (Gdx.input.justTouched()) {
+            game.setScreen(new MainMenuScreen(game));
+        }
     }
 
     private void updateCamera() {
@@ -230,23 +285,20 @@ public class LevelThree extends LevelScreen {
         }
 
         if (isTouchAndHold) {
-            if (touchPoint.x > ball.getPosition().x) {
+            if (Gdx.input.getX() > Own.device.getScreenWidth() / 2) {
                 ball.getBody().applyTorque(5, true);
             } else {
                 ball.getBody().applyTorque(-5, true);
             }
         }
+
     }
 
     @Override
     public void render(float delta) {
-        GL20 gl = Gdx.gl;
-        gl.glClearColor(0, 0, 0, 1f);
-        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
         handleInput();
-        drawBox2DWorld();
-        drawBox2DGUI();
+        updateWorld();
+        updateGui();
     }
 
     @Override

@@ -82,7 +82,7 @@ public class LevelTwo extends LevelScreen {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    levelComplete();
+                    levelEnd();
                 }
             });
         }
@@ -131,7 +131,7 @@ public class LevelTwo extends LevelScreen {
     }
 
     @Override
-    protected void levelComplete() {
+    protected void levelEnd() {
         game.setScreen(new MainMenuScreen(game));
     }
 
