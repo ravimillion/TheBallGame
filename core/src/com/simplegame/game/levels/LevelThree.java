@@ -19,6 +19,7 @@ import com.simplegame.game.userdata.UserData;
 
 import ownLib.BodyContact;
 import ownLib.Own;
+import ownLib.controls.ControlsLayer;
 
 import static com.simplegame.game.levels.GameState.GAME_OVER;
 import static com.simplegame.game.levels.GameState.LEVEL_END;
@@ -30,6 +31,7 @@ public class LevelThree extends LevelScreen {
     private BodyContact bodyContact = null;
     private boolean isTouchAndHold = false;
     private float ballPosMaxX;
+    private ControlsLayer controlsLayer = null;
 
     public LevelThree(GameEntry gameEntry) {
         this.game = gameEntry;
@@ -65,7 +67,6 @@ public class LevelThree extends LevelScreen {
         String idA = userDataA.getId();
         String idB = userDataB.getId();
 
-
         if (idA.startsWith("fireball") && idB.equals("bottom") || idB.startsWith("fireball") && idA.equals("bottom")) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
@@ -84,7 +85,7 @@ public class LevelThree extends LevelScreen {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    gameState = GAME_OVER;
+                    setGameState(GAME_OVER);
                 }
             });
         }
@@ -93,34 +94,12 @@ public class LevelThree extends LevelScreen {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    gameState = LEVEL_END;
+                    setGameState(LEVEL_END);
                 }
             });
         }
-
-//
-//        if (normalImpulse > 500) {
-//            GL20 gl = Gdx.gl;
-//            gl.glClearColor(1, 0, 0, 1);
-//            gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-//        }
-//
-//        if (userDataA.getId().equals("ball") && userDataB.getId().equals("right") || userDataA.getId().equals("right") && userDataB.getId().equals("ball")) {
-//            Gdx.app.postRunnable(new Runnable() {
-//                @Override
-//                public void run() {
-//                    game.setScreen(new MainMenuScreen(game));
-//                }
-//            });
-//        }
     }
 
-    private JsonValue loadLevelData() {
-        JsonReader jsonReader = new JsonReader();
-        JsonValue store = jsonReader.parse(Gdx.files.internal("json/leveldata.json"));
-        JsonValue levelData = store.get("3");
-        return levelData;
-    }
 
     @Override
     protected void setupLevel() {
@@ -130,19 +109,21 @@ public class LevelThree extends LevelScreen {
         world = new World(new Vector2(gravityX, gravityY), true);
         world.setContactListener(bodyContact);
 
+        controlsLayer = new ControlsLayer(game.batch, this);
         debugRenderer = new Box2DDebugRenderer();
-        JsonValue levelData = loadLevelData();
+
+        // Load json level data
+        JsonReader jsonReader = new JsonReader();
+        JsonValue store = jsonReader.parse(Gdx.files.internal("json/leveldata.json"));
+        JsonValue levelData = store.get("3");
+
+        // create objects
         createBall(levelData);
         createFireballs(levelData);
 
         drawBorder();
-        Own.io.setOnTouchListener(this);
-    }
+        Own.io.addProcessor(this);
 
-    @Override
-    protected void levelEnd() {
-        gameState = LEVEL_END;
-        this.game.setScreen(new MainMenuScreen(this.game));
     }
 
     private void createFireballs(JsonValue levelData) {
@@ -168,10 +149,9 @@ public class LevelThree extends LevelScreen {
 
     @Override
     public void show() {
-
     }
 
-    private void drawWorld() {
+    private void renderGame() {
         game.batch.setProjectionMatrix(box2DCam.combined);
         game.batch.begin();
 //        game.batch.draw(Own.assets.getTexture("BGL3"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
@@ -184,13 +164,15 @@ public class LevelThree extends LevelScreen {
         game.batch.end();
 
         game.batch.setProjectionMatrix(orthoCam.combined);
+        if (controlsLayer != null) {
+            controlsLayer.draw(Gdx.graphics.getDeltaTime());
+        }
         game.batch.begin();
-
         Own.text.draw(game.batch, "Score: 00000", new Vector2(10, ORTHO_HEIGHT - 20), Own.text.SCORE);
-
         for (FireBall fireBall : fireballsArray) {
             fireBall.drawGui();
         }
+
         orthoCam.update();
         game.batch.end();
     }
@@ -199,74 +181,60 @@ public class LevelThree extends LevelScreen {
         GL20 gl = Gdx.gl;
         gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        drawWorld();
+        renderGame();
 
         game.batch.begin();
-        switch (gameState) {
+
+        switch (getGameState()) {
             case RUNNING:
-                drawRunning();
                 break;
             case GAME_OVER:
-                drawGameOver();
+                break;
+            case PAUSED:
                 break;
         }
+
         game.batch.end();
     }
 
-    private void drawRunning() {
-        Own.text.draw(game.batch, "Pause", new Vector2(orthoCam.position.x + 400, ORTHO_HEIGHT - 100), Own.text.MENU);
-    }
-
-    private void drawGameOver() {
-        Own.text.draw(game.batch, "Game Over", new Vector2(orthoCam.position.x - 200, ORTHO_HEIGHT / 2), Own.text.MENU);
-    }
-
-    private void updateRunning(float delta) {
-        updateCamera();
-        ball.update(delta);
-
-        for (FireBall fireBall : fireballsArray) {
-            if (fireBall.getPosition().y < 4) {
-                fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - fireBall.getRadius()));
-            }
-            Own.box2d.gui.putOffScreen(fireBall, box2DCam);
-        }
-
-        world.step(Gdx.graphics.getDeltaTime(), 8, 2);
-        debugRenderer.render(world, box2DCam.combined);
-    }
 
     public void updateWorld() {
-        switch (gameState) {
+        switch (getGameState()) {
+            case READY:
+                Own.log(TAG, "Game ready");
+                break;
             case RUNNING:
-                updateRunning(Gdx.graphics.getDeltaTime());
+                followCamera();
+                ball.update(Gdx.graphics.getDeltaTime());
+
+                for (FireBall fireBall : fireballsArray) {
+                    if (fireBall.getPosition().y < 4) {
+                        fireBall.setPosition(new Vector2(fireBall.getPosition().x, WORLD_HEIGHT - fireBall.getRadius()));
+                    }
+                    Own.box2d.gui.putOffScreen(fireBall, box2DCam);
+                }
+
+                world.step(Gdx.graphics.getDeltaTime(), 8, 2);
+                debugRenderer.render(world, box2DCam.combined);
                 break;
             case GAME_OVER:
-                updateGameOver();
+                if (Gdx.input.justTouched()) {
+                    game.setScreen(new MainMenuScreen(game));
+                }
                 break;
             case PAUSED:
-                updatePaused();
+                Own.log(TAG, "Game paused");
+//                what to do when the game is paused
                 break;
             case LEVEL_END:
-                updateLevelEnd();
+                game.setScreen(new MainMenuScreen(game));
+                break;
+            default:
+                break;
         }
     }
 
-    private void updateLevelEnd() {
-        game.setScreen(new MainMenuScreen(game));
-    }
-
-    private void updatePaused() {
-
-    }
-
-    private void updateGameOver() {
-        if (Gdx.input.justTouched()) {
-            game.setScreen(new MainMenuScreen(game));
-        }
-    }
-
-    private void updateCamera() {
+    private void followCamera() {
         if (ball.getPosition().x > box2DCam.viewportWidth / 2 &&
                 ball.getPosition().x < WORLD_WIDTH - box2DCam.viewportWidth / 2 &&
                 ball.getPosition().x > ballPosMaxX) {
@@ -328,18 +296,19 @@ public class LevelThree extends LevelScreen {
     }
 
     @Override
-    public void touchDown(int screenX, int screenY, int pointer) {
-
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         isTouchAndHold = true;
+        return false;
     }
 
     @Override
-    public void touchUp(int screenX, int screenY, int pointer) {
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
         isTouchAndHold = false;
+        return false;
     }
 
     @Override
-    public void touchDragged(int screenX, int screenY, int pointer) {
-
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        return false;
     }
 }

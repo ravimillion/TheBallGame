@@ -14,7 +14,6 @@ import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
-import com.simplegame.game.MainMenuScreen;
 import com.simplegame.game.objects.Ball;
 import com.simplegame.game.objects.Balloon;
 import com.simplegame.game.objects.Icicle;
@@ -82,7 +81,7 @@ public class LevelTwo extends LevelScreen {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    levelEnd();
+
                 }
             });
         }
@@ -127,12 +126,7 @@ public class LevelTwo extends LevelScreen {
 //        createPrismaticJoint();
         createRopeJoint();
         drawBorder();
-        Own.io.setOnTouchListener(this);
-    }
-
-    @Override
-    protected void levelEnd() {
-        game.setScreen(new MainMenuScreen(game));
+        Own.io.addProcessor(this);
     }
 
     private void gameOver() {
@@ -295,17 +289,17 @@ public class LevelTwo extends LevelScreen {
     }
 
     @Override
-    public void touchDown(int screenX, int screenY, int pointer) {
-        Own.box2d.gui.applyForceFromSource(200f, balloon.getBody(), box2DCam.unproject(new Vector3(screenX, screenY, 0)), true);
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        return false;
     }
 
     @Override
-    public void touchUp(int screenX, int screenY, int pointer) {
-
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        return false;
     }
 
     @Override
-    public void touchDragged(int screenX, int screenY, int pointer) {
-
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        return false;
     }
 }

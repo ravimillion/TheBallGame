@@ -1,6 +1,7 @@
 package com.simplegame.game.levels;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
@@ -24,7 +25,7 @@ import ownLib.BodyContact;
 import ownLib.Own;
 import ownLib.OwnException;
 
-public class LevelOne extends LevelScreen {
+public class LevelOne extends LevelScreen implements InputProcessor{
     private String TAG = "LevelOne";
     private BodyContact bodyContact = null;
     private ArrayList<Stone> obstacleArray = null;
@@ -137,12 +138,7 @@ public class LevelOne extends LevelScreen {
 //        vertices[4] = new Vector2(0f, 10f);
 
         Own.bodyContact.setContactListener(this);
-        Own.io.setOnTouchListener(this);
-    }
-
-    @Override
-    protected void levelEnd() {
-
+        Own.io.addProcessor(this);
     }
 
     private void createTreeStump(HashMap<String, JsonValue> levelObjects) {
@@ -285,17 +281,17 @@ public class LevelOne extends LevelScreen {
     }
 
     @Override
-    public void touchDown(int screenX, int screenY, int pointer) {
-        ball.getBody().setLinearVelocity(new Vector2(0, 30f));
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        return false;
     }
 
     @Override
-    public void touchUp(int screenX, int screenY, int pointer) {
-
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        return false;
     }
 
     @Override
-    public void touchDragged(int screenX, int screenY, int pointer) {
-
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        return false;
     }
 }
