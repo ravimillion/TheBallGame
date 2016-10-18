@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import aurelienribon.tweenengine.TweenManager;
 import ownLib.Own;
 
 /**
@@ -17,6 +18,7 @@ public class Splash implements Screen {
     private Sprite splash = null;
     private float progress = 0;
 
+    private TweenManager tweenManager;
     public Splash(GameEntry gameEntry) {
         batch = gameEntry.batch;
     }

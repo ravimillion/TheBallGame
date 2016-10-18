@@ -208,7 +208,6 @@ public class LevelThree extends LevelScreen {
                 }
                 break;
             case PAUSED:
-                Own.log(TAG, "Game paused");
 //                what to do when the game is paused
                 break;
             case LEVEL_END:

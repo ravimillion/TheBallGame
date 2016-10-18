@@ -188,7 +188,6 @@ public class LevelOne extends LevelScreen implements InputProcessor {
                 }
                 break;
             case PAUSED:
-                Own.log(TAG, "Game paused");
                 break;
             case LEVEL_END:
                 game.setScreen(new MainMenuScreen(game));

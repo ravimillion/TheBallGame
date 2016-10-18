@@ -7,4 +7,6 @@ eclipse.project {
 }
 dependencies {
     compile 'org.json:json:20141113'
+    compile files('../libs/tween-engine-api.jar')
+    compile files('../libs/tween-engine-api-sources.jar')
 }
