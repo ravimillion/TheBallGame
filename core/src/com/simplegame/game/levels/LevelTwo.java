@@ -14,6 +14,7 @@ import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
+import com.simplegame.game.MainMenuScreen;
 import com.simplegame.game.objects.Ball;
 import com.simplegame.game.objects.Balloon;
 import com.simplegame.game.objects.Icicle;
@@ -27,6 +28,7 @@ import java.util.HashMap;
 
 import ownLib.BodyContact;
 import ownLib.Own;
+import ownLib.controls.ControlsLayer;
 
 public class LevelTwo extends LevelScreen {
     private String TAG = "LevelTwo";
@@ -81,7 +83,7 @@ public class LevelTwo extends LevelScreen {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-
+                    setGameState(GameState.LEVEL_END);
                 }
             });
         }
@@ -90,7 +92,7 @@ public class LevelTwo extends LevelScreen {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    gameOver();
+                    setGameState(GameState.GAME_OVER);
                 }
             });
         }
@@ -117,7 +119,9 @@ public class LevelTwo extends LevelScreen {
         world = new World(new Vector2(gravityX, gravityY), true);
         world.setContactListener(bodyContact);
 
+        controlsLayer = new ControlsLayer(game.batch, this);
         debugRenderer = new Box2DDebugRenderer();
+
         HashMap<String, JsonValue> levelObjects = loadLevelData();
         createBall(levelObjects);
         createBalloon(levelObjects);
@@ -129,8 +133,65 @@ public class LevelTwo extends LevelScreen {
         Own.io.addProcessor(this);
     }
 
-    private void gameOver() {
-        isGameOver = true;
+    @Override
+    protected void renderLevel() {
+        GL20 gl = Gdx.gl;
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        game.batch.setProjectionMatrix(box2DCam.combined);
+        game.batch.begin();
+        game.batch.draw(Own.assets.getTexture("BGL2"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
+
+        for (int i = 0; i < WORLD_WIDTH; i += box2DCam.viewportWidth) {
+            game.batch.draw(Own.assets.getTexture("GROUND"), i, 0, WORLD_WIDTH / 10, 4.3f);
+        }
+
+        if (ball != null) ball.drawGui();
+        if (balloon != null) balloon.drawGui();
+
+        if (icicle != null) icicle.drawGui();
+        if (icicle2 != null) icicle2.drawGui();
+
+        game.batch.end();
+
+        game.batch.setProjectionMatrix(orthoCam.combined);
+        controlsLayer.draw(Gdx.graphics.getDeltaTime());
+        game.batch.begin();
+        Own.text.draw(game.batch, "Score: 00000", new Vector2(10, ORTHO_HEIGHT - 20), Own.text.SCORE);
+        orthoCam.update();
+        game.batch.end();
+    }
+
+    @Override
+    protected void updateWorld() {
+        switch (getGameState()) {
+            case READY:
+                Own.log(TAG, "Game ready");
+                break;
+            case RUNNING:
+                followCamera();
+                if (icicle != null) Own.box2d.gui.putOffScreen(icicle, box2DCam);
+                if (icicle2 != null) Own.box2d.gui.putOffScreen(icicle2, box2DCam);
+
+                ball.update(Gdx.graphics.getDeltaTime());
+                world.step(Gdx.graphics.getDeltaTime(), 8, 2);
+                debugRenderer.render(world, box2DCam.combined);
+                break;
+            case GAME_OVER:
+                if (Gdx.input.justTouched()) {
+                    game.setScreen(new MainMenuScreen(game));
+                }
+                break;
+            case PAUSED:
+                Own.log(TAG, "Game paused");
+//                what to do when the game is paused
+                break;
+            case LEVEL_END:
+                game.setScreen(new MainMenuScreen(game));
+                break;
+            default:
+                break;
+        }
     }
 
     private void createIcicle(JsonValue objectData) {
@@ -175,6 +236,7 @@ public class LevelTwo extends LevelScreen {
         prismaticJointDef.enableLimit = true;
         prismaticJointDef.collideConnected = false;
         prismaticJointDef.upperTranslation = 5;
+
         world.createJoint(prismaticJointDef);
     }
 
@@ -195,44 +257,7 @@ public class LevelTwo extends LevelScreen {
     public void show() {
     }
 
-    private void drawBox2DGUI() {
-        game.batch.setProjectionMatrix(box2DCam.combined);
-        game.batch.begin();
-        game.batch.draw(Own.assets.getTexture("BGL2"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
-
-        for (int i = 0; i < WORLD_WIDTH; i += box2DCam.viewportWidth) {
-            game.batch.draw(Own.assets.getTexture("GROUND"), i, 0, WORLD_WIDTH / 10, 4.3f);
-        }
-
-        if (ball != null) ball.drawGui();
-        if (balloon != null) balloon.drawGui();
-
-        if (icicle != null) icicle.drawGui();
-        if (icicle2 != null) icicle2.drawGui();
-
-        game.batch.end();
-
-        game.batch.setProjectionMatrix(orthoCam.combined);
-        game.batch.begin();
-        Own.text.draw(game.batch, "Score: 00000", new Vector2(10, ORTHO_HEIGHT - 20), Own.text.SCORE);
-        orthoCam.update();
-        game.batch.end();
-
-    }
-
-    public void drawBox2DWorld() {
-        if (isGameOver) return;
-        updateCamera();
-        if (icicle != null) Own.box2d.gui.putOffScreen(icicle, box2DCam);
-        if (icicle2 != null) Own.box2d.gui.putOffScreen(icicle2, box2DCam);
-
-//      advance the world
-        world.step(Gdx.graphics.getDeltaTime(), 8, 2);
-//         debug renderer
-        debugRenderer.render(world, box2DCam.combined);
-    }
-
-    private void updateCamera() {
+    private void followCamera() {
         if (ball.getPosition().x > box2DCam.viewportWidth / 2 &&
                 ball.getPosition().x < WORLD_WIDTH - box2DCam.viewportWidth / 2 &&
                 ball.getPosition().x > ballPosMaxX) {
@@ -243,23 +268,18 @@ public class LevelTwo extends LevelScreen {
         }
     }
 
-
     public void handleInput() {
         if (Gdx.input.justTouched()) {
             Vector3 touchPoint = box2DCam.unproject(new Vector3(new Vector2(Gdx.input.getX(), Gdx.input.getY()), 0));
-            ball.handleInput(touchPoint);
+            Own.box2d.gui.applyForceFromSource(200f, balloon.getBody(), touchPoint, true);
         }
     }
 
     @Override
     public void render(float delta) {
-        GL20 gl = Gdx.gl;
-        gl.glClearColor(0, 0, 0, 1f);
-        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
         handleInput();
-        drawBox2DWorld();
-        drawBox2DGUI();
+        updateWorld();
+        renderLevel();
     }
 
     @Override

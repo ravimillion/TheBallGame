@@ -35,6 +35,7 @@ public class ControlsLayer {
     private Button resumeButton;
     private Button quitButton;
     private Button readyButton;
+    private Button restartButton;
 
     public ControlsLayer(SpriteBatch batch, LevelScreen levelScreen) {
         this.levelScreen = levelScreen;
@@ -106,10 +107,25 @@ public class ControlsLayer {
             }
         });
 
+        restartButton = controlsFactory.getImageButton(ButtonType.RESTART,
+                centerX - buttonWidth / 2,
+                centerY + buttonHeight * .40f,
+                buttonWidth,
+                buttonHeight);
+        restartButton.addListener(new EventListener() {
+            @Override
+            public boolean handle(Event event) {
+                levelScreen.setGameState(GameState.RUNNING);
+                setState(GameState.RUNNING);
+                return true;
+            }
+        });
+
         stage.addActor(resumeButton);
         stage.addActor(quitButton);
         stage.addActor(pauseButton);
         stage.addActor(readyButton);
+        stage.addActor(restartButton);
     }
 
     private void setAllHidden() {
@@ -117,6 +133,7 @@ public class ControlsLayer {
         readyButton.setVisible(false);
         resumeButton.setVisible(false);
         quitButton.setVisible(false);
+        restartButton.setVisible(false);
     }
 
     private void setState(GameState state) {
@@ -133,10 +150,15 @@ public class ControlsLayer {
                 resumeButton.setVisible(true);
                 quitButton.setVisible(true);
                 break;
+            case GAME_OVER:
+                restartButton.setVisible(true);
+                quitButton.setVisible(true);
+                break;
         }
     }
 
     public void draw(float delta) {
+        setState(levelScreen.getGameState());
         stage.act();
         stage.draw();
     }

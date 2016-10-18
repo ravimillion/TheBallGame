@@ -24,17 +24,22 @@ import java.util.HashMap;
 import ownLib.BodyContact;
 import ownLib.Own;
 import ownLib.OwnException;
+import ownLib.controls.ControlsLayer;
 
-public class LevelOne extends LevelScreen implements InputProcessor{
+public class LevelOne extends LevelScreen implements InputProcessor {
     private String TAG = "LevelOne";
-    private BodyContact bodyContact = null;
-    private ArrayList<Stone> obstacleArray = null;
-    private String msg1 = null;
-    private String msg2 = null;
-    private String msg3 = null;
+    private BodyContact bodyContact;
+    private ArrayList<Stone> obstacleArray;
 
-    private Ball ball = null;
-    private TreeStump treeStump = null;
+    private String msg1;
+    private String msg2;
+    private String msg3;
+
+    private Ball ball;
+    private TreeStump treeStump;
+    private ControlsLayer controlsLayer;
+
+    private float ballPosMaxX;
 
     public LevelOne(GameEntry gameEntry) {
         this.game = gameEntry;
@@ -67,15 +72,12 @@ public class LevelOne extends LevelScreen implements InputProcessor{
         box2DCam.update();
     }
 
-    private void gameOver() {
-        isGameOver = true;
-    }
 
     @Override
     public void contactListener(UserData userDataA, UserData userDataB, float normalImpulse) {
         if (normalImpulse > 100) Own.log(TAG, "Impulse: " + normalImpulse);
         if (normalImpulse > 450) {
-            gameOver();
+            setGameState(GameState.GAME_OVER);
         }
 
         if (userDataA.getId().equals("ball") && userDataB.getId().equals("right")
@@ -110,6 +112,8 @@ public class LevelOne extends LevelScreen implements InputProcessor{
 
         world = new World(new Vector2(gravityX, gravityY), true);
         world.setContactListener(bodyContact);
+
+        controlsLayer = new ControlsLayer(game.batch, this);
         debugRenderer = new Box2DDebugRenderer();
 
         HashMap<String, JsonValue> levelObjects = loadLevelData();
@@ -118,27 +122,91 @@ public class LevelOne extends LevelScreen implements InputProcessor{
         createTreeStump(levelObjects);
         drawBorder();
 
-//        int numOfPoints = 100;
-//        Vector2[] vectorPoints = new Vector2[numOfPoints];
-//        int widthFactor = (int) WORLD_WIDTH / numOfPoints;
-//        for (int i = 0; i < numOfPoints; i++) {
-//            if (i == 0 || i == numOfPoints - 1) {
-//                vectorPoints[i] = new Vector2(i * widthFactor, 0);
-//                continue;
-//            }
-//            vectorPoints[i] = new Vector2(i * widthFactor, Own.rand.nextInt(10));
-//        }
-//        Own.factory.getChainBody(BodyType.StaticBody, vectorPoints, radius * 4, radius, 0, 1.0f, 1.0f, 0, "Platform");
-
-//        Vector2[] vertices = new Vector2[5];
-//        vertices[0] = new Vector2(2f, 2f);
-//        vertices[1] = new Vector2(6f, 4f);
-//        vertices[2] = new Vector2(4f, 5f);
-//        vertices[3] = new Vector2(2f, 8f);
-//        vertices[4] = new Vector2(0f, 10f);
-
         Own.bodyContact.setContactListener(this);
         Own.io.addProcessor(this);
+    }
+
+    @Override
+    protected void renderLevel() {
+        GL20 gl = Gdx.gl;
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        game.batch.setProjectionMatrix(box2DCam.combined);
+        game.batch.begin();
+//        game.batch.draw(Own.assets.getTexture("BGL1"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
+
+//        send update to stones
+        for (int i = 0; i < obstacleArray.size(); i++) {
+            obstacleArray.get(i).drawGui();
+        }
+
+        if (treeStump != null) treeStump.drawGui();
+        if (ball != null) ball.drawGui();
+
+//        update the ground
+        for (int i = 0; i < WORLD_WIDTH; i += box2DCam.viewportWidth) {
+            game.batch.draw(Own.assets.getTexture("GROUND"), i, 0, WORLD_WIDTH / 10, 4.3f);
+        }
+        game.batch.end();
+
+        game.batch.setProjectionMatrix(orthoCam.combined);
+        controlsLayer.draw(Gdx.graphics.getDeltaTime());
+
+        game.batch.begin();
+        Own.text.draw(game.batch, "Score: 0000", new Vector2(0, ORTHO_HEIGHT - 20), Own.text.SCORE);
+        orthoCam.update();
+        game.batch.end();
+    }
+
+    @Override
+    protected void updateWorld() {
+        switch (getGameState()) {
+            case READY:
+                Own.log(TAG, "Game ready");
+                break;
+            case RUNNING:
+                followCamera();
+
+                try {
+                    Vector3 values = Own.device.getAccMeter();
+                    gravityX = (values.y * 10);
+                    msg1 = "x: " + gravityX;
+                    msg2 = " y: " + gravityY;
+                    msg3 = " XX: " + (gravityY + gravityX);
+
+                    world.setGravity(new Vector2(gravityX, gravityY + gravityX));
+                } catch (OwnException e) {
+                    e.printStackTrace();
+                }
+
+                world.step(Gdx.graphics.getDeltaTime(), 8, 2);
+                debugRenderer.render(world, box2DCam.combined);
+                break;
+            case GAME_OVER:
+                if (Gdx.input.justTouched()) {
+                    game.setScreen(new MainMenuScreen(game));
+                }
+                break;
+            case PAUSED:
+                Own.log(TAG, "Game paused");
+                break;
+            case LEVEL_END:
+                game.setScreen(new MainMenuScreen(game));
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void followCamera() {
+        if (ball.getPosition().x > box2DCam.viewportWidth / 2 &&
+                ball.getPosition().x < WORLD_WIDTH - box2DCam.viewportWidth / 2 &&
+                ball.getPosition().x > ballPosMaxX) {
+            ballPosMaxX = ball.getPosition().x;
+            worldBoundry.updateWorldBoundry(WorldBoundry.LEFT, new Vector2(ballPosMaxX - box2DCam.viewportWidth / 2, 0), 0);
+            box2DCam.position.set(ball.getPosition().x, box2DCam.viewportHeight / 2 + 1, 0);
+            box2DCam.update();
+        }
     }
 
     private void createTreeStump(HashMap<String, JsonValue> levelObjects) {
@@ -174,84 +242,16 @@ public class LevelOne extends LevelScreen implements InputProcessor{
     public void show() {
     }
 
-    private void drawBox2DGui() {
-        game.batch.setProjectionMatrix(box2DCam.combined);
-        game.batch.begin();
-        game.batch.draw(Own.assets.getTexture("BGL1"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
-
-//        send update to stones
-        for (int i = 0; i < obstacleArray.size(); i++) {
-            obstacleArray.get(i).drawGui();
+    public void handleInput() {
+        if (Gdx.input.justTouched()) {
         }
-
-        if (treeStump != null) treeStump.drawGui();
-        if (ball != null) ball.drawGui();
-
-//        update the ground
-        for (int i = 0; i < WORLD_WIDTH; i += box2DCam.viewportWidth) {
-            game.batch.draw(Own.assets.getTexture("GROUND"), i, 0, WORLD_WIDTH / 10, 4.3f);
-        }
-        game.batch.end();
-
-        // Ortho
-        game.batch.setProjectionMatrix(orthoCam.combined);
-        game.batch.begin();
-        Own.text.draw(game.batch, msg1, new Vector2(0, ORTHO_HEIGHT - 20), Own.text.SCORE);
-        Own.text.draw(game.batch, msg2, new Vector2(500, ORTHO_HEIGHT - 20), Own.text.SCORE);
-        Own.text.draw(game.batch, msg3, new Vector2(1000, ORTHO_HEIGHT - 20), Own.text.SCORE);
-        orthoCam.update();
-        game.batch.end();
-    }
-
-    public void drawBox2DWorld() {
-        if (isGameOver) return;
-
-        try {
-            Vector3 values = Own.device.getAccMeter();
-            gravityX = (values.y * 10);
-//            gravityY = -values.x * 10;
-
-            Vector2 gX = new Vector2(gravityX, 0);
-            Vector2 gY = new Vector2(gravityY, 0);
-
-
-            msg1 = "x: " + gravityX;
-            msg2 = " y: " + gravityY;
-            msg3 = " XX: " + (gravityY + gravityX);
-//            gravityY = -values.x * 10;
-//            float velocity = ball.getVelocity().len();
-//            if (velocity > 15000000) {
-//                gl.glClearColor(1, 0, 0, 1);
-//                gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-//            }
-
-//            if (gravityY > -9.8) gravityY = world.getGravity().y;
-            world.setGravity(new Vector2(gravityX, gravityY + gravityX));
-        } catch (OwnException e) {
-            e.printStackTrace();
-        }
-
-//        follow the camera
-        if (ball.getPosition().x > box2DCam.viewportWidth / 2 && ball.getPosition().x < WORLD_WIDTH - box2DCam.viewportWidth / 2) {
-            worldBoundry.updateWorldBoundry(WorldBoundry.LEFT, new Vector2(ball.getPosition().x - box2DCam.viewportWidth / 2, 0), 0);
-            box2DCam.position.set(ball.getPosition().x, box2DCam.viewportHeight / 2 + 1, 0);
-            box2DCam.update();
-        }
-
-//      advance the world
-        world.step(Gdx.graphics.getDeltaTime(), 8, 2);
-//         debug renderer
-        debugRenderer.render(world, box2DCam.combined);
     }
 
     @Override
     public void render(float delta) {
-        GL20 gl = Gdx.gl;
-        gl.glClearColor(0, 0, 0, 1f);
-        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        drawBox2DWorld();
-        drawBox2DGui();
+        handleInput();
+        updateWorld();
+        renderLevel();
     }
 
     @Override

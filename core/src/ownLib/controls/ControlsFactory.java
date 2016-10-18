@@ -14,7 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class ControlsFactory {
     public enum ButtonType {
-        PLAY, PAUSE, QUIT, RESUME, READY
+        PLAY, PAUSE, QUIT, RESUME, READY, RESTART
     }
 
     private TextureAtlas buttonAtlas = new TextureAtlas(Gdx.files.internal("controls/imagebuttons.pack"));
@@ -28,36 +28,39 @@ public class ControlsFactory {
     }
 
     public ImageButton getImageButton(ButtonType type, float posX, float posY, float width, float height) {
-        TextureRegionDrawable buttonUp = null;
-        TextureRegionDrawable buttonDown = null;
-
         ImageButtonStyle style = new ImageButtonStyle();
+        String upId = "play";
+        String downId = "play";
 
         switch(type) {
             case PLAY:
-                buttonUp = new TextureRegionDrawable(buttonAtlas.findRegion("play"));
-                buttonDown = new TextureRegionDrawable(buttonAtlas.findRegion("play"));
+                upId = "play";
+                downId = "play";
                 break;
             case PAUSE:
-                buttonUp = new TextureRegionDrawable(buttonAtlas.findRegion("pause"));
-                buttonDown = new TextureRegionDrawable(buttonAtlas.findRegion("pause"));
+                upId = "pause";
+                downId = "pause";
                 break;
             case QUIT:
-                buttonUp = new TextureRegionDrawable(buttonAtlas.findRegion("quit"));
-                buttonDown = new TextureRegionDrawable(buttonAtlas.findRegion("quit"));
+                upId = "quit";
+                downId = "quit";
                 break;
             case RESUME:
-                buttonUp = new TextureRegionDrawable(buttonAtlas.findRegion("resume"));
-                buttonDown = new TextureRegionDrawable(buttonAtlas.findRegion("resume"));
+                upId = "resume";
+                downId = "resume";
+                break;
+            case RESTART:
+                upId = "restart";
+                downId = "restart";
                 break;
             case READY:
-                buttonUp = new TextureRegionDrawable(buttonAtlas.findRegion("ready"));
-                buttonDown = new TextureRegionDrawable(buttonAtlas.findRegion("ready"));
+                upId = "ready";
+                downId = "ready";
                 break;
         }
 
-        style.imageUp = buttonUp;
-        style.imageDown = buttonDown;
+        style.imageUp = new TextureRegionDrawable(buttonAtlas.findRegion(upId));
+        style.imageDown = new TextureRegionDrawable(buttonAtlas.findRegion(downId));
 
         ImageButton imageButton = new ImageButton(style);
         imageButton.setPosition(posX, posY);

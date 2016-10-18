@@ -12,8 +12,9 @@ import ownLib.Own;
 
 public class Icicle extends GameObject {
     private float density;
-    private float restitution;
     private float friction;
+    private float restitution;
+
     private Vector2 position;
 
     public Icicle(World world, GameEntry gameEntry, JsonValue data) {

@@ -26,17 +26,20 @@ import static com.simplegame.game.levels.GameState.LEVEL_END;
 
 public class LevelThree extends LevelScreen {
     private String TAG = "LevelThree";
+
     private Ball ball;
     private Array<FireBall> fireballsArray;
     private BodyContact bodyContact = null;
-    private boolean isTouchAndHold = false;
+
     private float ballPosMaxX;
-    private ControlsLayer controlsLayer = null;
+    private boolean isTouchAndHold = false;
 
     public LevelThree(GameEntry gameEntry) {
         this.game = gameEntry;
+
         gravityX = 0;
         gravityY = -98f;
+
         setScreenResolution();
         setupLevel();
     }
@@ -60,6 +63,32 @@ public class LevelThree extends LevelScreen {
         box2DCam = new OrthographicCamera(WORLD_WIDTH / scaleFactor, WORLD_HEIGHT);
         box2DCam.position.set(box2DCam.viewportWidth / 2, box2DCam.viewportHeight / 2 + 1, 0);
         box2DCam.update();
+    }
+
+
+    @Override
+    protected void setupLevel() {
+        bodyContact = new BodyContact();
+        bodyContact.setContactListener(this);
+
+        world = new World(new Vector2(gravityX, gravityY), true);
+        world.setContactListener(bodyContact);
+
+        controlsLayer = new ControlsLayer(game.batch, this);
+        debugRenderer = new Box2DDebugRenderer();
+
+        // Load json level data
+        JsonReader jsonReader = new JsonReader();
+        JsonValue store = jsonReader.parse(Gdx.files.internal("json/leveldata.json"));
+        JsonValue levelData = store.get("3");
+
+        // create objects
+        createBall(levelData);
+        createFireballs(levelData);
+
+        drawBorder();
+        Own.io.addProcessor(this);
+
     }
 
     @Override
@@ -100,32 +129,6 @@ public class LevelThree extends LevelScreen {
         }
     }
 
-
-    @Override
-    protected void setupLevel() {
-        bodyContact = new BodyContact();
-        bodyContact.setContactListener(this);
-
-        world = new World(new Vector2(gravityX, gravityY), true);
-        world.setContactListener(bodyContact);
-
-        controlsLayer = new ControlsLayer(game.batch, this);
-        debugRenderer = new Box2DDebugRenderer();
-
-        // Load json level data
-        JsonReader jsonReader = new JsonReader();
-        JsonValue store = jsonReader.parse(Gdx.files.internal("json/leveldata.json"));
-        JsonValue levelData = store.get("3");
-
-        // create objects
-        createBall(levelData);
-        createFireballs(levelData);
-
-        drawBorder();
-        Own.io.addProcessor(this);
-
-    }
-
     private void createFireballs(JsonValue levelData) {
         JsonValue fireballs = levelData.get("fireballs");
         fireballsArray = new Array<FireBall>();
@@ -151,7 +154,11 @@ public class LevelThree extends LevelScreen {
     public void show() {
     }
 
-    private void renderGame() {
+    @Override
+    protected void renderLevel() {
+        GL20 gl = Gdx.gl;
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         game.batch.setProjectionMatrix(box2DCam.combined);
         game.batch.begin();
 //        game.batch.draw(Own.assets.getTexture("BGL3"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
@@ -163,10 +170,9 @@ public class LevelThree extends LevelScreen {
         if (ball != null) ball.drawGui();
         game.batch.end();
 
+
         game.batch.setProjectionMatrix(orthoCam.combined);
-        if (controlsLayer != null) {
-            controlsLayer.draw(Gdx.graphics.getDeltaTime());
-        }
+        controlsLayer.draw(Gdx.graphics.getDeltaTime());
         game.batch.begin();
         Own.text.draw(game.batch, "Score: 00000", new Vector2(10, ORTHO_HEIGHT - 20), Own.text.SCORE);
         for (FireBall fireBall : fireballsArray) {
@@ -176,27 +182,6 @@ public class LevelThree extends LevelScreen {
         orthoCam.update();
         game.batch.end();
     }
-
-    private void updateGui() {
-        GL20 gl = Gdx.gl;
-        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        renderGame();
-
-        game.batch.begin();
-
-        switch (getGameState()) {
-            case RUNNING:
-                break;
-            case GAME_OVER:
-                break;
-            case PAUSED:
-                break;
-        }
-
-        game.batch.end();
-    }
-
 
     public void updateWorld() {
         switch (getGameState()) {
@@ -259,14 +244,13 @@ public class LevelThree extends LevelScreen {
                 ball.getBody().applyTorque(-5, true);
             }
         }
-
     }
 
     @Override
     public void render(float delta) {
         handleInput();
         updateWorld();
-        updateGui();
+        renderLevel();
     }
 
     @Override

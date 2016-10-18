@@ -9,19 +9,27 @@ import com.simplegame.game.objects.WorldBoundry;
 import com.simplegame.game.screens.GameScreen;
 import com.simplegame.game.userdata.UserData;
 
+import ownLib.controls.ControlsLayer;
+
 
 public abstract class LevelScreen extends GameScreen implements InputProcessor {
-    protected World world;
     private GameState gameState = GameState.RUNNING;
-    protected WorldBoundry worldBoundry = null;
+
+    protected World world;
+    protected WorldBoundry worldBoundry;
+    protected ControlsLayer controlsLayer;
     protected Box2DDebugRenderer debugRenderer;
+
     protected float WORLD_WIDTH = 0;
     protected float WORLD_HEIGHT = 0;
+
     protected float gravityX = 0;
     protected float gravityY = 0;
-    protected boolean isGameOver = false;
 
+    protected abstract void setCamera();
     protected abstract void setupLevel();
+    protected abstract void renderLevel();
+    protected abstract void updateWorld();
 
     public abstract void contactListener(UserData bodyA, UserData bodyB, float normalImpulse);
 

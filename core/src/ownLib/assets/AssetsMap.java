@@ -80,7 +80,6 @@ public class AssetsMap {
             imageAssets.put("TRANSBALL", createJSONObject("images/transball.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGMM", createJSONObject("images/bgmm.jpg", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("LOADING", createJSONObject("images/loading.gif", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("PAUSE", createJSONObject("images/pause.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGL1", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGL2", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGL3", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));

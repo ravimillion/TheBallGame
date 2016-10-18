@@ -38,3 +38,10 @@ quit
   orig: 256, 128
   offset: 0, 0
   index: -1
+restart
+  rotate: false
+  xy: 517, 261
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
