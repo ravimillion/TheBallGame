@@ -18,7 +18,6 @@ public class Own {
     public static Box2d box2d = new Box2d();
     public static BodyContact bodyContact = new BodyContact();
 
-
     public static void dispose() {
         assets.dispose();
     }

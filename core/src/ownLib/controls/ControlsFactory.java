@@ -8,6 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
+import ownLib.Own;
+
 /**
  * Created by ravi on 13.10.16.
  */
@@ -17,7 +19,7 @@ public class ControlsFactory {
         PLAY, PAUSE, QUIT, RESUME, READY, RESTART
     }
 
-    private TextureAtlas buttonAtlas = new TextureAtlas(Gdx.files.internal("controls/imagebuttons.pack"));
+    private TextureAtlas buttonAtlas = Own.assets.getTextureAtlas("CONTROL_BUTTONS");
 
     public TextButton getTextButton(float posX, float posY, float width, float height) {
         Skin skin = new Skin(Gdx.files.internal("controls/uiskin.json"));

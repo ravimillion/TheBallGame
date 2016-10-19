@@ -30,11 +30,6 @@ public class LevelOne extends LevelScreen implements InputProcessor {
     private String TAG = "LevelOne";
     private BodyContact bodyContact;
     private ArrayList<Stone> obstacleArray;
-
-    private String msg1;
-    private String msg2;
-    private String msg3;
-
     private Ball ball;
     private TreeStump treeStump;
     private ControlsLayer controlsLayer;
@@ -162,7 +157,6 @@ public class LevelOne extends LevelScreen implements InputProcessor {
     protected void updateWorld() {
         switch (getGameState()) {
             case READY:
-                Own.log(TAG, "Game ready");
                 break;
             case RUNNING:
                 followCamera();
@@ -170,10 +164,6 @@ public class LevelOne extends LevelScreen implements InputProcessor {
                 try {
                     Vector3 values = Own.device.getAccMeter();
                     gravityX = (values.y * 10);
-                    msg1 = "x: " + gravityX;
-                    msg2 = " y: " + gravityY;
-                    msg3 = " XX: " + (gravityY + gravityX);
-
                     world.setGravity(new Vector2(gravityX, gravityY + gravityX));
                 } catch (OwnException e) {
                     e.printStackTrace();
@@ -183,13 +173,13 @@ public class LevelOne extends LevelScreen implements InputProcessor {
                 debugRenderer.render(world, box2DCam.combined);
                 break;
             case GAME_OVER:
-                if (Gdx.input.justTouched()) {
-                    game.setScreen(new MainMenuScreen(game));
-                }
+                this.dispose();
+                game.setScreen(new MainMenuScreen(game));
                 break;
             case PAUSED:
                 break;
             case LEVEL_END:
+                this.dispose();
                 game.setScreen(new MainMenuScreen(game));
                 break;
             default:
@@ -274,9 +264,10 @@ public class LevelOne extends LevelScreen implements InputProcessor {
 
     @Override
     public void dispose() {
-        Own.log(TAG, "Disposing levelOne");
+        Own.log("Disposing LevelScreen");
         world.dispose();
         debugRenderer.dispose();
+        controlsLayer.dispose();
     }
 
     @Override

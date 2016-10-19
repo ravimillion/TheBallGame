@@ -178,14 +178,14 @@ public class LevelTwo extends LevelScreen {
                 debugRenderer.render(world, box2DCam.combined);
                 break;
             case GAME_OVER:
-                if (Gdx.input.justTouched()) {
-                    game.setScreen(new MainMenuScreen(game));
-                }
+                this.dispose();
+                game.setScreen(new MainMenuScreen(game));
                 break;
             case PAUSED:
 //                what to do when the game is paused
                 break;
             case LEVEL_END:
+                this.dispose();
                 game.setScreen(new MainMenuScreen(game));
                 break;
             default:
@@ -305,6 +305,7 @@ public class LevelTwo extends LevelScreen {
         Own.log(TAG, "Disposing levelTwo");
         world.dispose();
         debugRenderer.dispose();
+        controlsLayer.dispose();
     }
 
     @Override

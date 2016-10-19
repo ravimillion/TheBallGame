@@ -6,6 +6,7 @@ import org.json.JSONObject;
 public class AssetsMap {
     public static final int TEXTURE_REGION = 1;
     public static final int TEXTURE = 2;
+    public static final int TEXTURE_ATLAS = 3;
 
 
     JSONObject audioAssets = new JSONObject();
@@ -70,6 +71,7 @@ public class AssetsMap {
 
     private void createImageAssets() {
         try {
+            // texture
             imageAssets.put("BALLOON", createJSONObject("images/balloon.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("SQUARE", createJSONObject("images/square.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("TREESTUMP", createJSONObject("images/treestump.png", TEXTURE, 0, 0, 0, 0));
@@ -87,9 +89,14 @@ public class AssetsMap {
             imageAssets.put("BGL5", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGL6", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
 
+            // texture atlas files are pack files
+            imageAssets.put("CONTROL_BUTTONS", createJSONObject("controls/imagebuttons.pack", TEXTURE_ATLAS, 0, 0, 0, 0));
+
+            // texture regions
             for (int i = 0; i < 6; i++) {
                 imageAssets.put(String.valueOf(i + 1), createJSONObject("images/numbers.jpg", TEXTURE_REGION, i * 56, 0, 55, 55));
             }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

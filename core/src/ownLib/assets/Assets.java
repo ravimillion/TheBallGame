@@ -8,6 +8,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGeneratorLoader;
@@ -31,11 +32,13 @@ public class Assets extends AssetManager {
     private JSONObject jsonAssets;
     private HashMap<String, FileHandle> jsonObjects;
     private HashMap<String, Texture> textureObjects;
+    private HashMap<String, TextureAtlas> textureAtlasObjects;
     private HashMap<String, TextureRegion> textureRegionObjects;
     private HashMap<String, BitmapFont> fontObjects;
 
     public Assets() {
         assetMap = new AssetsMap();
+        textureAtlasObjects = new HashMap<String, TextureAtlas>();
         textureRegionObjects = new HashMap<String, TextureRegion>();
         textureObjects = new HashMap<String, Texture>();
         fontObjects = new HashMap<String, BitmapFont>();
@@ -72,6 +75,10 @@ public class Assets extends AssetManager {
 
     public TextureRegion getTextureRegion(String key) {
         return textureRegionObjects.get(key);
+    }
+
+    public TextureAtlas getTextureAtlas(String key) {
+        return textureAtlasObjects.get(key);
     }
 
     public Texture getTexture(String key) {
@@ -157,8 +164,15 @@ public class Assets extends AssetManager {
 
         while (iterator.hasNext()) {
             String key = iterator.next();
+            JSONObject obj = imageAssets.getJSONObject(key);
+            Own.log(TAG, obj.getString("uri"));
             try {
-                this.load(imageAssets.getJSONObject(key).getString("uri"), Texture.class);
+                if (obj.getInt("type") == AssetsMap.TEXTURE_ATLAS) {
+                    this.load(obj.getString("uri"), TextureAtlas.class);
+                } else { // texture and texture regions are both loaded by texture.class
+                    this.load(obj.getString("uri"), Texture.class);
+                }
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -180,7 +194,6 @@ public class Assets extends AssetManager {
 
 
     public void createImageAssets() {
-//        Own.log(TAG, "Loading assets");
         Iterator<String> iterator = imageAssets.keys();
         JSONObject obj = null;
         while (iterator.hasNext()) {
@@ -201,14 +214,12 @@ public class Assets extends AssetManager {
                     case AssetsMap.TEXTURE:
                         textureObjects.put(key, (Texture) this.get(obj.getString("uri")));
                         break;
+                    case AssetsMap.TEXTURE_ATLAS:
+                        textureAtlasObjects.put(key, (TextureAtlas)this.get(obj.getString("uri")));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
         }
-
-
     }
 }

@@ -76,4 +76,5 @@ public abstract class LevelScreen extends GameScreen implements InputProcessor {
     public void setGameState(GameState gameState) {
         this.gameState = gameState;
     }
+
 }

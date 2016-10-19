@@ -4,6 +4,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.EventListener;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -56,12 +58,14 @@ public class ControlsLayer {
                 screenWidth - buttonWidth,
                 screenHeight - buttonHeight,
                 buttonWidth, buttonHeight);
-        pauseButton.addListener(new EventListener() {
-            @Override
-            public boolean handle(Event event) {
+        pauseButton.addListener(new InputListener() {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                return true;
+            }
+
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 levelScreen.setGameState(GameState.PAUSED);
                 setState(GameState.PAUSED);
-                return false;
             }
         });
 
@@ -70,12 +74,14 @@ public class ControlsLayer {
                 centerY + buttonHeight * .20f,
                 buttonWidth,
                 buttonHeight);
-        resumeButton.addListener(new EventListener() {
-            @Override
-            public boolean handle(Event event) {
+        resumeButton.addListener(new InputListener() {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                return true;
+            }
+
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 levelScreen.setGameState(GameState.RUNNING);
                 setState(GameState.RUNNING);
-                return false;
             }
         });
 
@@ -84,12 +90,14 @@ public class ControlsLayer {
                 centerY - (buttonHeight + buttonHeight * .20f),
                 buttonWidth,
                 buttonHeight);
-        quitButton.addListener(new EventListener() {
-            @Override
-            public boolean handle(Event event) {
+        quitButton.addListener(new InputListener() {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                return true;
+            }
+
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 levelScreen.setGameState(GameState.GAME_OVER);
                 setState(GameState.GAME_OVER);
-                return false;
             }
         });
 
@@ -98,12 +106,14 @@ public class ControlsLayer {
                 centerY - buttonHeight / 2,
                 buttonWidth,
                 buttonHeight);
-        readyButton.addListener(new EventListener() {
-            @Override
-            public boolean handle(Event event) {
+        readyButton.addListener(new InputListener() {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                return true;
+            }
+
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
                 levelScreen.setGameState(GameState.RUNNING);
                 setState(GameState.RUNNING);
-                return true;
             }
         });
 
@@ -161,5 +171,9 @@ public class ControlsLayer {
         setState(levelScreen.getGameState());
         stage.act();
         stage.draw();
+    }
+
+    public void dispose() {
+        stage.dispose();
     }
 }
