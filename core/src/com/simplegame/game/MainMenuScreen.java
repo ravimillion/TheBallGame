@@ -91,12 +91,15 @@ public class MainMenuScreen extends GameScreen {
                 if (levelGrid.get(i).contains(touchPoint.x, touchPoint.y)) {
                     switch (i) {
                         case 0:
+                            this.dispose();
                             game.setScreen(new LevelOne(game));
                             break;
                         case 1:
+                            this.dispose();
                             game.setScreen(new LevelTwo(game));
                             break;
                         case 2:
+                            this.dispose();
                             game.setScreen(new LevelThree(game));
                             break;
 //                        case 3:

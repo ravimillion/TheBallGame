@@ -80,6 +80,7 @@ public class LevelOne extends LevelScreen implements InputProcessor {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
+                    dispose();
                     game.setScreen(new MainMenuScreen(game));
                 }
             });

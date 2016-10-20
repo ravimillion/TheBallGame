@@ -53,6 +53,11 @@ public class Stone extends GameObject {
         return this.height;
     }
 
+    @Override
+    public void dispose() {
+
+    }
+
 
     public void setAngle(float angle) {
         this.angle = angle;

@@ -32,4 +32,6 @@ public abstract class GameObject {
     public abstract float getWidth();
 
     public abstract float getHeight();
+
+    public abstract void dispose();
 }

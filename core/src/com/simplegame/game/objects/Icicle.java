@@ -75,6 +75,11 @@ public class Icicle extends GameObject {
         return this.height;
     }
 
+    @Override
+    public void dispose() {
+
+    }
+
     public float getWidth() {
         return this.width;
     }

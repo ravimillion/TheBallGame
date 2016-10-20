@@ -92,6 +92,11 @@ public class Balloon extends GameObject {
         return height;
     }
 
+    @Override
+    public void dispose() {
+
+    }
+
     public void setHeight(float height) {
         this.height = height;
     }

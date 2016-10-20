@@ -31,6 +31,7 @@ public class GameEntry extends Game {
 
     public boolean loadGame() {
         while (!Own.assets.update()) {
+            Own.log(TAG, "Completed: " + Own.assets.getProgress());
 //            splashScreen.setProgress(Own.assets.getProgress());
         }
 

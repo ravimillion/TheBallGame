@@ -68,4 +68,9 @@ public class Ground extends GameObject {
     public float getHeight() {
         return 0;
     }
+
+    @Override
+    public void dispose() {
+
+    }
 }

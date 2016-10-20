@@ -59,6 +59,11 @@ public class TreeStump extends GameObject {
     }
 
     @Override
+    public void dispose() {
+
+    }
+
+    @Override
     public Vector2 getPosition() {
         return null;
     }

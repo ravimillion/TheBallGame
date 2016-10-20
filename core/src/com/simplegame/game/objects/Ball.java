@@ -56,6 +56,11 @@ public class Ball extends GameObject {
         return this.height;
     }
 
+    @Override
+    public void dispose() {
+
+    }
+
     public Body getBody() {
         return this.body;
     }

@@ -74,6 +74,10 @@ public class FireBall extends GameObject {
         this.id = id;
     }
 
+    public void dispose() {
+        particleEffect.dispose();
+    }
+
     @Override
     public float getWidth() {
         return 0;
