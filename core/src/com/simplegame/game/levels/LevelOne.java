@@ -184,7 +184,7 @@ public class LevelOne extends LevelScreen implements InputProcessor {
                 break;
             default:
                 break;
-
+                // this is bullshit
         }
     }
 
