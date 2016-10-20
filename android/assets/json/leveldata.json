@@ -2,12 +2,12 @@
   "1": {
     "ball": {
       "id": "ball",
-      "radius": 2.5,
+      "radius": 2,
       "x": 5,
-      "y": 5,
+      "y": 10,
       "restitution": 0,
-      "density": 0.5,
-      "friction": 0.3
+      "density": 0.01,
+      "friction": 0.6
     },
     "stone": {
       "id": "stone",

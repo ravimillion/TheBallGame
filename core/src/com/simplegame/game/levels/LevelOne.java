@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
@@ -35,6 +36,7 @@ public class LevelOne extends LevelScreen implements InputProcessor {
     private ControlsLayer controlsLayer;
 
     private float ballPosMaxX;
+    private boolean isTouchHold;
 
     public LevelOne(GameEntry gameEntry) {
         this.game = gameEntry;
@@ -137,21 +139,24 @@ public class LevelOne extends LevelScreen implements InputProcessor {
         }
 
         if (treeStump != null) treeStump.drawGui();
+        //        update the ground
+        Texture ground = Own.assets.getTexture("GROUND");
+
+        float imageRatio = 4.3f / ground.getHeight();
+        for (int i = 0; i < WORLD_WIDTH; i += ground.getWidth()*imageRatio) {
+            game.batch.draw(ground, i, 0, ground.getWidth()*imageRatio, 4.3f);
+        }
         if (ball != null) ball.drawGui();
 
-//        update the ground
-        for (int i = 0; i < WORLD_WIDTH; i += box2DCam.viewportWidth) {
-            game.batch.draw(Own.assets.getTexture("GROUND"), i, 0, WORLD_WIDTH / 10, 4.3f);
-        }
         game.batch.end();
 
         game.batch.setProjectionMatrix(orthoCam.combined);
-        controlsLayer.draw(Gdx.graphics.getDeltaTime());
-
         game.batch.begin();
         Own.text.draw(game.batch, "Score: 0000", new Vector2(0, ORTHO_HEIGHT - 20), Own.text.SCORE);
         orthoCam.update();
         game.batch.end();
+
+        controlsLayer.draw(Gdx.graphics.getDeltaTime());
     }
 
     @Override
@@ -161,15 +166,6 @@ public class LevelOne extends LevelScreen implements InputProcessor {
                 break;
             case RUNNING:
                 followCamera();
-
-                try {
-                    Vector3 values = Own.device.getAccMeter();
-                    gravityX = (values.y * 10);
-                    world.setGravity(new Vector2(gravityX, gravityY + gravityX));
-                } catch (OwnException e) {
-                    e.printStackTrace();
-                }
-
                 world.step(Gdx.graphics.getDeltaTime(), 8, 2);
                 debugRenderer.render(world, box2DCam.combined);
                 break;
@@ -185,7 +181,6 @@ public class LevelOne extends LevelScreen implements InputProcessor {
                 break;
             default:
                 break;
-                // this is bullshit
         }
     }
 
@@ -236,6 +231,14 @@ public class LevelOne extends LevelScreen implements InputProcessor {
     public void handleInput() {
         if (Gdx.input.justTouched()) {
         }
+
+        if (isTouchHold) {
+            if (Gdx.input.getX() > Own.device.getScreenWidth() / 2) {
+                ball.getBody().applyTorque(-15, true);
+            } else {
+                ball.getBody().applyTorque(+15, true);
+            }
+        }
     }
 
     @Override
@@ -274,11 +277,13 @@ public class LevelOne extends LevelScreen implements InputProcessor {
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        isTouchHold = true;
         return false;
     }
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        isTouchHold = false;
         return false;
     }
 

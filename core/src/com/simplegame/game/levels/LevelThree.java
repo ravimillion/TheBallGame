@@ -239,9 +239,9 @@ public class LevelThree extends LevelScreen {
 
         if (isTouchAndHold) {
             if (Gdx.input.getX() > Own.device.getScreenWidth() / 2) {
-                ball.getBody().applyTorque(5, true);
+                ball.getBody().applyTorque(-15, true);
             } else {
-                ball.getBody().applyTorque(-5, true);
+                ball.getBody().applyTorque(+15, true);
             }
         }
     }
