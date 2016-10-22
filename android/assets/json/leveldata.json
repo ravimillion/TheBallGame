@@ -8,7 +8,7 @@
       "y": 8,
       "restitution": 0,
       "density": 0.01,
-      "friction": 0.6
+      "friction": 0.5
     },
     "curveleft": {
       "id": "curveleft",
@@ -48,11 +48,11 @@
       "x": 25,
       "y": 6,
       "angle": 0,
-      "width": 20,
-      "height": 10,
+      "width": 10,
+      "height": 5,
       "restitution": 0,
-      "density": 1,
-      "friction": 1
+      "density": 0.1,
+      "friction": 0.1
     }
   },
   "2": {
@@ -93,7 +93,7 @@
     }
   },
   "3": {
-    "ground": "ground",
+    "ground": "grass",
     "ball": {
       "id": "ball",
       "radius": 2,

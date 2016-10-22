@@ -21,35 +21,35 @@ public class GameEntry extends Game {
     @Override
     public void create() {
         batch = new SpriteBatch();
-//        splashScreen = new Splash(this);
-//        this.setScreen(splashScreen);
-
-        if (loadGame()) {
-            afterLoad();
-        }
-    }
-
-    public boolean loadGame() {
-        while (!Own.assets.update()) {
-            Own.log(TAG, "Completed: " + Own.assets.getProgress());
-//            splashScreen.setProgress(Own.assets.getProgress());
-        }
-
-        return true;
-    }
-
-    public void afterLoad() {
         handler.showAds(false);
-        Own.text.createFonts();
-        Own.assets.createImageAssets();
-        setScreen(new MainMenuScreen(this));
-//        setScreen(new LevelOne(this));
+        splashScreen = new Splash(this);
+        this.setScreen(splashScreen);
+
+//
+//        if (isLoading()) {
+//            afterLoad();
+//        }
     }
+
+//    public boolean isLoading() {
+//        while (!Own.assets.update()) {
+//            Own.log(TAG, "Completed: " + Own.assets.getProgress());
+//            splashScreen.setProgress(Own.assets.getProgress());
+//        }
+//
+//        return true;
+//    }
+
+//    public void afterLoad() {
+//        handler.showAds(false);
+//        Own.text.createFonts();
+//        Own.assets.createImageAssets();
+//        setScreen(new MainMenuScreen(this));
+//    }
 
     @Override
     public void render() {
         super.render();
-
     }
 
     @Override

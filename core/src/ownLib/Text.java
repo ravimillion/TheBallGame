@@ -20,6 +20,20 @@ public class Text {
     private BitmapFont font;
     private FreeTypeFontGenerator.FreeTypeFontParameter parameter;
 
+    private BitmapFont splashFont;
+
+    public void showProgress(SpriteBatch batch, int progress, Vector2 pos) {
+        splashFont.draw(batch, "Completed..." + progress + " % ", pos.x, pos.y);
+    }
+
+    public void createFontForSplash() {
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/desyrel.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 48;
+        splashFont = generator.generateFont(parameter); // font size 12 pixels
+        generator.dispose();
+    }
+
     public void createFonts() {
         parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 

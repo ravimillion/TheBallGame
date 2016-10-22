@@ -5,6 +5,7 @@ import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.JsonValue;
@@ -69,7 +70,7 @@ public class LevelOne extends LevelScreen implements InputProcessor {
     public void contactListener(UserData userDataA, UserData userDataB, float normalImpulse) {
         if (normalImpulse > 100) Own.log(TAG, "Impulse: " + normalImpulse);
         if (normalImpulse > 450) {
-            setGameState(GameState.GAME_OVER);
+//            setGameState(GameState.GAME_OVER);
         }
 
         if (userDataA.getId().equals("ball") && userDataB.getId().equals("right")
@@ -88,6 +89,7 @@ public class LevelOne extends LevelScreen implements InputProcessor {
         levelData = store.get("1");
         ball = new Ball(world, game, levelData.get("ball"));
         treeStump = new JsonGameObject(world, game, levelData.get("treestump"));
+        treeStump.getBody().setType(BodyDef.BodyType.DynamicBody);
         curveLeft = new JsonGameObject(world, game, levelData.get("curveleft"));
         topWoodBox = new JsonGameObject(world, game, levelData.get("topwoodbox"));
         woodBox = new JsonGameObject(world, game, levelData.get("woodbox"));

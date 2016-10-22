@@ -80,7 +80,7 @@ public class AssetsMap {
             imageAssets.put("BOTTLE", createJSONObject("images/bottle.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("CARTTILE", createJSONObject("images/carttile.jpg", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("ICICLE", createJSONObject("images/icicle.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("GROUND", createJSONObject("images/ground.png", TEXTURE, 0, 0, 0, 0));
+            imageAssets.put("GRASS", createJSONObject("images/ground.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("TRANSBALL", createJSONObject("images/transball.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("CURVELEFT", createJSONObject("images/curveleft.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("TOPWOODBOX", createJSONObject("images/topwoodbox.png", TEXTURE, 0, 0, 0, 0));
@@ -90,10 +90,7 @@ public class AssetsMap {
             imageAssets.put("LOADING", createJSONObject("images/loading.gif", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGL1", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGL2", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("BGL3", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("BGL4", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("BGL5", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("BGL6", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
+            imageAssets.put("BGL3", createJSONObject("images/ground.png", TEXTURE, 0, 0, 0, 0));
 
             // texture atlas files are pack files
             imageAssets.put("CONTROL_BUTTONS", createJSONObject("controls/imagebuttons.pack", TEXTURE_ATLAS, 0, 0, 0, 0));
