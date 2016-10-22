@@ -28,8 +28,9 @@ public class LevelThree extends LevelScreen {
     private String TAG = "LevelThree";
 
     private Ball ball;
+    private JsonValue levelData;
     private Array<FireBall> fireballsArray;
-    private BodyContact bodyContact = null;
+    private BodyContact bodyContact;
 
     private float ballPosMaxX;
     private boolean isTouchAndHold = false;
@@ -78,10 +79,7 @@ public class LevelThree extends LevelScreen {
         debugRenderer = new Box2DDebugRenderer();
 
         // Load json level data
-        JsonReader jsonReader = new JsonReader();
-        JsonValue store = jsonReader.parse(Gdx.files.internal("json/leveldata.json"));
-        JsonValue levelData = store.get("3");
-
+        levelData = store.get("3");
         // create objects
         createBall(levelData);
         createFireballs(levelData);
@@ -145,7 +143,6 @@ public class LevelThree extends LevelScreen {
 
     private void createBall(JsonValue levelData) {
         ball = new Ball(world, game, levelData.get("ball"));
-        ball.create();
         ball.setPosition(new Vector2(5f, 10f));
         ball.setDamping(1f);
     }
@@ -161,11 +158,8 @@ public class LevelThree extends LevelScreen {
 
         game.batch.setProjectionMatrix(box2DCam.combined);
         game.batch.begin();
-//        game.batch.draw(Own.assets.getTexture("BGL3"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
 
-        for (int i = 0; i < WORLD_WIDTH; i += box2DCam.viewportWidth) {
-            game.batch.draw(Own.assets.getTexture("GROUND"), i, 0, WORLD_WIDTH / 10, 4.3f);
-        }
+        drawGround(levelData.getString("ground").toUpperCase());
 
         if (ball != null) ball.drawGui();
         game.batch.end();
@@ -184,6 +178,8 @@ public class LevelThree extends LevelScreen {
     }
 
     public void updateWorld() {
+        GL20 gl = Gdx.gl;
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         switch (getGameState()) {
             case READY:
                 Own.log(TAG, "Game ready");

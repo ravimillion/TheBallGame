@@ -3,7 +3,6 @@ package com.simplegame.game.levels;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -12,18 +11,15 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.physics.box2d.joints.PrismaticJointDef;
 import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
 import com.simplegame.game.MainMenuScreen;
 import com.simplegame.game.objects.Ball;
 import com.simplegame.game.objects.Balloon;
 import com.simplegame.game.objects.Icicle;
-import com.simplegame.game.objects.Stone;
 import com.simplegame.game.objects.WorldBoundry;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.userdata.UserData;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import ownLib.BodyContact;
@@ -36,11 +32,8 @@ public class LevelTwo extends LevelScreen {
     private Ball ball;
     private Icicle icicle;
     private Icicle icicle2;
-
-    private ArrayList<Stone> obstacleArray = null;
-    private BitmapFont font;
-
-    private BodyContact bodyContact = null;
+    private BodyContact bodyContact;
+    private JsonValue levelData;
     private float ballPosMaxX;
 
     public LevelTwo(GameEntry gameEntry) {
@@ -100,11 +93,7 @@ public class LevelTwo extends LevelScreen {
 
     private HashMap<String, JsonValue> loadLevelData() {
         HashMap<String, JsonValue> levelObjects = new HashMap<String, JsonValue>();
-
-        JsonReader jsonReader = new JsonReader();
-        JsonValue store = jsonReader.parse(Gdx.files.internal("json/leveldata.json"));
-
-        JsonValue levelData = store.get("2");
+        levelData = store.get("2");
         levelObjects.put("ball", levelData.get("ball"));
         levelObjects.put("balloon", levelData.get("balloon"));
         levelObjects.put("icicle", levelData.get("icicle"));
@@ -142,9 +131,7 @@ public class LevelTwo extends LevelScreen {
         game.batch.begin();
         game.batch.draw(Own.assets.getTexture("BGL2"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
 
-        for (int i = 0; i < WORLD_WIDTH; i += box2DCam.viewportWidth) {
-            game.batch.draw(Own.assets.getTexture("GROUND"), i, 0, WORLD_WIDTH / 10, 4.3f);
-        }
+        drawGround(levelData.getString("ground").toUpperCase());
 
         if (ball != null) ball.drawGui();
         if (balloon != null) balloon.drawGui();
@@ -247,7 +234,6 @@ public class LevelTwo extends LevelScreen {
 
     private void createBall(HashMap<String, JsonValue> levelObjects) {
         ball = new Ball(world, game, levelObjects.get("ball"));
-        ball.create();
         ball.setPosition(new Vector2(5f, 10f));
         ball.setDamping(1f);
     }

@@ -4,36 +4,31 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
 import com.simplegame.game.MainMenuScreen;
 import com.simplegame.game.objects.Ball;
-import com.simplegame.game.objects.Stone;
-import com.simplegame.game.objects.TreeStump;
+import com.simplegame.game.objects.JsonGameObject;
 import com.simplegame.game.objects.WorldBoundry;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.userdata.UserData;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import ownLib.BodyContact;
 import ownLib.Own;
-import ownLib.OwnException;
 import ownLib.controls.ControlsLayer;
 
 public class LevelOne extends LevelScreen implements InputProcessor {
     private String TAG = "LevelOne";
     private BodyContact bodyContact;
-    private ArrayList<Stone> obstacleArray;
     private Ball ball;
-    private TreeStump treeStump;
+    private JsonGameObject treeStump;
+    private JsonGameObject curveLeft;
+    private JsonGameObject topWoodBox;
+    private JsonGameObject woodBox;
     private ControlsLayer controlsLayer;
+    private JsonValue levelData;
 
     private float ballPosMaxX;
     private boolean isTouchHold;
@@ -89,18 +84,14 @@ public class LevelOne extends LevelScreen implements InputProcessor {
         }
     }
 
-    private HashMap<String, JsonValue> loadLevelData() {
-        HashMap<String, JsonValue> levelObjects = new HashMap<String, JsonValue>();
-
-        JsonReader jsonReader = new JsonReader();
-        JsonValue store = jsonReader.parse(Gdx.files.internal("json/leveldata.json"));
-
-        JsonValue levelData = store.get("1");
-        levelObjects.put("ball", levelData.get("ball"));
-        levelObjects.put("stone", levelData.get("stone"));
-        levelObjects.put("treestump", levelData.get("treestump"));
-
-        return levelObjects;
+    private void createGameObject() {
+        levelData = store.get("1");
+        ball = new Ball(world, game, levelData.get("ball"));
+        treeStump = new JsonGameObject(world, game, levelData.get("treestump"));
+        curveLeft = new JsonGameObject(world, game, levelData.get("curveleft"));
+        topWoodBox = new JsonGameObject(world, game, levelData.get("topwoodbox"));
+        woodBox = new JsonGameObject(world, game, levelData.get("woodbox"));
+        drawBorder();
     }
 
     @Override
@@ -114,14 +105,10 @@ public class LevelOne extends LevelScreen implements InputProcessor {
         controlsLayer = new ControlsLayer(game.batch, this);
         debugRenderer = new Box2DDebugRenderer();
 
-        HashMap<String, JsonValue> levelObjects = loadLevelData();
-        createBall(levelObjects);
-        createStones(levelObjects);
-        createTreeStump(levelObjects);
-        drawBorder();
-
         Own.bodyContact.setContactListener(this);
         Own.io.addProcessor(this);
+
+        createGameObject();
     }
 
     @Override
@@ -133,19 +120,11 @@ public class LevelOne extends LevelScreen implements InputProcessor {
         game.batch.begin();
 //        game.batch.draw(Own.assets.getTexture("BGL1"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
 
-//        send update to stones
-        for (int i = 0; i < obstacleArray.size(); i++) {
-            obstacleArray.get(i).drawGui();
-        }
-
         if (treeStump != null) treeStump.drawGui();
-        //        update the ground
-        Texture ground = Own.assets.getTexture("GROUND");
-
-        float imageRatio = 4.3f / ground.getHeight();
-        for (int i = 0; i < WORLD_WIDTH; i += ground.getWidth()*imageRatio) {
-            game.batch.draw(ground, i, 0, ground.getWidth()*imageRatio, 4.3f);
-        }
+        if (curveLeft != null) curveLeft.drawGui();
+        if (topWoodBox != null) topWoodBox.drawGui();
+        if (woodBox != null) woodBox.drawGui();
+        drawGround(levelData.getString("ground").toUpperCase());
         if (ball != null) ball.drawGui();
 
         game.batch.end();
@@ -161,6 +140,9 @@ public class LevelOne extends LevelScreen implements InputProcessor {
 
     @Override
     protected void updateWorld() {
+        GL20 gl = Gdx.gl;
+        gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         switch (getGameState()) {
             case READY:
                 break;
@@ -192,35 +174,6 @@ public class LevelOne extends LevelScreen implements InputProcessor {
             worldBoundry.updateWorldBoundry(WorldBoundry.LEFT, new Vector2(ballPosMaxX - box2DCam.viewportWidth / 2, 0), 0);
             box2DCam.position.set(ball.getPosition().x, box2DCam.viewportHeight / 2 + 1, 0);
             box2DCam.update();
-        }
-    }
-
-    private void createTreeStump(HashMap<String, JsonValue> levelObjects) {
-        treeStump = new TreeStump(world, game, levelObjects.get("treestump"));
-        treeStump.create();
-    }
-
-    private void createBall(HashMap<String, JsonValue> levelObjects) {
-        ball = new Ball(world, game, levelObjects.get("ball"));
-        ball.create();
-    }
-
-    private void createStones(HashMap<String, JsonValue> levelObjects) {
-        float[] angles = {-0.2f, -0.3f, -0.4f, -0.5f};
-
-        obstacleArray = new ArrayList<Stone>();
-        Stone stone = null;
-        for (int i = 2; i < WORLD_WIDTH / 15; i++) {
-            stone = new Stone(world, game, levelObjects.get("stone"));
-            stone.setAngle(angles[Own.rand.nextInt(4)]);
-            stone.setPosition(new Vector2((i * 15) + 25, 5f));
-            if (i % 2 == 0) {
-                stone.setSize(5f, 5f);
-            } else {
-                stone.setSize(3f, 3f);
-            }
-            stone.create();
-            obstacleArray.add(stone);
         }
     }
 

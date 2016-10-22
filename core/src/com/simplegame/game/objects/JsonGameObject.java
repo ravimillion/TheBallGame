@@ -13,13 +13,13 @@ import ownLib.Own;
 /**
  * Created by ravi on 18.09.16.
  */
-public class TreeStump extends GameObject {
+public class JsonGameObject extends GameObject {
     private float angle;
     private float density;
     private float restitution;
     private float friction;
 
-    public TreeStump(World world, GameEntry gameEntry, JsonValue data) {
+    public JsonGameObject(World world, GameEntry gameEntry, JsonValue data) {
         this.world = world;
         this.gameEntry = gameEntry;
         this.id = data.getString("id");
@@ -30,13 +30,14 @@ public class TreeStump extends GameObject {
         this.density = data.getFloat("density");
         this.friction = data.getFloat("friction");
         this.position = new Vector2(data.getFloat("x"), data.getFloat("y"));
+        this.create();
     }
 
     @Override
     public void create() {
         Own.box2d.factory.setWorld(this.world);
-        this.body = Own.box2d.factory.createJsonBody("TREESTUMP",
-                "treestump",
+        this.body = Own.box2d.factory.createJsonBody(this.id.toUpperCase(),
+                this.id,
                 BodyDef.BodyType.StaticBody,
                 position,
                 this.angle,
@@ -85,7 +86,7 @@ public class TreeStump extends GameObject {
 
     @Override
     public void drawGui() {
-        Own.box2d.gui.drawJsonBody(gameEntry.batch, "TREESTUMP", this.body);
+        Own.box2d.gui.drawJsonBody(gameEntry.batch, this.id.toUpperCase(), this.body);
     }
 
     public Body getBody() {

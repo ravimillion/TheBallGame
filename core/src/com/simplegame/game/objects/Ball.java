@@ -32,6 +32,7 @@ public class Ball extends GameObject {
         this.density = data.getFloat("density");
         this.friction = data.getFloat("friction");
         this.position = new Vector2(data.getFloat("x"), data.getFloat("y"));
+        this.create();
     }
 
     public void create() {

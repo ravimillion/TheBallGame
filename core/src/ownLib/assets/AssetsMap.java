@@ -51,8 +51,10 @@ public class AssetsMap {
         try {
             jsonAssets.put("BALLOON", "json/balloon.json");
             jsonAssets.put("BOTTLE", "json/bottle.json");
-            jsonAssets.put("SQUARE", "json/square.json");
+            jsonAssets.put("TOPWOODBOX", "json/topwoodbox.json");
+            jsonAssets.put("WOODBOX", "json/woodbox.json");
             jsonAssets.put("TREESTUMP", "json/treestump.json");
+            jsonAssets.put("CURVELEFT", "json/curveleft.json");
             jsonAssets.put("ICICLE", "json/icicle.json");
         } catch (JSONException e) {
             e.printStackTrace();
@@ -80,6 +82,10 @@ public class AssetsMap {
             imageAssets.put("ICICLE", createJSONObject("images/icicle.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("GROUND", createJSONObject("images/ground.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("TRANSBALL", createJSONObject("images/transball.png", TEXTURE, 0, 0, 0, 0));
+            imageAssets.put("CURVELEFT", createJSONObject("images/curveleft.png", TEXTURE, 0, 0, 0, 0));
+            imageAssets.put("TOPWOODBOX", createJSONObject("images/topwoodbox.png", TEXTURE, 0, 0, 0, 0));
+            imageAssets.put("WOODBOX", createJSONObject("images/woodbox.png", TEXTURE, 0, 0, 0, 0));
+            imageAssets.put("WOODFLOOR", createJSONObject("images/woodfloor.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGMM", createJSONObject("images/bgmm.jpg", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("LOADING", createJSONObject("images/loading.gif", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGL1", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));

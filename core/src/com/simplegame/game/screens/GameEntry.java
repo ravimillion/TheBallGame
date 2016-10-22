@@ -43,7 +43,7 @@ public class GameEntry extends Game {
         Own.text.createFonts();
         Own.assets.createImageAssets();
         setScreen(new MainMenuScreen(this));
-//        setScreen(new LevelThree(this));
+//        setScreen(new LevelOne(this));
     }
 
     @Override
