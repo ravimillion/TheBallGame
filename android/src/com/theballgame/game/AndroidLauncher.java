@@ -9,23 +9,12 @@ import android.widget.RelativeLayout;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.simplegame.game.AdHandler;
-import com.simplegame.game.screens.GameEntry;
-
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
-import android.view.View;
-import android.widget.RelativeLayout;
-
-import com.badlogic.gdx.backends.android.AndroidApplication;
-import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.simplegame.game.screens.*;
+import com.simplegame.game.AdHandler;
+import com.simplegame.game.screens.GameEntry;
 
 public class AndroidLauncher extends AndroidApplication implements AdHandler {
 	private static final String TAG = "AndroidLauncher";

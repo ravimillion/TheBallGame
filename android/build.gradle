@@ -16,11 +16,10 @@ android {
     }
     defaultConfig {
         applicationId "com.theballgame.game"
-        minSdkVersion 9
+        minSdkVersion 15
         targetSdkVersion 23
     }
     packagingOptions {
-        exclude 'META-INF/DEPENDENCIES.txt'
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/NOTICE'
@@ -135,9 +134,6 @@ idea {
 }
 dependencies {
     compile 'com.firebase:firebase-client-android:2.3.1'
-    compile 'com.firebase:firebase-client-android:2.3.1'
-    compile 'com.google.android.gms:play-services-auth:9.4.0'
-    compile 'com.firebase:firebase-client-android:2.3.1'
-    compile 'com.google.android.gms:play-services-auth:9.4.0'
-    compile 'com.google.android.gms:play-services-ads:9.4.0'
+    compile 'com.google.android.gms:play-services-auth:9.8.00'
+    compile 'com.google.android.gms:play-services-ads:9.8.00'
 }
