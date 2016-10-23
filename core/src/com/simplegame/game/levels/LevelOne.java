@@ -23,8 +23,13 @@ import ownLib.controls.ControlsLayer;
 public class LevelOne extends LevelScreen implements InputProcessor {
     private String TAG = "LevelOne";
     private BodyContact bodyContact;
+    private float BALL_FORCE = 20;
+
     private Ball ball;
     private JsonGameObject treeStump;
+    private JsonGameObject horiPlatform;
+    private JsonGameObject vertPlatform;
+    private JsonGameObject boxLeft;
     private JsonGameObject curveLeft;
     private JsonGameObject topWoodBox;
     private JsonGameObject woodBox;
@@ -52,15 +57,14 @@ public class LevelOne extends LevelScreen implements InputProcessor {
     }
 
     protected void setCamera() {
-        int scaleFactor = 10;
+        WORLD_HEIGHT = 32f;
         WORLD_WIDTH = 480f;
-        WORLD_HEIGHT = Own.device.getScreenRatio() * WORLD_WIDTH / scaleFactor;
 
         orthoCam = new OrthographicCamera(ORTHO_WIDTH, ORTHO_HEIGHT);
         orthoCam.position.set(orthoCam.viewportWidth / 2, orthoCam.viewportHeight / 2, 0);
         orthoCam.update();
 
-        box2DCam = new OrthographicCamera(WORLD_WIDTH / scaleFactor, WORLD_HEIGHT);
+        box2DCam = new OrthographicCamera(WORLD_HEIGHT/Own.device.getScreenRatio(), WORLD_HEIGHT);
         box2DCam.position.set(box2DCam.viewportWidth / 2, box2DCam.viewportHeight / 2 + 1, 0);
         box2DCam.update();
     }
@@ -70,7 +74,9 @@ public class LevelOne extends LevelScreen implements InputProcessor {
     public void contactListener(UserData userDataA, UserData userDataB, float normalImpulse) {
         if (normalImpulse > 100) Own.log(TAG, "Impulse: " + normalImpulse);
         if (normalImpulse > 450) {
-//            setGameState(GameState.GAME_OVER);
+            setGameState(GameState.GAME_OVER);
+        } else {
+            Own.log(TAG, "Impulse: " + normalImpulse);
         }
 
         if (userDataA.getId().equals("ball") && userDataB.getId().equals("right")
@@ -78,8 +84,9 @@ public class LevelOne extends LevelScreen implements InputProcessor {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    dispose();
-                    game.setScreen(new MainMenuScreen(game));
+                    setGameState(GameState.LEVEL_END);
+//                    dispose();
+//                    game.setScreen(new MainMenuScreen(game));
                 }
             });
         }
@@ -87,12 +94,16 @@ public class LevelOne extends LevelScreen implements InputProcessor {
 
     private void createGameObject() {
         levelData = store.get("1");
+        BALL_FORCE = levelData.getFloat("force");
         ball = new Ball(world, game, levelData.get("ball"));
-        treeStump = new JsonGameObject(world, game, levelData.get("treestump"));
-        treeStump.getBody().setType(BodyDef.BodyType.DynamicBody);
+        boxLeft = new JsonGameObject(world, game, levelData.get("boxleft"));
+        horiPlatform= new JsonGameObject(world, game, levelData.get("horiplatform"));
+        vertPlatform= new JsonGameObject(world, game, levelData.get("vertplatform"));
         curveLeft = new JsonGameObject(world, game, levelData.get("curveleft"));
         topWoodBox = new JsonGameObject(world, game, levelData.get("topwoodbox"));
+        topWoodBox.getBody().setType(BodyDef.BodyType.DynamicBody);
         woodBox = new JsonGameObject(world, game, levelData.get("woodbox"));
+        woodBox.getBody().setType(BodyDef.BodyType.DynamicBody);
         drawBorder();
     }
 
@@ -123,9 +134,12 @@ public class LevelOne extends LevelScreen implements InputProcessor {
 //        game.batch.draw(Own.assets.getTexture("BGL1"), box2DCam.position.x - box2DCam.viewportWidth / 2, 0, WORLD_WIDTH / 10, WORLD_HEIGHT + 1);
 
         if (treeStump != null) treeStump.drawGui();
+        if (boxLeft != null) boxLeft.drawGui();
         if (curveLeft != null) curveLeft.drawGui();
         if (topWoodBox != null) topWoodBox.drawGui();
         if (woodBox != null) woodBox.drawGui();
+        if (horiPlatform != null) horiPlatform.drawGui();
+        if (vertPlatform != null) vertPlatform.drawGui();
         drawGround(levelData.getString("ground").toUpperCase());
         if (ball != null) ball.drawGui();
 
@@ -169,11 +183,13 @@ public class LevelOne extends LevelScreen implements InputProcessor {
     }
 
     private void followCamera() {
+//        box2DCam.position.set(ball.getPosition().x, box2DCam.viewportHeight / 2 + 1, 0);
+//        box2DCam.update();
         if (ball.getPosition().x > box2DCam.viewportWidth / 2 &&
                 ball.getPosition().x < WORLD_WIDTH - box2DCam.viewportWidth / 2 &&
                 ball.getPosition().x > ballPosMaxX) {
             ballPosMaxX = ball.getPosition().x;
-            worldBoundry.updateWorldBoundry(WorldBoundry.LEFT, new Vector2(ballPosMaxX - box2DCam.viewportWidth / 2, 0), 0);
+//            worldBoundry.updateWorldBoundry(WorldBoundry.LEFT, new Vector2(ballPosMaxX - box2DCam.viewportWidth / 2, 0), 0);
             box2DCam.position.set(ball.getPosition().x, box2DCam.viewportHeight / 2 + 1, 0);
             box2DCam.update();
         }
@@ -189,9 +205,9 @@ public class LevelOne extends LevelScreen implements InputProcessor {
 
         if (isTouchHold) {
             if (Gdx.input.getX() > Own.device.getScreenWidth() / 2) {
-                ball.getBody().applyTorque(-15, true);
+                ball.getBody().applyTorque(BALL_FORCE * -1, true);
             } else {
-                ball.getBody().applyTorque(+15, true);
+                ball.getBody().applyTorque(BALL_FORCE, true);
             }
         }
     }

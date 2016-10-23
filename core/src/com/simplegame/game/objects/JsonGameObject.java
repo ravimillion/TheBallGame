@@ -1,5 +1,6 @@
 package com.simplegame.game.objects;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -40,7 +41,7 @@ public class JsonGameObject extends GameObject {
                 this.id,
                 BodyDef.BodyType.StaticBody,
                 position,
-                this.angle,
+                this.angle * MathUtils.degreesToRadians,
                 this.width,
                 this.height,
                 this.density,

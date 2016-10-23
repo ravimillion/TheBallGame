@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.simplegame.game.MainMenuScreen;
+import com.simplegame.game.levels.LevelOne;
 
 import aurelienribon.tweenengine.TweenManager;
 import ownLib.Own;
@@ -48,7 +49,8 @@ public class Splash implements Screen {
             public void run() {
                 Own.text.createFonts();
                 Own.assets.createImageAssets();
-                gameEntry.setScreen(new MainMenuScreen(gameEntry));
+//                gameEntry.setScreen(new MainMenuScreen(gameEntry));
+                gameEntry.setScreen(new LevelOne(gameEntry));
             }
         });
     }
