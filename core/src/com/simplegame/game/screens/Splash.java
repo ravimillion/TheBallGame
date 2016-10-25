@@ -49,8 +49,8 @@ public class Splash implements Screen {
             public void run() {
                 Own.text.createFonts();
                 Own.assets.createImageAssets();
-//                gameEntry.setScreen(new MainMenuScreen(gameEntry));
-                gameEntry.setScreen(new LevelOne(gameEntry));
+                gameEntry.setScreen(new MainMenuScreen(gameEntry));
+//                gameEntry.setScreen(new LevelOne(gameEntry));
             }
         });
     }

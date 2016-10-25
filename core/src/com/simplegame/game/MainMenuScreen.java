@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
+import com.simplegame.game.levels.LevelFour;
 import com.simplegame.game.levels.LevelOne;
 import com.simplegame.game.levels.LevelThree;
 import com.simplegame.game.levels.LevelTwo;
@@ -102,9 +103,10 @@ public class MainMenuScreen extends GameScreen {
                             this.dispose();
                             game.setScreen(new LevelThree(game));
                             break;
-//                        case 3:
-//                            game.setScreen(new LevelFour(game));
-//                            break;
+                        case 3:
+                            this.dispose();
+                            game.setScreen(new LevelFour(game));
+                            break;
 //                        case 4:
 //                            game.setScreen(new LevelFive(game));
 //                            break;

@@ -132,8 +132,8 @@ idea {
         }
     }
 }
+
 dependencies {
     compile 'com.firebase:firebase-client-android:2.3.1'
-    compile 'com.google.android.gms:play-services-auth:9.8.00'
-    compile 'com.google.android.gms:play-services-ads:9.8.00'
+    compile 'com.google.android.gms:play-services:9.8.0'
 }
