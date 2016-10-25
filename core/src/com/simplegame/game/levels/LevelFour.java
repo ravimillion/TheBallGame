@@ -48,6 +48,7 @@ public class LevelFour extends LevelScreen{
         Viewport viewport = new FitViewport(WORLD_HEIGHT/Own.device.getScreenRatio(), WORLD_HEIGHT, box2DCam); // this should be the size of camera in WORLD units. make sure you check that in editor first.
         sceneLoader = new SceneLoader(); // default scene loader loads allr esources from default RM as usual.
         sceneLoader.loadScene("MainScene", viewport);
+
     }
 
     @Override
