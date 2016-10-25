@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.simplegame.game.MainMenuScreen;
-import com.simplegame.game.levels.LevelOne;
 
 import aurelienribon.tweenengine.TweenManager;
 import ownLib.Own;
