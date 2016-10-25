@@ -233,7 +233,7 @@ public class LevelTwo extends LevelScreen {
     }
 
     private void createBall(HashMap<String, JsonValue> levelObjects) {
-        ball = new Ball(world, game, levelObjects.get("ball"));
+        ball = new Ball(world, game.batch, levelObjects.get("ball"));
         ball.setPosition(new Vector2(5f, 10f));
         ball.setDamping(1f);
     }

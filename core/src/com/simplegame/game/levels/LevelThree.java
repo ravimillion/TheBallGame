@@ -142,7 +142,7 @@ public class LevelThree extends LevelScreen {
     }
 
     private void createBall(JsonValue levelData) {
-        ball = new Ball(world, game, levelData.get("ball"));
+        ball = new Ball(world, game.batch, levelData.get("ball"));
         ball.setPosition(new Vector2(5f, 10f));
         ball.setDamping(1f);
     }

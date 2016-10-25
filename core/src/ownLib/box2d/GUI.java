@@ -1,6 +1,7 @@
 package ownLib.box2d;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.MathUtils;
@@ -24,7 +25,7 @@ public class GUI {
         }
     }
 
-    public void drawCircleWithRotation(SpriteBatch batch, String textRegionID, Body body) {
+    public void drawCircleWithRotation(Batch batch, String textRegionID, Body body) {
         float radius = ((CircleUserData) body.getUserData()).getRadius();
         batch.draw(new TextureRegion(Own.assets.getTexture(textRegionID)),
                 body.getPosition().x - radius, // x

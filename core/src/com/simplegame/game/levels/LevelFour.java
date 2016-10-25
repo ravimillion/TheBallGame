@@ -3,8 +3,12 @@ package com.simplegame.game.levels;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.JsonReader;
+import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.simplegame.game.objects.Ball;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.userdata.UserData;
 import com.uwsoft.editor.renderer.SceneLoader;
@@ -18,6 +22,7 @@ import ownLib.Own;
 public class LevelFour extends LevelScreen{
 
     SceneLoader sceneLoader;
+    Ball ball;
 
     public LevelFour(GameEntry gameEntry) {
         this.game = gameEntry;
@@ -48,19 +53,25 @@ public class LevelFour extends LevelScreen{
         Viewport viewport = new FitViewport(WORLD_HEIGHT/Own.device.getScreenRatio(), WORLD_HEIGHT, box2DCam); // this should be the size of camera in WORLD units. make sure you check that in editor first.
         sceneLoader = new SceneLoader(); // default scene loader loads allr esources from default RM as usual.
         sceneLoader.loadScene("MainScene", viewport);
-
+        setupLevel();
     }
 
     @Override
     protected void setupLevel() {
-
+        JsonValue store = new JsonReader().parse(Gdx.files.internal("json/leveldata.json"));
+        ball = new Ball(sceneLoader.world, sceneLoader.getBatch(), store.get("1").get("ball"));
+        ball.setPosition(new Vector2(10f, 20f));
     }
 
     @Override
     protected void renderLevel() {
         Gdx.gl.glClearColor(0, 0, 0, 0);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        sceneLoader.getBatch().begin();
+        ball.drawGui();
+        sceneLoader.getBatch().end();
         sceneLoader.getEngine().update(Gdx.graphics.getDeltaTime());
+
     }
 
     @Override

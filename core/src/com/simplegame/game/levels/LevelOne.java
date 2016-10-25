@@ -95,7 +95,7 @@ public class LevelOne extends LevelScreen implements InputProcessor {
     private void createGameObject() {
         levelData = store.get("1");
         BALL_FORCE = levelData.getFloat("force");
-        ball = new Ball(world, game, levelData.get("ball"));
+        ball = new Ball(world, game.batch, levelData.get("ball"));
         boxLeft = new JsonGameObject(world, game, levelData.get("boxleft"));
         horiPlatform= new JsonGameObject(world, game, levelData.get("horiplatform"));
         vertPlatform= new JsonGameObject(world, game, levelData.get("vertplatform"));

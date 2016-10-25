@@ -1,5 +1,8 @@
 package com.simplegame.game.objects;
 
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -15,7 +18,7 @@ import ownLib.Own;
  */
 public class Ball extends GameObject {
     private World world;
-    private GameEntry gameEntry;
+    private Batch batch;
 
     private float radius;
     private Vector2 position;
@@ -23,8 +26,8 @@ public class Ball extends GameObject {
     private float restitution;
     private float friction;
 
-    public Ball(World world, GameEntry gameEntry, JsonValue data) {
-        this.gameEntry = gameEntry;
+    public Ball(World world, Batch batch, JsonValue data) {
+        this.batch = batch;
         this.world = world;
         this.id = data.getString("id");
         this.radius = data.getFloat("radius");
@@ -90,7 +93,7 @@ public class Ball extends GameObject {
 
     @Override
     public void drawGui() {
-        Own.box2d.gui.drawCircleWithRotation(gameEntry.batch, "TRANSBALL", this.body);
+        Own.box2d.gui.drawCircleWithRotation(batch, "TRANSBALL", this.body);
     }
 
     public Vector2 getVelocity() {
