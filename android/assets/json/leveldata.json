@@ -25,5 +25,8 @@
       {"id": "fireball2", "radius": 1, "x": 20, "y": 25, "restitution": 0, "density": 0.01, "friction": 0.3},
       {"id": "fireball3", "radius": 1, "x": 30, "y": 35, "restitution": 0, "density": 0.01, "friction": 0.3},
       {"id": "fireball4", "radius": 1, "x": 40, "y": 35, "restitution": 0, "density": 0.01, "friction": 0.3}]
+  },
+  "4": {
+    "ball": {"id": "ball1", "radius": 2, "x": 10, "y": 8, "restitution": 1, "density": 1.0, "friction": 0.5}
   }
 }

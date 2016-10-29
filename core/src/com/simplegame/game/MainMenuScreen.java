@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
-import com.simplegame.game.levels.LevelFour;
+import com.simplegame.game.levels.four.LevelFour;
 import com.simplegame.game.levels.LevelOne;
 import com.simplegame.game.levels.LevelThree;
 import com.simplegame.game.levels.LevelTwo;

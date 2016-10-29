@@ -1,17 +1,17 @@
-package com.simplegame.game.levels;
+package com.simplegame.game.levels.four;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.utils.JsonReader;
-import com.badlogic.gdx.utils.JsonValue;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.simplegame.game.levels.LevelScreen;
 import com.simplegame.game.objects.Ball;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.userdata.UserData;
 import com.uwsoft.editor.renderer.SceneLoader;
+import com.uwsoft.editor.renderer.utils.ItemWrapper;
 
 import ownLib.Own;
 
@@ -19,7 +19,7 @@ import ownLib.Own;
  * Created by ravi on 23.10.16.
  */
 
-public class LevelFour extends LevelScreen{
+public class LevelFour extends LevelScreen {
 
     SceneLoader sceneLoader;
     Ball ball;
@@ -53,25 +53,33 @@ public class LevelFour extends LevelScreen{
         Viewport viewport = new FitViewport(WORLD_HEIGHT/Own.device.getScreenRatio(), WORLD_HEIGHT, box2DCam); // this should be the size of camera in WORLD units. make sure you check that in editor first.
         sceneLoader = new SceneLoader(); // default scene loader loads allr esources from default RM as usual.
         sceneLoader.loadScene("MainScene", viewport);
-        setupLevel();
     }
 
     @Override
     protected void setupLevel() {
-        JsonValue store = new JsonReader().parse(Gdx.files.internal("json/leveldata.json"));
-        ball = new Ball(sceneLoader.world, sceneLoader.getBatch(), store.get("1").get("ball"));
-        ball.setPosition(new Vector2(10f, 20f));
+        this.world = sceneLoader.world;
+        this.debugRenderer = new Box2DDebugRenderer();
+
+        ItemWrapper rootEntity = new ItemWrapper(sceneLoader.getRoot());
+        ItemWrapper ball = rootEntity.getChild("ball");
+        BallScript ballScript = new BallScript();
+        ball.addScript(ballScript);
     }
+
+    boolean isInitialized = false;
 
     @Override
     protected void renderLevel() {
         Gdx.gl.glClearColor(0, 0, 0, 0);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        sceneLoader.getBatch().begin();
-        ball.drawGui();
-        sceneLoader.getBatch().end();
+
         sceneLoader.getEngine().update(Gdx.graphics.getDeltaTime());
 
+        if (!isInitialized) {
+            setupLevel();
+            isInitialized = true;
+        }
+        debugRenderer.render(this.world, box2DCam.combined);
     }
 
     @Override
