@@ -72,11 +72,10 @@ public class LevelOne extends LevelScreen implements InputProcessor {
 
     @Override
     public void contactListener(UserData userDataA, UserData userDataB, float normalImpulse) {
-        if (normalImpulse > 100) Own.log(TAG, "Impulse: " + normalImpulse);
         if (normalImpulse > 450) {
             setGameState(GameState.GAME_OVER);
         } else {
-            Own.log(TAG, "Impulse: " + normalImpulse);
+//            Own.log(TAG, "Impulse: " + normalImpulse);
         }
 
         if (userDataA.getId().equals("ball") && userDataB.getId().equals("right")
