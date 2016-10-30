@@ -3,7 +3,6 @@ package com.simplegame.game.screens;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.simplegame.game.AdHandler;
-import com.simplegame.game.levels.four.LevelFour;
 
 import ownLib.Own;
 
@@ -21,9 +20,8 @@ public class GameEntry extends Game {
     public void create() {
         batch = new SpriteBatch();
         handler.showAds(false);
-//        splashScreen = new Splash(this);
-//        this.setScreen(splashScreen);
-        this.setScreen(new LevelFour(this));
+        splashScreen = new Splash(this);
+        this.setScreen(splashScreen);
     }
 
     @Override
