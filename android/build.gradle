@@ -16,7 +16,7 @@ android {
     }
     defaultConfig {
         applicationId "com.theballgame.game"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 23
     }
     packagingOptions {
@@ -31,6 +31,10 @@ android {
         exclude 'META-INF/LGPL2.1'
         exclude 'META-INF/maven/com.nineoldandroids/library/pom.xml'
         exclude 'META-INF/maven/com.nineoldandroids/library/pom.properties'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
 }
 // called every time gradle gets executed, takes the native dependencies of

@@ -12,12 +12,12 @@ import com.badlogic.gdx.physics.box2d.joints.PrismaticJointDef;
 import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.JsonValue;
-import com.simplegame.game.MainMenuScreen;
 import com.simplegame.game.objects.Ball;
 import com.simplegame.game.objects.Balloon;
 import com.simplegame.game.objects.Icicle;
-import com.simplegame.game.objects.WorldBoundry;
+import com.simplegame.game.objects.WorldBoundary;
 import com.simplegame.game.screens.GameEntry;
+import com.simplegame.game.screens.MainMenuScreen;
 import com.simplegame.game.userdata.UserData;
 
 import java.util.HashMap;
@@ -107,6 +107,7 @@ public class LevelTwo extends LevelScreen {
 
         world = new World(new Vector2(gravityX, gravityY), true);
         world.setContactListener(bodyContact);
+        Own.box2d.factory.setWorld(world);
 
         controlsLayer = new ControlsLayer(game.batch, this);
         debugRenderer = new Box2DDebugRenderer();
@@ -233,7 +234,7 @@ public class LevelTwo extends LevelScreen {
     }
 
     private void createBall(HashMap<String, JsonValue> levelObjects) {
-        ball = new Ball(world, game.batch, levelObjects.get("ball"));
+        ball = new Ball(game.batch, levelObjects.get("ball"));
         ball.setPosition(new Vector2(5f, 10f));
         ball.setDamping(1f);
     }
@@ -247,7 +248,7 @@ public class LevelTwo extends LevelScreen {
                 ball.getPosition().x < WORLD_WIDTH - box2DCam.viewportWidth / 2 &&
                 ball.getPosition().x > ballPosMaxX) {
             ballPosMaxX = ball.getPosition().x;
-            worldBoundry.updateWorldBoundry(WorldBoundry.LEFT, new Vector2(ballPosMaxX - box2DCam.viewportWidth / 2, 0), 0);
+            worldBoundary.updateWorldBoundry(WorldBoundary.LEFT, new Vector2(ballPosMaxX - box2DCam.viewportWidth / 2, 0), 0);
             box2DCam.position.set(ball.getPosition().x, box2DCam.viewportHeight / 2 + 1, 0);
             box2DCam.update();
         }

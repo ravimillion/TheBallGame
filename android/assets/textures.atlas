@@ -1,0 +1,257 @@
+
+textures.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+controls/default
+  rotate: false
+  xy: 801, 2
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+controls/gameover
+  rotate: false
+  xy: 1059, 2
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+controls/pause
+  rotate: false
+  xy: 1317, 2
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+images/background
+  rotate: false
+  xy: 2, 1262
+  size: 1334, 772
+  orig: 1334, 772
+  offset: 0, 0
+  index: -1
+images/balloon
+  rotate: false
+  xy: 2, 460
+  size: 800, 800
+  orig: 800, 800
+  offset: 0, 0
+  index: -1
+images/bgmm
+  rotate: false
+  xy: 2, 102
+  size: 797, 356
+  orig: 797, 356
+  offset: 0, 0
+  index: -1
+images/boxleft
+  rotate: false
+  xy: 1338, 1382
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+images/boxright
+  rotate: false
+  xy: 804, 608
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+images/curveleft
+  rotate: false
+  xy: 1458, 827
+  size: 553, 553
+  orig: 553, 553
+  offset: 0, 0
+  index: -1
+images/g6086
+  rotate: false
+  xy: 801, 327
+  size: 1198, 131
+  orig: 1198, 131
+  offset: 0, 0
+  index: -1
+images/spikes
+  rotate: false
+  xy: 801, 327
+  size: 1198, 131
+  orig: 1198, 131
+  offset: 0, 0
+  index: -1
+images/ground
+  rotate: false
+  xy: 804, 460
+  size: 1026, 146
+  orig: 1026, 146
+  offset: 0, 0
+  index: -1
+images/horiplatform
+  rotate: false
+  xy: 801, 132
+  size: 773, 193
+  orig: 773, 193
+  offset: 0, 0
+  index: -1
+images/icicle
+  rotate: false
+  xy: 1576, 102
+  size: 400, 223
+  orig: 400, 223
+  offset: 0, 0
+  index: -1
+images/numbers
+  rotate: false
+  xy: 1458, 646
+  size: 389, 179
+  orig: 389, 179
+  offset: 0, 0
+  index: -1
+images/transball
+  rotate: false
+  xy: 1849, 632
+  size: 193, 193
+  orig: 193, 193
+  offset: 0, 0
+  index: -1
+particle/glow
+  rotate: false
+  xy: 1992, 1992
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+particle/particle
+  rotate: false
+  xy: 1338, 1348
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/rainDrop
+  rotate: false
+  xy: 1978, 297
+  size: 13, 28
+  orig: 13, 28
+  offset: 0, 0
+  index: -1
+
+textures2.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+controls/imagebuttons
+  rotate: false
+  xy: 2, 1366
+  size: 1024, 512
+  orig: 1024, 512
+  offset: 0, 0
+  index: -1
+controls/play
+  rotate: false
+  xy: 1417, 1451
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+controls/quit
+  rotate: false
+  xy: 1390, 1321
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+controls/ready
+  rotate: false
+  xy: 1716, 1492
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+controls/restart
+  rotate: false
+  xy: 656, 2
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+controls/resume
+  rotate: false
+  xy: 1390, 1191
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+images/bottle
+  rotate: false
+  xy: 1716, 1622
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/carttile
+  rotate: false
+  xy: 656, 132
+  size: 203, 203
+  orig: 203, 203
+  offset: 0, 0
+  index: -1
+images/longground
+  rotate: false
+  xy: 2, 1880
+  size: 1948, 122
+  orig: 1948, 122
+  offset: 0, 0
+  index: -1
+images/square
+  rotate: false
+  xy: 1417, 1581
+  size: 297, 297
+  orig: 297, 297
+  offset: 0, 0
+  index: -1
+images/topwoodbox
+  rotate: false
+  xy: 2, 712
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+images/treestump
+  rotate: false
+  xy: 1028, 1309
+  size: 360, 180
+  orig: 360, 180
+  offset: 0, 0
+  index: -1
+images/vertplatform
+  rotate: false
+  xy: 656, 591
+  size: 193, 773
+  orig: 193, 773
+  offset: 0, 0
+  index: -1
+images/woodbox
+  rotate: false
+  xy: 2, 58
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+images/woodfloor
+  rotate: false
+  xy: 1028, 1491
+  size: 387, 387
+  orig: 387, 387
+  offset: 0, 0
+  index: -1
+particle/fire
+  rotate: false
+  xy: 656, 337
+  size: 265, 252
+  orig: 265, 252
+  offset: 0, 0
+  index: -1

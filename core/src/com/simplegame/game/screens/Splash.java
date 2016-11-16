@@ -7,18 +7,18 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import com.simplegame.game.MainMenuScreen;
+import com.simplegame.game.levels.levelfour.LevelFour;
 
 import aurelienribon.tweenengine.TweenManager;
 import ownLib.Own;
 
 public class Splash implements Screen {
+    GameEntry gameEntry;
     private String TAG = "Splash";
     private SpriteBatch batch;
     private Texture loading = null;
     private Sprite splash = null;
     private float progress = 0;
-    GameEntry gameEntry;
     private Vector2 loadingMsgPos = new Vector2(Own.device.getScreenWidth()/2 - 50, Own.device.getScreenHeight()/2);
     private TweenManager tweenManager;
 
@@ -48,8 +48,8 @@ public class Splash implements Screen {
             public void run() {
                 Own.text.createFonts();
                 Own.assets.createImageAssets();
-                gameEntry.setScreen(new MainMenuScreen(gameEntry));
-//                gameEntry.setScreen(new LevelOne(gameEntry));
+//                gameEntry.setScreen(new MainMenuScreen(gameEntry));
+                gameEntry.setScreen(new LevelFour(gameEntry));
             }
         });
     }

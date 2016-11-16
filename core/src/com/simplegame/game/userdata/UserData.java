@@ -5,7 +5,7 @@ import com.badlogic.gdx.math.Vector2;
 /**
  * Created by ravi on 29.08.16.
  */
-public abstract class UserData {
+public class UserData {
     protected String id = null;
     protected String type = "";
     protected Vector2 pos;

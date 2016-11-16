@@ -9,7 +9,7 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
-import com.simplegame.game.objects.WorldBoundry;
+import com.simplegame.game.objects.WorldBoundary;
 import com.simplegame.game.screens.GameScreen;
 import com.simplegame.game.userdata.UserData;
 
@@ -18,19 +18,16 @@ import ownLib.controls.ControlsLayer;
 
 
 public abstract class LevelScreen extends GameScreen implements InputProcessor {
-    private GameState gameState = GameState.RUNNING;
-
     protected World world;
-    protected WorldBoundry worldBoundry;
+    protected WorldBoundary worldBoundary;
     protected ControlsLayer controlsLayer;
     protected Box2DDebugRenderer debugRenderer;
     protected JsonValue store = new JsonReader().parse(Gdx.files.internal("json/leveldata.json"));
-
     protected float WORLD_WIDTH = 0;
     protected float WORLD_HEIGHT = 0;
-
     protected float gravityX = 0;
     protected float gravityY = 0;
+    private GameState gameState = GameState.RUNNING;
 
     protected abstract void setCamera();
 
@@ -43,9 +40,8 @@ public abstract class LevelScreen extends GameScreen implements InputProcessor {
     public abstract void contactListener(UserData bodyA, UserData bodyB, float normalImpulse);
 
     protected void drawBorder() {
-        worldBoundry = new WorldBoundry(WORLD_WIDTH, WORLD_HEIGHT);
-        worldBoundry.updateWorldBoundry(WorldBoundry.BOTTOM, new Vector2(0, 6f), 0);
-
+        worldBoundary = new WorldBoundary(WORLD_WIDTH, WORLD_HEIGHT);
+        worldBoundary.updateWorldBoundry(WorldBoundary.BOTTOM, new Vector2(0, 6f), 0);
     }
 
     protected void drawGround(String floorId) {

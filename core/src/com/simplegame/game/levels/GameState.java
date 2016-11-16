@@ -5,5 +5,5 @@ package com.simplegame.game.levels;
  */
 
 public enum GameState {
-    RUNNING, PAUSED, READY, LEVEL_END, GAME_OVER
+    RUNNING, PAUSED, READY, LEVEL_END, GAME_OVER, QUIT, RESTART_LEVEL
 }

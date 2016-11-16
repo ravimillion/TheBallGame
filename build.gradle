@@ -10,6 +10,7 @@ buildscript {
         classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.2.0'
         classpath 'org.multi-os-engine:moe-gradle:1.2.2'
     }
+
 }
 
 allprojects {
@@ -92,6 +93,7 @@ project(":android") {
         compile "de.tomgrill.gdxfacebook:gdx-facebook-android:1.2.2"
         compile "de.tomgrill.gdxdialogs:gdx-dialogs-android:1.1.0"
     }
+
 }
 
 project(":ios") {
@@ -128,7 +130,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
         compile "com.underwaterapps.overlap2druntime:overlap2d-runtime-libgdx:0.1.2-SNAPSHOT"
         compile "com.kotcrab.vis:vis-ui:1.1.1"
-        compile "com.kotcrab.vis:vis-runtime:0.3.2"
+        compile "com.kotcrab.vis:vis-runtime:0.3.4"
         compile "net.dermetfan.libgdx-utils:libgdx-utils:0.13.3"
         compile "net.dermetfan.libgdx-utils:libgdx-utils-box2d:0.13.3"
         compile "de.tomgrill.gdxfacebook:gdx-facebook-core:1.2.2"
@@ -158,3 +160,4 @@ project(":ios-moe") {
 tasks.eclipse.doLast {
     delete ".project"
 }
+

@@ -15,10 +15,6 @@ import ownLib.Own;
  */
 
 public class ControlsFactory {
-    public enum ButtonType {
-        PLAY, PAUSE, QUIT, RESUME, READY, RESTART
-    }
-
     private TextureAtlas buttonAtlas = Own.assets.getTextureAtlas("CONTROL_BUTTONS");
 
     public TextButton getTextButton(float posX, float posY, float width, float height) {
@@ -34,8 +30,8 @@ public class ControlsFactory {
         String upId = "play";
         String downId = "play";
 
-        switch(type) {
-            case PLAY:
+        switch (type) {
+            case RUNNING:
                 upId = "play";
                 downId = "play";
                 break;
@@ -79,5 +75,7 @@ public class ControlsFactory {
 
         return imageButton;
     }
+
+    public enum ButtonType {RUNNING, PAUSE, QUIT, RESUME, READY, RESTART}
 }
 

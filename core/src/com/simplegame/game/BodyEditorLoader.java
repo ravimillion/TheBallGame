@@ -8,6 +8,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
+import com.simplegame.game.userdata.UserData;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -92,11 +93,13 @@ public class BodyEditorLoader {
 
             polygonShape.set(vertices);
             fd.shape = polygonShape;
-            body.createFixture(fd);
+            body.createFixture(fd).setUserData(new UserData(name, "json", body.getPosition()));
+
 
             for (int ii = 0, nn = vertices.length; ii < nn; ii++) {
                 free(vertices[ii]);
             }
+
         }
 
         for (int i = 0, n = rbModel.circles.size(); i < n; i++) {
@@ -107,10 +110,11 @@ public class BodyEditorLoader {
             circleShape.setPosition(center);
             circleShape.setRadius(radius);
             fd.shape = circleShape;
-            body.createFixture(fd);
+            body.createFixture(fd).setUserData(new UserData(name, "json", body.getPosition()));
 
             free(center);
         }
+
     }
 
     /**

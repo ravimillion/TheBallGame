@@ -1,15 +1,12 @@
 package com.simplegame.game.objects;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.JsonValue;
-import com.simplegame.game.screens.GameEntry;
 
 import ownLib.Own;
 
@@ -26,9 +23,8 @@ public class Ball extends GameObject {
     private float restitution;
     private float friction;
 
-    public Ball(World world, Batch batch, JsonValue data) {
+    public Ball(Batch batch, JsonValue data) {
         this.batch = batch;
-        this.world = world;
         this.id = data.getString("id");
         this.radius = data.getFloat("radius");
         this.restitution = data.getFloat("restitution");
@@ -39,7 +35,6 @@ public class Ball extends GameObject {
     }
 
     public void create() {
-        Own.box2d.factory.setWorld(this.world);
         this.body = Own.box2d.factory.getCircleBody(BodyDef.BodyType.DynamicBody,
                 position,
                 0,

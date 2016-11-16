@@ -7,7 +7,9 @@ import com.simplegame.game.AdHandler;
 import ownLib.Own;
 
 public class GameEntry extends Game {
-    public SpriteBatch batch;
+    public static int WORLD_WIDTH = 573;
+    public static int WORLD_HEIGHT = 32;
+    public static SpriteBatch batch;
     private String TAG = "GameEntry";
     private Splash splashScreen;
     private AdHandler handler;
@@ -22,6 +24,7 @@ public class GameEntry extends Game {
         handler.showAds(false);
         splashScreen = new Splash(this);
         this.setScreen(splashScreen);
+//        this.setScreen(new LevelFour(this));
     }
 
     @Override
@@ -32,5 +35,6 @@ public class GameEntry extends Game {
     @Override
     public void dispose() {
         Own.dispose();
+        batch.dispose();
     }
 }

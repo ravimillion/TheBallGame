@@ -1,0 +1,190 @@
+{
+  "1": {
+    "ground": "woodfloor",
+    "force": 550,
+    "ball": {
+      "id": "ball",
+      "radius": 2,
+      "x": 2,
+      "y": 8,
+      "restitution": 0,
+      "density": 0.1,
+      "friction": 1
+    },
+    "boxleft": {
+      "id": "boxleft",
+      "x": 18,
+      "y": 6,
+      "angle": 0,
+      "width": 5,
+      "height": 5,
+      "restitution": 0.0,
+      "density": 1,
+      "friction": 0.3
+    },
+    "horiplatform": {
+      "id": "horiplatform",
+      "x": 30,
+      "y": 13,
+      "angle": 0,
+      "width": 12,
+      "height": 3,
+      "restitution": 0,
+      "density": 1,
+      "friction": 1
+    },
+    "vertplatform": {
+      "id": "vertplatform",
+      "x": 45,
+      "y": 12,
+      "angle": 0,
+      "width": 3,
+      "height": 12,
+      "restitution": 0,
+      "density": 1,
+      "friction": 1
+    },
+    "curveleft": {
+      "id": "curveleft",
+      "x": 70,
+      "y": 6,
+      "angle": 0,
+      "width": 10,
+      "height": 10,
+      "restitution": 0,
+      "density": 1,
+      "friction": 1
+    },
+    "treestump": {
+      "id": "treestump",
+      "x": 25,
+      "y": 6,
+      "angle": 0,
+      "width": 10,
+      "height": 5,
+      "restitution": 0,
+      "density": 0.1,
+      "friction": 0.1
+    },
+    "woodbox": {
+      "id": "woodbox",
+      "x": 45,
+      "y": 6,
+      "angle": 0,
+      "width": 5,
+      "height": 5,
+      "restitution": 0.5,
+      "density": 0.01,
+      "friction": 0.3
+    },
+    "topwoodbox": {
+      "id": "topwoodbox",
+      "x": 52,
+      "y": 6,
+      "angle": 0,
+      "width": 5,
+      "height": 5,
+      "restitution": 0.5,
+      "density": 0.01,
+      "friction": 1
+    }
+  },
+  "2": {
+    "ground": "woodfloor",
+    "ball": {
+      "id": "ball",
+      "radius": 2,
+      "x": 2,
+      "y": 8,
+      "restitution": 0,
+      "density": 0.01,
+      "friction": 0.5
+    },
+    "force": {
+      "strength": 100
+    },
+    "balloon": {
+      "id": "balloon",
+      "x": 25,
+      "y": 6,
+      "angle": 0,
+      "width": 5,
+      "height": 5,
+      "restitution": 0,
+      "density": 0.1,
+      "friction": 0.3
+    },
+    "icicle": {
+      "id": "icicle",
+      "x": 5,
+      "y": 20,
+      "angle": 0,
+      "width": 8,
+      "height": 4,
+      "restitution": 0,
+      "density": 0.1,
+      "friction": 0.5
+    }
+  },
+  "3": {
+    "ground": "grass",
+    "ball": {
+      "id": "ball",
+      "radius": 2,
+      "x": 2,
+      "y": 8,
+      "restitution": 0,
+      "density": 0.01,
+      "friction": 0.5
+    },
+    "fireballs": [
+      {
+        "id": "fireball1",
+        "radius": 1,
+        "x": 10,
+        "y": 15,
+        "restitution": 0,
+        "density": 0.01,
+        "friction": 0.3
+      },
+      {
+        "id": "fireball2",
+        "radius": 1,
+        "x": 20,
+        "y": 25,
+        "restitution": 0,
+        "density": 0.01,
+        "friction": 0.3
+      },
+      {
+        "id": "fireball3",
+        "radius": 1,
+        "x": 30,
+        "y": 35,
+        "restitution": 0,
+        "density": 0.01,
+        "friction": 0.3
+      },
+      {
+        "id": "fireball4",
+        "radius": 1,
+        "x": 40,
+        "y": 35,
+        "restitution": 0,
+        "density": 0.01,
+        "friction": 0.3
+      }
+    ]
+  },
+  "4": {
+    "ball": {
+      "id": "ball1",
+      "radius": 2,
+      "x": 10,
+      "y": 8,
+      "restitution": 0.5,
+      "density": 2.0,
+      "friction": 5.0
+    }
+  }
+}

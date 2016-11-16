@@ -18,6 +18,7 @@ import com.simplegame.game.userdata.BoundaryUserData;
 import com.simplegame.game.userdata.CircleUserData;
 import com.simplegame.game.userdata.JsonUserData;
 import com.simplegame.game.userdata.RectUserData;
+import com.simplegame.game.userdata.UserData;
 
 import ownLib.Own;
 
@@ -33,6 +34,10 @@ public class Factory {
     private Body body = null;
 
     public Factory() {
+    }
+
+    public World getWorld() {
+        return this.world;
     }
 
     public void setWorld(World world) {
@@ -70,10 +75,20 @@ public class Factory {
 
         CircleUserData circleUserData = new CircleUserData(id, "Circle", circleShape, pos, radius);
 
-        body.createFixture(fixtureDef).setUserData(circleUserData);
+        body.createFixture(fixtureDef).setUserData(new UserData(id, "circle", body.getPosition()));
         body.setUserData(circleUserData);
         body.setSleepingAllowed(false);
         return body;
+    }
+
+    public FixtureDef getCirclulerFixtureDef(BodyType bodyType, Vector2 pos, float angle, float radius, float density, float friction, float restitution, String id) {
+        bodyDef = getBodyDef(bodyType, pos, angle);
+        body = world.createBody(bodyDef);
+
+        CircleShape circleShape = createCircleShape(radius);
+        fixtureDef = getFixtureDef(circleShape, density, friction, restitution);
+
+        return fixtureDef;
     }
 
     public Body getPolygonBody(BodyType bodyType, Vector2 pos, float angle, Vector2[] vertices, float density, float friction, float restitution, Object userData) {
@@ -81,6 +96,7 @@ public class Factory {
         body = world.createBody(bodyDef);
 
         PolygonShape polygonShape = createPolygonShape(vertices);
+
         fixtureDef = getFixtureDef(polygonShape, density, friction, restitution);
 //        polygonShape.dispose();
 
@@ -99,7 +115,7 @@ public class Factory {
         fixtureDef = getFixtureDef(polygonShape, density, friction, restitution);
 
         RectUserData rectUserData = new RectUserData(id, "Rect", polygonShape, pos, width, height);
-        body.createFixture(fixtureDef).setUserData(rectUserData);
+        body.createFixture(fixtureDef).setUserData(new UserData(id, "rect", body.getPosition()));
         body.setUserData(rectUserData);
         body.setSleepingAllowed(true);
         fixtureDef.isSensor = false;
@@ -117,7 +133,7 @@ public class Factory {
         fixtureDef = getFixtureDef(chainShape, density, friction, restitution);
 //        chainShape.dispose();
 
-        body.createFixture(fixtureDef).setUserData(userData);
+        body.createFixture(fixtureDef).setUserData(new UserData("chain", "chain", body.getPosition()));
         body.setSleepingAllowed(false);
         return body;
     }
@@ -145,7 +161,7 @@ public class Factory {
         fixtureDef = getFixtureDef(edgeShape, density, friction, restitution);
 
 
-        body.createFixture(fixtureDef).setUserData(id);
+        body.createFixture(fixtureDef).setUserData(new UserData(id, "edge", body.getPosition()));
         body.setUserData(new BoundaryUserData(id, "Edge", pos));
         body.setSleepingAllowed(false);
         return body;
