@@ -66,6 +66,7 @@ gradle-app.setting
 build/
 
 ## OS Specific
+.directory
 .DS_Store
 Thumbs.db
 ## VisEditor

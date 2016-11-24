@@ -39,8 +39,8 @@ public class AssetsMap {
 
     private void createAudioAssets() {
         try {
-            audioAssets.put("GLASS_ROLLING", "sounds/glassRolling.mp3");
-            audioAssets.put("GLASS_BREAK", "sounds/glassBreak.wav");
+            audioAssets.put("GLASS_ROLLING", "sound/glassRolling.mp3");
+            audioAssets.put("GLASS_BREAK", "sound/glassBreak.wav");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -67,9 +67,9 @@ public class AssetsMap {
 
     private void createFontAssets() {
         try {
-            fontAssets.put("DESYREL", "fonts/desyrel.ttf");
-            fontAssets.put("GOUDY", "fonts/goudy.ttf");
-            fontAssets.put("ACTOR", "fonts/actor.ttf");
+            fontAssets.put("DESYREL", "font/desyrel.ttf");
+            fontAssets.put("GOUDY", "font/goudy.ttf");
+            fontAssets.put("ACTOR", "font/actor.ttf");
         } catch (JSONException e) {
             e.printStackTrace();
         }

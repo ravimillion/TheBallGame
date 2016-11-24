@@ -41,7 +41,6 @@ public class BodyContact implements ContactListener {
         if (userDataA != null && userDataB != null) {
             notifyListener(userDataA, userDataB, impulse.getNormalImpulses()[0]);
         }
-
     }
 
     public void notifyListener(UserData userDataA, UserData userDataB, float normalImpulse) {
