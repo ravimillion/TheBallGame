@@ -180,11 +180,11 @@
     "ball": {
       "id": "ball1",
       "radius": 2,
-      "x": 10,
+      "x": 130,
       "y": 8,
       "restitution": 0.5,
       "density": 2.0,
-      "friction": 5.0
+      "friction": 2.5
     }
   }
 }

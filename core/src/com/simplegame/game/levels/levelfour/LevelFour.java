@@ -8,6 +8,7 @@ import com.badlogic.gdx.utils.Logger;
 import com.kotcrab.vis.runtime.RuntimeContext;
 import com.kotcrab.vis.runtime.data.SceneData;
 import com.kotcrab.vis.runtime.scene.Scene;
+import com.kotcrab.vis.runtime.scene.SceneFeature;
 import com.kotcrab.vis.runtime.scene.SceneLoader;
 import com.kotcrab.vis.runtime.scene.SystemProvider;
 import com.kotcrab.vis.runtime.scene.VisAssetManager;
@@ -49,7 +50,7 @@ public class LevelFour implements Screen {
     public void loadGameScene() {
         SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
 //        parameter.config.addSystem(ControlsLayerSystem.class);
-//        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
+        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
         levelParams.config.addSystem(CameraControllerSystem.class);
@@ -67,21 +68,6 @@ public class LevelFour implements Screen {
         scene = manager.loadSceneNow("scene/levelfour.scene", levelParams);
     }
 
-    public void loadMenuScene() {
-
-//        SceneLoader.SceneParameter parameter = new SceneLoader.SceneParameter();
-//        parameter.config.addSystem(SpriteBoundsCreator.class);
-//        parameter.config.addSystem(SpriteBoundsUpdater.class);
-//        parameter.config.addSystem(new SystemProvider() {
-//            @Override
-//            public BaseSystem create (EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
-//                return new ControlsSceneManager(LevelFour.this);
-//            }
-//        });
-//
-//        controlsScene = manager.loadSceneNow("scene/controls.scene", parameter);
-    }
-
     @Override
     public void show() {
     }
@@ -90,13 +76,11 @@ public class LevelFour implements Screen {
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         scene.render();
-//        controlsScene.render();
     }
 
     @Override
     public void resize(int width, int height) {
         scene.resize(width, height);
-//        controlsScene.resize(width, height);
     }
 
     @Override
