@@ -11,12 +11,11 @@ import com.badlogic.gdx.math.Vector2;
  * Created by ravi on 11.09.16.
  */
 public class Text {
-    private String TAG = "Text";
     public String GOUDY_PAR = "GOUDY_PAR";
     public String DESYREL_PAR = "DESYREL_PAR";
     public String SCORE = "SCORE";
     public String MENU = "MENU";
-
+    private String TAG = "Text";
     private BitmapFont font;
     private FreeTypeFontGenerator.FreeTypeFontParameter parameter;
 
@@ -27,7 +26,7 @@ public class Text {
     }
 
     public void createFontForSplash() {
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/desyrel.ttf"));
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/desyrel.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
         parameter.size = 48;
         splashFont = generator.generateFont(parameter); // font size 12 pixels
