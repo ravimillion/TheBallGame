@@ -7,24 +7,25 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import com.simplegame.game.levels.levelfour.LevelFour;
+import com.simplegame.game.GameController;
 
 import aurelienribon.tweenengine.TweenManager;
 import ownLib.Own;
 
 public class Splash implements Screen {
-    GameEntry gameEntry;
+    GameController gameController;
     private String TAG = "Splash";
-    private SpriteBatch batch;
     private Texture loading = null;
     private Sprite splash = null;
     private float progress = 0;
-    private Vector2 loadingMsgPos = new Vector2(Own.device.getScreenWidth()/2 - 50, Own.device.getScreenHeight()/2);
+    private SpriteBatch spriteBatch;
+    private Vector2 loadingMsgPos = new Vector2(Own.device.getScreenWidth() / 2 - 50, Own.device.getScreenHeight() / 2);
     private TweenManager tweenManager;
+    private GameEntry gameEntry;
 
-    public Splash(GameEntry gameEntry) {
+    public Splash(GameEntry gameEntry, SpriteBatch spriteBatch) {
         this.gameEntry = gameEntry;
-        batch = gameEntry.batch;
+        this.spriteBatch = spriteBatch;
         Own.text.createFontForSplash();
     }
 
@@ -34,7 +35,7 @@ public class Splash implements Screen {
 
     public boolean isLoading() {
         if (!Own.assets.update()) {
-            Own.log(TAG, "Completed: " + Own.assets.getProgress());
+            Own.log(TAG, "Loading: " + Own.assets.getProgress());
             progress = Own.assets.getProgress();
             return true;
         }
@@ -48,7 +49,8 @@ public class Splash implements Screen {
             public void run() {
                 Own.text.createFonts();
                 Own.assets.createImageAssets();
-                gameEntry.setScreen(new LevelFour(gameEntry));
+                dispose();
+                gameEntry.finishLoading();
             }
         });
     }
@@ -58,18 +60,20 @@ public class Splash implements Screen {
         GL20 gl = Gdx.gl;
         gl.glClearColor(0, 0, 0, 1f);
         gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        batch.begin();
 
-        Own.text.showProgress(batch, (int)(progress*100), loadingMsgPos);
-        if (!isLoading()){
+        spriteBatch.begin();
+
+        Own.text.showProgress(spriteBatch, (int) (progress * 100), loadingMsgPos);
+        if (!isLoading()) {
             afterLoad();
-            batch.end();
+            spriteBatch.end();
             gl.glClearColor(0, 0, 0, 1f);
             gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-            batch.begin();
-            Own.text.showProgress(batch, 100, loadingMsgPos);
+            spriteBatch.begin();
+            Own.text.showProgress(spriteBatch, 100, loadingMsgPos);
         }
-        batch.end();
+
+        spriteBatch.end();
     }
 
     @Override
@@ -94,6 +98,6 @@ public class Splash implements Screen {
 
     @Override
     public void dispose() {
-
+        Own.log("Disposing Splash Screen");
     }
 }

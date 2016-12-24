@@ -178,9 +178,9 @@
   },
   "4": {
     "ball": {
-      "id": "ball1",
+      "id": "ball",
       "radius": 2,
-      "x": 130,
+      "x": 110,
       "y": 8,
       "restitution": 0.5,
       "density": 2.0,

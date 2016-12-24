@@ -1,6 +1,6 @@
 {
   "versionCode": 2,
-  "path": "scene/levelfour.scene",
+  "path": "scene/levelone.scene",
   "width": 55.0,
   "height": 32.0,
   "pixelsPerUnit": 100.0,
@@ -19,7 +19,7 @@
       "name": "Controls",
       "id": 0,
       "locked": true,
-      "visible": false,
+      "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     },
@@ -42,7 +42,7 @@
     {
       "name": "Background",
       "id": 3,
-      "locked": false,
+      "locked": true,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -980,9 +980,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 0,
           "@class": "Layer"
         },
@@ -1044,9 +1041,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 0,
           "@class": "Layer"
         },
@@ -1102,9 +1096,6 @@
           "width": 2.56,
           "height": 1.28,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 0,
@@ -1164,9 +1155,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 0,
           "@class": "Layer"
         },
@@ -1224,9 +1212,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 0,
           "@class": "Layer"
         },
@@ -1282,9 +1267,6 @@
           "width": 2.56,
           "height": 1.28,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 0,

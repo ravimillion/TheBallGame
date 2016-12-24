@@ -11,8 +11,8 @@ import com.kotcrab.vis.runtime.component.VisSprite;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
+import com.simplegame.game.GameController;
 import com.simplegame.game.levels.GameState;
-import com.simplegame.game.levels.levelfour.LevelFour;
 import com.simplegame.game.levels.levelfour.component.Bounds;
 
 import java.util.HashMap;
@@ -29,15 +29,15 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
     private PlayerSystem playerSystem;
     private CameraManager cameraManager;
 
-    private LevelFour game;
+    private GameController gameController;
 
     private HashMap<String, Float> posMap = new HashMap<String, Float>();
     private HashMap<String, Entity> entityMap = new HashMap<String, Entity>();
     private HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
     private String[] buttons = {"idPause", "idResume", "idReady", "idQuit", "idRestart", "idGameOver"};
 
-    public ControlsSystem(LevelFour game) {
-        this.game = game;
+    public ControlsSystem(GameController gameController) {
+        this.gameController = gameController;
     }
 
     @Override
@@ -72,13 +72,13 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
                 show("idReady");
                 break;
             case LEVEL_END:
-                game.notify(GameState.LEVEL_END);
+                gameController.notify(GameState.LEVEL_END);
                 break;
             case RESTART_LEVEL:
-                game.notify(GameState.RESTART_LEVEL);
+                gameController.notify(GameState.RESTART_LEVEL);
                 break;
             case QUIT:
-                game.notify(GameState.QUIT);
+                gameController.notify(GameState.QUIT);
             default:
                 break;
         }
@@ -90,13 +90,13 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
         touchPoint.set(screenX, screenY, 0);
         cameraManager.getCamera().unproject(touchPoint);
 
-        String pressedBtn = getPressedButton(touchPoint);
-        if (pressedBtn != null) setState(getNextState(pressedBtn));
+        String buttonId = getPressedButtonId(touchPoint);
+        if (buttonId != null) setState(getNextState(buttonId));
 
         return false;
     }
 
-    private String getPressedButton(Vector3 touchPoint) {
+    private String getPressedButtonId(Vector3 touchPoint) {
         Entity entity;
         Bounds bounds;
 

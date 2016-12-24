@@ -145,112 +145,133 @@ filter: Nearest,Nearest
 repeat: none
 controls/imagebuttons
   rotate: false
-  xy: 2, 1366
+  xy: 2, 1320
   size: 1024, 512
   orig: 1024, 512
   offset: 0, 0
   index: -1
 controls/play
   rotate: false
-  xy: 1417, 1451
+  xy: 1417, 1343
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/quit
   rotate: false
-  xy: 1390, 1321
+  xy: 1417, 1213
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/ready
   rotate: false
-  xy: 1716, 1492
+  xy: 1675, 1192
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/restart
   rotate: false
-  xy: 656, 2
+  xy: 1150, 829
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/resume
   rotate: false
-  xy: 1390, 1191
+  xy: 1150, 699
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
+images/1
+  rotate: false
+  xy: 1417, 1473
+  size: 359, 359
+  orig: 359, 359
+  offset: 0, 0
+  index: -1
+images/2
+  rotate: false
+  xy: 656, 184
+  size: 359, 359
+  orig: 359, 359
+  offset: 0, 0
+  index: -1
+images/3
+  rotate: false
+  xy: 851, 959
+  size: 359, 359
+  orig: 359, 359
+  offset: 0, 0
+  index: -1
 images/bottle
   rotate: false
-  xy: 1716, 1622
+  xy: 1778, 1576
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
   index: -1
 images/carttile
   rotate: false
-  xy: 656, 132
+  xy: 1212, 1240
   size: 203, 203
   orig: 203, 203
   offset: 0, 0
   index: -1
 images/longground
   rotate: false
-  xy: 2, 1880
+  xy: 2, 1834
   size: 1948, 122
   orig: 1948, 122
   offset: 0, 0
   index: -1
 images/square
   rotate: false
-  xy: 1417, 1581
+  xy: 851, 660
   size: 297, 297
   orig: 297, 297
   offset: 0, 0
   index: -1
 images/topwoodbox
   rotate: false
-  xy: 2, 712
+  xy: 2, 666
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
 images/treestump
   rotate: false
-  xy: 1028, 1309
+  xy: 656, 2
   size: 360, 180
   orig: 360, 180
   offset: 0, 0
   index: -1
 images/vertplatform
   rotate: false
-  xy: 656, 591
+  xy: 656, 545
   size: 193, 773
   orig: 193, 773
   offset: 0, 0
   index: -1
 images/woodbox
   rotate: false
-  xy: 2, 58
+  xy: 2, 12
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
 images/woodfloor
   rotate: false
-  xy: 1028, 1491
+  xy: 1028, 1445
   size: 387, 387
   orig: 387, 387
   offset: 0, 0
   index: -1
 particle/fire
   rotate: false
-  xy: 656, 337
+  xy: 1778, 1322
   size: 265, 252
   orig: 265, 252
   offset: 0, 0

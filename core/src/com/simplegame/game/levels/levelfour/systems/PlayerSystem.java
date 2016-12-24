@@ -12,9 +12,9 @@ import com.kotcrab.vis.runtime.component.PhysicsBody;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.physics.PhysicsSystem;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
+import com.simplegame.game.GameController;
 import com.simplegame.game.levels.GameState;
 import com.simplegame.game.objects.Ball;
-import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.userdata.UserData;
 
 import ownLib.BodyContact;
@@ -25,7 +25,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
     public GameState state = GameState.RUNNING;
     public Body body;
     ComponentMapper<PhysicsBody> physicsCm;
-    // needed for drawing the ball
+    //     needed for drawing the ball
     CameraManager cameraManager;
     private PhysicsSystem physicsSystem;
     private ControlsSystem controlsSystem;
@@ -33,7 +33,12 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
     private World physicsWorld;
     private BodyContact bodyContact;  // may be contact system can be created seperately
     private OrthographicCamera camera;
+    private GameController gameController;
 
+
+    public PlayerSystem(GameController gameController) {
+        this.gameController = gameController;
+    }
 
     @Override
     public void afterSceneInit() {
@@ -46,7 +51,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
 
         JsonValue levelData = new JsonReader().parse(Gdx.files.internal("json/leveldata.json")).get("4");
         // create the ball
-        ball = new Ball(GameEntry.batch, levelData.get("ball"));
+        ball = new Ball(this.gameController.spriteBatch, levelData.get("ball"));
         body = ball.getBody();
         state = GameState.RUNNING;
     }
@@ -72,14 +77,14 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
     }
 
     private boolean isLevelEnd() {
-        return body.getPosition().x > GameEntry.WORLD_WIDTH - 5;
+        return body.getPosition().x > this.gameController.WORLD_WIDTH - 5;
     }
 
     private void drawBall() {
-        GameEntry.batch.setProjectionMatrix(cameraManager.getCamera().combined);
-        GameEntry.batch.begin();
+        gameController.spriteBatch.setProjectionMatrix(cameraManager.getCamera().combined);
+        gameController.spriteBatch.begin();
         ball.drawGui();
-        GameEntry.batch.end();
+        gameController.spriteBatch.end();
     }
 
     private void handleInput() {
@@ -105,8 +110,46 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
                 @Override
                 public void run() {
                     Own.log("Hit the spike");
+
                 }
             });
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

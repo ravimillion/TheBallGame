@@ -38,8 +38,10 @@ public class InitSystem extends BaseSystem implements AfterSceneInit {
         entity = idManager.get("fourbox");
         addUserData(entity, "fourbox", "polygon");
 
-        entity = idManager.get("spike");
-        addUserData(entity, "spike", "polygon");
+        Array<Entity> entities = idManager.getMultiple("spike");
+        for (Entity e: entities) {
+            addUserData(e, "spike", "polygon");
+        }
     }
 
     private void addUserData(Entity entity, String id, String type) {
