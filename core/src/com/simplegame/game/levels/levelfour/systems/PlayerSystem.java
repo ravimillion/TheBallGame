@@ -101,19 +101,26 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
 
     @Override
     public void onContact(UserData userDataA, UserData userDataB, float normalImpulse) {
-
-        String idA = userDataA.getId();
-        String idB = userDataB.getId();
-
-        if (idA.startsWith("ball") && idB.equals("spike") || idB.startsWith("ball") && idA.equals("spike")) {
+        if (Own.box2d.exactMatch(userDataA, userDataB, "ball", "spike")) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
                     Own.log("Hit the spike");
-
+                    controlsSystem.setState(GameState.LEVEL_END);
                 }
             });
         }
+
+        if (Own.box2d.startMatch(userDataA, userDataB, "ball", "fireball")) {
+            Gdx.app.postRunnable(new Runnable() {
+                @Override
+                public void run() {
+                    Own.log("Hit the fireball");
+                    controlsSystem.setState(GameState.LEVEL_END);
+                }
+            });
+        }
+
     }
 }
 

@@ -9,6 +9,7 @@ import com.badlogic.gdx.utils.Logger;
 import com.kotcrab.vis.runtime.RuntimeContext;
 import com.kotcrab.vis.runtime.data.SceneData;
 import com.kotcrab.vis.runtime.scene.Scene;
+import com.kotcrab.vis.runtime.scene.SceneFeature;
 import com.kotcrab.vis.runtime.scene.SceneLoader;
 import com.kotcrab.vis.runtime.scene.SystemProvider;
 import com.kotcrab.vis.runtime.scene.VisAssetManager;
@@ -23,13 +24,6 @@ import com.simplegame.game.levels.levelfour.systems.SpriteBoundsCreator;
 import com.simplegame.game.levels.levelfour.systems.SpriteBoundsUpdater;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.screens.MenuScreen;
-
-import ownLib.Own;
-
-
-/**
- * Created by ravi on 26.11.16.
- */
 
 public class GameController implements Screen {
     public static int WORLD_WIDTH = 573;
@@ -112,11 +106,10 @@ public class GameController implements Screen {
     }
 
     public void loadLevelTwoScene() {
-        Own.log("Load Level 2");
         unloadPreviousScene();
 
         SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
-//        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
+        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
         levelParams.config.addSystem(InitSystem.class);

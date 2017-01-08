@@ -38,6 +38,9 @@ public class InitSystem extends BaseSystem implements AfterSceneInit {
         entity = idManager.get("fourbox");
         addUserData(entity, "fourbox", "polygon");
 
+        entity = idManager.get("fireball1");
+        addUserData(entity, "fireball1", "polygon");
+
         Array<Entity> entities = idManager.getMultiple("spike");
         for (Entity e: entities) {
             addUserData(e, "spike", "polygon");

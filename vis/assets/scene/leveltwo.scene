@@ -19,7 +19,7 @@
       "name": "Controls",
       "id": 0,
       "locked": true,
-      "visible": true,
+      "visible": false,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     },
@@ -34,7 +34,7 @@
     {
       "name": "Particles",
       "id": 2,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -48,7 +48,7 @@
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 1,
+  "activeLayerId": 2,
   "groupIds": [],
   "schemes": [
     {
@@ -980,6 +980,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 0,
           "@class": "Layer"
         },
@@ -1041,6 +1044,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 0,
           "@class": "Layer"
         },
@@ -1096,6 +1102,9 @@
           "width": 2.56,
           "height": 1.28,
           "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
         },
         {
           "layerId": 0,
@@ -1155,6 +1164,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 0,
           "@class": "Layer"
         },
@@ -1210,6 +1222,9 @@
           "width": 2.56,
           "height": 1.28,
           "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
         },
         {
           "layerId": 0,
@@ -1269,6 +1284,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 0,
           "@class": "Layer"
         },
@@ -1301,8 +1319,12 @@
           "@class": "Point"
         },
         {
-          "layerId": 3,
+          "layerId": 1,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "b27987ee-834d-4add-8892-bbb7afec2bc3",
@@ -1922,8 +1944,8 @@
     {
       "components": [
         {
-          "x": 77.752975,
-          "y": 23.712734,
+          "x": 77.753,
+          "y": 23.7127,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -1946,8 +1968,12 @@
           "@class": "ProtoVisParticle"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "0fe9c1fa-18fa-46bc-8c9e-0ac9cfa89449",
@@ -1956,6 +1982,10 @@
         {
           "zIndex": 0,
           "@class": "Renderable"
+        },
+        {
+          "id": "partical1",
+          "@class": "VisID"
         },
         {
           "componentsToDrop": [
@@ -4404,6 +4434,114 @@
           "maskBits": -1,
           "categoryBits": 1,
           "@class": "PhysicsProperties"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 22.1363,
+          "y": 22.3155,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "@class": "Point"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "2b323576-0e0d-413b-b2ee-3932540ed76a",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "fireball1",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 21.756298,
+              "y": 21.935501,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 22.516296,
+              "y": 21.935501,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 22.516296,
+              "y": 22.695501,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 21.756298,
+              "y": 22.695501,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 21.756298,
+                "y": 22.695501
+              },
+              {
+                "x": 21.756298,
+                "y": 21.935501
+              },
+              {
+                "x": 22.516296,
+                "y": 21.935501
+              },
+              {
+                "x": 22.516296,
+                "y": 22.695501
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 1.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": false,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"
