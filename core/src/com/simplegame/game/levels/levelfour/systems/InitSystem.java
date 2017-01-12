@@ -12,9 +12,6 @@ import com.kotcrab.vis.runtime.system.physics.PhysicsSystem;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 import com.simplegame.game.userdata.UserData;
 
-/**
- * Created by ravi on 10.11.16.
- */
 
 public class InitSystem extends BaseSystem implements AfterSceneInit {
     ComponentMapper<PhysicsBody> physicsCm;
@@ -38,11 +35,8 @@ public class InitSystem extends BaseSystem implements AfterSceneInit {
         entity = idManager.get("fourbox");
         addUserData(entity, "fourbox", "polygon");
 
-        entity = idManager.get("fireball1");
-        addUserData(entity, "fireball1", "polygon");
-
         Array<Entity> entities = idManager.getMultiple("spike");
-        for (Entity e: entities) {
+        for (Entity e : entities) {
             addUserData(e, "spike", "polygon");
         }
     }
@@ -50,6 +44,7 @@ public class InitSystem extends BaseSystem implements AfterSceneInit {
     private void addUserData(Entity entity, String id, String type) {
         Body body = physicsCm.get(entity).body;
         Array<Fixture> fixtureArray = body.getFixtureList();
+
         for (int i = 0; i < fixtureArray.size; i++) {
             fixtureArray.get(i).setUserData(new UserData(id, type, body.getPosition()));
         }
@@ -59,6 +54,4 @@ public class InitSystem extends BaseSystem implements AfterSceneInit {
     protected void processSystem() {
 
     }
-
-
 }

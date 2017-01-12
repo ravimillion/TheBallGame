@@ -20,8 +20,8 @@
 //import ownLib.Own;
 //import ownLib.controls.ControlsLayer;
 //
-//import static com.simplegame.game.levels.GameState.GAME_OVER;
-//import static com.simplegame.game.levels.GameState.LEVEL_END;
+//import static com.simplegame.game.levels.GameData.GAME_OVER;
+//import static com.simplegame.game.levels.GameData.LEVEL_END;
 //
 //public class LevelThree extends LevelScreen {
 //    private String TAG = "LevelThree";

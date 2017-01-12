@@ -7,7 +7,6 @@ import com.kotcrab.vis.runtime.scene.Scene;
 import com.kotcrab.vis.runtime.scene.SceneLoader;
 import com.kotcrab.vis.runtime.scene.VisAssetManager;
 import com.simplegame.game.GameController;
-import com.simplegame.game.levels.GameState;
 
 public class LevelFour implements Screen {
 
@@ -87,22 +86,22 @@ public class LevelFour implements Screen {
         manager.dispose();
     }
 
-    public void notify(GameState state) {
-        switch (state) {
-            case LEVEL_END:
-                this.dispose();
-//                gameEntry.setScreen(new MenuScreen(gameEntry));
-                break;
-            case RESTART_LEVEL:
-                this.dispose();
-//                gameEntry.setScreen(new LevelFour(gameEntry));
-                break;
-            case QUIT:
-                this.dispose();
-//                this.gameEntry.dispose();
-                System.exit(0);
-            default:
-                break;
-        }
-    }
+//    public void notify(GameData state) {
+//        switch (state) {
+//            case LEVEL_END:
+//                this.dispose();
+////                gameEntry.setScreen(new MenuScreen(gameEntry));
+//                break;
+//            case RESTART_LEVEL:
+//                this.dispose();
+////                gameEntry.setScreen(new LevelFour(gameEntry));
+//                break;
+//            case QUIT:
+//                this.dispose();
+////                this.gameEntry.dispose();
+//                System.exit(0);
+//            default:
+//                break;
+//        }
+//    }
 }

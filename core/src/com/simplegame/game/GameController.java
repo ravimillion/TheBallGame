@@ -9,12 +9,11 @@ import com.badlogic.gdx.utils.Logger;
 import com.kotcrab.vis.runtime.RuntimeContext;
 import com.kotcrab.vis.runtime.data.SceneData;
 import com.kotcrab.vis.runtime.scene.Scene;
-import com.kotcrab.vis.runtime.scene.SceneFeature;
 import com.kotcrab.vis.runtime.scene.SceneLoader;
 import com.kotcrab.vis.runtime.scene.SystemProvider;
 import com.kotcrab.vis.runtime.scene.VisAssetManager;
 import com.kotcrab.vis.runtime.util.EntityEngineConfiguration;
-import com.simplegame.game.levels.GameState;
+import com.simplegame.game.levels.GameData;
 import com.simplegame.game.levels.levelfour.systems.CameraControllerSystem;
 import com.simplegame.game.levels.levelfour.systems.ControlsSystem;
 import com.simplegame.game.levels.levelfour.systems.InitSystem;
@@ -25,15 +24,18 @@ import com.simplegame.game.levels.levelfour.systems.SpriteBoundsUpdater;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.screens.MenuScreen;
 
+import ownLib.Own;
+
 public class GameController implements Screen {
     public static int WORLD_WIDTH = 573;
     public static int WORLD_HEIGHT = 32;
-
+    public static int level;
     public SpriteBatch spriteBatch;
     GameEntry game;
     private Scene scene = null;
     private VisAssetManager manager;
     private String scenePath;
+
 
     public GameController(GameEntry game, SpriteBatch spriteBatch) {
         this.spriteBatch = spriteBatch;
@@ -52,6 +54,7 @@ public class GameController implements Screen {
     }
 
     public void loadMenuScene() {
+        this.level = GameData.MENU_SCREEN;
         unloadPreviousScene();
         SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
 
@@ -70,6 +73,7 @@ public class GameController implements Screen {
     }
 
     public void loadLevelOneScene() {
+        this.level = GameData.LEVEL_ONE;
         unloadPreviousScene();
 
         SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
@@ -77,7 +81,7 @@ public class GameController implements Screen {
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
         levelParams.config.addSystem(InitSystem.class);
-        levelParams.config.addSystem(ParticleSystem.class);
+//        levelParams.config.addSystem(ParticleSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -106,10 +110,11 @@ public class GameController implements Screen {
     }
 
     public void loadLevelTwoScene() {
+        this.level = GameData.LEVEL_TWO;
         unloadPreviousScene();
 
         SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
-        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
+//        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
         levelParams.config.addSystem(InitSystem.class);
@@ -142,13 +147,14 @@ public class GameController implements Screen {
     }
 
     public void loadLevelThreeScene() {
-
+        this.level = GameData.LEVEL_THREE;
     }
 
     @Override
     public void show() {
-        loadMenuScene();
+//        loadMenuScene();
 //        loadLevelOneScene();
+        loadLevelTwoScene();
     }
 
     @Override
@@ -181,7 +187,33 @@ public class GameController implements Screen {
         spriteBatch.dispose();
     }
 
-    public void notify(GameState gameState) {
-        loadMenuScene();
+    private void restartLevel() {
+        switch(this.level) {
+            case GameData.MENU_SCREEN:
+                loadMenuScene();
+                break;
+            case GameData.LEVEL_ONE:
+                loadLevelOneScene();
+                break;
+            case GameData.LEVEL_TWO:
+                loadLevelTwoScene();
+                break;
+            case GameData.LEVEL_THREE:
+                loadLevelThreeScene();
+                break;
+            default:
+                Own.log("Error: Invalid level info: " + this.level);
+        }
+    }
+
+    public void notify(int gameState) {
+        switch(gameState) {
+            case GameData.RESTART_LEVEL:
+                restartLevel();
+                break;
+            case GameData.LEVEL_END:
+                loadMenuScene();
+                break;
+        }
     }
 }

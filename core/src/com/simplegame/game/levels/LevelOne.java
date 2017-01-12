@@ -72,7 +72,7 @@
 //    @Override
 //    public void contactListener(UserData userDataA, UserData userDataB, float normalImpulse) {
 //        if (normalImpulse > 450) {
-//            setGameState(GameState.GAME_OVER);
+//            setGameState(GameData.GAME_OVER);
 //        } else {
 ////            Own.log(TAG, "Impulse: " + normalImpulse);
 //        }
@@ -82,7 +82,7 @@
 //            Gdx.app.postRunnable(new Runnable() {
 //                @Override
 //                public void run() {
-//                    setGameState(GameState.LEVEL_END);
+//                    setGameState(GameData.LEVEL_END);
 ////                    dispose();
 ////                    game.setScreen(new MenuScreen(game));
 //                }

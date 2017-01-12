@@ -9,7 +9,7 @@
 //import com.badlogic.gdx.scenes.scene2d.Stage;
 //import com.badlogic.gdx.scenes.scene2d.ui.Button;
 //import com.badlogic.gdx.utils.viewport.ScreenViewport;
-//import com.simplegame.game.levels.GameState;
+//import com.simplegame.game.levels.GameData;
 //import com.simplegame.game.levels.LevelScreen;
 //
 //import ownLib.Own;
@@ -49,8 +49,8 @@
 //        Own.io.addProcessor(stage);
 //
 //        createControls();
-//        levelScreen.setGameState(GameState.READY);
-//        setState(GameState.READY);
+//        levelScreen.setGameState(GameData.READY);
+//        setState(GameData.READY);
 //    }
 //
 //    private void createControls() {
@@ -64,8 +64,8 @@
 //            }
 //
 //            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-//                levelScreen.setGameState(GameState.PAUSED);
-//                setState(GameState.PAUSED);
+//                levelScreen.setGameState(GameData.PAUSED);
+//                setState(GameData.PAUSED);
 //            }
 //        });
 //
@@ -80,8 +80,8 @@
 //            }
 //
 //            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-//                levelScreen.setGameState(GameState.RUNNING);
-//                setState(GameState.RUNNING);
+//                levelScreen.setGameState(GameData.RUNNING);
+//                setState(GameData.RUNNING);
 //            }
 //        });
 //
@@ -96,8 +96,8 @@
 //            }
 //
 //            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-//                levelScreen.setGameState(GameState.GAME_OVER);
-//                setState(GameState.GAME_OVER);
+//                levelScreen.setGameState(GameData.GAME_OVER);
+//                setState(GameData.GAME_OVER);
 //            }
 //        });
 //
@@ -112,8 +112,8 @@
 //            }
 //
 //            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-//                levelScreen.setGameState(GameState.RUNNING);
-//                setState(GameState.RUNNING);
+//                levelScreen.setGameState(GameData.RUNNING);
+//                setState(GameData.RUNNING);
 //            }
 //        });
 //
@@ -125,8 +125,8 @@
 //        restartButton.addListener(new EventListener() {
 //            @Override
 //            public boolean handle(Event event) {
-//                levelScreen.setGameState(GameState.RUNNING);
-//                setState(GameState.RUNNING);
+//                levelScreen.setGameState(GameData.RUNNING);
+//                setState(GameData.RUNNING);
 //                return true;
 //            }
 //        });
@@ -146,7 +146,7 @@
 //        restartButton.setVisible(false);
 //    }
 //
-//    private void setState(GameState state) {
+//    private void setState(GameData state) {
 //        setAllHidden();
 //
 //        switch (state) {

@@ -76,7 +76,7 @@
 //            Gdx.app.postRunnable(new Runnable() {
 //                @Override
 //                public void run() {
-//                    setGameState(GameState.LEVEL_END);
+//                    setGameState(GameData.LEVEL_END);
 //                }
 //            });
 //        }
@@ -85,7 +85,7 @@
 //            Gdx.app.postRunnable(new Runnable() {
 //                @Override
 //                public void run() {
-//                    setGameState(GameState.GAME_OVER);
+//                    setGameState(GameData.GAME_OVER);
 //                }
 //            });
 //        }

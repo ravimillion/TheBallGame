@@ -12,7 +12,7 @@ import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 import com.simplegame.game.GameController;
-import com.simplegame.game.levels.GameState;
+import com.simplegame.game.levels.GameData;
 import com.simplegame.game.levels.levelfour.component.Bounds;
 
 import java.util.HashMap;
@@ -52,33 +52,33 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
         }
 
         Own.io.addProcessor(this);
-        setState(GameState.READY);
+        setState(GameData.READY);
     }
 
-    public void setState(GameState state) {
+    public void setState(int state) {
         playerSystem.state = state;
 
         hide("*");
         switch (state) {
-            case PAUSED:
+            case GameData.PAUSED:
                 show("idResume");
                 show("idQuit");
                 break;
-            case RUNNING:
+            case GameData.RUNNING:
                 show("idPause");
                 show("idRestart");
                 break;
-            case READY:
+            case GameData.READY:
                 show("idReady");
                 break;
-            case LEVEL_END:
-                gameController.notify(GameState.LEVEL_END);
+            case GameData.LEVEL_END:
+                gameController.notify(GameData.LEVEL_END);
                 break;
-            case RESTART_LEVEL:
-                gameController.notify(GameState.RESTART_LEVEL);
+            case GameData.RESTART_LEVEL:
+                gameController.notify(GameData.RESTART_LEVEL);
                 break;
-            case QUIT:
-                gameController.notify(GameState.QUIT);
+            case GameData.QUIT:
+                gameController.notify(GameData.QUIT);
             default:
                 break;
         }
@@ -114,24 +114,25 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
         return buttonId;
     }
 
-    public GameState getNextState(String buttonId) {
+    public int getNextState(String buttonId) {
 
         switch (buttonId) {
             case "idPause":
-                return GameState.PAUSED;
+                return GameData.PAUSED;
             case "idReady":
-                return GameState.RUNNING;
+                return GameData.RUNNING;
             case "idQuit":
-                return GameState.QUIT;
+                return GameData.QUIT;
             case "idResume":
-                return GameState.RUNNING;
+                return GameData.RUNNING;
             case "idRestart":
-                return GameState.RESTART_LEVEL;
+                return GameData.RESTART_LEVEL;
             default:
+                Own.log("Error: No next level info found: " + buttonId);
                 break;
         }
 
-        return null;
+        return -1;
     }
 
     public void setControlsPosition() {

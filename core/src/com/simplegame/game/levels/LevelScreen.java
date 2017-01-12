@@ -27,7 +27,7 @@
 //    protected float WORLD_HEIGHT = 0;
 //    protected float gravityX = 0;
 //    protected float gravityY = 0;
-//    private GameState gameState = GameState.RUNNING;
+//    private GameData gameState = GameData.RUNNING;
 //
 //    protected abstract void setCamera();
 //
@@ -84,11 +84,11 @@
 //        return false;
 //    }
 //
-//    public GameState getGameState() {
+//    public GameData getGameState() {
 //        return gameState;
 //    }
 //
-//    public void setGameState(GameState gameState) {
+//    public void setGameState(GameData gameState) {
 //        this.gameState = gameState;
 //    }
 //

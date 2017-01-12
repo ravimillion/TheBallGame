@@ -13,16 +13,14 @@ import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.physics.PhysicsSystem;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 import com.simplegame.game.GameController;
-import com.simplegame.game.levels.GameState;
+import com.simplegame.game.levels.GameData;
 import com.simplegame.game.objects.Ball;
-import com.simplegame.game.userdata.UserData;
 
 import ownLib.BodyContact;
 import ownLib.Own;
-import ownLib.listener.OnContactListener;
 
-public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContactListener {
-    public GameState state = GameState.RUNNING;
+public class PlayerSystem extends BaseSystem implements AfterSceneInit {
+    public int state = GameData.RUNNING;
     public Body body;
     ComponentMapper<PhysicsBody> physicsCm;
     //     needed for drawing the ball
@@ -31,7 +29,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
     private ControlsSystem controlsSystem;
     private Ball ball;
     private World physicsWorld;
-    private BodyContact bodyContact;  // may be contact system can be created seperately
+    private BodyContact bodyContact;
     private OrthographicCamera camera;
     private GameController gameController;
 
@@ -46,14 +44,14 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
         Own.box2d.factory.setWorld(physicsWorld);
 
         bodyContact = new BodyContact();
-        bodyContact.setContactListener(this);
+        bodyContact.setContactListener(new ContactListenerSystem(controlsSystem));
         physicsWorld.setContactListener(bodyContact);
 
         JsonValue levelData = new JsonReader().parse(Gdx.files.internal("json/leveldata.json")).get("4");
         // create the ball
         ball = new Ball(this.gameController.spriteBatch, levelData.get("ball"));
         body = ball.getBody();
-        state = GameState.RUNNING;
+        state = GameData.RUNNING;
     }
 
     @Override
@@ -63,12 +61,12 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
 
     @Override
     protected void processSystem() {
-        if (state == GameState.RUNNING) {
+        if (state == GameData.RUNNING) {
             physicsSystem.setEnabled(true);
             handleInput();
 
             if (isLevelEnd()) {
-                controlsSystem.setState(GameState.LEVEL_END);
+                controlsSystem.setState(GameData.LEVEL_END);
             }
         } else {
             physicsSystem.setEnabled(false);
@@ -97,30 +95,6 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit, OnContac
                 body.applyTorque(BALL_FORCE, true);
             }
         }
-    }
-
-    @Override
-    public void onContact(UserData userDataA, UserData userDataB, float normalImpulse) {
-        if (Own.box2d.exactMatch(userDataA, userDataB, "ball", "spike")) {
-            Gdx.app.postRunnable(new Runnable() {
-                @Override
-                public void run() {
-                    Own.log("Hit the spike");
-                    controlsSystem.setState(GameState.LEVEL_END);
-                }
-            });
-        }
-
-        if (Own.box2d.startMatch(userDataA, userDataB, "ball", "fireball")) {
-            Gdx.app.postRunnable(new Runnable() {
-                @Override
-                public void run() {
-                    Own.log("Hit the fireball");
-                    controlsSystem.setState(GameState.LEVEL_END);
-                }
-            });
-        }
-
     }
 }
 

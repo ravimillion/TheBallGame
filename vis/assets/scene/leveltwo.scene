@@ -32,14 +32,6 @@
       "@class": "EditorLayer"
     },
     {
-      "name": "Particles",
-      "id": 2,
-      "locked": false,
-      "visible": true,
-      "cordsSystem": "WORLD",
-      "@class": "EditorLayer"
-    },
-    {
       "name": "Background",
       "id": 3,
       "locked": true,
@@ -48,7 +40,7 @@
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 2,
+  "activeLayerId": 1,
   "groupIds": [],
   "schemes": [
     {
@@ -1702,7 +1694,7 @@
       "components": [
         {
           "x": 83.05609,
-          "y": 20.306028,
+          "y": 20.480127,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -1760,22 +1752,22 @@
           "vertices": [
             {
               "x": 89.566086,
-              "y": 26.816029,
+              "y": 26.990128,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 89.566086,
-              "y": 21.606028,
+              "y": 21.780127,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 89.565865,
-              "y": 20.311987,
+              "y": 20.486086,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 83.06609,
-              "y": 20.316029,
+              "y": 20.490128,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
@@ -1783,19 +1775,19 @@
             [
               {
                 "x": 89.566086,
-                "y": 26.816029
+                "y": 26.990128
               },
               {
                 "x": 83.06609,
-                "y": 20.316029
+                "y": 20.490128
               },
               {
                 "x": 89.565865,
-                "y": 20.311987
+                "y": 20.486086
               },
               {
                 "x": 89.566086,
-                "y": 21.606028
+                "y": 21.780127
               }
             ]
           ],
@@ -1944,8 +1936,8 @@
     {
       "components": [
         {
-          "x": 77.753,
-          "y": 23.7127,
+          "x": 22.862736,
+          "y": 29.34123,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -1968,7 +1960,7 @@
           "@class": "ProtoVisParticle"
         },
         {
-          "layerId": 2,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -4441,8 +4433,8 @@
     {
       "components": [
         {
-          "x": 22.1363,
-          "y": 22.3155,
+          "x": 22.884903,
+          "y": 30.24818,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -4454,6 +4446,10 @@
         {
           "layerId": 1,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "2b323576-0e0d-413b-b2ee-3932540ed76a",
@@ -4470,43 +4466,383 @@
         {
           "vertices": [
             {
-              "x": 21.756298,
-              "y": 21.935501,
+              "x": 22.504902,
+              "y": 29.868181,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 22.516296,
-              "y": 21.935501,
+              "x": 23.2649,
+              "y": 29.868181,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 22.516296,
-              "y": 22.695501,
+              "x": 23.2649,
+              "y": 30.628181,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 21.756298,
-              "y": 22.695501,
+              "x": 22.504902,
+              "y": 30.628181,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 21.756298,
-                "y": 22.695501
+                "x": 22.504902,
+                "y": 30.628181
               },
               {
-                "x": 21.756298,
-                "y": 21.935501
+                "x": 22.504902,
+                "y": 29.868181
               },
               {
-                "x": 22.516296,
-                "y": 21.935501
+                "x": 23.2649,
+                "y": 29.868181
               },
               {
-                "x": 22.516296,
-                "y": 22.695501
+                "x": 23.2649,
+                "y": 30.628181
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 1.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": false,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 52.24191,
+          "y": 10.268513,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "particle/fire.p",
+            "@class": "ParticleAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "pixelsPerUnits": 100.0,
+          "scale": 0.01,
+          "@class": "PixelsPerUnit"
+        },
+        {
+          "activeOnStart": true,
+          "@class": "ProtoVisParticle"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "1ee44e5c-43a5-4979-8541-35c84d300c64",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "partical2",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "PixelsPerUnit",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 52.226627,
+          "y": 11.250231,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "@class": "Point"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "a2fd373e-acf8-40f2-b318-10fe21ae777a",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "fireball2",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 51.846626,
+              "y": 10.870232,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 52.606625,
+              "y": 10.870232,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 52.606625,
+              "y": 11.630232,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 51.846626,
+              "y": 11.630232,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 51.846626,
+                "y": 11.630232
+              },
+              {
+                "x": 51.846626,
+                "y": 10.870232
+              },
+              {
+                "x": 52.606625,
+                "y": 10.870232
+              },
+              {
+                "x": 52.606625,
+                "y": 11.630232
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 1.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": false,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 78.0905,
+          "y": 27.2042,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "particle/fire.p",
+            "@class": "ParticleAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "pixelsPerUnits": 100.0,
+          "scale": 0.01,
+          "@class": "PixelsPerUnit"
+        },
+        {
+          "activeOnStart": true,
+          "@class": "ProtoVisParticle"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "9216bcac-081d-445a-b52c-bce35c3c5849",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "partical3",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "PixelsPerUnit",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 78.0752,
+          "y": 28.1859,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "@class": "Point"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "72b8b2ec-bd79-4eac-aaac-13899bf31a4f",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "fireball3",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 77.6952,
+              "y": 27.8059,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 78.4552,
+              "y": 27.8059,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 78.4552,
+              "y": 28.5659,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 77.6952,
+              "y": 28.5659,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 77.6952,
+                "y": 28.5659
+              },
+              {
+                "x": 77.6952,
+                "y": 27.8059
+              },
+              {
+                "x": 78.4552,
+                "y": 27.8059
+              },
+              {
+                "x": 78.4552,
+                "y": 28.5659
               }
             ]
           ],
