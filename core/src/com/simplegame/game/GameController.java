@@ -148,13 +148,45 @@ public class GameController implements Screen {
 
     public void loadLevelThreeScene() {
         this.level = GameData.LEVEL_THREE;
+        unloadPreviousScene();
+
+        SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
+//        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
+        levelParams.config.addSystem(SpriteBoundsCreator.class);
+        levelParams.config.addSystem(SpriteBoundsUpdater.class);
+        levelParams.config.addSystem(InitSystem.class);
+        levelParams.config.addSystem(ParticleSystem.class);
+
+        levelParams.config.addSystem(new SystemProvider() {
+            @Override
+            public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
+                return new CameraControllerSystem(GameController.this);
+            }
+        });
+
+        levelParams.config.addSystem(new SystemProvider() {
+            @Override
+            public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
+                return new PlayerSystem(GameController.this);
+            }
+        });
+
+        levelParams.config.addSystem(new SystemProvider() {
+            @Override
+            public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
+                return new ControlsSystem(GameController.this);
+            }
+        });
+
+        scenePath = "scene/levelthree.scene";
+        scene = manager.loadSceneNow(scenePath, levelParams);
     }
 
     @Override
     public void show() {
 //        loadMenuScene();
-//        loadLevelOneScene();
-        loadLevelTwoScene();
+        loadLevelOneScene();
+//        loadLevelTwoScene();
     }
 
     @Override
