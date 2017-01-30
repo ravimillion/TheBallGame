@@ -22,6 +22,8 @@ import com.simplegame.game.userdata.UserData;
 
 import java.util.HashMap;
 
+import ownLib.Own;
+
 public class ParticleSystem extends EntityProcessingSystem implements AfterSceneInit {
     ComponentMapper<VisParticle> visParticleCm;
     ComponentMapper<PhysicsBody> physicsBodyCm;
@@ -29,12 +31,15 @@ public class ParticleSystem extends EntityProcessingSystem implements AfterScene
     PhysicsSystem physicsSystem;
     ComponentMapper<Point> pointCm;
     ComponentMapper<Transform> transformCm;
+    PlayerSystem playerSystem;
 
     VisIDManager idManager;
     Body body = null;
-    int FIREBALL_COUNT = 3;
+    int FIREBALL_COUNT = 28;
+    int MAX_PARTICLE_COUNT = 100;
     private HashMap<String, Body> fireballs;
     private RuntimeConfiguration runtimeConfig;
+
     public ParticleSystem() {
         super(Aspect.one(Point.class, VisParticle.class));
     }
@@ -44,18 +49,38 @@ public class ParticleSystem extends EntityProcessingSystem implements AfterScene
         VisID visID = visIDCm.get(e);
         if (visID.id.equals("boundary")) return;
 
+        float minRange = playerSystem.body.getPosition().x - GameController.VIEWPORT_WIDTH / 2;
+        float maxRange = playerSystem.body.getPosition().x + GameController.VIEWPORT_WIDTH / 2;
+
         VisParticle visParticle = visParticleCm.get(e);
 
         body = null;
         if (visParticle != null) {
-            body = fireballs.get("fireball" + visID.id.replace("partical", ""));
-            ParticleEmitter particleEmitter = visParticle.getEffect().getEmitters().get(0);
-            particleEmitter.setPosition(body.getPosition().x, body.getPosition().y);
-        }
+            String fireballId = "fireball" + visID.id.replace("partical", "");
+            body = fireballs.get(fireballId);
+            if (body != null) {
+                float bx = body.getPosition().x;
+                float by = body.getPosition().y;
 
-        if (body != null && body.getPosition().y < 7) {
-            body.setTransform(body.getPosition().x, GameController.WORLD_HEIGHT - 1, body.getAngle());
-            body.setLinearVelocity(0, 0);
+                ParticleEmitter particleEmitter = visParticle.getEffect().getEmitters().get(0);
+
+                if (bx < minRange || bx > maxRange) {
+                    particleEmitter.setMaxParticleCount(0);
+                    return;
+                }
+
+                particleEmitter.setPosition(bx, by);
+                if (particleEmitter.getMaxParticleCount() == 0) {
+                    particleEmitter.setMaxParticleCount(MAX_PARTICLE_COUNT);
+//                    particleEmitter.setMinParticleCount(MAX_PARTICLE_COUNT);
+                }
+                if (by < 7) {
+                    body.setTransform(bx, GameController.WORLD_HEIGHT - 1, body.getAngle());
+                    body.setLinearVelocity(0, 0);
+                }
+            } else {
+                Own.log("empty body: " + fireballId);
+            }
         }
     }
 
@@ -63,8 +88,9 @@ public class ParticleSystem extends EntityProcessingSystem implements AfterScene
     public void afterSceneInit() {
         fireballs = new HashMap<String, Body>();
 
-        for(int i = 1; i < FIREBALL_COUNT + 1; i++) {
-            String id =  "fireball" + i;
+        for (int i = 1; i < FIREBALL_COUNT + 1; i++) {
+            String id = "fireball" + i;
+
 
             Body body = physicsBodyCm.get(idManager.get(id)).body;
             Array<Fixture> fixtureArray = body.getFixtureList();

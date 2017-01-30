@@ -29,6 +29,7 @@ import ownLib.Own;
 public class GameController implements Screen {
     public static int WORLD_WIDTH = 573;
     public static int WORLD_HEIGHT = 32;
+    public static int VIEWPORT_WIDTH = 53;
     public static int level;
     public SpriteBatch spriteBatch;
     GameEntry game;
@@ -155,7 +156,7 @@ public class GameController implements Screen {
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
         levelParams.config.addSystem(InitSystem.class);
-        levelParams.config.addSystem(ParticleSystem.class);
+//        levelParams.config.addSystem(ParticleSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -185,8 +186,9 @@ public class GameController implements Screen {
     @Override
     public void show() {
 //        loadMenuScene();
-        loadLevelOneScene();
+//        loadLevelOneScene();
 //        loadLevelTwoScene();
+        loadLevelThreeScene();
     }
 
     @Override
@@ -240,6 +242,9 @@ public class GameController implements Screen {
 
     public void notify(int gameState) {
         switch(gameState) {
+            case GameData.QUIT:
+                loadMenuScene();
+                break;
             case GameData.RESTART_LEVEL:
                 restartLevel();
                 break;

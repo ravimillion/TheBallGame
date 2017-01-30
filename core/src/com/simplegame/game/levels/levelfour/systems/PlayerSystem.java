@@ -4,12 +4,16 @@ import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.JsonReader;
 import com.badlogic.gdx.utils.JsonValue;
 import com.kotcrab.vis.runtime.component.PhysicsBody;
+import com.kotcrab.vis.runtime.component.Transform;
+import com.kotcrab.vis.runtime.component.VisID;
 import com.kotcrab.vis.runtime.system.CameraManager;
+import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.system.physics.PhysicsSystem;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 import com.simplegame.game.GameController;
@@ -23,8 +27,10 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     public int state = GameData.RUNNING;
     public Body body;
     ComponentMapper<PhysicsBody> physicsCm;
-    //     needed for drawing the ball
+    ComponentMapper<VisID> visIDCm;
     CameraManager cameraManager;
+    ComponentMapper<Transform> transformCm;
+    VisIDManager idManager;
     private PhysicsSystem physicsSystem;
     private ControlsSystem controlsSystem;
     private Ball ball;
@@ -32,7 +38,8 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     private BodyContact bodyContact;
     private OrthographicCamera camera;
     private GameController gameController;
-
+    private float TOP_ANGULAR_VELOCITY = 20;
+    private float TOP_LINEAR_VELOCITY = 35;
 
     public PlayerSystem(GameController gameController) {
         this.gameController = gameController;
@@ -51,6 +58,8 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         // create the ball
         ball = new Ball(this.gameController.spriteBatch, levelData.get("ball"));
         body = ball.getBody();
+        Transform transform = transformCm.get(idManager.get("ballPosition"));
+        body.setTransform(transform.getX(), body.getPosition().y, body.getAngle());
         state = GameData.RUNNING;
     }
 
@@ -62,7 +71,8 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     @Override
     protected void processSystem() {
         if (state == GameData.RUNNING) {
-            physicsSystem.setEnabled(true);
+            if (!physicsSystem.isEnabled()) physicsSystem.setEnabled(true);
+            limitVelocity();
             handleInput();
 
             if (isLevelEnd()) {
@@ -72,6 +82,26 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
             physicsSystem.setEnabled(false);
         }
         drawBall();
+    }
+
+    private void limitVelocity() {
+        float angularVelocity = body.getAngularVelocity();
+
+        if (angularVelocity > TOP_ANGULAR_VELOCITY) body.setAngularVelocity(TOP_ANGULAR_VELOCITY);
+        if (angularVelocity < -TOP_ANGULAR_VELOCITY) body.setAngularVelocity(-TOP_ANGULAR_VELOCITY);
+
+        // limit horizontal velocity
+        Vector2 velocity = body.getLinearVelocity();
+        // moving right
+        if (velocity.x > TOP_LINEAR_VELOCITY) body.setLinearVelocity(TOP_LINEAR_VELOCITY, velocity.y);
+        // moving left
+        if (velocity.x < -TOP_LINEAR_VELOCITY) body.setLinearVelocity(-TOP_LINEAR_VELOCITY, velocity.y);
+
+        // limit vertical velocity
+        // moving up
+        if (velocity.y > TOP_LINEAR_VELOCITY) body.setLinearVelocity(velocity.x, TOP_LINEAR_VELOCITY);
+        // moving down
+        if (velocity.y < -TOP_LINEAR_VELOCITY) body.setLinearVelocity(velocity.x, -TOP_LINEAR_VELOCITY);
     }
 
     private boolean isLevelEnd() {

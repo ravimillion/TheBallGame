@@ -45,6 +45,16 @@ public class ContactListenerSystem implements OnContactListener {
             });
         }
 
+        if (exactMatch(userDataA, userDataB, "ball", "dboxvert")) {
+            Gdx.app.postRunnable(new Runnable() {
+                @Override
+                public void run() {
+                    Own.log("Hit the spike");
+//                    controlsSystem.setState(GameData.LEVEL_END);
+                }
+            });
+        }
+
         if (startMatch(userDataA, userDataB, "ball", "fireball")) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
