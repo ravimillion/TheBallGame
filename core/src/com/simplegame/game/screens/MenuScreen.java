@@ -13,7 +13,7 @@ import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 import com.simplegame.game.GameController;
-import com.simplegame.game.levels.levelfour.component.Bounds;
+import com.simplegame.game.components.Bounds;
 
 import java.util.HashMap;
 

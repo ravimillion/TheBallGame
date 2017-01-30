@@ -13,16 +13,15 @@ import com.kotcrab.vis.runtime.scene.SceneLoader;
 import com.kotcrab.vis.runtime.scene.SystemProvider;
 import com.kotcrab.vis.runtime.scene.VisAssetManager;
 import com.kotcrab.vis.runtime.util.EntityEngineConfiguration;
-import com.simplegame.game.levels.GameData;
-import com.simplegame.game.levels.levelfour.systems.CameraControllerSystem;
-import com.simplegame.game.levels.levelfour.systems.ControlsSystem;
-import com.simplegame.game.levels.levelfour.systems.InitSystem;
-import com.simplegame.game.levels.levelfour.systems.ParticleSystem;
-import com.simplegame.game.levels.levelfour.systems.PlayerSystem;
-import com.simplegame.game.levels.levelfour.systems.SpriteBoundsCreator;
-import com.simplegame.game.levels.levelfour.systems.SpriteBoundsUpdater;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.screens.MenuScreen;
+import com.simplegame.game.systems.CameraControllerSystem;
+import com.simplegame.game.systems.ControlsSystem;
+import com.simplegame.game.systems.InitSystem;
+import com.simplegame.game.systems.ParticleSystem;
+import com.simplegame.game.systems.PlayerSystem;
+import com.simplegame.game.systems.SpriteBoundsCreator;
+import com.simplegame.game.systems.SpriteBoundsUpdater;
 
 import ownLib.Own;
 

@@ -7,12 +7,8 @@ import com.simplegame.game.GameController;
 
 import ownLib.Own;
 
-//import static com.simplegame.game.screens.GameEntry.batch;
-
 
 public class GameEntry extends Game {
-//    public static int WORLD_WIDTH = 573;
-//    public static int WORLD_HEIGHT = 32;
     public static SpriteBatch spriteBatch;
     private String TAG = "GameEntry";
     private Splash splashScreen;
@@ -27,15 +23,8 @@ public class GameEntry extends Game {
     public void create() {
         spriteBatch = new SpriteBatch();
         handler.showAds(false);
-
-//        GameController gameController = new GameController(this, spriteBatch);
-//        this.setScreen(gameController);
-//        gameController.loadMenuScene();
-//        gameController.loadSplashScreen();
-
         splashScreen = new Splash(this, spriteBatch);
         this.setScreen(splashScreen);
-//        this.setScreen(new LevelFour(this));
     }
 
     @Override

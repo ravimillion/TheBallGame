@@ -9,7 +9,7 @@
 //import com.badlogic.gdx.scenes.scene2d.Stage;
 //import com.badlogic.gdx.scenes.scene2d.ui.Button;
 //import com.badlogic.gdx.utils.viewport.ScreenViewport;
-//import com.simplegame.game.levels.GameData;
+//import com.simplegame.game.GameData;
 //import com.simplegame.game.levels.LevelScreen;
 //
 //import ownLib.Own;

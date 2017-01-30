@@ -66,7 +66,7 @@ public class Splash implements Screen {
     @Override
     public void render(float delta) {
         GL20 gl = Gdx.gl;
-        gl.glClearColor(0.8f, 0.8f, 0.8f, 1f);
+        gl.glClearColor(1, 1, 1, 1f);
         gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         spriteBatch.begin();
@@ -76,7 +76,7 @@ public class Splash implements Screen {
         if (!isLoading()) {
             afterLoad();
             spriteBatch.end();
-            gl.glClearColor(0.8f, 0.8f, 0.8f, 1f);
+            gl.glClearColor(1, 1, 1, 1f);
             gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
             spriteBatch.begin();
             spriteBatch.draw(logo, logoPosition.x, logoPosition.y, logoSize.x, logoSize.y);

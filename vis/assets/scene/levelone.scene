@@ -678,47 +678,22 @@
     {
       "components": [
         {
-          "x": 468.29306,
-          "y": 13.134475,
+          "x": 12.4231,
+          "y": -3.2657,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 0.965,
-          "originY": 0.965,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/transball.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 1.93,
-          "height": 1.93,
-          "@class": "ProtoVisSprite"
+          "@class": "Point"
         },
         {
           "layerId": 1,
           "@class": "Layer"
         },
         {
-          "uuid": "3e9e13c9-7e6f-4f82-a46a-73ff390284a9",
+          "uuid": "811a3d49-cdca-4c38-b3d5-2a8bc5b3136b",
           "@class": "VisUUID"
         },
         {
@@ -728,6 +703,19 @@
         {
           "id": "ballPosition",
           "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"

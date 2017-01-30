@@ -49,7 +49,6 @@ public class AssetsMap {
 
     private void createJsonAssets() {
         try {
-            jsonAssets.put("BALLOON", "json/balloon.json");
             jsonAssets.put("BOTTLE", "json/bottle.json");
             jsonAssets.put("TOPWOODBOX", "json/topwoodbox.json");
             jsonAssets.put("WOODBOX", "json/woodbox.json");
@@ -57,9 +56,7 @@ public class AssetsMap {
             jsonAssets.put("BOXRIGHT", "json/boxright.json");
             jsonAssets.put("HORIPLATFORM", "json/horiplatform.json");
             jsonAssets.put("VERTPLATFORM", "json/vertplatform.json");
-            jsonAssets.put("TREESTUMP", "json/treestump.json");
             jsonAssets.put("CURVELEFT", "json/curveleft.json");
-            jsonAssets.put("ICICLE", "json/icicle.json");
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -78,12 +75,7 @@ public class AssetsMap {
     private void createImageAssets() {
         try {
             // texture
-            imageAssets.put("BALLOON", createJSONObject("images/balloon.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("SQUARE", createJSONObject("images/square.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("TREESTUMP", createJSONObject("images/treestump.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BOTTLE", createJSONObject("images/bottle.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("CARTTILE", createJSONObject("images/carttile.jpg", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("ICICLE", createJSONObject("images/icicle.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("GRASS", createJSONObject("images/ground.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("TRANSBALL", createJSONObject("images/transball.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("CURVELEFT", createJSONObject("images/curveleft.png", TEXTURE, 0, 0, 0, 0));
@@ -95,19 +87,10 @@ public class AssetsMap {
             imageAssets.put("HORIPLATFORM", createJSONObject("images/horiplatform.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("VERTPLATFORM", createJSONObject("images/vertplatform.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BOXRIGHT", createJSONObject("images/boxright.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("LOADING", createJSONObject("images/loading.gif", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("BGL1", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("BGL2", createJSONObject("images/background.png", TEXTURE, 0, 0, 0, 0));
-            imageAssets.put("BGL3", createJSONObject("images/ground.png", TEXTURE, 0, 0, 0, 0));
             imageAssets.put("BGMM", createJSONObject("images/bgmm.jpg", TEXTURE, 0, 0, 0, 0));
 
-            // texture atlas files are pack files
-            imageAssets.put("CONTROL_BUTTONS", createJSONObject("controls/imagebuttons.pack", TEXTURE_ATLAS, 0, 0, 0, 0));
-
-            // texture regions
-            for (int i = 0; i < 6; i++) {
-                imageAssets.put(String.valueOf(i + 1), createJSONObject("images/numbers.jpg", TEXTURE_REGION, i * 56, 0, 55, 55));
-            }
+//            // texture atlas files are pack files
+//            imageAssets.put("CONTROL_BUTTONS", createJSONObject("controls/imagebuttons.pack", TEXTURE_ATLAS, 0, 0, 0, 0));
 
         } catch (JSONException e) {
             e.printStackTrace();
