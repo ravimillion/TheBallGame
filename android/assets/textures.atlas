@@ -6,133 +6,140 @@ filter: Nearest,Nearest
 repeat: none
 controls/default
   rotate: false
-  xy: 801, 2
+  xy: 2, 842
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/gameover
   rotate: false
-  xy: 1059, 2
+  xy: 260, 842
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/pause
   rotate: false
-  xy: 1317, 2
+  xy: 518, 842
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 images/background
   rotate: false
-  xy: 2, 1262
+  xy: 2, 1120
   size: 1334, 772
   orig: 1334, 772
   offset: 0, 0
   index: -1
-images/balloon
-  rotate: false
-  xy: 2, 460
-  size: 800, 800
-  orig: 800, 800
-  offset: 0, 0
-  index: -1
-images/bgmm
-  rotate: false
-  xy: 2, 102
-  size: 797, 356
-  orig: 797, 356
-  offset: 0, 0
-  index: -1
 images/boxleft
   rotate: false
-  xy: 1338, 1382
+  xy: 1338, 1240
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
 images/boxright
   rotate: false
-  xy: 804, 608
+  xy: 1338, 586
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
-images/curveleft
+images/carttile
   rotate: false
-  xy: 1458, 827
-  size: 553, 553
-  orig: 553, 553
+  xy: 1649, 5
+  size: 203, 203
+  orig: 203, 203
   offset: 0, 0
   index: -1
 images/g6086
   rotate: false
-  xy: 801, 327
+  xy: 2, 688
   size: 1198, 131
   orig: 1198, 131
   offset: 0, 0
   index: -1
 images/spikes
   rotate: false
-  xy: 801, 327
+  xy: 2, 688
   size: 1198, 131
   orig: 1198, 131
   offset: 0, 0
   index: -1
 images/ground
   rotate: false
-  xy: 804, 460
+  xy: 2, 972
   size: 1026, 146
   orig: 1026, 146
   offset: 0, 0
   index: -1
 images/horiplatform
   rotate: false
-  xy: 801, 132
+  xy: 1260, 391
   size: 773, 193
   orig: 773, 193
   offset: 0, 0
   index: -1
-images/icicle
+images/longground
   rotate: false
-  xy: 1576, 102
-  size: 400, 223
-  orig: 400, 223
+  xy: 2, 1894
+  size: 1948, 122
+  orig: 1948, 122
   offset: 0, 0
   index: -1
 images/numbers
   rotate: false
-  xy: 1458, 646
+  xy: 1649, 210
   size: 389, 179
   orig: 389, 179
   offset: 0, 0
   index: -1
-images/transball
+images/splash
   rotate: false
-  xy: 1849, 632
-  size: 193, 193
-  orig: 193, 193
+  xy: 2, 7
+  size: 602, 679
+  orig: 602, 679
+  offset: 0, 0
+  index: -1
+images/square
+  rotate: false
+  xy: 1030, 821
+  size: 297, 297
+  orig: 297, 297
+  offset: 0, 0
+  index: -1
+images/topwoodbox
+  rotate: false
+  xy: 606, 34
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+images/woodfloor
+  rotate: false
+  xy: 1260, 2
+  size: 387, 387
+  orig: 387, 387
   offset: 0, 0
   index: -1
 particle/glow
   rotate: false
-  xy: 1992, 1992
+  xy: 1952, 1974
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
   index: -1
 particle/particle
   rotate: false
-  xy: 1338, 1348
+  xy: 1952, 1940
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 particle/rainDrop
   rotate: false
-  xy: 1978, 297
+  xy: 1952, 1910
   size: 13, 28
   orig: 13, 28
   offset: 0, 0
@@ -145,133 +152,133 @@ filter: Nearest,Nearest
 repeat: none
 controls/imagebuttons
   rotate: false
-  xy: 2, 1320
+  xy: 804, 1499
   size: 1024, 512
   orig: 1024, 512
   offset: 0, 0
   index: -1
 controls/play
   rotate: false
-  xy: 1417, 1343
+  xy: 1378, 753
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/quit
   rotate: false
-  xy: 1417, 1213
+  xy: 1325, 623
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/ready
   rotate: false
-  xy: 1675, 1192
+  xy: 1325, 493
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/restart
   rotate: false
-  xy: 1150, 829
+  xy: 918, 396
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 controls/resume
   rotate: false
-  xy: 1150, 699
+  xy: 918, 266
   size: 256, 128
   orig: 256, 128
   offset: 0, 0
   index: -1
 images/1
   rotate: false
-  xy: 1417, 1473
+  xy: 656, 780
   size: 359, 359
   orig: 359, 359
   offset: 0, 0
   index: -1
 images/2
   rotate: false
-  xy: 656, 184
+  xy: 1017, 780
   size: 359, 359
   orig: 359, 359
   offset: 0, 0
   index: -1
 images/3
   rotate: false
-  xy: 851, 959
+  xy: 557, 194
   size: 359, 359
   orig: 359, 359
   offset: 0, 0
   index: -1
+images/balloon
+  rotate: false
+  xy: 2, 1211
+  size: 800, 800
+  orig: 800, 800
+  offset: 0, 0
+  index: -1
+images/bgmm
+  rotate: false
+  xy: 804, 1141
+  size: 797, 356
+  orig: 797, 356
+  offset: 0, 0
+  index: -1
 images/bottle
   rotate: false
-  xy: 1778, 1576
+  xy: 1378, 883
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
   index: -1
-images/carttile
+images/curveleft
   rotate: false
-  xy: 1212, 1240
-  size: 203, 203
-  orig: 203, 203
+  xy: 2, 2
+  size: 553, 553
+  orig: 553, 553
   offset: 0, 0
   index: -1
-images/longground
+images/icicle
   rotate: false
-  xy: 2, 1834
-  size: 1948, 122
-  orig: 1948, 122
+  xy: 656, 555
+  size: 400, 223
+  orig: 400, 223
   offset: 0, 0
   index: -1
-images/square
+images/transball
   rotate: false
-  xy: 851, 660
-  size: 297, 297
-  orig: 297, 297
-  offset: 0, 0
-  index: -1
-images/topwoodbox
-  rotate: false
-  xy: 2, 666
-  size: 652, 652
-  orig: 652, 652
+  xy: 1603, 1304
+  size: 193, 193
+  orig: 193, 193
   offset: 0, 0
   index: -1
 images/treestump
   rotate: false
-  xy: 656, 2
+  xy: 557, 12
   size: 360, 180
   orig: 360, 180
   offset: 0, 0
   index: -1
 images/vertplatform
   rotate: false
-  xy: 656, 545
+  xy: 1830, 1238
   size: 193, 773
   orig: 193, 773
   offset: 0, 0
   index: -1
 images/woodbox
   rotate: false
-  xy: 2, 12
+  xy: 2, 557
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
-images/woodfloor
-  rotate: false
-  xy: 1028, 1445
-  size: 387, 387
-  orig: 387, 387
-  offset: 0, 0
-  index: -1
 particle/fire
   rotate: false
-  xy: 1778, 1322
+  xy: 1058, 526
   size: 265, 252
   orig: 265, 252
   offset: 0, 0

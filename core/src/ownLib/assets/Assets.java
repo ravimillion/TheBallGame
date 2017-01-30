@@ -43,8 +43,8 @@ public class Assets extends AssetManager {
         textureObjects = new HashMap<String, Texture>();
         fontObjects = new HashMap<String, BitmapFont>();
         jsonObjects = new HashMap<String, FileHandle>();
-        loadAssetsInMemory();
     }
+
 
 
     public void playSound(String assetKey) {
@@ -94,7 +94,7 @@ public class Assets extends AssetManager {
         return null;
     }
 
-    private void loadAssetsInMemory() {
+    public void loadAssetsInMemory() {
         // get assets
         audioAssets = assetMap.getAudioAssets();
         imageAssets = assetMap.getImageAssets();

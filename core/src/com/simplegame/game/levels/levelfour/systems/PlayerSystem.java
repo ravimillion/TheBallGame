@@ -39,7 +39,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     private OrthographicCamera camera;
     private GameController gameController;
     private float TOP_ANGULAR_VELOCITY = 20;
-    private float TOP_LINEAR_VELOCITY = 35;
+    private float TOP_LINEAR_VELOCITY = 45;
 
     public PlayerSystem(GameController gameController) {
         this.gameController = gameController;

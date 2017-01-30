@@ -185,15 +185,16 @@ public class GameController implements Screen {
 
     @Override
     public void show() {
-//        loadMenuScene();
+        loadMenuScene();
 //        loadLevelOneScene();
 //        loadLevelTwoScene();
-        loadLevelThreeScene();
+//        loadLevelThreeScene();
     }
 
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClearColor(0, 0, 0, 1f);
         if (scene != null) scene.render();
     }
 

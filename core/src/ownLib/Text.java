@@ -22,13 +22,14 @@ public class Text {
     private BitmapFont splashFont;
 
     public void showProgress(SpriteBatch batch, int progress, Vector2 pos) {
-        splashFont.draw(batch, "Completed..." + progress + " % ", pos.x, pos.y);
+        splashFont.draw(batch, progress + " %", pos.x, pos.y);
     }
 
     public void createFontForSplash() {
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/desyrel.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 48;
+        parameter.size = 32;
+        parameter.color = Color.BLACK;
         splashFont = generator.generateFont(parameter); // font size 12 pixels
         generator.dispose();
     }
