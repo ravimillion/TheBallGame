@@ -20,9 +20,8 @@ public class CameraControllerSystem extends BaseSystem implements AfterSceneInit
         float posX = playerSystem.body.getPosition().x;
         if (posX > camera.viewportWidth / 2 && posX < this.gameController.WORLD_WIDTH - camera.viewportWidth / 2) {
             camera.position.x = posX;
-            camera.update();
         }
-
+        camera.update();
     }
 
     @Override
