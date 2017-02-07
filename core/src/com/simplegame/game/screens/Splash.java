@@ -18,17 +18,14 @@ import ownLib.Own;
 
 public class Splash implements Screen {
     GameController gameController;
-    private String TAG = "Splash";
-    private Texture loading = null;
-    private Sprite splash = null;
-    private float progress = 0;
     private SpriteBatch spriteBatch;
 
-    private float logoWidth = Own.device.getScreenWidth() / 6;
-    private float logoHeight = logoWidth + (logoWidth * 0.1f);
-    private Vector2 logoPosition = new Vector2(Own.device.getScreenWidth() / 2 - logoWidth / 2, Own.device.getScreenHeight() / 2 - logoHeight * 0.2f);
-    private Vector2 loadingMsgPos = new Vector2(Own.device.getScreenWidth() / 2 - 60, logoPosition.y - (logoPosition.y * 0.20f));
-    private Vector2 logoSize = new Vector2(logoWidth, logoHeight);
+    private float LOGO_WIDTH = Own.device.getScreenHeight() / 2.5f;
+    private float LOGO_HEIGHT = LOGO_WIDTH * 1.1f;
+    private float FADE_IN_TIME = 0f;
+    private float FADE_OUT_TIME = 0f;
+
+    private Vector2 LOGO_POSITION = new Vector2(Own.device.getScreenWidth() / 2 - LOGO_WIDTH / 2, Own.device.getScreenHeight() / 2 - LOGO_HEIGHT * 0.3f);
     private TweenManager tweenManager;
     private GameEntry gameEntry;
     private Texture logo;
@@ -38,11 +35,9 @@ public class Splash implements Screen {
         this.gameEntry = gameEntry;
         this.spriteBatch = spriteBatch;
         Own.text.createFontForSplash();
-
-        logo = new Texture(Gdx.files.internal("images/splash.png"));
-        splashSprite = new Sprite(logo);
-        splashSprite.setSize(logoWidth, logoHeight);
-        splashSprite.setPosition(logoPosition.x, logoPosition.y);
+        splashSprite = new Sprite(new Texture(Gdx.files.internal("images/splash.png")));
+        splashSprite.setSize(LOGO_WIDTH, LOGO_HEIGHT);
+        splashSprite.setPosition(LOGO_POSITION.x, LOGO_POSITION.y);
     }
 
     @Override
@@ -54,17 +49,30 @@ public class Splash implements Screen {
         Tween.registerAccessor(Sprite.class, new SpriteAccessor());
 
         Tween.set(splashSprite, SpriteAccessor.FADE_IN_OUT).target(0).start(tweenManager);
-        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, 4).target(1).start(tweenManager);
-        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, 2).target(0).delay(3).start(tweenManager).setCallback(new TweenCallback() {
+        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, FADE_IN_TIME).target(1).start(tweenManager).setCallback(new TweenCallback() {
             @Override
             public void onEvent(int type, BaseTween<?> source) {
-                Own.log("Finished....");
                 Gdx.app.postRunnable(new Runnable() {
                     @Override
                     public void run() {
+                        // start loading when the logo is fully shown
                         while (true) {
-                            if (!isLoading()) {
-                                afterLoad();
+                            if (Own.assets.update()) {
+                                // when loading finishes trigger fade out after creating assets
+                                Own.text.createFonts();
+                                Own.assets.createImageAssets();
+                                Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, FADE_OUT_TIME).target(0).start(tweenManager).setCallback(new TweenCallback() {
+                                    @Override
+                                    public void onEvent(int type, BaseTween<?> source) {
+                                        Gdx.app.postRunnable(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                dispose();
+                                                gameEntry.finishLoading();
+                                            }
+                                        });
+                                    }
+                                }).start(tweenManager);
                                 break;
                             }
                         }
@@ -81,45 +89,18 @@ public class Splash implements Screen {
         gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         tweenManager.update(delta);
+
         spriteBatch.begin();
-
-//        Own.text.showProgress(spriteBatch, (int) (progress * 100), loadingMsgPos);
-//        spriteBatch.draw(logo, logoPosition.x, logoPosition.y, logoSize.x, logoSize.y);
-//        if (!isLoading()) {
-//            afterLoad();
-//            spriteBatch.end();
-//            gl.glClearColor(1, 1, 1, 1f);
-//            gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-//            spriteBatch.begin();
-//            spriteBatch.draw(logo, logoPosition.x, logoPosition.y, logoSize.x, logoSize.y);
-//            Own.text.showProgress(spriteBatch, 100, loadingMsgPos);
-//        }
-
-//
         splashSprite.draw(spriteBatch);
         spriteBatch.end();
     }
 
     public boolean isLoading() {
         if (!Own.assets.update()) {
-            progress = Own.assets.getProgress();
-            Own.log(TAG, "Loading: " + progress);
             return true;
         }
 
         return false;
-    }
-
-    public void afterLoad() {
-        Gdx.app.postRunnable(new Runnable() {
-            @Override
-            public void run() {
-                Own.text.createFonts();
-                Own.assets.createImageAssets();
-                dispose();
-                gameEntry.finishLoading();
-            }
-        });
     }
 
     @Override

@@ -16,31 +16,39 @@
   },
   "layers": [
     {
-      "name": "Controls",
+      "name": "Background",
       "id": 0,
-      "locked": true,
-      "visible": false,
-      "cordsSystem": "WORLD",
-      "@class": "EditorLayer"
-    },
-    {
-      "name": "PhysicsObjects",
-      "id": 1,
       "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     },
     {
-      "name": "Background",
-      "id": 3,
+      "name": "Ground",
+      "id": 1,
       "locked": true,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
+    },
+    {
+      "name": "PhysicsObjects",
+      "id": 2,
+      "locked": false,
+      "visible": true,
+      "cordsSystem": "WORLD",
+      "@class": "EditorLayer"
+    },
+    {
+      "name": "Controls",
+      "id": 3,
+      "locked": true,
+      "visible": false,
+      "cordsSystem": "WORLD",
+      "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 1,
+  "activeLayerId": 0,
   "groupIds": [],
   "schemes": [
     {
@@ -82,7 +90,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -146,7 +154,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -210,7 +218,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -274,7 +282,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -297,12 +305,12 @@
           "vertices": [
             {
               "x": 33.9601,
-              "y": 12.501497,
+              "y": 12.501499,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 33.9601,
-              "y": 7.2914996,
+              "y": 7.291499,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
@@ -320,7 +328,7 @@
             [
               {
                 "x": 33.9601,
-                "y": 12.501497
+                "y": 12.501499
               },
               {
                 "x": 27.460098,
@@ -332,7 +340,7 @@
               },
               {
                 "x": 33.9601,
-                "y": 7.2914996
+                "y": 7.291499
               }
             ]
           ],
@@ -398,7 +406,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -522,7 +530,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -586,7 +594,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -650,7 +658,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -689,7 +697,7 @@
           "@class": "Point"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -759,7 +767,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -847,320 +855,73 @@
     {
       "components": [
         {
-          "x": 51.131954,
-          "y": 30.041348,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 1.28,
-          "originY": 0.64,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "controls/pause.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "cfee6ee6-7b7d-4f7a-ab25-645a4915596f",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 100,
-          "@class": "Renderable"
-        },
-        {
-          "id": "idPause",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 25.6046,
-          "y": 22.3706,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 1.28,
-          "originY": 0.64,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "controls/resume.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "f47ab091-c063-40d7-93ff-47434a275b95",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "idResume",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 25.6046,
-          "y": 11.1307,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 1.28,
-          "originY": 0.64,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "controls/quit.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "c9c2f4fe-33c4-4e17-9b09-5b58bb48ee2e",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "idQuit",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 25.6046,
-          "y": 16.9881,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 1.28,
-          "originY": 0.64,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "controls/ready.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "5c575a1b-0125-487e-907f-cbe34a9cce74",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "idReady",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 43.039154,
-          "y": 30.041348,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 1.28,
-          "originY": 0.64,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "controls/restart.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "d75aa718-df1e-4da6-a474-b2ce82034a43",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "idRestart",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 25.820177,
-          "y": 14.909993,
-          "scaleX": 5.0,
+          "x": 22.2233,
+          "y": 18.06,
+          "scaleX": 5.2,
           "scaleY": 5.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 1.28,
-          "originY": 0.64,
+          "originX": 5.335,
+          "originY": 4.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/bgwall.jpg",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.67,
+          "height": 8.0,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "204b651a-c5ad-4832-839a-8881244c56df",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idBackground",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 24.14579,
+          "y": 16.262945,
+          "scaleX": 2.0,
+          "scaleY": 2.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.0,
+          "originY": 1.255,
           "@class": "Origin"
         },
         {
@@ -1182,19 +943,19 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
+          "width": 6.0,
+          "height": 2.51,
           "@class": "ProtoVisSprite"
         },
         {
           "@class": "Invisible"
         },
         {
-          "layerId": 0,
+          "layerId": 3,
           "@class": "Layer"
         },
         {
-          "uuid": "631b2b38-3ab0-4860-b850-f832102043b4",
+          "uuid": "6a3afc7d-88cb-45cf-837b-b383607ccf2e",
           "@class": "VisUUID"
         },
         {
@@ -1203,6 +964,246 @@
         },
         {
           "id": "idGameOver",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 24.0657,
+          "y": 16.1026,
+          "scaleX": 2.0,
+          "scaleY": 2.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.0,
+          "originY": 1.255,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "controls/congratulations.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.0,
+          "height": 2.51,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "09f8816a-22eb-4ea4-ac9b-6179a48cdc0b",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idCongrats",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 24.3487,
+          "y": 12.9459,
+          "scaleX": 1.2,
+          "scaleY": 1.2,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.0,
+          "originY": 1.255,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "controls/quit.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.0,
+          "height": 2.51,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "8ebbc2f8-bb8b-4560-b69e-f0aec0e06926",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idQuit",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 41.793,
+          "y": 29.0,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.0,
+          "originY": 1.255,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "controls/restart.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.0,
+          "height": 2.51,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "97703f83-eabb-44e4-b4fe-e5fb47ae1e36",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idRestart",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 24.3487,
+          "y": 18.8335,
+          "scaleX": 1.2,
+          "scaleY": 1.2,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.0,
+          "originY": 1.255,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "controls/resume.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.0,
+          "height": 2.51,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "67885eb1-eb30-4fc5-882d-88d181f716aa",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idResume",
           "@class": "VisID"
         }
       ],
@@ -1222,7 +1223,7 @@
           "@class": "Point"
         },
         {
-          "layerId": 3,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -1393,8 +1394,12 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "8cfe0d94-a428-4c8f-af6b-9374bae09e32",
@@ -1512,7 +1517,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1636,7 +1641,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1760,7 +1765,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1879,7 +1884,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -2003,7 +2008,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -2119,7 +2124,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -2768,7 +2773,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -3381,8 +3386,8 @@
     {
       "components": [
         {
-          "x": 132.14305,
-          "y": 24.637878,
+          "x": 139.62051,
+          "y": 25.354897,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 45.0,
@@ -3417,7 +3422,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -3434,53 +3439,53 @@
         {
           "vertices": [
             {
-              "x": 135.39291,
-              "y": 32.5462,
+              "x": 142.87038,
+              "y": 33.263218,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 140.0441,
-              "y": 27.883492,
+              "x": 147.52156,
+              "y": 28.60051,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 140.0441,
-              "y": 27.892313,
+              "x": 147.52156,
+              "y": 28.609331,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 135.40305,
-              "y": 23.27053,
+              "x": 142.88051,
+              "y": 23.987549,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 135.39291,
-                "y": 32.5462
+                "x": 142.87038,
+                "y": 33.263218
               },
               {
-                "x": 135.40305,
-                "y": 23.27053
+                "x": 142.88051,
+                "y": 23.987549
               },
               {
-                "x": 140.0441,
-                "y": 27.883492
+                "x": 147.52156,
+                "y": 28.60051
               }
             ],
             [
               {
-                "x": 140.0441,
-                "y": 27.892313
+                "x": 147.52156,
+                "y": 28.609331
               },
               {
-                "x": 135.40305,
-                "y": 23.27053
+                "x": 142.88051,
+                "y": 23.987549
               },
               {
-                "x": 140.0441,
-                "y": 27.883492
+                "x": 147.52156,
+                "y": 28.60051
               }
             ]
           ],
@@ -3546,7 +3551,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4159,8 +4164,8 @@
     {
       "components": [
         {
-          "x": 127.68382,
-          "y": 8.189273,
+          "x": 152.2377,
+          "y": 23.3334,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -4195,7 +4200,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4216,50 +4221,50 @@
         {
           "vertices": [
             {
-              "x": 127.68382,
-              "y": 8.189273,
+              "x": 152.2377,
+              "y": 23.3334,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 134.20381,
-              "y": 8.189273,
+              "x": 158.75769,
+              "y": 23.3334,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 134.20381,
-              "y": 14.709286,
+              "x": 158.75769,
+              "y": 29.853416,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 127.68382,
-              "y": 14.709286,
+              "x": 152.2377,
+              "y": 29.853416,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 127.68382,
-                "y": 14.709286
+                "x": 152.2377,
+                "y": 29.853416
               },
               {
-                "x": 127.68382,
-                "y": 8.189273
+                "x": 152.2377,
+                "y": 23.3334
               },
               {
-                "x": 134.20381,
-                "y": 8.189273
+                "x": 158.75769,
+                "y": 23.3334
               },
               {
-                "x": 134.20381,
-                "y": 14.709286
+                "x": 158.75769,
+                "y": 29.853416
               }
             ]
           ],
           "@class": "VisPolygon"
         },
         {
-          "bodyType": "StaticBody",
+          "bodyType": "KinematicBody",
           "friction": 0.3,
           "density": 0.01,
           "restitution": 0.0,
@@ -4318,7 +4323,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4442,7 +4447,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4530,7 +4535,7 @@
     {
       "components": [
         {
-          "x": 209.58412,
+          "x": 212.00671,
           "y": 13.7788,
           "scaleX": 1.0,
           "scaleY": 1.0,
@@ -4566,7 +4571,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4588,43 +4593,43 @@
         {
           "vertices": [
             {
-              "x": 209.58412,
+              "x": 212.00671,
               "y": 13.7788,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 216.10411,
+              "x": 218.5267,
               "y": 13.7788,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 216.10411,
-              "y": 20.298798,
+              "x": 218.5267,
+              "y": 20.298796,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 209.58412,
-              "y": 20.298798,
+              "x": 212.00671,
+              "y": 20.298796,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 209.58412,
-                "y": 20.298798
+                "x": 212.00671,
+                "y": 20.298796
               },
               {
-                "x": 209.58412,
+                "x": 212.00671,
                 "y": 13.7788
               },
               {
-                "x": 216.10411,
+                "x": 218.5267,
                 "y": 13.7788
               },
               {
-                "x": 216.10411,
-                "y": 20.298798
+                "x": 218.5267,
+                "y": 20.298796
               }
             ]
           ],
@@ -4690,7 +4695,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4806,7 +4811,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4930,7 +4935,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5049,7 +5054,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5137,8 +5142,8 @@
     {
       "components": [
         {
-          "x": 199.77673,
-          "y": 6.056965,
+          "x": 199.7662,
+          "y": 5.9938,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -5173,7 +5178,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5195,43 +5200,43 @@
         {
           "vertices": [
             {
-              "x": 206.28673,
-              "y": 12.566972,
+              "x": 206.2762,
+              "y": 12.503805,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 206.28673,
-              "y": 7.356963,
+              "x": 206.2762,
+              "y": 7.2937984,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 206.28651,
-              "y": 6.0629234,
+              "x": 206.27599,
+              "y": 5.9997587,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 199.78673,
-              "y": 6.066965,
+              "x": 199.7762,
+              "y": 6.0038004,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 206.28673,
-                "y": 12.566972
+                "x": 206.2762,
+                "y": 12.503805
               },
               {
-                "x": 199.78673,
-                "y": 6.066965
+                "x": 199.7762,
+                "y": 6.0038004
               },
               {
-                "x": 206.28651,
-                "y": 6.0629234
+                "x": 206.27599,
+                "y": 5.9997587
               },
               {
-                "x": 206.28673,
-                "y": 7.356963
+                "x": 206.2762,
+                "y": 7.2937984
               }
             ]
           ],
@@ -5239,7 +5244,7 @@
         },
         {
           "bodyType": "StaticBody",
-          "friction": 1.0,
+          "friction": 0.5,
           "density": 0.3,
           "restitution": 0.0,
           "sensor": false,
@@ -5261,8 +5266,8 @@
     {
       "components": [
         {
-          "x": 148.5979,
-          "y": 19.357449,
+          "x": 150.21358,
+          "y": 21.175074,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -5297,7 +5302,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5319,43 +5324,43 @@
         {
           "vertices": [
             {
-              "x": 148.5979,
-              "y": 19.357449,
+              "x": 150.21358,
+              "y": 21.175074,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 156.3279,
-              "y": 19.357449,
+              "x": 157.94357,
+              "y": 21.175074,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 156.3279,
-              "y": 21.287449,
+              "x": 157.94357,
+              "y": 23.105074,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 148.5979,
-              "y": 21.287449,
+              "x": 150.21358,
+              "y": 23.105074,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 148.5979,
-                "y": 21.287449
+                "x": 150.21358,
+                "y": 23.105074
               },
               {
-                "x": 148.5979,
-                "y": 19.357449
+                "x": 150.21358,
+                "y": 21.175074
               },
               {
-                "x": 156.3279,
-                "y": 19.357449
+                "x": 157.94357,
+                "y": 21.175074
               },
               {
-                "x": 156.3279,
-                "y": 21.287449
+                "x": 157.94357,
+                "y": 23.105074
               }
             ]
           ],
@@ -5421,7 +5426,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5501,7 +5506,7 @@
     {
       "components": [
         {
-          "x": 210.72424,
+          "x": 213.14684,
           "y": 26.90307,
           "scaleX": 1.0,
           "scaleY": 1.0,
@@ -5537,7 +5542,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5559,22 +5564,22 @@
         {
           "vertices": [
             {
-              "x": 210.72424,
+              "x": 213.14684,
               "y": 26.90307,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 217.24423,
+              "x": 219.66682,
               "y": 26.90307,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 217.24423,
+              "x": 219.66682,
               "y": 33.423073,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 210.72424,
+              "x": 213.14684,
               "y": 33.423073,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
@@ -5582,19 +5587,19 @@
           "faces": [
             [
               {
-                "x": 210.72424,
+                "x": 213.14684,
                 "y": 33.423073
               },
               {
-                "x": 210.72424,
+                "x": 213.14684,
                 "y": 26.90307
               },
               {
-                "x": 217.24423,
+                "x": 219.66682,
                 "y": 26.90307
               },
               {
-                "x": 217.24423,
+                "x": 219.66682,
                 "y": 33.423073
               }
             ]
@@ -5661,7 +5666,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -6310,7 +6315,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -6403,8 +6408,8 @@
     {
       "components": [
         {
-          "x": 221.29723,
-          "y": 6.1494308,
+          "x": 221.30215,
+          "y": 6.0163875,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -6439,7 +6444,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -6457,572 +6462,572 @@
         {
           "vertices": [
             {
-              "x": 221.29411,
-              "y": 6.929971,
+              "x": 221.29904,
+              "y": 6.796928,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 221.29723,
-              "y": 6.1494308,
+              "x": 221.30215,
+              "y": 6.0163875,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 233.27722,
-              "y": 6.1494308,
+              "x": 233.28215,
+              "y": 6.0163875,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 233.26265,
-              "y": 6.9425406,
+              "x": 233.26758,
+              "y": 6.8094974,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 232.89735,
-              "y": 7.452443,
+              "x": 232.90228,
+              "y": 7.3194,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 232.53206,
-              "y": 6.9323936,
+              "x": 232.53699,
+              "y": 6.7993503,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 232.1566,
-              "y": 7.4473715,
+              "x": 232.16153,
+              "y": 7.314328,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 231.77861,
-              "y": 6.940006,
+              "x": 231.78354,
+              "y": 6.8069625,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 231.40317,
-              "y": 7.4600554,
+              "x": 231.4081,
+              "y": 7.327012,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 231.03273,
-              "y": 6.937467,
+              "x": 231.03766,
+              "y": 6.804424,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 230.64714,
-              "y": 7.45498,
+              "x": 230.65207,
+              "y": 7.3219366,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 230.27165,
-              "y": 6.924785,
+              "x": 230.27658,
+              "y": 6.791742,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 229.9165,
-              "y": 7.472739,
+              "x": 229.92143,
+              "y": 7.339696,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 229.52837,
-              "y": 6.937469,
+              "x": 229.5333,
+              "y": 6.8044257,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 229.15546,
-              "y": 7.4575186,
+              "x": 229.16039,
+              "y": 7.3244753,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 228.78502,
-              "y": 6.924787,
+              "x": 228.78995,
+              "y": 6.7917438,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 228.39688,
-              "y": 7.452447,
+              "x": 228.40181,
+              "y": 7.3194036,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 228.04173,
-              "y": 6.917176,
+              "x": 228.04666,
+              "y": 6.7841325,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 227.66374,
-              "y": 7.465131,
+              "x": 227.66867,
+              "y": 7.3320875,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 227.27803,
-              "y": 6.937469,
+              "x": 227.28296,
+              "y": 6.8044257,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 226.91019,
-              "y": 7.452445,
+              "x": 226.91512,
+              "y": 7.3194017,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 226.5322,
-              "y": 6.937469,
+              "x": 226.53712,
+              "y": 6.8044257,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 226.16435,
-              "y": 7.462592,
+              "x": 226.16928,
+              "y": 7.329549,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 225.7838,
-              "y": 6.9400067,
+              "x": 225.78873,
+              "y": 6.8069634,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 225.41089,
-              "y": 7.465131,
+              "x": 225.41582,
+              "y": 7.3320875,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 225.03543,
-              "y": 6.9323955,
+              "x": 225.04036,
+              "y": 6.799352,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 224.67012,
-              "y": 7.44991,
+              "x": 224.67505,
+              "y": 7.316867,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 224.28194,
-              "y": 6.945081,
+              "x": 224.28687,
+              "y": 6.812038,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 223.90903,
-              "y": 7.472741,
+              "x": 223.91396,
+              "y": 7.339698,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 223.54626,
-              "y": 6.9400077,
+              "x": 223.5512,
+              "y": 6.8069644,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 223.179,
-              "y": 7.4609766,
+              "x": 223.18393,
+              "y": 7.3279333,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 222.80273,
-              "y": 6.9370046,
+              "x": 222.80766,
+              "y": 6.8039613,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 222.41942,
-              "y": 7.4539423,
+              "x": 222.42435,
+              "y": 7.320899,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 222.05019,
-              "y": 6.929971,
+              "x": 222.05511,
+              "y": 6.796928,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 221.67743,
-              "y": 7.4539423,
+              "x": 221.68236,
+              "y": 7.320899,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 221.67743,
-                "y": 7.4539423
+                "x": 221.68236,
+                "y": 7.320899
               },
               {
-                "x": 221.29411,
-                "y": 6.929971
+                "x": 221.29904,
+                "y": 6.796928
               },
               {
-                "x": 222.05019,
-                "y": 6.929971
+                "x": 222.05511,
+                "y": 6.796928
               }
             ],
             [
               {
-                "x": 222.41942,
-                "y": 7.4539423
+                "x": 222.42435,
+                "y": 7.320899
               },
               {
-                "x": 222.05019,
-                "y": 6.929971
+                "x": 222.05511,
+                "y": 6.796928
               },
               {
-                "x": 222.80273,
-                "y": 6.9370046
+                "x": 222.80766,
+                "y": 6.8039613
               }
             ],
             [
               {
-                "x": 223.179,
-                "y": 7.4609766
+                "x": 223.18393,
+                "y": 7.3279333
               },
               {
-                "x": 222.80273,
-                "y": 6.9370046
+                "x": 222.80766,
+                "y": 6.8039613
               },
               {
-                "x": 223.54626,
-                "y": 6.9400077
+                "x": 223.5512,
+                "y": 6.8069644
               }
             ],
             [
               {
-                "x": 222.80273,
-                "y": 6.9370046
+                "x": 222.80766,
+                "y": 6.8039613
               },
               {
-                "x": 222.05019,
-                "y": 6.929971
+                "x": 222.05511,
+                "y": 6.796928
               },
               {
-                "x": 225.03543,
-                "y": 6.9323955
+                "x": 225.04036,
+                "y": 6.799352
               },
               {
-                "x": 223.54626,
-                "y": 6.9400077
+                "x": 223.5512,
+                "y": 6.8069644
               }
             ],
             [
               {
-                "x": 223.90903,
-                "y": 7.472741
+                "x": 223.91396,
+                "y": 7.339698
               },
               {
-                "x": 223.54626,
-                "y": 6.9400077
+                "x": 223.5512,
+                "y": 6.8069644
               },
               {
-                "x": 224.28194,
-                "y": 6.945081
+                "x": 224.28687,
+                "y": 6.812038
               }
             ],
             [
               {
-                "x": 224.67012,
-                "y": 7.44991
+                "x": 224.67505,
+                "y": 7.316867
               },
               {
-                "x": 224.28194,
-                "y": 6.945081
+                "x": 224.28687,
+                "y": 6.812038
               },
               {
-                "x": 225.03543,
-                "y": 6.9323955
+                "x": 225.04036,
+                "y": 6.799352
               }
             ],
             [
               {
-                "x": 224.28194,
-                "y": 6.945081
+                "x": 224.28687,
+                "y": 6.812038
               },
               {
-                "x": 223.54626,
-                "y": 6.9400077
+                "x": 223.5512,
+                "y": 6.8069644
               },
               {
-                "x": 225.03543,
-                "y": 6.9323955
+                "x": 225.04036,
+                "y": 6.799352
               }
             ],
             [
               {
-                "x": 225.41089,
-                "y": 7.465131
+                "x": 225.41582,
+                "y": 7.3320875
               },
               {
-                "x": 225.03543,
-                "y": 6.9323955
+                "x": 225.04036,
+                "y": 6.799352
               },
               {
-                "x": 225.7838,
-                "y": 6.9400067
+                "x": 225.78873,
+                "y": 6.8069634
               }
             ],
             [
               {
-                "x": 226.16435,
-                "y": 7.462592
+                "x": 226.16928,
+                "y": 7.329549
               },
               {
-                "x": 225.7838,
-                "y": 6.9400067
+                "x": 225.78873,
+                "y": 6.8069634
               },
               {
-                "x": 226.5322,
-                "y": 6.937469
+                "x": 226.53712,
+                "y": 6.8044257
               }
             ],
             [
               {
-                "x": 225.7838,
-                "y": 6.9400067
+                "x": 225.78873,
+                "y": 6.8069634
               },
               {
-                "x": 225.03543,
-                "y": 6.9323955
+                "x": 225.04036,
+                "y": 6.799352
               },
               {
-                "x": 226.5322,
-                "y": 6.937469
+                "x": 226.53712,
+                "y": 6.8044257
               }
             ],
             [
               {
-                "x": 226.91019,
-                "y": 7.452445
+                "x": 226.91512,
+                "y": 7.3194017
               },
               {
-                "x": 226.5322,
-                "y": 6.937469
+                "x": 226.53712,
+                "y": 6.8044257
               },
               {
-                "x": 227.27803,
-                "y": 6.937469
+                "x": 227.28296,
+                "y": 6.8044257
               }
             ],
             [
               {
-                "x": 226.5322,
-                "y": 6.937469
+                "x": 226.53712,
+                "y": 6.8044257
               },
               {
-                "x": 225.03543,
-                "y": 6.9323955
+                "x": 225.04036,
+                "y": 6.799352
               },
               {
-                "x": 228.04173,
-                "y": 6.917176
+                "x": 228.04666,
+                "y": 6.7841325
               },
               {
-                "x": 227.27803,
-                "y": 6.937469
+                "x": 227.28296,
+                "y": 6.8044257
               }
             ],
             [
               {
-                "x": 227.66374,
-                "y": 7.465131
+                "x": 227.66867,
+                "y": 7.3320875
               },
               {
-                "x": 227.27803,
-                "y": 6.937469
+                "x": 227.28296,
+                "y": 6.8044257
               },
               {
-                "x": 228.04173,
-                "y": 6.917176
+                "x": 228.04666,
+                "y": 6.7841325
               }
             ],
             [
               {
-                "x": 225.03543,
-                "y": 6.9323955
+                "x": 225.04036,
+                "y": 6.799352
               },
               {
-                "x": 222.05019,
-                "y": 6.929971
+                "x": 222.05511,
+                "y": 6.796928
               },
               {
-                "x": 228.04173,
-                "y": 6.917176
+                "x": 228.04666,
+                "y": 6.7841325
               }
             ],
             [
               {
-                "x": 222.05019,
-                "y": 6.929971
+                "x": 222.05511,
+                "y": 6.796928
               },
               {
-                "x": 221.29411,
-                "y": 6.929971
+                "x": 221.29904,
+                "y": 6.796928
               },
               {
-                "x": 221.29723,
-                "y": 6.1494308
+                "x": 221.30215,
+                "y": 6.0163875
               },
               {
-                "x": 233.27722,
-                "y": 6.1494308
+                "x": 233.28215,
+                "y": 6.0163875
               },
               {
-                "x": 228.04173,
-                "y": 6.917176
+                "x": 228.04666,
+                "y": 6.7841325
               }
             ],
             [
               {
-                "x": 228.39688,
-                "y": 7.452447
+                "x": 228.40181,
+                "y": 7.3194036
               },
               {
-                "x": 228.04173,
-                "y": 6.917176
+                "x": 228.04666,
+                "y": 6.7841325
               },
               {
-                "x": 228.78502,
-                "y": 6.924787
+                "x": 228.78995,
+                "y": 6.7917438
               }
             ],
             [
               {
-                "x": 229.15546,
-                "y": 7.4575186
+                "x": 229.16039,
+                "y": 7.3244753
               },
               {
-                "x": 228.78502,
-                "y": 6.924787
+                "x": 228.78995,
+                "y": 6.7917438
               },
               {
-                "x": 229.52837,
-                "y": 6.937469
+                "x": 229.5333,
+                "y": 6.8044257
               }
             ],
             [
               {
-                "x": 229.9165,
-                "y": 7.472739
+                "x": 229.92143,
+                "y": 7.339696
               },
               {
-                "x": 229.52837,
-                "y": 6.937469
+                "x": 229.5333,
+                "y": 6.8044257
               },
               {
-                "x": 230.27165,
-                "y": 6.924785
+                "x": 230.27658,
+                "y": 6.791742
               }
             ],
             [
               {
-                "x": 229.52837,
-                "y": 6.937469
+                "x": 229.5333,
+                "y": 6.8044257
               },
               {
-                "x": 228.78502,
-                "y": 6.924787
+                "x": 228.78995,
+                "y": 6.7917438
               },
               {
-                "x": 230.27165,
-                "y": 6.924785
+                "x": 230.27658,
+                "y": 6.791742
               }
             ],
             [
               {
-                "x": 228.78502,
-                "y": 6.924787
+                "x": 228.78995,
+                "y": 6.7917438
               },
               {
-                "x": 228.04173,
-                "y": 6.917176
+                "x": 228.04666,
+                "y": 6.7841325
               },
               {
-                "x": 230.27165,
-                "y": 6.924785
+                "x": 230.27658,
+                "y": 6.791742
               }
             ],
             [
               {
-                "x": 230.64714,
-                "y": 7.45498
+                "x": 230.65207,
+                "y": 7.3219366
               },
               {
-                "x": 230.27165,
-                "y": 6.924785
+                "x": 230.27658,
+                "y": 6.791742
               },
               {
-                "x": 231.03273,
-                "y": 6.937467
+                "x": 231.03766,
+                "y": 6.804424
               }
             ],
             [
               {
-                "x": 231.40317,
-                "y": 7.4600554
+                "x": 231.4081,
+                "y": 7.327012
               },
               {
-                "x": 231.03273,
-                "y": 6.937467
+                "x": 231.03766,
+                "y": 6.804424
               },
               {
-                "x": 231.77861,
-                "y": 6.940006
+                "x": 231.78354,
+                "y": 6.8069625
               }
             ],
             [
               {
-                "x": 231.03273,
-                "y": 6.937467
+                "x": 231.03766,
+                "y": 6.804424
               },
               {
-                "x": 230.27165,
-                "y": 6.924785
+                "x": 230.27658,
+                "y": 6.791742
               },
               {
-                "x": 232.53206,
-                "y": 6.9323936
+                "x": 232.53699,
+                "y": 6.7993503
               },
               {
-                "x": 231.77861,
-                "y": 6.940006
+                "x": 231.78354,
+                "y": 6.8069625
               }
             ],
             [
               {
-                "x": 232.1566,
-                "y": 7.4473715
+                "x": 232.16153,
+                "y": 7.314328
               },
               {
-                "x": 231.77861,
-                "y": 6.940006
+                "x": 231.78354,
+                "y": 6.8069625
               },
               {
-                "x": 232.53206,
-                "y": 6.9323936
+                "x": 232.53699,
+                "y": 6.7993503
               }
             ],
             [
               {
-                "x": 230.27165,
-                "y": 6.924785
+                "x": 230.27658,
+                "y": 6.791742
               },
               {
-                "x": 228.04173,
-                "y": 6.917176
+                "x": 228.04666,
+                "y": 6.7841325
               },
               {
-                "x": 233.27722,
-                "y": 6.1494308
+                "x": 233.28215,
+                "y": 6.0163875
               },
               {
-                "x": 232.53206,
-                "y": 6.9323936
+                "x": 232.53699,
+                "y": 6.7993503
               }
             ],
             [
               {
-                "x": 232.89735,
-                "y": 7.452443
+                "x": 232.90228,
+                "y": 7.3194
               },
               {
-                "x": 232.53206,
-                "y": 6.9323936
+                "x": 232.53699,
+                "y": 6.7993503
               },
               {
-                "x": 233.27722,
-                "y": 6.1494308
+                "x": 233.28215,
+                "y": 6.0163875
               },
               {
-                "x": 233.26265,
-                "y": 6.9425406
+                "x": 233.26758,
+                "y": 6.8094974
               }
             ]
           ],
@@ -7088,7 +7093,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7211,7 +7216,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7335,7 +7340,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7459,7 +7464,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7547,8 +7552,8 @@
     {
       "components": [
         {
-          "x": 120.813576,
-          "y": 10.1239195,
+          "x": 127.349365,
+          "y": 17.125372,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 45.0,
@@ -7583,7 +7588,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7605,53 +7610,53 @@
         {
           "vertices": [
             {
-              "x": 120.98918,
-              "y": 14.72884,
+              "x": 127.52498,
+              "y": 21.730291,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 125.43724,
-              "y": 14.737572,
+              "x": 131.97305,
+              "y": 21.739023,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 120.81147,
-              "y": 10.106011,
+              "x": 127.34726,
+              "y": 17.107464,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 116.19158,
-              "y": 14.731754,
+              "x": 122.72737,
+              "y": 21.733206,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 125.43724,
-                "y": 14.737572
+                "x": 131.97305,
+                "y": 21.739023
               },
               {
-                "x": 120.98918,
-                "y": 14.72884
+                "x": 127.52498,
+                "y": 21.730291
               },
               {
-                "x": 120.81147,
-                "y": 10.106011
+                "x": 127.34726,
+                "y": 17.107464
               }
             ],
             [
               {
-                "x": 120.81147,
-                "y": 10.106011
+                "x": 127.34726,
+                "y": 17.107464
               },
               {
-                "x": 120.98918,
-                "y": 14.72884
+                "x": 127.52498,
+                "y": 21.730291
               },
               {
-                "x": 116.19158,
-                "y": 14.731754
+                "x": 122.72737,
+                "y": 21.733206
               }
             ]
           ],
@@ -7717,7 +7722,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7734,8 +7739,8 @@
     {
       "components": [
         {
-          "x": 134.43155,
-          "y": 11.540678,
+          "x": 517.30444,
+          "y": 6.026255,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -7757,7 +7762,7 @@
         },
         {
           "asset": {
-            "relativePath": "images/boxleft.png",
+            "relativePath": "images/boxright.png",
             "@class": "TextureRegionAsset"
           },
           "@class": "AssetReference"
@@ -7770,7 +7775,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7778,7 +7783,7 @@
           "@class": "VisGroup"
         },
         {
-          "uuid": "ef43140a-2752-42c2-b416-603d866105d7",
+          "uuid": "88c98832-1f6a-409d-8f1e-27c784375a96",
           "@class": "VisUUID"
         },
         {
@@ -7786,49 +7791,49 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "downslopebox",
           "@class": "VisID"
         },
         {
           "vertices": [
             {
-              "x": 140.94156,
-              "y": 18.050674,
+              "x": 517.29626,
+              "y": 12.549944,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 140.94156,
-              "y": 12.840677,
+              "x": 523.82434,
+              "y": 6.029818,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 140.94131,
-              "y": 11.546637,
+              "x": 518.6045,
+              "y": 6.0362535,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 134.44154,
-              "y": 11.550678,
+              "x": 517.3032,
+              "y": 6.0419507,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 140.94156,
-                "y": 18.050674
+                "x": 517.29626,
+                "y": 12.549944
               },
               {
-                "x": 134.44154,
-                "y": 11.550678
+                "x": 517.3032,
+                "y": 6.0419507
               },
               {
-                "x": 140.94131,
-                "y": 11.546637
+                "x": 518.6045,
+                "y": 6.0362535
               },
               {
-                "x": 140.94156,
-                "y": 12.840677
+                "x": 523.82434,
+                "y": 6.029818
               }
             ]
           ],
@@ -7837,8 +7842,8 @@
         {
           "bodyType": "StaticBody",
           "friction": 1.0,
-          "density": 0.3,
-          "restitution": 0.0,
+          "density": 0.2,
+          "restitution": 3.0,
           "sensor": false,
           "gravityScale": 1.0,
           "linearDamping": 0.0,
@@ -7894,7 +7899,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -8543,7 +8548,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -8631,7 +8636,7 @@
     {
       "components": [
         {
-          "x": 206.30527,
+          "x": 207.51657,
           "y": 6.0183015,
           "scaleX": 1.0,
           "scaleY": 1.0,
@@ -8667,7 +8672,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -8681,22 +8686,22 @@
         {
           "vertices": [
             {
-              "x": 206.30527,
+              "x": 207.51657,
               "y": 6.018302,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 208.23526,
+              "x": 209.44656,
               "y": 6.018302,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 208.23526,
+              "x": 209.44656,
               "y": 13.7483015,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 206.30527,
+              "x": 207.51657,
               "y": 13.7483015,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
@@ -8704,19 +8709,19 @@
           "faces": [
             [
               {
-                "x": 206.30527,
+                "x": 207.51657,
                 "y": 13.7483015
               },
               {
-                "x": 206.30527,
+                "x": 207.51657,
                 "y": 6.018302
               },
               {
-                "x": 208.23526,
+                "x": 209.44656,
                 "y": 6.018302
               },
               {
-                "x": 208.23526,
+                "x": 209.44656,
                 "y": 13.7483015
               }
             ]
@@ -8747,7 +8752,7 @@
     {
       "components": [
         {
-          "x": 212.98132,
+          "x": 215.40392,
           "y": 9.139917,
           "scaleX": 1.0,
           "scaleY": 1.0,
@@ -8783,7 +8788,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -8805,22 +8810,22 @@
         {
           "vertices": [
             {
-              "x": 213.15694,
+              "x": 215.57953,
               "y": 13.744837,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 217.605,
+              "x": 220.02759,
               "y": 13.753569,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 212.97922,
+              "x": 215.40181,
               "y": 9.122009,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 208.35933,
+              "x": 210.78192,
               "y": 13.747751,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
@@ -8828,29 +8833,29 @@
           "faces": [
             [
               {
-                "x": 217.605,
+                "x": 220.02759,
                 "y": 13.753569
               },
               {
-                "x": 213.15694,
+                "x": 215.57953,
                 "y": 13.744837
               },
               {
-                "x": 212.97922,
+                "x": 215.40181,
                 "y": 9.122009
               }
             ],
             [
               {
-                "x": 212.97922,
+                "x": 215.40181,
                 "y": 9.122009
               },
               {
-                "x": 213.15694,
+                "x": 215.57953,
                 "y": 13.744837
               },
               {
-                "x": 208.35933,
+                "x": 210.78192,
                 "y": 13.747751
               }
             ]
@@ -8881,7 +8886,7 @@
     {
       "components": [
         {
-          "x": 208.20357,
+          "x": 210.62616,
           "y": 20.373117,
           "scaleX": 1.0,
           "scaleY": 1.0,
@@ -8917,7 +8922,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -8939,22 +8944,22 @@
         {
           "vertices": [
             {
-              "x": 208.20357,
+              "x": 210.62616,
               "y": 20.373117,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 214.72356,
+              "x": 217.14615,
               "y": 20.373117,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 214.72356,
+              "x": 217.14615,
               "y": 26.893116,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 208.20357,
+              "x": 210.62616,
               "y": 26.893116,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
@@ -8962,19 +8967,19 @@
           "faces": [
             [
               {
-                "x": 208.20357,
+                "x": 210.62616,
                 "y": 26.893116
               },
               {
-                "x": 208.20357,
+                "x": 210.62616,
                 "y": 20.373117
               },
               {
-                "x": 214.72356,
+                "x": 217.14615,
                 "y": 20.373117
               },
               {
-                "x": 214.72356,
+                "x": 217.14615,
                 "y": 26.893116
               }
             ]
@@ -9041,7 +9046,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9165,7 +9170,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9281,7 +9286,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9361,8 +9366,8 @@
     {
       "components": [
         {
-          "x": 339.1078,
-          "y": 16.9749,
+          "x": 343.2448,
+          "y": 12.531409,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -9397,7 +9402,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9419,43 +9424,43 @@
         {
           "vertices": [
             {
-              "x": 339.1078,
-              "y": 16.9749,
+              "x": 343.2448,
+              "y": 12.531409,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 346.83783,
-              "y": 16.9749,
+              "x": 350.97485,
+              "y": 12.531409,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 346.83783,
-              "y": 18.9049,
+              "x": 350.97485,
+              "y": 14.4614105,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 339.1078,
-              "y": 18.9049,
+              "x": 343.2448,
+              "y": 14.4614105,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 339.1078,
-                "y": 18.9049
+                "x": 343.2448,
+                "y": 14.4614105
               },
               {
-                "x": 339.1078,
-                "y": 16.9749
+                "x": 343.2448,
+                "y": 12.531409
               },
               {
-                "x": 346.83783,
-                "y": 16.9749
+                "x": 350.97485,
+                "y": 12.531409
               },
               {
-                "x": 346.83783,
-                "y": 18.9049
+                "x": 350.97485,
+                "y": 14.4614105
               }
             ]
           ],
@@ -9521,7 +9526,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -10134,8 +10139,8 @@
     {
       "components": [
         {
-          "x": 327.5551,
-          "y": 10.6032,
+          "x": 330.1599,
+          "y": 17.804714,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -10170,7 +10175,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -10192,43 +10197,43 @@
         {
           "vertices": [
             {
-              "x": 327.5551,
-              "y": 10.6032,
+              "x": 330.1599,
+              "y": 17.804714,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 335.28516,
-              "y": 10.6032,
+              "x": 337.88995,
+              "y": 17.804714,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 335.28516,
-              "y": 12.533201,
+              "x": 337.88995,
+              "y": 19.734713,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 327.5551,
-              "y": 12.533201,
+              "x": 330.1599,
+              "y": 19.734713,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 327.5551,
-                "y": 12.533201
+                "x": 330.1599,
+                "y": 19.734713
               },
               {
-                "x": 327.5551,
-                "y": 10.6032
+                "x": 330.1599,
+                "y": 17.804714
               },
               {
-                "x": 335.28516,
-                "y": 10.6032
+                "x": 337.88995,
+                "y": 17.804714
               },
               {
-                "x": 335.28516,
-                "y": 12.533201
+                "x": 337.88995,
+                "y": 19.734713
               }
             ]
           ],
@@ -10294,7 +10299,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -10943,7 +10948,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -11592,7 +11597,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -12205,8 +12210,8 @@
     {
       "components": [
         {
-          "x": 350.97028,
-          "y": 22.429955,
+          "x": 355.2606,
+          "y": 11.397846,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -12241,7 +12246,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -12263,43 +12268,43 @@
         {
           "vertices": [
             {
-              "x": 350.97028,
-              "y": 22.429955,
+              "x": 355.2606,
+              "y": 11.397846,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 358.70032,
-              "y": 22.429955,
+              "x": 362.99063,
+              "y": 11.397846,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 358.70032,
-              "y": 24.359955,
+              "x": 362.99063,
+              "y": 13.327845,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 350.97028,
-              "y": 24.359955,
+              "x": 355.2606,
+              "y": 13.327845,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 350.97028,
-                "y": 24.359955
+                "x": 355.2606,
+                "y": 13.327845
               },
               {
-                "x": 350.97028,
-                "y": 22.429955
+                "x": 355.2606,
+                "y": 11.397846
               },
               {
-                "x": 358.70032,
-                "y": 22.429955
+                "x": 362.99063,
+                "y": 11.397846
               },
               {
-                "x": 358.70032,
-                "y": 24.359955
+                "x": 362.99063,
+                "y": 13.327845
               }
             ]
           ],
@@ -12329,8 +12334,8 @@
     {
       "components": [
         {
-          "x": 362.8933,
-          "y": 14.068361,
+          "x": 367.0303,
+          "y": 9.778094,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -12365,7 +12370,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -12387,43 +12392,43 @@
         {
           "vertices": [
             {
-              "x": 362.8933,
-              "y": 14.068361,
+              "x": 367.0303,
+              "y": 9.778094,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 370.62335,
-              "y": 14.068361,
+              "x": 374.76035,
+              "y": 9.778094,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 370.62335,
-              "y": 15.998362,
+              "x": 374.76035,
+              "y": 11.708095,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 362.8933,
-              "y": 15.998362,
+              "x": 367.0303,
+              "y": 11.708095,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 362.8933,
-                "y": 15.998362
+                "x": 367.0303,
+                "y": 11.708095
               },
               {
-                "x": 362.8933,
-                "y": 14.068361
+                "x": 367.0303,
+                "y": 9.778094
               },
               {
-                "x": 370.62335,
-                "y": 14.068361
+                "x": 374.76035,
+                "y": 9.778094
               },
               {
-                "x": 370.62335,
-                "y": 15.998362
+                "x": 374.76035,
+                "y": 11.708095
               }
             ]
           ],
@@ -12489,7 +12494,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -12618,7 +12623,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13267,7 +13272,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13391,7 +13396,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13515,7 +13520,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13639,7 +13644,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13763,7 +13768,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13887,7 +13892,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13946,6 +13951,523 @@
               {
                 "x": 495.035,
                 "y": 7.303167
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 0.3,
+          "restitution": 0.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 36.009262,
+          "y": -16.451344,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 2.1399994,
+          "originY": 0.08,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "fontSize": 20,
+            "relativePath": "font/desyrel.ttf",
+            "@class": "TtfFontAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "pixelsPerUnits": 100.0,
+          "scale": 0.01,
+          "@class": "PixelsPerUnit"
+        },
+        {
+          "text": "The quick brown fox jumps over the lazy dog",
+          "autoSetOriginToCenter": true,
+          "isUsesDistanceField": false,
+          "@class": "ProtoVisText"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "f8f38d0e-9ceb-43fb-9df3-4563e3b72ed1",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "PixelsPerUnit",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 128.75801,
+          "y": 5.9980574,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.26,
+          "originY": 3.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/boxright.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.52,
+          "height": 6.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "a658f2fb-8503-448a-b08c-c69a07f0eb41",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "downslopebox",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 128.74985,
+              "y": 12.521747,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 135.27794,
+              "y": 6.0016203,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 130.05807,
+              "y": 6.0080557,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 128.7568,
+              "y": 6.013753,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 128.74985,
+                "y": 12.521747
+              },
+              {
+                "x": 128.7568,
+                "y": 6.013753
+              },
+              {
+                "x": 130.05807,
+                "y": 6.0080557
+              },
+              {
+                "x": 135.27794,
+                "y": 6.0016203
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 0.2,
+          "restitution": 3.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 2.9928,
+          "y": 30.3527,
+          "scaleX": 7.0,
+          "scaleY": 7.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.255,
+          "originY": 0.065,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "fontSize": 20,
+            "relativePath": "font/actor.ttf",
+            "@class": "TtfFontAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "pixelsPerUnits": 100.0,
+          "scale": 0.01,
+          "@class": "PixelsPerUnit"
+        },
+        {
+          "@class": "Invisible"
+        },
+        {
+          "text": "Score:",
+          "autoSetOriginToCenter": true,
+          "isUsesDistanceField": false,
+          "@class": "ProtoVisText"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "d06055a3-3e44-4533-94c5-355023c772c4",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idScore",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [],
+          "@class": "VisPolygon"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "PixelsPerUnit",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 24.3088,
+          "y": 15.8294,
+          "scaleX": 3.0,
+          "scaleY": 3.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.0,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "controls/touchToStart.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.0,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "37a159f5-51c6-4f7f-b519-ed451842498d",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idReady",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 48.6074,
+          "y": 29.0,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.0,
+          "originY": 1.255,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "controls/pause.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.0,
+          "height": 2.51,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "f8491d54-ea59-4946-857c-5686b8937d7e",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idPause",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 122.233765,
+          "y": 5.9982038,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.26,
+          "originY": 3.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/boxleft.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.52,
+          "height": 6.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "117e5e9b-d393-44c8-ba42-e1aa01eb72f8",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "upslopebox",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 128.74377,
+              "y": 12.508202,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 128.74377,
+              "y": 7.298203,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 128.74353,
+              "y": 6.0041614,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 122.24376,
+              "y": 6.008204,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 128.74377,
+                "y": 12.508202
+              },
+              {
+                "x": 122.24376,
+                "y": 6.008204
+              },
+              {
+                "x": 128.74353,
+                "y": 6.0041614
+              },
+              {
+                "x": 128.74377,
+                "y": 7.298203
               }
             ]
           ],

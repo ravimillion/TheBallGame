@@ -34,7 +34,7 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
     private HashMap<String, Float> posMap = new HashMap<String, Float>();
     private HashMap<String, Entity> entityMap = new HashMap<String, Entity>();
     private HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
-    private String[] buttons = {"idPause", "idResume", "idReady", "idQuit", "idRestart", "idGameOver"};
+    private String[] buttons = {"idCongrats", "idPause", "idResume", "idReady", "idQuit", "idRestart", "idGameOver"};
 
     public ControlsSystem(GameController gameController) {
         this.gameController = gameController;
@@ -129,10 +129,11 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
                 return GameData.RESTART_LEVEL;
             default:
                 Own.log("Error: No next level info found: " + buttonId);
-                break;
+                return GameData.RUNNING;
+//                break;
         }
 
-        return -1;
+//        return -1;
     }
 
     public void setControlsPosition() {

@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Logger;
 import com.kotcrab.vis.runtime.RuntimeContext;
 import com.kotcrab.vis.runtime.data.SceneData;
+import com.kotcrab.vis.runtime.font.FreeTypeFontProvider;
 import com.kotcrab.vis.runtime.scene.Scene;
 import com.kotcrab.vis.runtime.scene.SceneLoader;
 import com.kotcrab.vis.runtime.scene.SystemProvider;
@@ -15,6 +16,7 @@ import com.kotcrab.vis.runtime.scene.VisAssetManager;
 import com.kotcrab.vis.runtime.util.EntityEngineConfiguration;
 import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.screens.MenuScreen;
+import com.simplegame.game.systems.AlwaysInViewPortSystem;
 import com.simplegame.game.systems.CameraControllerSystem;
 import com.simplegame.game.systems.ControlsSystem;
 import com.simplegame.game.systems.InitSystem;
@@ -42,6 +44,7 @@ public class GameController implements Screen {
         this.game = game;
 
         manager = new VisAssetManager(spriteBatch);
+        manager.enableFreeType(new FreeTypeFontProvider());
         manager.getLogger().setLevel(Logger.ERROR);
     }
 
@@ -103,6 +106,7 @@ public class GameController implements Screen {
                 return new ControlsSystem(GameController.this);
             }
         });
+        levelParams.config.addSystem(AlwaysInViewPortSystem.class);
 
         scenePath = "scene/levelone.scene";
         scene = manager.loadSceneNow(scenePath, levelParams);
@@ -184,8 +188,8 @@ public class GameController implements Screen {
 
     @Override
     public void show() {
-        loadMenuScene();
-//        loadLevelOneScene();
+//        loadMenuScene();
+        loadLevelOneScene();
 //        loadLevelTwoScene();
 //        loadLevelThreeScene();
     }

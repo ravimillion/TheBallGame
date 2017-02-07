@@ -22,7 +22,7 @@ public class GameEntry extends Game {
     @Override
     public void create() {
         spriteBatch = new SpriteBatch();
-        handler.showAds(false);
+        handler.showAds(false); // enable ads
         splashScreen = new Splash(this, spriteBatch);
         this.setScreen(splashScreen);
     }
@@ -40,6 +40,6 @@ public class GameEntry extends Game {
 
     public void finishLoading() {
         this.gameController = new GameController(this, spriteBatch);
-        this.setScreen(this.gameController);;
+        this.setScreen(this.gameController);
     }
 }
