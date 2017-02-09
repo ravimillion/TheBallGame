@@ -34,7 +34,7 @@
     {
       "name": "PhysicsObjects",
       "id": 2,
-      "locked": false,
+      "locked": true,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -43,7 +43,7 @@
       "name": "Controls",
       "id": 3,
       "locked": true,
-      "visible": false,
+      "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
@@ -855,65 +855,8 @@
     {
       "components": [
         {
-          "x": 22.2233,
-          "y": 18.06,
-          "scaleX": 5.2,
-          "scaleY": 5.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 5.335,
-          "originY": 4.0,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/bgwall.jpg",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 10.67,
-          "height": 8.0,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "204b651a-c5ad-4832-839a-8881244c56df",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "idBackground",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 24.14579,
-          "y": 16.262945,
+          "x": 24.1458,
+          "y": 16.2629,
           "scaleX": 2.0,
           "scaleY": 2.0,
           "rotation": 0.0,
@@ -948,18 +891,19 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 3,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "6a3afc7d-88cb-45cf-837b-b383607ccf2e",
           "@class": "VisUUID"
         },
         {
-          "zIndex": 0,
+          "zIndex": 1000,
           "@class": "Renderable"
         },
         {
@@ -1006,9 +950,6 @@
           "width": 6.0,
           "height": 2.51,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 3,
@@ -1068,9 +1009,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -1126,9 +1064,6 @@
           "width": 6.0,
           "height": 2.51,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 3,
@@ -1188,9 +1123,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -1199,7 +1131,7 @@
           "@class": "VisUUID"
         },
         {
-          "zIndex": 0,
+          "zIndex": 1000,
           "@class": "Renderable"
         },
         {
@@ -13980,73 +13912,6 @@
     {
       "components": [
         {
-          "x": 36.009262,
-          "y": -16.451344,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 2.1399994,
-          "originY": 0.08,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "fontSize": 20,
-            "relativePath": "font/desyrel.ttf",
-            "@class": "TtfFontAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "text": "The quick brown fox jumps over the lazy dog",
-          "autoSetOriginToCenter": true,
-          "isUsesDistanceField": false,
-          "@class": "ProtoVisText"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "f8f38d0e-9ceb-43fb-9df3-4563e3b72ed1",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
           "x": 128.75801,
           "y": 5.9980574,
           "scaleX": 1.0,
@@ -14206,9 +14071,6 @@
           "@class": "PixelsPerUnit"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "text": "Score:",
           "autoSetOriginToCenter": true,
           "isUsesDistanceField": false,
@@ -14289,9 +14151,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -14300,7 +14159,7 @@
           "@class": "VisUUID"
         },
         {
-          "zIndex": 0,
+          "zIndex": 1000,
           "@class": "Renderable"
         },
         {
@@ -14347,9 +14206,6 @@
           "width": 6.0,
           "height": 2.51,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 3,
@@ -14490,6 +14346,63 @@
           "maskBits": -1,
           "categoryBits": 1,
           "@class": "PhysicsProperties"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 22.4962,
+          "y": 22.1749,
+          "scaleX": 5.4,
+          "scaleY": 5.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.115,
+          "originY": 5.005,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/wall2.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.23,
+          "height": 10.01,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "63f5690d-94b7-4199-9fe7-c0ff62bbe93d",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idBackground",
+          "@class": "VisID"
         }
       ],
       "@class": "EntityScheme"
