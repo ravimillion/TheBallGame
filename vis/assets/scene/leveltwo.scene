@@ -16,9 +16,9 @@
   },
   "layers": [
     {
-      "name": "Controls",
+      "name": "Background",
       "id": 0,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -26,36 +26,36 @@
     {
       "name": "PhysicsObjects",
       "id": 1,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     },
     {
-      "name": "Background",
+      "name": "Controls",
       "id": 3,
-      "locked": true,
-      "visible": true,
+      "locked": false,
+      "visible": false,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 0,
+  "activeLayerId": 1,
   "groupIds": [],
   "schemes": [
     {
       "components": [
         {
-          "x": 324.45737,
-          "y": 2.4054103,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
+          "x": 55.989117,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 9.74,
-          "originY": 0.61,
+          "originX": 5.13,
+          "originY": 1.26,
           "@class": "Origin"
         },
         {
@@ -69,7 +69,7 @@
         },
         {
           "asset": {
-            "relativePath": "images/longground.png",
+            "relativePath": "images/stoneground.png",
             "@class": "TextureRegionAsset"
           },
           "@class": "AssetReference"
@@ -77,23 +77,23 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
+          "width": 10.26,
+          "height": 2.52,
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
           "groupIds": [
-            2,
-            4
+            1,
+            21
           ],
           "@class": "VisGroup"
         },
         {
-          "uuid": "6eca084c-ba57-41f3-bc58-87b2a029e869",
+          "uuid": "fa59e0dc-e6f7-4a98-9341-af26ff8a071f",
           "@class": "VisUUID"
         },
         {
@@ -101,7 +101,6 @@
           "@class": "Renderable"
         },
         {
-          "id": "ground",
           "@class": "VisID"
         }
       ],
@@ -110,16 +109,16 @@
     {
       "components": [
         {
-          "x": 419.90524,
-          "y": 2.4047294,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
+          "x": 80.52792,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 9.74,
-          "originY": 0.61,
+          "originX": 5.13,
+          "originY": 1.26,
           "@class": "Origin"
         },
         {
@@ -133,7 +132,7 @@
         },
         {
           "asset": {
-            "relativePath": "images/longground.png",
+            "relativePath": "images/stoneground.png",
             "@class": "TextureRegionAsset"
           },
           "@class": "AssetReference"
@@ -141,23 +140,23 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
+          "width": 10.26,
+          "height": 2.52,
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
           "groupIds": [
             1,
-            4
+            21
           ],
           "@class": "VisGroup"
         },
         {
-          "uuid": "58bdc8be-106a-44d7-8f56-2a3d0605a4e0",
+          "uuid": "db937049-63b1-4fbc-8b96-6f96d220e5f5",
           "@class": "VisUUID"
         },
         {
@@ -165,71 +164,6 @@
           "@class": "Renderable"
         },
         {
-          "id": "ground",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 515.4031,
-          "y": 2.4102302,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 3,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            1,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "6651ef55-01e3-41db-8fc8-93281022e120",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
           "@class": "VisID"
         }
       ],
@@ -479,198 +413,6 @@
           "maskBits": -1,
           "categoryBits": 1,
           "@class": "PhysicsProperties"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 133.50342,
-          "y": 2.3987622,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 3,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            0,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "c794ff1c-691a-4203-ae5c-ec0e0666d437",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 38.00562,
-          "y": 2.3932624,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 3,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            0,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "e7b7a70a-8c61-4b7e-beae-d4e1b3105ee8",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 228.95955,
-          "y": 2.3999095,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 3,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            2,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "bf664a57-f692-4703-b2a8-065477ca9660",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
-          "@class": "VisID"
         }
       ],
       "@class": "EntityScheme"
@@ -936,16 +678,16 @@
     {
       "components": [
         {
-          "x": 51.131954,
-          "y": 30.041348,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
+          "x": 47.9496,
+          "y": 28.5189,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 1.28,
-          "originY": 0.64,
+          "originX": 3.0,
+          "originY": 1.255,
           "@class": "Origin"
         },
         {
@@ -967,12 +709,15 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
+          "width": 6.0,
+          "height": 2.51,
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
           "@class": "Layer"
         },
         {
@@ -980,11 +725,11 @@
           "@class": "VisGroup"
         },
         {
-          "uuid": "cfee6ee6-7b7d-4f7a-ab25-645a4915596f",
+          "uuid": "e7e2f71c-b065-46d0-b32f-e440e59cced3",
           "@class": "VisUUID"
         },
         {
-          "zIndex": 100,
+          "zIndex": 0,
           "@class": "Renderable"
         },
         {
@@ -997,16 +742,16 @@
     {
       "components": [
         {
-          "x": 25.6046,
-          "y": 22.3706,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
+          "x": 23.922876,
+          "y": 21.2879,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 1.28,
-          "originY": 0.64,
+          "originX": 3.0,
+          "originY": 1.255,
           "@class": "Origin"
         },
         {
@@ -1028,20 +773,27 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
+          "width": 6.0,
+          "height": 2.51,
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
           "@class": "Layer"
         },
         {
-          "uuid": "f47ab091-c063-40d7-93ff-47434a275b95",
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "00417831-7879-4be4-9fd6-ac5f2e735efe",
           "@class": "VisUUID"
         },
         {
-          "zIndex": 100,
+          "zIndex": 0,
           "@class": "Renderable"
         },
         {
@@ -1054,16 +806,16 @@
     {
       "components": [
         {
-          "x": 25.6046,
-          "y": 11.1307,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
+          "x": 23.922876,
+          "y": 9.784,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 1.28,
-          "originY": 0.64,
+          "originX": 3.0,
+          "originY": 1.255,
           "@class": "Origin"
         },
         {
@@ -1085,20 +837,27 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
+          "width": 6.0,
+          "height": 2.51,
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
           "@class": "Layer"
         },
         {
-          "uuid": "c9c2f4fe-33c4-4e17-9b09-5b58bb48ee2e",
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "76c8bde8-4004-4392-84bc-d2f4593b972a",
           "@class": "VisUUID"
         },
         {
-          "zIndex": 100,
+          "zIndex": 0,
           "@class": "Renderable"
         },
         {
@@ -1111,73 +870,16 @@
     {
       "components": [
         {
-          "x": 25.6046,
-          "y": 16.9881,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
+          "x": 41.047237,
+          "y": 28.518885,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 1.28,
-          "originY": 0.64,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "controls/ready.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "5c575a1b-0125-487e-907f-cbe34a9cce74",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 100,
-          "@class": "Renderable"
-        },
-        {
-          "id": "idReady",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 43.039154,
-          "y": 30.041348,
-          "scaleX": 2.0,
-          "scaleY": 2.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 1.28,
-          "originY": 0.64,
+          "originX": 3.0,
+          "originY": 1.255,
           "@class": "Origin"
         },
         {
@@ -1199,16 +901,23 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 2.56,
-          "height": 1.28,
+          "width": 6.0,
+          "height": 2.51,
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
           "@class": "Layer"
         },
         {
-          "uuid": "d75aa718-df1e-4da6-a474-b2ce82034a43",
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "f18d1cc9-b5f5-4296-9e56-863c661bb115",
           "@class": "VisUUID"
         },
         {
@@ -1261,15 +970,22 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "631b2b38-3ab0-4860-b850-f832102043b4",
           "@class": "VisUUID"
         },
         {
-          "zIndex": 100,
+          "zIndex": 102,
           "@class": "Renderable"
         },
         {
@@ -11957,6 +11673,2126 @@
             }
           ],
           "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 23.9229,
+          "y": 14.249,
+          "scaleX": 3.0,
+          "scaleY": 3.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.0,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "controls/touchToStart.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.0,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "5f9d7766-9bab-4ac2-8258-253586f305e6",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 101,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idReady",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 23.922876,
+          "y": 14.3198,
+          "scaleX": 3.0,
+          "scaleY": 3.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.0,
+          "originY": 1.255,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "controls/congratulations.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.0,
+          "height": 2.51,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "69a2c521-9ca0-4200-9bed-f4424cc1cda8",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 100,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idCongrats",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 22.2213,
+          "y": 16.6571,
+          "scaleX": 5.65,
+          "scaleY": 5.65,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.78,
+          "originY": 2.305,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/background4.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 11.56,
+          "height": 4.61,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "dd837c77-069a-4f65-9c17-236f71ff0503",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idBackground",
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 31.5388,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "9885fa2c-433f-4901-8667-c3e1ff496e12",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": -0.0025997758,
+          "y": -0.04419774,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.0,
+          "originY": 0.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "70f3f919-cfc9-4856-8c2c-4b0c31edf558",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 154.0661,
+          "y": 1.7113876,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            3,
+            4,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "95f9117e-6e9f-4339-ae52-7143d4bf35e1",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 178.60489,
+          "y": 1.7113876,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            3,
+            4,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "6796d8a3-4092-45f8-bf5f-20db3d3c22fd",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 129.61578,
+          "y": 1.7113876,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            5,
+            4,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "e03a522b-b752-4bc2-a6fa-240aa6612fae",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 105.076965,
+          "y": 1.7113876,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            5,
+            4,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "c3d1c4cc-df18-431f-8e7b-a75fc9c5c6d8",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 252.17555,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            7,
+            8,
+            9,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "14b4833e-f10e-4b95-bc60-bdabe6861b2d",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 276.71436,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            7,
+            8,
+            9,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "d78f58b6-88d5-4e5a-894e-1469b5b29f3c",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 227.72523,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            10,
+            8,
+            9,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "085b3b6f-4963-422f-a807-962133978895",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 203.18643,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            10,
+            8,
+            9,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "a4d0a3ec-718c-4b67-b4f0-a1d5864d427d",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 350.2525,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            11,
+            12,
+            9,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "01223d7c-59f2-4262-9ca6-066c65a9503b",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 374.79132,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            11,
+            12,
+            9,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "9fee9cd1-9e76-4a48-9644-8886e3d6aac8",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 325.8022,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            13,
+            12,
+            9,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "6936749a-ba23-4cef-9fa8-f75a57821b68",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 301.26337,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            13,
+            12,
+            9,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "9aced2f5-efe9-40d0-a4e7-4833109e9f60",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 448.18277,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            14,
+            15,
+            16,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "f926c4b3-4670-4bfe-87cf-57f9a3416cd7",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 472.7216,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            14,
+            15,
+            16,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "e0e673d4-d4e7-42f6-9ff0-9aa2663fd2aa",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 423.73245,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            17,
+            15,
+            16,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "dec4b96b-6f92-4609-924d-303eb316d6d1",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 399.19366,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            17,
+            15,
+            16,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "1c179b7f-8c46-46ad-84a5-b6cb30508c47",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 546.2597,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            18,
+            19,
+            16,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "55a174a7-021b-470f-8922-d16f0bb63185",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 570.7985,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            18,
+            19,
+            16,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "a19660ca-7c09-4bd0-9c36-70e805a835fb",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 521.8094,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            20,
+            19,
+            16,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "f9234cd5-72ca-4f36-be48-d680eafedc3c",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 497.2706,
+          "y": 1.713,
+          "scaleX": 2.4,
+          "scaleY": 2.4,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.13,
+          "originY": 1.26,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/stoneground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.26,
+          "height": 2.52,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [
+            20,
+            19,
+            16,
+            21
+          ],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "07d22139-82bf-449e-ae02-e7b436e41e30",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 54.137,
+          "y": 6.0582,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 3.035,
+          "originY": 2.91,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/yellowpaint.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 6.07,
+          "height": 5.82,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "93314961-30e2-4f7c-8bd1-de2434cfe7ad",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 54.91954,
+              "y": 10.878001,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.60711,
+              "y": 10.730313,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.478718,
+              "y": 10.527591,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.221935,
+              "y": 10.365412,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.167873,
+              "y": 10.020782,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.170036,
+              "y": 9.5316,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.49236,
+              "y": 8.779509,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.89733,
+              "y": 8.3580065,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.877174,
+              "y": 6.575467,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 55.674557,
+              "y": 6.1827264,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 55.864975,
+              "y": 6.063714,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 58.554653,
+              "y": 6.0399113,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 58.79268,
+              "y": 6.2303314,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.423443,
+              "y": 6.515961,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.429573,
+              "y": 8.4295635,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.79397,
+              "y": 8.798952,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 60.011112,
+              "y": 9.170831,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 60.2008,
+              "y": 9.670006,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 60.20579,
+              "y": 10.094304,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 60.07599,
+              "y": 10.388815,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.841377,
+              "y": 10.458699,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.741543,
+              "y": 10.703295,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.432056,
+              "y": 10.850551,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.42456,
+              "y": 11.219938,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.289818,
+              "y": 11.444575,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.18998,
+              "y": 11.329764,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.23241,
+              "y": 11.185004,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 58.885487,
+              "y": 10.883004,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 58.226574,
+              "y": 10.705797,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 57.3006,
+              "y": 10.620927,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 55.99526,
+              "y": 10.725754,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 55.176613,
+              "y": 11.050217,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 55.126698,
+              "y": 11.279837,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.927025,
+              "y": 11.282332,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 54.927025,
+                "y": 11.282332
+              },
+              {
+                "x": 54.91954,
+                "y": 10.878001
+              },
+              {
+                "x": 55.176613,
+                "y": 11.050217
+              },
+              {
+                "x": 55.126698,
+                "y": 11.279837
+              }
+            ],
+            [
+              {
+                "x": 55.176613,
+                "y": 11.050217
+              },
+              {
+                "x": 54.91954,
+                "y": 10.878001
+              },
+              {
+                "x": 55.99526,
+                "y": 10.725754
+              }
+            ],
+            [
+              {
+                "x": 59.18998,
+                "y": 11.329764
+              },
+              {
+                "x": 59.23241,
+                "y": 11.185004
+              },
+              {
+                "x": 59.42456,
+                "y": 11.219938
+              },
+              {
+                "x": 59.289818,
+                "y": 11.444575
+              }
+            ],
+            [
+              {
+                "x": 59.23241,
+                "y": 11.185004
+              },
+              {
+                "x": 58.885487,
+                "y": 10.883004
+              },
+              {
+                "x": 59.432056,
+                "y": 10.850551
+              },
+              {
+                "x": 59.42456,
+                "y": 11.219938
+              }
+            ],
+            [
+              {
+                "x": 58.885487,
+                "y": 10.883004
+              },
+              {
+                "x": 58.226574,
+                "y": 10.705797
+              },
+              {
+                "x": 59.741543,
+                "y": 10.703295
+              },
+              {
+                "x": 59.432056,
+                "y": 10.850551
+              }
+            ],
+            [
+              {
+                "x": 58.226574,
+                "y": 10.705797
+              },
+              {
+                "x": 57.3006,
+                "y": 10.620927
+              },
+              {
+                "x": 59.841377,
+                "y": 10.458699
+              },
+              {
+                "x": 59.741543,
+                "y": 10.703295
+              }
+            ],
+            [
+              {
+                "x": 59.841377,
+                "y": 10.458699
+              },
+              {
+                "x": 57.3006,
+                "y": 10.620927
+              },
+              {
+                "x": 60.07599,
+                "y": 10.388815
+              }
+            ],
+            [
+              {
+                "x": 57.3006,
+                "y": 10.620927
+              },
+              {
+                "x": 55.99526,
+                "y": 10.725754
+              },
+              {
+                "x": 60.20579,
+                "y": 10.094304
+              },
+              {
+                "x": 60.07599,
+                "y": 10.388815
+              }
+            ],
+            [
+              {
+                "x": 55.99526,
+                "y": 10.725754
+              },
+              {
+                "x": 54.91954,
+                "y": 10.878001
+              },
+              {
+                "x": 59.429573,
+                "y": 8.4295635
+              },
+              {
+                "x": 59.79397,
+                "y": 8.798952
+              },
+              {
+                "x": 60.011112,
+                "y": 9.170831
+              },
+              {
+                "x": 60.2008,
+                "y": 9.670006
+              },
+              {
+                "x": 60.20579,
+                "y": 10.094304
+              }
+            ],
+            [
+              {
+                "x": 59.429573,
+                "y": 8.4295635
+              },
+              {
+                "x": 54.91954,
+                "y": 10.878001
+              },
+              {
+                "x": 58.79268,
+                "y": 6.2303314
+              },
+              {
+                "x": 59.423443,
+                "y": 6.515961
+              }
+            ],
+            [
+              {
+                "x": 58.79268,
+                "y": 6.2303314
+              },
+              {
+                "x": 54.91954,
+                "y": 10.878001
+              },
+              {
+                "x": 54.89733,
+                "y": 8.3580065
+              },
+              {
+                "x": 55.674557,
+                "y": 6.1827264
+              },
+              {
+                "x": 55.864975,
+                "y": 6.063714
+              },
+              {
+                "x": 58.554653,
+                "y": 6.0399113
+              }
+            ],
+            [
+              {
+                "x": 54.877174,
+                "y": 6.575467
+              },
+              {
+                "x": 55.674557,
+                "y": 6.1827264
+              },
+              {
+                "x": 54.89733,
+                "y": 8.3580065
+              }
+            ],
+            [
+              {
+                "x": 54.89733,
+                "y": 8.3580065
+              },
+              {
+                "x": 54.91954,
+                "y": 10.878001
+              },
+              {
+                "x": 54.60711,
+                "y": 10.730313
+              },
+              {
+                "x": 54.478718,
+                "y": 10.527591
+              },
+              {
+                "x": 54.167873,
+                "y": 10.020782
+              },
+              {
+                "x": 54.170036,
+                "y": 9.5316
+              },
+              {
+                "x": 54.49236,
+                "y": 8.779509
+              }
+            ],
+            [
+              {
+                "x": 54.221935,
+                "y": 10.365412
+              },
+              {
+                "x": 54.167873,
+                "y": 10.020782
+              },
+              {
+                "x": 54.478718,
+                "y": 10.527591
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
         }
       ],
       "@class": "EntityScheme"

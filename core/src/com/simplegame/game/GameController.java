@@ -18,6 +18,7 @@ import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.screens.MenuScreen;
 import com.simplegame.game.systems.AlwaysInViewPortSystem;
 import com.simplegame.game.systems.CameraControllerSystem;
+import com.simplegame.game.systems.ContactListenerSystem;
 import com.simplegame.game.systems.ControlsSystem;
 import com.simplegame.game.systems.InitSystem;
 import com.simplegame.game.systems.ParticleSystem;
@@ -123,6 +124,7 @@ public class GameController implements Screen {
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
         levelParams.config.addSystem(InitSystem.class);
         levelParams.config.addSystem(ParticleSystem.class);
+        levelParams.config.addSystem(ContactListenerSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -145,6 +147,7 @@ public class GameController implements Screen {
             }
         });
 
+        levelParams.config.addSystem(AlwaysInViewPortSystem.class);
         scenePath = "scene/leveltwo.scene";
         scene = manager.loadSceneNow(scenePath, levelParams);
 
@@ -189,8 +192,8 @@ public class GameController implements Screen {
     @Override
     public void show() {
 //        loadMenuScene();
-        loadLevelOneScene();
-//        loadLevelTwoScene();
+//        loadLevelOneScene();
+        loadLevelTwoScene();
 //        loadLevelThreeScene();
     }
 

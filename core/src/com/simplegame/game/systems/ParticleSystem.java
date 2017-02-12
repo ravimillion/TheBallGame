@@ -36,7 +36,7 @@ public class ParticleSystem extends EntityProcessingSystem implements AfterScene
     VisIDManager idManager;
     Body body = null;
     int FIREBALL_COUNT = 28;
-    int MAX_PARTICLE_COUNT = 100;
+    int MAX_PARTICLE_COUNT = 500;
     private HashMap<String, Body> fireballs;
     private RuntimeConfiguration runtimeConfig;
 

@@ -33,6 +33,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     VisIDManager idManager;
     private PhysicsSystem physicsSystem;
     private ControlsSystem controlsSystem;
+    private ContactListenerSystem contactListenerSystem;
     private Ball ball;
     private World physicsWorld;
     private BodyContact bodyContact;
@@ -51,7 +52,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         Own.box2d.factory.setWorld(physicsWorld);
 
         bodyContact = new BodyContact();
-        bodyContact.setContactListener(new com.simplegame.game.systems.ContactListenerSystem(controlsSystem));
+        bodyContact.setContactListener(contactListenerSystem);
         physicsWorld.setContactListener(bodyContact);
 
         JsonValue levelData = new JsonReader().parse(Gdx.files.internal("json/leveldata.json")).get("4");

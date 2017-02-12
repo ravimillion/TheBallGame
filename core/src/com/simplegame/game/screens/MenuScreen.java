@@ -4,7 +4,6 @@ import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.math.Vector3;
 import com.kotcrab.vis.runtime.component.Invisible;
 import com.kotcrab.vis.runtime.component.Transform;
@@ -17,20 +16,24 @@ import com.simplegame.game.components.Bounds;
 
 import java.util.HashMap;
 
+import aurelienribon.tweenengine.TweenManager;
 import ownLib.Own;
 
-public class MenuScreen extends BaseSystem implements Screen, AfterSceneInit, InputProcessor {
+public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProcessor {
     ComponentMapper<Bounds> boundsCm;
     ComponentMapper<VisSprite> spriteCm;
     ComponentMapper<Transform> transformCm;
 
     VisIDManager idManager;
     CameraManager cameraManager;
+    TweenManager tweenManager = new TweenManager();
+
 
     GameController gameController;
     String[] buttons = {"idOne", "idTwo", "idThree"};
     HashMap<String, Entity> entityMap = new HashMap<String, Entity>();
     HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
+    VisSprite oneSprite;
 
     public MenuScreen(GameController gameController) {
         this.gameController = gameController;
@@ -47,6 +50,39 @@ public class MenuScreen extends BaseSystem implements Screen, AfterSceneInit, In
         }
 
         Own.io.addProcessor(this);
+
+//        Tween.registerAccessor(Sprite.class, new SpriteAccessor());
+//
+//        Entity entityOne = idManager.get("idTwo");
+//        oneSprite = spriteCm.get(entityOne);
+//        Tween.set(sprite, SpriteAccessor.FADE_IN_OUT).target(0).start(tweenManager);
+//        Tween.to(sprite, SpriteAccessor.FADE_IN_OUT, 15).target(1).start(tweenManager).setCallback(new TweenCallback() {
+//            @Override
+//            public void onEvent(int type, BaseTween<?> source) {
+//                Gdx.app.postRunnable(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Own.log("Finished tweening");
+//                    }
+//                });
+//            }
+//        }).start(tweenManager);
+
+        // TWEEN MANAGER
+//        Tween.registerAccessor(VisSprite.class, new VisSpriteAccessor());
+//
+//        Tween.set(oneSprite, VisSpriteAccessor.FADE_IN_OUT).target(0).start(tweenManager);
+//        Tween.to(oneSprite, VisSpriteAccessor.FADE_IN_OUT, 5).target(1).start(tweenManager).setCallback(new TweenCallback() {
+//            @Override
+//            public void onEvent(int type, BaseTween<?> source) {
+//                Gdx.app.postRunnable(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Own.log("Finished tweening");
+//                    }
+//                });
+//            }
+//        }).start(tweenManager);
     }
 
     @Override
@@ -84,39 +120,9 @@ public class MenuScreen extends BaseSystem implements Screen, AfterSceneInit, In
         return buttonId;
     }
 
-    @Override
-    public void show() {
-
-    }
-
-    @Override
-    public void render(float delta) {
-
-    }
-
-    @Override
-    public void resize(int width, int height) {
-
-    }
-
-    @Override
-    public void pause() {
-
-    }
-
-    @Override
-    public void resume() {
-
-    }
-
-    @Override
-    public void hide() {
-
-    }
 
     @Override
     protected void processSystem() {
-
     }
 
     @Override
