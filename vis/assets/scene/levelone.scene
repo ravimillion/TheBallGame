@@ -34,7 +34,7 @@
     {
       "name": "PhysicsObjects",
       "id": 2,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -686,8 +686,8 @@
     {
       "components": [
         {
-          "x": 12.4231,
-          "y": -3.2657,
+          "x": 8.186777,
+          "y": 21.135555,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -699,6 +699,10 @@
         {
           "layerId": 2,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "811a3d49-cdca-4c38-b3d5-2a8bc5b3136b",

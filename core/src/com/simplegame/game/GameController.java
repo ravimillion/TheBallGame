@@ -39,7 +39,6 @@ public class GameController implements Screen {
     private VisAssetManager manager;
     private String scenePath;
 
-
     public GameController(GameEntry game, SpriteBatch spriteBatch) {
         this.spriteBatch = spriteBatch;
         this.game = game;
@@ -85,7 +84,7 @@ public class GameController implements Screen {
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
         levelParams.config.addSystem(InitSystem.class);
-//        levelParams.config.addSystem(ParticleSystem.class);
+        levelParams.config.addSystem(ContactListenerSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -192,8 +191,8 @@ public class GameController implements Screen {
     @Override
     public void show() {
 //        loadMenuScene();
-//        loadLevelOneScene();
-        loadLevelTwoScene();
+        loadLevelOneScene();
+//        loadLevelTwoScene();
 //        loadLevelThreeScene();
     }
 
