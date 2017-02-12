@@ -2,21 +2,18 @@ package com.simplegame.game.systems;
 
 import com.artemis.BaseSystem;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.math.Vector2;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 import com.simplegame.game.GameController;
-import com.simplegame.game.utils.ShakeCamera;
-
-import ownLib.Own;
+import com.simplegame.game.utils.CameraShaker;
 
 public class CameraControllerSystem extends BaseSystem implements AfterSceneInit {
     OrthographicCamera camera;
     GameController gameController;
     private CameraManager cameraManager;
     private PlayerSystem playerSystem;
-    private ShakeCamera shakeCamera;
-    private float y = 0;
+    private CameraShaker cameraShaker;
 
     public CameraControllerSystem(GameController gameController) {
         this.gameController = gameController;
@@ -24,36 +21,37 @@ public class CameraControllerSystem extends BaseSystem implements AfterSceneInit
     }
     @Override
     protected void processSystem() {
-        float posX = playerSystem.body.getPosition().x;
-        float posY = playerSystem.body.getPosition().y;
-        if (shakeCamera.isShaking()) {
-            Vector3 pos = new Vector3(shakeCamera.getShakeCameraCenter(posX, y), 0);
-            Own.log("Exlosion: pos.x" + pos.x + " pos.y: " + pos.y);
-            camera.position.x = pos.x;
-            camera.position.y = pos.y;
+        Vector2 bodyPosition = playerSystem.body.getPosition();
+
+        if (cameraShaker.isShaking()) {
+            // shake Origin is defined as ball x-position and vertical center of the screen
+            Vector2 shakeOrigin = new Vector2(bodyPosition.x, camera.viewportHeight / 2f);
+            // get afterShakePosition for the duration of the shake (random points are supposed to be generated)
+            Vector2 afterShakePosition = cameraShaker.getShakeCenterForOrigin(shakeOrigin);
+            camera.position.x = afterShakePosition.x;
+            camera.position.y = afterShakePosition.y;
             camera.update();
             return;
         }
 
 
-        if (posX > camera.viewportWidth / 2 && posX < this.gameController.WORLD_WIDTH - camera.viewportWidth / 2) {
-            camera.position.x = posX;
-            camera.position.y = this.y;
+        if (bodyPosition.x > camera.viewportWidth / 2 && bodyPosition.x < this.gameController.WORLD_WIDTH - camera.viewportWidth / 2) {
+            camera.position.x = bodyPosition.x;
+            camera.position.y = camera.viewportHeight / 2f;
             camera.update();
         }
 
     }
 
-    public void shakeCamera() {
-        shakeCamera.setOriginCameraCenter(camera.position.x, camera.position.y);
-        shakeCamera.startShaking();
+    public void shakeCamera(float intensity, float diminishFactor) {
+        // no need to set the origin for shake as it is calculated for the moving center of the body itself
+        cameraShaker.startShaking(intensity, diminishFactor);
     }
 
 
     @Override
     public void afterSceneInit() {
         camera = cameraManager.getCamera();
-        this.shakeCamera = new ShakeCamera(camera);
-        this.y = camera.position.y;
+        this.cameraShaker = new CameraShaker(camera.position.x, camera.position.y);
     }
 }

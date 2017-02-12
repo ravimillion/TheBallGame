@@ -4,6 +4,7 @@ import com.artemis.BaseSystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.simplegame.game.userdata.UserData;
+import com.simplegame.game.utils.CameraShaker;
 
 import ownLib.Own;
 import ownLib.listener.OnContactListener;
@@ -43,7 +44,7 @@ public class ContactListenerSystem extends BaseSystem implements OnContactListen
 //                    Own.log("Hit the spike" + normalImpulse);
 
                     if (normalImpulse > 100) {
-                        cameraControllerSystem.shakeCamera();
+                        cameraControllerSystem.shakeCamera(CameraShaker.SHAKE_INTENSITY_VERY_HIGH, CameraShaker.DIMINISH_FACTOR_SHORT);
                     }
 
 //                    controlsSystem.setState(GameData.LEVEL_END);

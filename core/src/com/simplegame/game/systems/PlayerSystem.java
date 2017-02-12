@@ -60,7 +60,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         ball = new Ball(this.gameController.spriteBatch, levelData.get("ball"));
         body = ball.getBody();
         Transform transform = transformCm.get(idManager.get("ballPosition"));
-        body.setTransform(transform.getX(), body.getPosition().y, body.getAngle());
+        body.setTransform(transform.getX(), transform.getY(), body.getAngle());
         state = GameData.RUNNING;
     }
 
