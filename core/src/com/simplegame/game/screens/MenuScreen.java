@@ -30,7 +30,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
 
 
     GameController gameController;
-    String[] buttons = {"idOne", "idTwo", "idThree"};
+    String[] buttons = {"idOne", "idTwo", "idThree", "idFacebook", "idTwitter", "idSettings", "idVolume"};
     HashMap<String, Entity> entityMap = new HashMap<String, Entity>();
     HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
     VisSprite oneSprite;
@@ -92,11 +92,23 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         cameraManager.getCamera().unproject(touchPoint);
 
         String buttonId = getPressedButtonId(touchPoint);
-        if (buttonId != null) {
-            this.dispose();
-            if (buttonId.equals("idOne")) gameController.loadLevelOneScene();
-            if (buttonId.equals("idTwo")) gameController.loadLevelTwoScene();
-            if (buttonId.equals("idThree")) gameController.loadLevelThreeScene();
+        if (buttonId == null) return false;
+
+        switch(buttonId) {
+            case "idOne":
+                gameController.loadLevelOneScene();
+                this.dispose();
+                break;
+            case "idTwo":
+                gameController.loadLevelTwoScene();
+                this.dispose();
+                break;
+            case "idThree":
+                gameController.loadLevelThreeScene();
+                this.dispose();
+                break;
+            default:
+                Own.log(buttonId + "pressed");
         }
 
         return false;

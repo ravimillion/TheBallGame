@@ -34,7 +34,7 @@
     {
       "name": "PhysicsObjects",
       "id": 2,
-      "locked": false,
+      "locked": true,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -14357,10 +14357,10 @@
     {
       "components": [
         {
-          "x": 22.507074,
-          "y": 27.243753,
+          "x": 22.5071,
+          "y": 23.243784,
           "scaleX": 5.4,
-          "scaleY": 5.4,
+          "scaleY": 4.6,
           "rotation": 0.0,
           "@class": "Transform"
         },

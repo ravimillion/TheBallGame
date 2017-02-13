@@ -4,88 +4,200 @@ size: 2048,2048
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-images/1
-  rotate: false
-  xy: 1681, 295
-  size: 359, 359
-  orig: 359, 359
-  offset: 0, 0
-  index: -1
-images/_wall2
-  rotate: false
-  xy: 2, 11
-  size: 1023, 1001
-  orig: 1023, 1001
-  offset: 0, 0
-  index: -1
 images/bgmm
   rotate: false
-  xy: 1027, 656
+  xy: 1220, 260
   size: 797, 356
   orig: 797, 356
   offset: 0, 0
   index: -1
-images/bluewoodbox
+images/blackpaint
   rotate: false
-  xy: 1027, 2
-  size: 652, 652
-  orig: 652, 652
+  xy: 2, 56
+  size: 607, 582
+  orig: 607, 582
   offset: 0, 0
   index: -1
 images/bottle
   rotate: false
-  xy: 1681, 37
+  xy: 1736, 2
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
   index: -1
 images/floor1
   rotate: false
-  xy: 2, 1920
+  xy: 2, 640
   size: 2000, 122
   orig: 2000, 122
   offset: 0, 0
   index: -1
-images/longground
+images/greenpaint
   rotate: false
-  xy: 2, 1796
-  size: 1948, 122
-  orig: 1948, 122
+  xy: 611, 56
+  size: 607, 582
+  orig: 607, 582
   offset: 0, 0
   index: -1
-images/newbg
+images/mainmenu
   rotate: false
-  xy: 2, 1014
-  size: 1900, 780
-  orig: 1900, 780
+  xy: 2, 764
+  size: 2023, 1275
+  orig: 2023, 1275
   offset: 0, 0
   index: -1
-images/transball
+particle/1
   rotate: false
-  xy: 1826, 819
-  size: 193, 193
-  orig: 193, 193
+  xy: 2004, 686
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/axe_med_muzzleflame01
+  rotate: false
+  xy: 1220, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+particle/axe_med_muzzleflame02
+  rotate: false
+  xy: 1478, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+particle/butterfly1
+  rotate: false
+  xy: 2004, 652
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/diamond1
+  rotate: false
+  xy: 2004, 618
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/expl1
+  rotate: false
+  xy: 1994, 226
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/expl2
+  rotate: false
+  xy: 1994, 192
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/expl3
+  rotate: false
+  xy: 1994, 158
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/feather
+  rotate: false
+  xy: 1994, 124
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/feather2
+  rotate: false
+  xy: 1994, 90
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
 particle/glow
   rotate: false
-  xy: 2004, 2000
+  xy: 2004, 720
   size: 42, 42
   orig: 42, 42
   offset: 0, 0
   index: -1
+particle/heart1
+  rotate: false
+  xy: 1994, 56
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 particle/particle
   rotate: false
-  xy: 2004, 1966
+  xy: 1994, 22
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/simple
+  rotate: false
+  xy: 1994, 22
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 particle/rainDrop
   rotate: false
-  xy: 2004, 1936
+  xy: 2027, 2011
   size: 13, 28
   orig: 13, 28
+  offset: 0, 0
+  index: -1
+particle/sharp1
+  rotate: false
+  xy: 2, 22
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/sharp2
+  rotate: false
+  xy: 36, 22
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/simple2
+  rotate: false
+  xy: 70, 22
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/simple3
+  rotate: false
+  xy: 104, 22
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/snowflake
+  rotate: false
+  xy: 138, 22
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/snowflake2
+  rotate: false
+  xy: 172, 22
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+particle/star2
+  rotate: false
+  xy: 206, 22
+  size: 32, 32
+  orig: 32, 32
   offset: 0, 0
   index: -1
 
@@ -94,88 +206,109 @@ size: 2048,2048
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-controls/congratulations
+controls/default
   rotate: false
-  xy: 1026, 213
-  size: 600, 251
-  orig: 600, 251
+  xy: 1030, 219
+  size: 256, 128
+  orig: 256, 128
   offset: 0, 0
   index: -1
 controls/touchToStart
   rotate: false
-  xy: 1026, 466
+  xy: 1027, 349
   size: 600, 252
   orig: 600, 252
   offset: 0, 0
   index: -1
-images/2
+font/Atarian/SF Atarian System Sample
   rotate: false
-  xy: 1682, 892
+  xy: 1288, 222
+  size: 250, 125
+  orig: 250, 125
+  offset: 0, 0
+  index: -1
+images/1
+  rotate: false
+  xy: 1681, 896
   size: 359, 359
   orig: 359, 359
   offset: 0, 0
   index: -1
-images/3
+images/_wall2
   rotate: false
-  xy: 1682, 531
-  size: 359, 359
-  orig: 359, 359
+  xy: 2, 254
+  size: 1023, 1001
+  orig: 1023, 1001
   offset: 0, 0
   index: -1
-images/boxleft
+images/bluewoodbox
   rotate: false
-  xy: 1028, 1374
+  xy: 1027, 603
   size: 652, 652
   orig: 652, 652
-  offset: 0, 0
-  index: -1
-images/boxright
-  rotate: false
-  xy: 1028, 720
-  size: 652, 652
-  orig: 652, 652
-  offset: 0, 0
-  index: -1
-images/floor
-  rotate: false
-  xy: 2, 2
-  size: 1023, 202
-  orig: 1023, 202
   offset: 0, 0
   index: -1
 images/horiplatform
   rotate: false
-  xy: 1027, 18
+  xy: 1030, 19
   size: 773, 193
   orig: 773, 193
   offset: 0, 0
   index: -1
-images/vertplatform
+images/newbg
   rotate: false
-  xy: 1682, 1253
-  size: 193, 773
-  orig: 193, 773
+  xy: 2, 1257
+  size: 1900, 780
+  orig: 1900, 780
   offset: 0, 0
   index: -1
-images/wall
+images/stoneground
   rotate: false
-  xy: 2, 1116
-  size: 1024, 910
-  orig: 1024, 910
+  xy: 2, 2
+  size: 1026, 250
+  orig: 1026, 250
   offset: 0, 0
   index: -1
-images/wall2
+images/transball
   rotate: false
-  xy: 2, 206
-  size: 1022, 908
-  orig: 1022, 908
+  xy: 1805, 19
+  size: 193, 193
+  orig: 193, 193
+  offset: 0, 0
+  index: -1
+images/woodfloor
+  rotate: false
+  xy: 1629, 214
+  size: 387, 387
+  orig: 387, 387
+  offset: 0, 0
+  index: -1
+particle/cloud
+  rotate: false
+  xy: 1904, 1909
+  size: 128, 128
+  orig: 128, 128
   offset: 0, 0
   index: -1
 particle/fire
   rotate: false
-  xy: 1628, 277
+  xy: 1681, 642
   size: 265, 252
   orig: 265, 252
+  offset: 0, 0
+  index: -1
+particle/fire1
+  rotate: false
+  xy: 1904, 1779
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+particle/star1
+  rotate: false
+  xy: 1904, 1713
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
 
@@ -184,13 +317,82 @@ size: 2048,2048
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-controls/default
+images/2
   rotate: false
-  xy: 656, 1390
-  size: 256, 128
-  orig: 256, 128
+  xy: 1682, 758
+  size: 359, 359
+  orig: 359, 359
   offset: 0, 0
   index: -1
+images/3
+  rotate: false
+  xy: 1682, 397
+  size: 359, 359
+  orig: 359, 359
+  offset: 0, 0
+  index: -1
+images/boxleft
+  rotate: false
+  xy: 1028, 1240
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+images/boxright
+  rotate: false
+  xy: 1028, 586
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+images/longground
+  rotate: false
+  xy: 2, 1894
+  size: 1948, 122
+  orig: 1948, 122
+  offset: 0, 0
+  index: -1
+images/redpaint
+  rotate: false
+  xy: 1026, 2
+  size: 607, 582
+  orig: 607, 582
+  offset: 0, 0
+  index: -1
+images/vertplatform
+  rotate: false
+  xy: 1682, 1119
+  size: 193, 773
+  orig: 193, 773
+  offset: 0, 0
+  index: -1
+images/wall
+  rotate: false
+  xy: 2, 982
+  size: 1024, 910
+  orig: 1024, 910
+  offset: 0, 0
+  index: -1
+images/wall2
+  rotate: false
+  xy: 2, 72
+  size: 1022, 908
+  orig: 1022, 908
+  offset: 0, 0
+  index: -1
+particle/cloud_2_256x256
+  rotate: false
+  xy: 1635, 139
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+
+textures4.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
 images/bgwall
   rotate: false
   xy: 656, 586
@@ -198,11 +400,11 @@ images/bgwall
   orig: 1067, 800
   offset: 0, 0
   index: -1
-images/blackpaint
+images/curveleft
   rotate: false
-  xy: 2, 17
-  size: 607, 582
-  orig: 607, 582
+  xy: 1220, 31
+  size: 553, 553
+  orig: 553, 553
   offset: 0, 0
   index: -1
 images/darkbox
@@ -219,6 +421,13 @@ images/darkerbox
   orig: 652, 652
   offset: 0, 0
   index: -1
+images/fb
+  rotate: false
+  xy: 656, 1395
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
 images/g6086
   rotate: false
   xy: 2, 1909
@@ -233,13 +442,6 @@ images/spikes
   orig: 1198, 131
   offset: 0, 0
   index: -1
-images/greenpaint
-  rotate: false
-  xy: 611, 2
-  size: 607, 582
-  orig: 607, 582
-  offset: 0, 0
-  index: -1
 images/greenwoodbox
   rotate: false
   xy: 2, 601
@@ -247,87 +449,67 @@ images/greenwoodbox
   orig: 652, 652
   offset: 0, 0
   index: -1
-images/redpaint
-  rotate: false
-  xy: 1220, 2
-  size: 607, 582
-  orig: 607, 582
-  offset: 0, 0
-  index: -1
-images/woodfloor
-  rotate: false
-  xy: 656, 1520
-  size: 387, 387
-  orig: 387, 387
-  offset: 0, 0
-  index: -1
-
-textures4.png
-size: 2048,2048
-format: RGBA8888
-filter: Nearest,Nearest
-repeat: none
-controls/gameover
-  rotate: false
-  xy: 2, 2
-  size: 600, 251
-  orig: 600, 251
-  offset: 0, 0
-  index: -1
-controls/imagebuttons
-  rotate: false
-  xy: 656, 858
-  size: 1024, 512
-  orig: 1024, 512
-  offset: 0, 0
-  index: -1
-images/background3
-  rotate: false
-  xy: 2, 1563
-  size: 1156, 461
-  orig: 1156, 461
-  offset: 0, 0
-  index: -1
-images/ground
-  rotate: false
-  xy: 604, 29
-  size: 1026, 146
-  orig: 1026, 146
-  offset: 0, 0
-  index: -1
-images/pinkbox
-  rotate: false
-  xy: 1160, 1372
-  size: 652, 652
-  orig: 652, 652
-  offset: 0, 0
-  index: -1
-images/splash
-  rotate: false
-  xy: 656, 177
-  size: 602, 679
-  orig: 602, 679
-  offset: 0, 0
-  index: -1
-images/topwoodbox
-  rotate: false
-  xy: 2, 909
-  size: 652, 652
-  orig: 652, 652
-  offset: 0, 0
-  index: -1
 images/whitepaint
   rotate: false
-  xy: 1260, 274
+  xy: 2, 17
   size: 607, 582
   orig: 607, 582
   offset: 0, 0
   index: -1
-images/woodbox
+images/yellowpaint
   rotate: false
-  xy: 2, 255
-  size: 652, 652
-  orig: 652, 652
+  xy: 611, 2
+  size: 607, 582
+  orig: 607, 582
+  offset: 0, 0
+  index: -1
+particle/cloud_3_256x256
+  rotate: false
+  xy: 1725, 1130
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+particle/cloud_4_256x256
+  rotate: false
+  xy: 1725, 872
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+particle/cloud_5_256x256
+  rotate: false
+  xy: 1725, 614
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+particle/cloud_6_256x256
+  rotate: false
+  xy: 1775, 356
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+particle/energy_blob3_small
+  rotate: false
+  xy: 1856, 1840
+  size: 183, 200
+  orig: 183, 200
+  offset: 0, 0
+  index: -1
+particle/energy_blob_small
+  rotate: false
+  xy: 1856, 1638
+  size: 183, 200
+  orig: 183, 200
+  offset: 0, 0
+  index: -1
+particle/energy_swirly1
+  rotate: false
+  xy: 1775, 98
+  size: 256, 256
+  orig: 256, 256
   offset: 0, 0
   index: -1
 
@@ -336,80 +518,218 @@ size: 2048,2048
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+controls/imagebuttons
+  rotate: false
+  xy: 2, 594
+  size: 1024, 512
+  orig: 1024, 512
+  offset: 0, 0
+  index: -1
+font/india-snake-pixel-labyrinth-gam/india-snake-pixel-labyrinth-game_sample
+  rotate: false
+  xy: 1160, 1018
+  size: 720, 360
+  orig: 720, 360
+  offset: 0, 0
+  index: -1
+font/india-snake-pixel-labyrinth-gam/india-snake-pixel-labyrinth-game_sample_2
+  rotate: false
+  xy: 1030, 2
+  size: 720, 360
+  orig: 720, 360
+  offset: 0, 0
+  index: -1
+images/background2
+  rotate: false
+  xy: 2, 168
+  size: 1024, 424
+  orig: 1024, 424
+  offset: 0, 0
+  index: -1
+images/background3
+  rotate: false
+  xy: 2, 1571
+  size: 1156, 461
+  orig: 1156, 461
+  offset: 0, 0
+  index: -1
+images/background4
+  rotate: false
+  xy: 2, 1108
+  size: 1156, 461
+  orig: 1156, 461
+  offset: 0, 0
+  index: -1
+images/ground
+  rotate: false
+  xy: 2, 20
+  size: 1026, 146
+  orig: 1026, 146
+  offset: 0, 0
+  index: -1
+images/pinkbox
+  rotate: false
+  xy: 1160, 1380
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+images/topwoodbox
+  rotate: false
+  xy: 1028, 364
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+particle/cloud_1_256x256
+  rotate: false
+  xy: 1682, 503
+  size: 256, 255
+  orig: 256, 255
+  offset: 0, 0
+  index: -1
+particle/energy_swirly2
+  rotate: false
+  xy: 1682, 760
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+
+textures6.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+controls/congratulations
+  rotate: false
+  xy: 1120, 961
+  size: 600, 251
+  orig: 600, 251
+  offset: 0, 0
+  index: -1
+controls/gameover
+  rotate: false
+  xy: 1120, 708
+  size: 600, 251
+  orig: 600, 251
+  offset: 0, 0
+  index: -1
 controls/pause
   rotate: false
-  xy: 2, 2
+  xy: 516, 237
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
 controls/play
   rotate: false
-  xy: 1028, 1172
+  xy: 1209, 455
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
 controls/quit
   rotate: false
-  xy: 1030, 919
+  xy: 1119, 2
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
+images/floor
+  rotate: false
+  xy: 656, 1728
+  size: 1023, 202
+  orig: 1023, 202
+  offset: 0, 0
+  index: -1
+images/levelone
+  rotate: false
+  xy: 606, 490
+  size: 601, 208
+  orig: 601, 208
+  offset: 0, 0
+  index: -1
+images/levelthree
+  rotate: false
+  xy: 516, 37
+  size: 601, 198
+  orig: 601, 198
+  offset: 0, 0
+  index: -1
+images/leveltwo
+  rotate: false
+  xy: 1118, 255
+  size: 601, 198
+  orig: 601, 198
+  offset: 0, 0
+  index: -1
+images/settings
+  rotate: false
+  xy: 2, 83
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+images/splash
+  rotate: false
+  xy: 2, 597
+  size: 602, 679
+  orig: 602, 679
+  offset: 0, 0
+  index: -1
+images/twitter
+  rotate: false
+  xy: 1170, 1214
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+images/volume
+  rotate: false
+  xy: 606, 700
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+images/woodbox
+  rotate: false
+  xy: 2, 1278
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
+particle/tunnel_ring
+  rotate: false
+  xy: 656, 1214
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+textures7.png
+size: 2048,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
 controls/ready
   rotate: false
-  xy: 1030, 666
+  xy: 2, 2
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
 controls/restart
   rotate: false
-  xy: 611, 413
+  xy: 604, 2
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
 controls/resume
   rotate: false
-  xy: 611, 160
+  xy: 1206, 2
   size: 600, 251
   orig: 600, 251
-  offset: 0, 0
-  index: -1
-images/background2
-  rotate: false
-  xy: 2, 1091
-  size: 1024, 424
-  orig: 1024, 424
-  offset: 0, 0
-  index: -1
-images/background4
-  rotate: false
-  xy: 2, 1517
-  size: 1156, 461
-  orig: 1156, 461
-  offset: 0, 0
-  index: -1
-images/curveleft
-  rotate: false
-  xy: 1160, 1425
-  size: 553, 553
-  orig: 553, 553
-  offset: 0, 0
-  index: -1
-images/stoneground
-  rotate: false
-  xy: 2, 839
-  size: 1026, 250
-  orig: 1026, 250
-  offset: 0, 0
-  index: -1
-images/yellowpaint
-  rotate: false
-  xy: 2, 255
-  size: 607, 582
-  orig: 607, 582
   offset: 0, 0
   index: -1
