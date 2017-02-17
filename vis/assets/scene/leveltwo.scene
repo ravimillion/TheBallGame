@@ -18,7 +18,7 @@
     {
       "name": "Background",
       "id": 0,
-      "locked": false,
+      "locked": true,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -32,9 +32,17 @@
       "@class": "EditorLayer"
     },
     {
+      "name": "Animations",
+      "id": 2,
+      "locked": false,
+      "visible": true,
+      "cordsSystem": "WORLD",
+      "@class": "EditorLayer"
+    },
+    {
       "name": "Controls",
       "id": 3,
-      "locked": false,
+      "locked": true,
       "visible": false,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -1635,7 +1643,7 @@
       "components": [
         {
           "x": 34.0156,
-          "y": 28.317883,
+          "y": 27.843,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -1674,8 +1682,70 @@
           "@class": "Renderable"
         },
         {
-          "id": "partical1",
           "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 33.635597,
+              "y": 27.463001,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 34.395596,
+              "y": 27.463001,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 34.395596,
+              "y": 28.223001,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 33.635597,
+              "y": 28.223001,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 33.635597,
+                "y": 28.223001
+              },
+              {
+                "x": 33.635597,
+                "y": 27.463001
+              },
+              {
+                "x": 34.395596,
+                "y": 27.463001
+              },
+              {
+                "x": 34.395596,
+                "y": 28.223001
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
         },
         {
           "componentsToDrop": [
@@ -4002,120 +4072,8 @@
     {
       "components": [
         {
-          "x": 34.070297,
-          "y": 28.816448,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "2b323576-0e0d-413b-b2ee-3932540ed76a",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball1",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 33.690296,
-              "y": 28.43645,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 34.450294,
-              "y": 28.43645,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 34.450294,
-              "y": 29.19645,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 33.690296,
-              "y": 29.19645,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 33.690296,
-                "y": 29.19645
-              },
-              {
-                "x": 33.690296,
-                "y": 28.43645
-              },
-              {
-                "x": 34.450294,
-                "y": 28.43645
-              },
-              {
-                "x": 34.450294,
-                "y": 29.19645
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 59.354454,
-          "y": 12.812837,
+          "x": 59.3545,
+          "y": 12.8128,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -4154,8 +4112,70 @@
           "@class": "Renderable"
         },
         {
-          "id": "partical2",
           "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 58.9745,
+              "y": 12.4328,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.734497,
+              "y": 12.4328,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 59.734497,
+              "y": 13.1928005,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 58.9745,
+              "y": 13.1928005,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 58.9745,
+                "y": 13.1928005
+              },
+              {
+                "x": 58.9745,
+                "y": 12.4328
+              },
+              {
+                "x": 59.734497,
+                "y": 12.4328
+              },
+              {
+                "x": 59.734497,
+                "y": 13.1928005
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
         },
         {
           "componentsToDrop": [
@@ -4172,120 +4192,8 @@
     {
       "components": [
         {
-          "x": 59.339172,
-          "y": 13.794555,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "a2fd373e-acf8-40f2-b318-10fe21ae777a",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball2",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 58.95917,
-              "y": 13.414556,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 59.71917,
-              "y": 13.414556,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 59.71917,
-              "y": 14.174556,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 58.95917,
-              "y": 14.174556,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 58.95917,
-                "y": 14.174556
-              },
-              {
-                "x": 58.95917,
-                "y": 13.414556
-              },
-              {
-                "x": 59.71917,
-                "y": 13.414556
-              },
-              {
-                "x": 59.71917,
-                "y": 14.174556
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 77.902016,
-          "y": 26.548275,
+          "x": 77.902,
+          "y": 26.5483,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -4324,8 +4232,70 @@
           "@class": "Renderable"
         },
         {
-          "id": "partical3",
           "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 77.522,
+              "y": 26.1683,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 78.282005,
+              "y": 26.1683,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 78.282005,
+              "y": 26.9283,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 77.522,
+              "y": 26.9283,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 77.522,
+                "y": 26.9283
+              },
+              {
+                "x": 77.522,
+                "y": 26.1683
+              },
+              {
+                "x": 78.282005,
+                "y": 26.1683
+              },
+              {
+                "x": 78.282005,
+                "y": 26.9283
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
         },
         {
           "componentsToDrop": [
@@ -4342,290 +4312,8 @@
     {
       "components": [
         {
-          "x": 77.880806,
-          "y": 27.543638,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "72b8b2ec-bd79-4eac-aaac-13899bf31a4f",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball3",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 77.5008,
-              "y": 27.16364,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 78.2608,
-              "y": 27.16364,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 78.2608,
-              "y": 27.92364,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 77.5008,
-              "y": 27.92364,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 77.5008,
-                "y": 27.92364
-              },
-              {
-                "x": 77.5008,
-                "y": 27.16364
-              },
-              {
-                "x": 78.2608,
-                "y": 27.16364
-              },
-              {
-                "x": 78.2608,
-                "y": 27.92364
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 157.1563,
-          "y": 10.9517,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "9ef8c430-11ea-4d57-a43c-c06d50c72601",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical6",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 157.1544,
-          "y": 11.2914,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "98c1d9de-6d6c-4d73-a577-d6f49c8e22e6",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball6",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 156.7744,
-              "y": 10.911401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 157.53441,
-              "y": 10.911401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 157.53441,
-              "y": 11.671401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 156.7744,
-              "y": 11.671401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 156.7744,
-                "y": 11.671401
-              },
-              {
-                "x": 156.7744,
-                "y": 10.911401
-              },
-              {
-                "x": 157.53441,
-                "y": 10.911401
-              },
-              {
-                "x": 157.53441,
-                "y": 11.671401
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 105.714874,
-          "y": 25.633097,
+          "x": 105.7149,
+          "y": 25.6331,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -4664,407 +4352,75 @@
           "@class": "Renderable"
         },
         {
-          "id": "partical4",
           "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 105.3349,
+              "y": 25.253101,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 106.0949,
+              "y": 25.253101,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 106.0949,
+              "y": 26.013102,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 105.3349,
+              "y": 26.013102,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 105.3349,
+                "y": 26.013102
+              },
+              {
+                "x": 105.3349,
+                "y": 25.253101
+              },
+              {
+                "x": 106.0949,
+                "y": 25.253101
+              },
+              {
+                "x": 106.0949,
+                "y": 26.013102
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
         },
         {
           "componentsToDrop": [
             {
               "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 105.6734,
-          "y": 25.9904,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "97be31ba-920b-418d-ab49-5721e77cbed6",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball4",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 105.293396,
-              "y": 25.610401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 106.0534,
-              "y": 25.610401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 106.0534,
-              "y": 26.370401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 105.293396,
-              "y": 26.370401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 105.293396,
-                "y": 26.370401
-              },
-              {
-                "x": 105.293396,
-                "y": 25.610401
-              },
-              {
-                "x": 106.0534,
-                "y": 25.610401
-              },
-              {
-                "x": 106.0534,
-                "y": 26.370401
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 105.67336,
-          "y": 25.990416,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "1c894215-3cbc-4222-b467-5b59bc6dcf75",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball3",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 105.29336,
-              "y": 25.610416,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 106.05336,
-              "y": 25.610416,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 106.05336,
-              "y": 26.370417,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 105.29336,
-              "y": 26.370417,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 105.29336,
-                "y": 26.370417
-              },
-              {
-                "x": 105.29336,
-                "y": 25.610416
-              },
-              {
-                "x": 106.05336,
-                "y": 25.610416
-              },
-              {
-                "x": 106.05336,
-                "y": 26.370417
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 130.8302,
-          "y": 24.452213,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "a95f0305-3743-4ac7-8c0d-db17e48b57a3",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical5",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 130.7928,
-          "y": 24.9553,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "dd6fec74-fbdc-4ba5-9a7b-902578040128",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball5",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 130.4128,
-              "y": 24.5753,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 131.17279,
-              "y": 24.5753,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 131.17279,
-              "y": 25.3353,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 130.4128,
-              "y": 25.3353,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 130.4128,
-                "y": 25.3353
-              },
-              {
-                "x": 130.4128,
-                "y": 24.5753
-              },
-              {
-                "x": 131.17279,
-                "y": 24.5753
-              },
-              {
-                "x": 131.17279,
-                "y": 25.3353
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
               "@class": "Class"
             }
           ],
@@ -5193,1196 +4549,6 @@
           "maskBits": -1,
           "categoryBits": 1,
           "@class": "PhysicsProperties"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 194.1104,
-          "y": 20.9706,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "6c4de8e9-4836-4c69-813b-2f41e01389cd",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical7",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 194.1085,
-          "y": 21.3104,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "22505d67-cda9-41a0-8ce7-d9084d5bdd88",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball7",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 193.7285,
-              "y": 20.9304,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 194.48851,
-              "y": 20.9304,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 194.48851,
-              "y": 21.690401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 193.7285,
-              "y": 21.690401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 193.7285,
-                "y": 21.690401
-              },
-              {
-                "x": 193.7285,
-                "y": 20.9304
-              },
-              {
-                "x": 194.48851,
-                "y": 20.9304
-              },
-              {
-                "x": 194.48851,
-                "y": 21.690401
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 219.5357,
-          "y": 20.9706,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "6f85e646-65e8-44f0-866b-6c67e1ea553a",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical8",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 219.5338,
-          "y": 21.3104,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "81b5d1c7-7be6-41a6-8c97-8ec74d551706",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball8",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 219.1538,
-              "y": 20.9304,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 219.9138,
-              "y": 20.9304,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 219.9138,
-              "y": 21.690401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 219.1538,
-              "y": 21.690401,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 219.1538,
-                "y": 21.690401
-              },
-              {
-                "x": 219.1538,
-                "y": 20.9304
-              },
-              {
-                "x": 219.9138,
-                "y": 20.9304
-              },
-              {
-                "x": 219.9138,
-                "y": 21.690401
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 252.4588,
-          "y": 20.8611,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "3757da4c-c82f-45a9-b45c-c3d58e836e77",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical9",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 252.4876,
-          "y": 21.3963,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "16df81e5-c620-4874-a4fa-d0726d6a6418",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball9",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 252.10759,
-              "y": 21.0163,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 252.8676,
-              "y": 21.0163,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 252.8676,
-              "y": 21.7763,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 252.10759,
-              "y": 21.7763,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 252.10759,
-                "y": 21.7763
-              },
-              {
-                "x": 252.10759,
-                "y": 21.0163
-              },
-              {
-                "x": 252.8676,
-                "y": 21.0163
-              },
-              {
-                "x": 252.8676,
-                "y": 21.7763
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 281.6499,
-          "y": 21.1682,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "bb206e01-8965-4a2e-9e29-fe71f3d46e3a",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical10",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 281.648,
-          "y": 21.508,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "6a14dcad-d9e8-48ab-9493-d9d82eecca0c",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball10",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 281.268,
-              "y": 21.128,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 282.028,
-              "y": 21.128,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 282.028,
-              "y": 21.888,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 281.268,
-              "y": 21.888,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 281.268,
-                "y": 21.888
-              },
-              {
-                "x": 281.268,
-                "y": 21.128
-              },
-              {
-                "x": 282.028,
-                "y": 21.128
-              },
-              {
-                "x": 282.028,
-                "y": 21.888
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 315.3089,
-          "y": 21.6952,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "1adf0208-45cf-40c7-82d4-14aebf730f25",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical11",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 315.307,
-          "y": 22.067211,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "8a5d0d5e-27ea-4b4f-90a6-bacf8cb2fdd7",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball11",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 314.927,
-              "y": 21.687212,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 315.687,
-              "y": 21.687212,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 315.687,
-              "y": 22.447212,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 314.927,
-              "y": 22.447212,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 314.927,
-                "y": 22.447212
-              },
-              {
-                "x": 314.927,
-                "y": 21.687212
-              },
-              {
-                "x": 315.687,
-                "y": 21.687212
-              },
-              {
-                "x": 315.687,
-                "y": 22.447212
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 348.9018,
-          "y": 21.0365,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "4004c10f-2fcb-4457-ab79-dd0276dd7041",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical12",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 348.8999,
-          "y": 21.3762,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "9b2d5182-4aed-4dce-853e-54fc4649e1ef",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball12",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 348.5199,
-              "y": 20.9962,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 349.2799,
-              "y": 20.9962,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 349.2799,
-              "y": 21.7562,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 348.5199,
-              "y": 21.7562,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 348.5199,
-                "y": 21.7562
-              },
-              {
-                "x": 348.5199,
-                "y": 20.9962
-              },
-              {
-                "x": 349.2799,
-                "y": 20.9962
-              },
-              {
-                "x": 349.2799,
-                "y": 21.7562
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 377.8159,
-          "y": 20.3119,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "b87f6f5d-69fa-4608-86c9-e89d592b38d7",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical13",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 377.6139,
-          "y": 20.6517,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "772f8e8c-4287-46ca-a990-0cb700d9f7d0",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball13",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 377.2339,
-              "y": 20.2717,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 377.9939,
-              "y": 20.2717,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 377.9939,
-              "y": 21.0317,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 377.2339,
-              "y": 21.0317,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 377.2339,
-                "y": 21.0317
-              },
-              {
-                "x": 377.2339,
-                "y": 20.2717
-              },
-              {
-                "x": 377.9939,
-                "y": 20.2717
-              },
-              {
-                "x": 377.9939,
-                "y": 21.0317
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"
@@ -6631,2556 +4797,6 @@
           "maskBits": -1,
           "categoryBits": 1,
           "@class": "PhysicsProperties"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 441.7058,
-          "y": 21.9831,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "37e9d0c7-5ad5-4220-9bab-d8f85e0193b9",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical22",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 441.7039,
-          "y": 22.3228,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "3f9a1e5a-5d65-4046-9100-1807bbb4b0f0",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball22",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 441.32388,
-              "y": 21.9428,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 442.0839,
-              "y": 21.9428,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 442.0839,
-              "y": 22.7028,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 441.32388,
-              "y": 22.7028,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 441.32388,
-                "y": 22.7028
-              },
-              {
-                "x": 441.32388,
-                "y": 21.9428
-              },
-              {
-                "x": 442.0839,
-                "y": 21.9428
-              },
-              {
-                "x": 442.0839,
-                "y": 22.7028
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 476.6658,
-          "y": 17.7165,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "b1ed705a-c987-4395-99e4-f0ee4c9208d9",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical23",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 476.5474,
-          "y": 19.0461,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "b7914068-4ba7-4b75-be8b-a1582a5ee7e7",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball23",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 476.1674,
-              "y": 18.666101,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 476.9274,
-              "y": 18.666101,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 476.9274,
-              "y": 19.426102,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 476.1674,
-              "y": 19.426102,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 476.1674,
-                "y": 19.426102
-              },
-              {
-                "x": 476.1674,
-                "y": 18.666101
-              },
-              {
-                "x": 476.9274,
-                "y": 18.666101
-              },
-              {
-                "x": 476.9274,
-                "y": 19.426102
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 501.922,
-          "y": 18.0792,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "ee524d40-135c-4895-aa45-652c38d88e40",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical24",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 501.92,
-          "y": 18.4189,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "e42d8b25-d814-44dd-8dcd-24ea9d097230",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball24",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 501.54,
-              "y": 18.0389,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 502.30002,
-              "y": 18.0389,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 502.30002,
-              "y": 18.7989,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 501.54,
-              "y": 18.7989,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 501.54,
-                "y": 18.7989
-              },
-              {
-                "x": 501.54,
-                "y": 18.0389
-              },
-              {
-                "x": 502.30002,
-                "y": 18.0389
-              },
-              {
-                "x": 502.30002,
-                "y": 18.7989
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 508.8435,
-          "y": 22.6259,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "aef1174e-b5be-40d2-9ab3-9153fd73cc9a",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical25",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 508.8416,
-          "y": 22.9656,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "4496e761-6bfe-410a-add6-5ea2659a723b",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball25",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 508.4616,
-              "y": 22.5856,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 509.22162,
-              "y": 22.5856,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 509.22162,
-              "y": 23.3456,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 508.4616,
-              "y": 23.3456,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 508.4616,
-                "y": 23.3456
-              },
-              {
-                "x": 508.4616,
-                "y": 22.5856
-              },
-              {
-                "x": 509.22162,
-                "y": 22.5856
-              },
-              {
-                "x": 509.22162,
-                "y": 23.3456
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 515.5792,
-          "y": 27.8602,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "2e8456c2-25bb-4fde-bc73-8f487095817d",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical26",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 515.5772,
-          "y": 28.1999,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "6a49e8fc-cfa8-4007-b8c1-259b99294239",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball26",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 515.1972,
-              "y": 27.8199,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 515.9572,
-              "y": 27.8199,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 515.9572,
-              "y": 28.5799,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 515.1972,
-              "y": 28.5799,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 515.1972,
-                "y": 28.5799
-              },
-              {
-                "x": 515.1972,
-                "y": 27.8199
-              },
-              {
-                "x": 515.9572,
-                "y": 27.8199
-              },
-              {
-                "x": 515.9572,
-                "y": 28.5799
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 521.6681,
-          "y": 31.9104,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "326fb734-17ef-4492-b477-4dd04f0c84a1",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical27",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 521.6662,
-          "y": 32.2501,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "593d5e70-a512-42b8-b77d-47ffacec753b",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball27",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 521.2862,
-              "y": 31.8701,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 522.0462,
-              "y": 31.8701,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 522.0462,
-              "y": 32.6301,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 521.2862,
-              "y": 32.6301,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 521.2862,
-                "y": 32.6301
-              },
-              {
-                "x": 521.2862,
-                "y": 31.8701
-              },
-              {
-                "x": 522.0462,
-                "y": 31.8701
-              },
-              {
-                "x": 522.0462,
-                "y": 32.6301
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 527.373,
-          "y": 34.8619,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "97da2bf8-27ee-4579-8be6-9a49a19d894e",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical28",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 527.3711,
-          "y": 35.2016,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "da0bb060-6410-457f-869f-c4657e4773ee",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball28",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 526.9911,
-              "y": 34.8216,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 527.7511,
-              "y": 34.8216,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 527.7511,
-              "y": 35.581596,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 526.9911,
-              "y": 35.581596,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 526.9911,
-                "y": 35.581596
-              },
-              {
-                "x": 526.9911,
-                "y": 34.8216
-              },
-              {
-                "x": 527.7511,
-                "y": 34.8216
-              },
-              {
-                "x": 527.7511,
-                "y": 35.581596
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 425.7035,
-          "y": 23.534885,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "3d2feb75-1f29-459e-a8dc-9bea9b9c4ada",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical19",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 425.7015,
-          "y": 23.874586,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "922831f8-cfb4-4813-8c02-2f70ecc7e49b",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball19",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 425.3215,
-              "y": 23.494587,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 426.0815,
-              "y": 23.494587,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 426.0815,
-              "y": 24.254587,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 425.3215,
-              "y": 24.254587,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 425.3215,
-                "y": 24.254587
-              },
-              {
-                "x": 425.3215,
-                "y": 23.494587
-              },
-              {
-                "x": 426.0815,
-                "y": 23.494587
-              },
-              {
-                "x": 426.0815,
-                "y": 24.254587
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 420.8463,
-          "y": 28.595285,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "4f1fffa5-b22f-427b-ba5a-758f619476f1",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical18",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 420.8444,
-          "y": 28.934986,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "18c3f5d4-9657-4818-b722-175bca086eec",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball18",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 420.4644,
-              "y": 28.554987,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 421.2244,
-              "y": 28.554987,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 421.2244,
-              "y": 29.314987,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 420.4644,
-              "y": 29.314987,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 420.4644,
-                "y": 29.314987
-              },
-              {
-                "x": 420.4644,
-                "y": 28.554987
-              },
-              {
-                "x": 421.2244,
-                "y": 28.554987
-              },
-              {
-                "x": 421.2244,
-                "y": 29.314987
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 408.7566,
-          "y": 28.2287,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "ec11ba63-cc25-43f3-a1ce-ff372fe241b9",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical17",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 408.7547,
-          "y": 28.5684,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "d412b01e-9f20-48fb-92b5-5315b655fd85",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball17",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 408.3747,
-              "y": 28.1884,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 409.1347,
-              "y": 28.1884,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 409.1347,
-              "y": 28.9484,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 408.3747,
-              "y": 28.9484,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 408.3747,
-                "y": 28.9484
-              },
-              {
-                "x": 408.3747,
-                "y": 28.1884
-              },
-              {
-                "x": 409.1347,
-                "y": 28.1884
-              },
-              {
-                "x": 409.1347,
-                "y": 28.9484
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 402.7761,
-          "y": 23.4795,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "cfff3b36-a7a1-4fa2-8e5f-316befe7cd9d",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical16",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 402.7742,
-          "y": 23.8192,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "d9b81014-24aa-448d-888f-586ac3d1c1c3",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball16",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 402.3942,
-              "y": 23.439201,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 403.1542,
-              "y": 23.439201,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 403.1542,
-              "y": 24.199202,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 402.3942,
-              "y": 24.199202,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 402.3942,
-                "y": 24.199202
-              },
-              {
-                "x": 402.3942,
-                "y": 23.439201
-              },
-              {
-                "x": 403.1542,
-                "y": 23.439201
-              },
-              {
-                "x": 403.1542,
-                "y": 24.199202
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 399.2582,
-          "y": 18.7303,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "a9c5e7f5-5f4d-4762-a117-d515841f5727",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical15",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 399.2563,
-          "y": 19.07,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "4f4983f8-6469-49a2-b7c2-cb7764373215",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball15",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 398.87628,
-              "y": 18.69,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 399.6363,
-              "y": 18.69,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 399.6363,
-              "y": 19.45,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 398.87628,
-              "y": 19.45,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 398.87628,
-                "y": 19.45
-              },
-              {
-                "x": 398.87628,
-                "y": 18.69
-              },
-              {
-                "x": 399.6363,
-                "y": 18.69
-              },
-              {
-                "x": 399.6363,
-                "y": 19.45
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 396.7956,
-          "y": 11.8703,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "8614f797-91eb-4885-b3fa-8d782877afec",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical14",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 396.7937,
-          "y": 12.2101,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "123ed8c5-5047-464a-81cc-fb91c9de8cb5",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball14",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 396.4137,
-              "y": 11.830101,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 397.1737,
-              "y": 11.830101,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 397.1737,
-              "y": 12.590101,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 396.4137,
-              "y": 12.590101,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 396.4137,
-                "y": 12.590101
-              },
-              {
-                "x": 396.4137,
-                "y": 11.830101
-              },
-              {
-                "x": 397.1737,
-                "y": 11.830101
-              },
-              {
-                "x": 397.1737,
-                "y": 12.590101
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 429.75018,
-          "y": 18.244785,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "7a7bc364-20eb-4d34-aebb-23f4c3af782d",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical20",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 429.7483,
-          "y": 18.584585,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "f1815d75-dc10-49b3-8288-35d249c3863c",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball20",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 429.3683,
-              "y": 18.204586,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 430.1283,
-              "y": 18.204586,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 430.1283,
-              "y": 18.964586,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 429.3683,
-              "y": 18.964586,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 429.3683,
-                "y": 18.964586
-              },
-              {
-                "x": 429.3683,
-                "y": 18.204586
-              },
-              {
-                "x": 430.1283,
-                "y": 18.204586
-              },
-              {
-                "x": 430.1283,
-                "y": 18.964586
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 431.4802,
-          "y": 12.733986,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "asset": {
-            "relativePath": "particle/fire.p",
-            "@class": "ParticleAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
-        },
-        {
-          "activeOnStart": true,
-          "@class": "ProtoVisParticle"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "5b31c481-f9f5-4958-a30e-9b06d46a4bcd",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "partical21",
-          "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 431.4783,
-          "y": 13.073686,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "@class": "Point"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "fb9cc5d1-709e-40e5-a9ae-f164babbbdc1",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "fireball21",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 431.0983,
-              "y": 12.6936865,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 431.8583,
-              "y": 12.6936865,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 431.8583,
-              "y": 13.453687,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 431.0983,
-              "y": 13.453687,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 431.0983,
-                "y": 13.453687
-              },
-              {
-                "x": 431.0983,
-                "y": 12.6936865
-              },
-              {
-                "x": 431.8583,
-                "y": 12.6936865
-              },
-              {
-                "x": 431.8583,
-                "y": 13.453687
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 1.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": false,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"
@@ -11631,8 +7247,8 @@
     {
       "components": [
         {
-          "x": 6.121887,
-          "y": 18.823574,
+          "x": 151.43814,
+          "y": 17.589468,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -13793,6 +9409,513 @@
           "maskBits": -1,
           "categoryBits": 1,
           "@class": "PhysicsProperties"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 44.0255,
+          "y": 18.009495,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 0.5,
+            "relativePath": "spriter/animStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.01,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "58a1f72b-16c9-4f5b-a941-f1fe22ecadb9",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.01,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 40.33438,
+              "y": 19.2963,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 40.292545,
+              "y": 19.15848,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 42.43422,
+              "y": 17.4216,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 41.679935,
+              "y": 14.79052,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 41.756283,
+              "y": 14.700288,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 44.039864,
+              "y": 16.324474,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 46.149124,
+              "y": 14.715188,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 46.2647,
+              "y": 14.799243,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 45.497337,
+              "y": 17.5384,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 47.694168,
+              "y": 19.199429,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 47.650146,
+              "y": 19.317732,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 44.860996,
+              "y": 19.366756,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 44.04433,
+              "y": 22.020319,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 43.89424,
+              "y": 22.017817,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 43.011997,
+              "y": 19.251228,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 43.89424,
+                "y": 22.017817
+              },
+              {
+                "x": 43.011997,
+                "y": 19.251228
+              },
+              {
+                "x": 44.860996,
+                "y": 19.366756
+              },
+              {
+                "x": 44.04433,
+                "y": 22.020319
+              }
+            ],
+            [
+              {
+                "x": 44.860996,
+                "y": 19.366756
+              },
+              {
+                "x": 43.011997,
+                "y": 19.251228
+              },
+              {
+                "x": 45.497337,
+                "y": 17.5384
+              },
+              {
+                "x": 47.694168,
+                "y": 19.199429
+              },
+              {
+                "x": 47.650146,
+                "y": 19.317732
+              }
+            ],
+            [
+              {
+                "x": 43.011997,
+                "y": 19.251228
+              },
+              {
+                "x": 40.33438,
+                "y": 19.2963
+              },
+              {
+                "x": 44.039864,
+                "y": 16.324474
+              },
+              {
+                "x": 46.149124,
+                "y": 14.715188
+              },
+              {
+                "x": 46.2647,
+                "y": 14.799243
+              },
+              {
+                "x": 45.497337,
+                "y": 17.5384
+              }
+            ],
+            [
+              {
+                "x": 41.756283,
+                "y": 14.700288
+              },
+              {
+                "x": 44.039864,
+                "y": 16.324474
+              },
+              {
+                "x": 42.43422,
+                "y": 17.4216
+              },
+              {
+                "x": 41.679935,
+                "y": 14.79052
+              }
+            ],
+            [
+              {
+                "x": 44.039864,
+                "y": 16.324474
+              },
+              {
+                "x": 40.33438,
+                "y": 19.2963
+              },
+              {
+                "x": 40.292545,
+                "y": 19.15848
+              },
+              {
+                "x": 42.43422,
+                "y": 17.4216
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": false,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 151.5627,
+          "y": 28.4388,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "particle/fire.p",
+            "@class": "ParticleAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "pixelsPerUnits": 100.0,
+          "scale": 0.01,
+          "@class": "PixelsPerUnit"
+        },
+        {
+          "activeOnStart": true,
+          "@class": "ProtoVisParticle"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "463a7c2d-478e-44d1-8ef1-b17579d73b0b",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 151.1827,
+              "y": 28.058802,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 151.94269,
+              "y": 28.058802,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 151.94269,
+              "y": 28.818802,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 151.1827,
+              "y": 28.818802,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 151.1827,
+                "y": 28.818802
+              },
+              {
+                "x": 151.1827,
+                "y": 28.058802
+              },
+              {
+                "x": 151.94269,
+                "y": 28.058802
+              },
+              {
+                "x": 151.94269,
+                "y": 28.818802
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "PixelsPerUnit",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 124.62879,
+          "y": 25.646898,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "particle/fire.p",
+            "@class": "ParticleAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "pixelsPerUnits": 100.0,
+          "scale": 0.01,
+          "@class": "PixelsPerUnit"
+        },
+        {
+          "activeOnStart": true,
+          "@class": "ProtoVisParticle"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "25cc98d6-7227-4469-acf7-054576ff9f71",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 489.884,
+              "y": 56.202206,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 490.64395,
+              "y": 56.202206,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 490.64395,
+              "y": 56.962208,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 489.884,
+              "y": 56.962208,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 489.884,
+                "y": 56.962208
+              },
+              {
+                "x": 489.884,
+                "y": 56.202206
+              },
+              {
+                "x": 490.64395,
+                "y": 56.202206
+              },
+              {
+                "x": 490.64395,
+                "y": 56.962208
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "PixelsPerUnit",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"

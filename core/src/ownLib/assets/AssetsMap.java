@@ -39,8 +39,8 @@ public class AssetsMap {
 
     private void createAudioAssets() {
         try {
-            audioAssets.put("GLASS_ROLLING", "sound/glassRolling.mp3");
-            audioAssets.put("GLASS_BREAK", "sound/glassBreak.wav");
+//            audioAssets.put("GLASS_ROLLING", "sound/glassRolling.mp3");
+//            audioAssets.put("GLASS_BREAK", "sound/glassBreak.wav");
         } catch (JSONException e) {
             e.printStackTrace();
         }

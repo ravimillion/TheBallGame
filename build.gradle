@@ -127,6 +127,7 @@ project(":core") {
         compile "com.underwaterapps.overlap2druntime:overlap2d-runtime-libgdx:0.1.2-SNAPSHOT"
         compile "com.kotcrab.vis:vis-ui:1.2.4"
         compile "com.kotcrab.vis:vis-runtime:0.3.4"
+        compile "com.kotcrab.vis:vis-runtime-spriter:0.3.4"
         compile "net.dermetfan.libgdx-utils:libgdx-utils:0.13.3"
         compile "net.dermetfan.libgdx-utils:libgdx-utils-box2d:0.13.3"
         compile "de.tomgrill.gdxfacebook:gdx-facebook-core:1.2.2"

@@ -16,10 +16,10 @@
   },
   "layers": [
     {
-      "name": "Controls",
+      "name": "Background",
       "id": 0,
       "locked": true,
-      "visible": false,
+      "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     },
@@ -40,9 +40,9 @@
       "@class": "EditorLayer"
     },
     {
-      "name": "Background",
+      "name": "Controls",
       "id": 3,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -90,7 +90,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
@@ -154,7 +154,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
@@ -218,7 +218,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
@@ -530,7 +530,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
@@ -594,7 +594,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
@@ -658,7 +658,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 3,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
@@ -980,10 +980,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
+          "layerId": 3,
           "@class": "Layer"
         },
         {
@@ -1040,10 +1037,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
+          "layerId": 3,
           "@class": "Layer"
         },
         {
@@ -1100,10 +1094,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
+          "layerId": 3,
           "@class": "Layer"
         },
         {
@@ -1160,10 +1151,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
+          "layerId": 3,
           "@class": "Layer"
         },
         {
@@ -1220,10 +1208,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
+          "layerId": 3,
           "@class": "Layer"
         },
         {
@@ -1280,10 +1265,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
+          "layerId": 3,
           "@class": "Layer"
         },
         {
@@ -17983,10 +17965,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
-          "layerId": 0,
+          "layerId": 3,
           "@class": "Layer"
         },
         {
@@ -18000,6 +17979,66 @@
         {
           "id": "idCongrats",
           "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 12.6007,
+          "y": 16.5748,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 0.5,
+            "relativePath": "spriter/animStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.01,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "d6189786-8f27-476e-9fd8-a9c395adc152",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.01,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": false,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"

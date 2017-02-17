@@ -26,11 +26,11 @@ import ownLib.Own;
 public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     public int state = GameData.RUNNING;
     public Body body;
-    ComponentMapper<PhysicsBody> physicsCm;
-    ComponentMapper<VisID> visIDCm;
-    CameraManager cameraManager;
-    ComponentMapper<Transform> transformCm;
-    VisIDManager idManager;
+    private ComponentMapper<PhysicsBody> physicsCm;
+    private ComponentMapper<VisID> visIDCm;
+    private CameraManager cameraManager;
+    private ComponentMapper<Transform> transformCm;
+    private VisIDManager idManager;
     private PhysicsSystem physicsSystem;
     private ControlsSystem controlsSystem;
     private ContactListenerSystem contactListenerSystem;
@@ -39,6 +39,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     private BodyContact bodyContact;
     private OrthographicCamera camera;
     private GameController gameController;
+
     private float TOP_ANGULAR_VELOCITY = 20;
     private float TOP_LINEAR_VELOCITY = 45;
 

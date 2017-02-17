@@ -3,7 +3,6 @@ package com.simplegame.game.systems;
 import com.artemis.BaseSystem;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.simplegame.game.GameData;
 import com.simplegame.game.userdata.UserData;
 
 import ownLib.Own;
@@ -45,7 +44,7 @@ public class ContactListenerSystem extends BaseSystem implements OnContactListen
 //                        cameraControllerSystem.shakeCamera(CameraShaker.SHAKE_INTENSITY_VERY_HIGH, CameraShaker.DIMINISH_FACTOR_MEDIUM);
                     }
 
-                    controlsSystem.setState(GameData.LEVEL_END);
+//                    controlsSystem.setState(GameData.LEVEL_END);
                 }
             });
         }

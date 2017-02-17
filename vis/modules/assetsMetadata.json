@@ -1,0 +1,26 @@
+[
+  {
+    "key": "spriter/anim1/",
+    "value": "com.kotcrab.vis.editor.directory.Spriter",
+    "@class-key": "String",
+    "@class-value": "String"
+  },
+  {
+    "key": "spriter/startAnim/",
+    "value": "com.kotcrab.vis.editor.directory.Spriter",
+    "@class-key": "String",
+    "@class-value": "String"
+  },
+  {
+    "key": "spriter/star/",
+    "value": "com.kotcrab.vis.editor.directory.Spriter",
+    "@class-key": "String",
+    "@class-value": "String"
+  },
+  {
+    "key": "spriter/animStar/",
+    "value": "com.kotcrab.vis.editor.directory.Spriter",
+    "@class-key": "String",
+    "@class-value": "String"
+  }
+]

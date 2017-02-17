@@ -6,6 +6,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Logger;
+import com.kotcrab.vis.plugin.spriter.runtime.SpriterSupport;
 import com.kotcrab.vis.runtime.RuntimeContext;
 import com.kotcrab.vis.runtime.data.SceneData;
 import com.kotcrab.vis.runtime.font.FreeTypeFontProvider;
@@ -25,6 +26,7 @@ import com.simplegame.game.systems.ParticleSystem;
 import com.simplegame.game.systems.PlayerSystem;
 import com.simplegame.game.systems.SpriteBoundsCreator;
 import com.simplegame.game.systems.SpriteBoundsUpdater;
+import com.simplegame.game.systems.SpriterPhysicsSystem;
 
 import ownLib.Own;
 
@@ -45,6 +47,7 @@ public class GameController implements Screen {
 
         manager = new VisAssetManager(spriteBatch);
         manager.enableFreeType(new FreeTypeFontProvider());
+        manager.registerSupport(new SpriterSupport());
         manager.getLogger().setLevel(Logger.ERROR);
     }
 
@@ -124,6 +127,7 @@ public class GameController implements Screen {
         levelParams.config.addSystem(InitSystem.class);
         levelParams.config.addSystem(ParticleSystem.class);
         levelParams.config.addSystem(ContactListenerSystem.class);
+        levelParams.config.addSystem(SpriterPhysicsSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -191,9 +195,9 @@ public class GameController implements Screen {
 
     @Override
     public void show() {
-        loadMenuScene();
+//        loadMenuScene();
 //        loadLevelOneScene();
-//        loadLevelTwoScene();
+        loadLevelTwoScene();
 //        loadLevelThreeScene();
     }
 
@@ -245,6 +249,7 @@ public class GameController implements Screen {
             default:
                 Own.log("Error: Invalid level info: " + this.level);
         }
+
     }
 
     public void notify(int gameState) {

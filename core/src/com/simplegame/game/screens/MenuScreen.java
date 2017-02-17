@@ -3,19 +3,23 @@ package com.simplegame.game.screens;
 import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.math.Vector3;
 import com.kotcrab.vis.runtime.component.Invisible;
+import com.kotcrab.vis.runtime.component.Tint;
 import com.kotcrab.vis.runtime.component.Transform;
 import com.kotcrab.vis.runtime.component.VisSprite;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 import com.simplegame.game.GameController;
+import com.simplegame.game.TintAccessor;
 import com.simplegame.game.components.Bounds;
 
 import java.util.HashMap;
 
+import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
 import ownLib.Own;
 
@@ -23,6 +27,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
     ComponentMapper<Bounds> boundsCm;
     ComponentMapper<VisSprite> spriteCm;
     ComponentMapper<Transform> transformCm;
+    ComponentMapper<Tint> tintCm;
 
     VisIDManager idManager;
     CameraManager cameraManager;
@@ -50,39 +55,20 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         }
 
         Own.io.addProcessor(this);
-
-//        Tween.registerAccessor(Sprite.class, new SpriteAccessor());
-//
-//        Entity entityOne = idManager.get("idTwo");
-//        oneSprite = spriteCm.get(entityOne);
-//        Tween.set(sprite, SpriteAccessor.FADE_IN_OUT).target(0).start(tweenManager);
-//        Tween.to(sprite, SpriteAccessor.FADE_IN_OUT, 15).target(1).start(tweenManager).setCallback(new TweenCallback() {
-//            @Override
-//            public void onEvent(int type, BaseTween<?> source) {
-//                Gdx.app.postRunnable(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Own.log("Finished tweening");
-//                    }
-//                });
-//            }
-//        }).start(tweenManager);
-
         // TWEEN MANAGER
-//        Tween.registerAccessor(VisSprite.class, new VisSpriteAccessor());
-//
-//        Tween.set(oneSprite, VisSpriteAccessor.FADE_IN_OUT).target(0).start(tweenManager);
-//        Tween.to(oneSprite, VisSpriteAccessor.FADE_IN_OUT, 5).target(1).start(tweenManager).setCallback(new TweenCallback() {
-//            @Override
-//            public void onEvent(int type, BaseTween<?> source) {
-//                Gdx.app.postRunnable(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Own.log("Finished tweening");
-//                    }
-//                });
-//            }
-//        }).start(tweenManager);
+        Tween.registerAccessor(Tint.class, new TintAccessor());
+
+        Entity entity = idManager.get("idOne");
+        Tween.set(tintCm.get(entity), TintAccessor.FADE_IN_OUT).target(0).start(tweenManager);
+        Tween.to(tintCm.get(entity), TintAccessor.FADE_IN_OUT, 1).target(1f).start(tweenManager);
+
+        entity = idManager.get("idTwo");
+        Tween.set(tintCm.get(entity), TintAccessor.FADE_IN_OUT).target(0).start(tweenManager);
+        Tween.to(tintCm.get(entity), TintAccessor.FADE_IN_OUT, 1.5f).target(1f).start(tweenManager);
+
+        entity = idManager.get("idThree");
+        Tween.set(tintCm.get(entity), TintAccessor.FADE_IN_OUT).target(0).start(tweenManager);
+        Tween.to(tintCm.get(entity), TintAccessor.FADE_IN_OUT, 2f).target(1f).start(tweenManager);
     }
 
     @Override
@@ -94,7 +80,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         String buttonId = getPressedButtonId(touchPoint);
         if (buttonId == null) return false;
 
-        switch(buttonId) {
+        switch (buttonId) {
             case "idOne":
                 gameController.loadLevelOneScene();
                 this.dispose();
@@ -135,6 +121,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
 
     @Override
     protected void processSystem() {
+        tweenManager.update(Math.min(Gdx.graphics.getDeltaTime(), 1/60f));
     }
 
     @Override
