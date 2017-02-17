@@ -27,7 +27,6 @@ android/libs/arm64-v8a/
 android/libs/x86/
 android/libs/x86_64/
 android/gen/
-android/assets/
 .idea/
 *.ipr
 *.iws
@@ -71,5 +70,5 @@ build/
 .DS_Store
 Thumbs.db
 ## VisEditor
-vis/.*
+vis/
 vis/**/.*
