@@ -146,21 +146,21 @@
 //        restartButton.setVisible(false);
 //    }
 //
-//    private void setState(GameData state) {
+//    private void setState(int state) {
 //        setAllHidden();
 //
 //        switch (state) {
-//            case READY:
+//            case GameData.READY:
 //                readyButton.setVisible(true);
 //                break;
-//            case RUNNING:
+//            case GameData.RUNNING:
 //                pauseButton.setVisible(true);
 //                break;
-//            case PAUSED:
+//            case GameData.PAUSED:
 //                resumeButton.setVisible(true);
 //                quitButton.setVisible(true);
 //                break;
-//            case GAME_OVER:
+//            case GameData.GAME_OVER:
 //                restartButton.setVisible(true);
 //                quitButton.setVisible(true);
 //                break;

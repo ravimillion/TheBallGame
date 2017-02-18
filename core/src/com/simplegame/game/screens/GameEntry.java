@@ -22,7 +22,7 @@ public class GameEntry extends Game {
     @Override
     public void create() {
         spriteBatch = new SpriteBatch();
-        handler.showAds(false); // enable ads
+//        handler.showAds(false); // enable ads
         splashScreen = new Splash(this, spriteBatch);
         this.setScreen(splashScreen);
     }

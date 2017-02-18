@@ -3,6 +3,7 @@ package com.simplegame.game.systems;
 import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.math.Vector3;
 import com.kotcrab.vis.runtime.component.Invisible;
@@ -196,6 +197,20 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
 
     @Override
     public boolean keyDown(int keycode) {
+        Own.log("Pressed: " + keycode);
+        switch (keycode) {
+            case Input.Keys.ENTER:
+                setState(getNextState("idReady"));
+                break;
+            case Input.Keys.SPACE:
+                setState(getNextState("idPause"));
+                break;
+            case Input.Keys.Q:
+                Own.log("Q pressed");
+                setState(getNextState("idQuit"));
+                break;
+        }
+
         return false;
     }
 
@@ -212,5 +227,10 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
     @Override
     public boolean scrolled(int amount) {
         return false;
+    }
+
+    @Override
+    public void dispose() {
+        Own.io.removeProcessor(this);
     }
 }

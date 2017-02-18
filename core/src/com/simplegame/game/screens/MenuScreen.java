@@ -4,6 +4,7 @@ import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.math.Vector3;
 import com.kotcrab.vis.runtime.component.Invisible;
@@ -131,6 +132,26 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
 
     @Override
     public boolean keyDown(int keycode) {
+        switch (keycode) {
+            case Keys.NUM_1:
+                this.dispose();
+                gameController.loadLevelOneScene();
+                break;
+            case Keys.NUM_2:
+                this.dispose();
+                gameController.loadLevelOneScene();
+                break;
+            case Keys.NUM_3:
+                this.dispose();
+                gameController.loadLevelOneScene();
+                break;
+            case Keys.Q:
+                this.dispose();
+                gameController.exitApp();
+                break;
+
+
+        }
         return false;
     }
 

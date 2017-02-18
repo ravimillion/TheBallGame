@@ -3,6 +3,7 @@ package com.simplegame.game.systems;
 import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -126,6 +127,13 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
             } else {
                 body.applyTorque(BALL_FORCE, true);
             }
+        }
+
+        // for pc mode
+        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+            body.applyTorque(BALL_FORCE * -1, true);
+        } else if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+            body.applyTorque(BALL_FORCE, true);
         }
     }
 }

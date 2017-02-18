@@ -265,4 +265,9 @@ public class GameController implements Screen {
                 break;
         }
     }
+
+    public void exitApp() {
+        Own.log("Exit app");
+        Gdx.app.exit();
+    }
 }
