@@ -42,7 +42,7 @@ public class BodyContact implements ContactListener {
     }
 
     public void notifyListener(UserData userDataA, UserData userDataB, float normalImpulse) {
-        if (contactListener != null) contactListener.onContact(userDataA, userDataB, normalImpulse);
+//        if (contactListener != null) contactListener.onContact(userDataA, userDataB, normalImpulse);
     }
 
     public void setContactListener(OnContactListener listener) {

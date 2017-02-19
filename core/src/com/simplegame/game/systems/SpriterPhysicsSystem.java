@@ -38,7 +38,7 @@ public class SpriterPhysicsSystem extends EntitySystem implements AfterSceneInit
     @Override
     protected void processSystem() {
         Bag<Entity> entityBag = getEntities();
-        for (Entity e: entityBag) {
+        for (Entity e : entityBag) {
             PhysicsBody physics = physicsCm.get(e);
             if (physics.body == null) return;
 

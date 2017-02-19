@@ -19,6 +19,7 @@ public class CameraControllerSystem extends BaseSystem implements AfterSceneInit
         this.gameController = gameController;
 
     }
+
     @Override
     protected void processSystem() {
         Vector2 bodyPosition = playerSystem.body.getPosition();

@@ -34,7 +34,7 @@
     {
       "name": "PhysicsObjects",
       "id": 2,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -686,26 +686,47 @@
     {
       "components": [
         {
-          "x": 8.186777,
-          "y": 21.135555,
+          "x": 6.2925,
+          "y": 21.2273,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "@class": "Point"
+          "originX": 0.965,
+          "originY": 0.965,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/transball.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 1.93,
+          "height": 1.93,
+          "@class": "ProtoVisSprite"
         },
         {
           "layerId": 2,
           "@class": "Layer"
         },
         {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "811a3d49-cdca-4c38-b3d5-2a8bc5b3136b",
+          "uuid": "622cf6c3-37ee-4029-bda1-dd0ada48cb53",
           "@class": "VisUUID"
         },
         {
@@ -713,21 +734,8 @@
           "@class": "Renderable"
         },
         {
-          "id": "ballPosition",
+          "id": "ball",
           "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"

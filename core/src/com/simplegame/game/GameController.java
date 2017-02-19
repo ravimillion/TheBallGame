@@ -19,10 +19,9 @@ import com.simplegame.game.screens.GameEntry;
 import com.simplegame.game.screens.MenuScreen;
 import com.simplegame.game.systems.AlwaysInViewPortSystem;
 import com.simplegame.game.systems.CameraControllerSystem;
-import com.simplegame.game.systems.ContactListenerSystem;
 import com.simplegame.game.systems.ControlsSystem;
-import com.simplegame.game.systems.InitSystem;
 import com.simplegame.game.systems.ParticleSystem;
+import com.simplegame.game.systems.PhysicsBodyContactSystem;
 import com.simplegame.game.systems.PlayerSystem;
 import com.simplegame.game.systems.SpriteBoundsCreator;
 import com.simplegame.game.systems.SpriteBoundsUpdater;
@@ -49,6 +48,7 @@ public class GameController implements Screen {
         manager.enableFreeType(new FreeTypeFontProvider());
         manager.registerSupport(new SpriterSupport());
         manager.getLogger().setLevel(Logger.ERROR);
+
     }
 
     private void unloadPreviousScene() {
@@ -86,8 +86,7 @@ public class GameController implements Screen {
 //        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
-        levelParams.config.addSystem(InitSystem.class);
-        levelParams.config.addSystem(ContactListenerSystem.class);
+        levelParams.config.addSystem(PhysicsBodyContactSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -124,10 +123,9 @@ public class GameController implements Screen {
 //        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
-        levelParams.config.addSystem(InitSystem.class);
         levelParams.config.addSystem(ParticleSystem.class);
-        levelParams.config.addSystem(ContactListenerSystem.class);
         levelParams.config.addSystem(SpriterPhysicsSystem.class);
+        levelParams.config.addSystem(PhysicsBodyContactSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -164,9 +162,7 @@ public class GameController implements Screen {
 //        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
-        levelParams.config.addSystem(InitSystem.class);
-        levelParams.config.addSystem(ContactListenerSystem.class);
-//        levelParams.config.addSystem(ParticleSystem.class);
+        levelParams.config.addSystem(PhysicsBodyContactSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -196,8 +192,8 @@ public class GameController implements Screen {
     @Override
     public void show() {
 //        loadMenuScene();
-//        loadLevelOneScene();
-        loadLevelTwoScene();
+        loadLevelOneScene();
+//        loadLevelTwoScene();
 //        loadLevelThreeScene();
     }
 
@@ -233,7 +229,7 @@ public class GameController implements Screen {
     }
 
     private void restartLevel() {
-        switch(this.level) {
+        switch (this.level) {
             case GameData.MENU_SCREEN:
                 loadMenuScene();
                 break;
@@ -253,7 +249,7 @@ public class GameController implements Screen {
     }
 
     public void notify(int gameState) {
-        switch(gameState) {
+        switch (gameState) {
             case GameData.QUIT:
                 loadMenuScene();
                 break;

@@ -122,7 +122,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
 
     @Override
     protected void processSystem() {
-        tweenManager.update(Math.min(Gdx.graphics.getDeltaTime(), 1/60f));
+        tweenManager.update(Math.min(Gdx.graphics.getDeltaTime(), 1 / 60f));
     }
 
     @Override
@@ -139,11 +139,11 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
                 break;
             case Keys.NUM_2:
                 this.dispose();
-                gameController.loadLevelOneScene();
+                gameController.loadLevelTwoScene();
                 break;
             case Keys.NUM_3:
                 this.dispose();
-                gameController.loadLevelOneScene();
+                gameController.loadLevelThreeScene();
                 break;
             case Keys.Q:
                 this.dispose();

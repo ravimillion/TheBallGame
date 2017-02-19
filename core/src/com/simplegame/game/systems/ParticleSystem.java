@@ -40,7 +40,7 @@ public class ParticleSystem extends EntitySystem {
     @Override
     protected void processSystem() {
         Bag<Entity> entityBag = getEntities();
-        for (Entity e: entityBag) {
+        for (Entity e : entityBag) {
             PhysicsBody physics = physicsCm.get(e);
             if (physics.body == null) return;
 
@@ -53,7 +53,6 @@ public class ParticleSystem extends EntitySystem {
                 body.setTransform(body.getPosition().x, GameController.WORLD_HEIGHT - 1, body.getAngle());
                 body.setLinearVelocity(0, 0);
             }
-
         }
     }
 }

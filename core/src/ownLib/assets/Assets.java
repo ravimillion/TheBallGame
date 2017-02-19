@@ -46,7 +46,6 @@ public class Assets extends AssetManager {
     }
 
 
-
     public void playSound(String assetKey) {
         String assetURI = null;
 
@@ -215,7 +214,7 @@ public class Assets extends AssetManager {
                         textureObjects.put(key, (Texture) this.get(obj.getString("uri")));
                         break;
                     case AssetsMap.TEXTURE_ATLAS:
-                        textureAtlasObjects.put(key, (TextureAtlas)this.get(obj.getString("uri")));
+                        textureAtlasObjects.put(key, (TextureAtlas) this.get(obj.getString("uri")));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

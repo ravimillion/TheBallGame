@@ -17,7 +17,7 @@ public class TintAccessor implements TweenAccessor<Tint> {
     @Override
     public int getValues(Tint tint, int tweenType, float[] returnValues) {
 
-        switch(tweenType) {
+        switch (tweenType) {
             case FADE_IN_OUT:
                 returnValues[0] = tint.getTint().a;
                 return 1;
@@ -29,7 +29,7 @@ public class TintAccessor implements TweenAccessor<Tint> {
 
     @Override
     public void setValues(Tint tint, int tweenType, float[] newValues) {
-        switch(tweenType) {
+        switch (tweenType) {
             case FADE_IN_OUT:
                 Color c = tint.getTint();
                 c.a = newValues[0];
