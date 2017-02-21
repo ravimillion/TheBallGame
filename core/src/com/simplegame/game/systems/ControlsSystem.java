@@ -197,7 +197,6 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
 
     @Override
     public boolean keyDown(int keycode) {
-        Own.log("Pressed: " + keycode);
         switch (keycode) {
             case Input.Keys.ENTER:
                 setState(getNextState("idReady"));
@@ -206,7 +205,6 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
                 setState(getNextState("idPause"));
                 break;
             case Input.Keys.Q:
-                Own.log("Q pressed");
                 setState(getNextState("idQuit"));
                 break;
         }

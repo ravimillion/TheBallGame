@@ -149,8 +149,6 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
                 this.dispose();
                 gameController.exitApp();
                 break;
-
-
         }
         return false;
     }

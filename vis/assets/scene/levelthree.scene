@@ -16,9 +16,9 @@
   },
   "layers": [
     {
-      "name": "Background",
+      "name": "Ground",
       "id": 0,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -32,217 +32,17 @@
       "@class": "EditorLayer"
     },
     {
-      "name": "Animation",
-      "id": 2,
-      "locked": false,
-      "visible": true,
-      "cordsSystem": "WORLD",
-      "@class": "EditorLayer"
-    },
-    {
       "name": "Controls",
       "id": 3,
-      "locked": false,
-      "visible": true,
+      "locked": true,
+      "visible": false,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 2,
+  "activeLayerId": 0,
   "groupIds": [],
   "schemes": [
-    {
-      "components": [
-        {
-          "x": 324.45737,
-          "y": 2.4054103,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            2,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "6eca084c-ba57-41f3-bc58-87b2a029e869",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 419.90524,
-          "y": 2.4047294,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            1,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "58bdc8be-106a-44d7-8f56-2a3d0605a4e0",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 515.4031,
-          "y": 2.4102302,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            1,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "6651ef55-01e3-41db-8fc8-93281022e120",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
     {
       "components": [
         {
@@ -487,198 +287,6 @@
           "maskBits": -1,
           "categoryBits": 1,
           "@class": "PhysicsProperties"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 133.50342,
-          "y": 2.3987622,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            0,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "c794ff1c-691a-4203-ae5c-ec0e0666d437",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 38.00562,
-          "y": 2.3932624,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            0,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "e7b7a70a-8c61-4b7e-beae-d4e1b3105ee8",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 228.95955,
-          "y": 2.3999095,
-          "scaleX": 4.9,
-          "scaleY": 4.9,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 9.74,
-          "originY": 0.61,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/longground.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 19.48,
-          "height": 1.22,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [
-            2,
-            4
-          ],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "bf664a57-f692-4703-b2a8-065477ca9660",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "ground",
-          "@class": "VisID"
         }
       ],
       "@class": "EntityScheme"
@@ -980,6 +588,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -1035,6 +646,9 @@
           "width": 6.0,
           "height": 2.51,
           "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
         },
         {
           "layerId": 3,
@@ -1094,6 +708,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -1149,6 +766,9 @@
           "width": 6.0,
           "height": 2.52,
           "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
         },
         {
           "layerId": 3,
@@ -1208,6 +828,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -1263,6 +886,9 @@
           "width": 2.56,
           "height": 1.28,
           "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
         },
         {
           "layerId": 3,
@@ -6279,655 +5905,6 @@
     {
       "components": [
         {
-          "x": 232.9335,
-          "y": 0.6827514,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 5.99,
-          "originY": 0.655,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/g6086.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 11.98,
-          "height": 1.31,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "d863c883-3851-413b-8d6d-5f692ea8e7ee",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "spike",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 232.93039,
-              "y": 1.4632921,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 232.9335,
-              "y": 0.68275166,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 244.9135,
-              "y": 0.68275166,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 244.89894,
-              "y": 1.4758615,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 244.53363,
-              "y": 1.9857635,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 244.16832,
-              "y": 1.4657145,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 243.7929,
-              "y": 1.9806919,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 243.4149,
-              "y": 1.4733267,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 243.03944,
-              "y": 1.9933758,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 242.66902,
-              "y": 1.470788,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 242.28342,
-              "y": 1.9883003,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 241.90794,
-              "y": 1.458106,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 241.55278,
-              "y": 2.0060596,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 241.16464,
-              "y": 1.4707899,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 240.79173,
-              "y": 1.990839,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 240.4213,
-              "y": 1.458108,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 240.03316,
-              "y": 1.9857674,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 239.678,
-              "y": 1.4504967,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 239.30002,
-              "y": 1.9984512,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 238.9143,
-              "y": 1.4707899,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 238.54646,
-              "y": 1.9857655,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 238.16847,
-              "y": 1.4707899,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 237.80064,
-              "y": 1.9959126,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 237.42007,
-              "y": 1.4733276,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 237.04716,
-              "y": 1.9984512,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 236.6717,
-              "y": 1.4657164,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 236.30641,
-              "y": 1.9832306,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 235.91823,
-              "y": 1.4784021,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 235.5453,
-              "y": 2.0060616,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 235.18254,
-              "y": 1.4733286,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 234.81529,
-              "y": 1.994297,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 234.43901,
-              "y": 1.4703255,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 234.05571,
-              "y": 1.9872627,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 233.68646,
-              "y": 1.4632921,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 233.3137,
-              "y": 1.9872627,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 233.3137,
-                "y": 1.9872627
-              },
-              {
-                "x": 232.93039,
-                "y": 1.4632921
-              },
-              {
-                "x": 233.68646,
-                "y": 1.4632921
-              }
-            ],
-            [
-              {
-                "x": 234.05571,
-                "y": 1.9872627
-              },
-              {
-                "x": 233.68646,
-                "y": 1.4632921
-              },
-              {
-                "x": 234.43901,
-                "y": 1.4703255
-              }
-            ],
-            [
-              {
-                "x": 234.81529,
-                "y": 1.994297
-              },
-              {
-                "x": 234.43901,
-                "y": 1.4703255
-              },
-              {
-                "x": 235.18254,
-                "y": 1.4733286
-              }
-            ],
-            [
-              {
-                "x": 234.43901,
-                "y": 1.4703255
-              },
-              {
-                "x": 233.68646,
-                "y": 1.4632921
-              },
-              {
-                "x": 236.6717,
-                "y": 1.4657164
-              },
-              {
-                "x": 235.18254,
-                "y": 1.4733286
-              }
-            ],
-            [
-              {
-                "x": 235.5453,
-                "y": 2.0060616
-              },
-              {
-                "x": 235.18254,
-                "y": 1.4733286
-              },
-              {
-                "x": 235.91823,
-                "y": 1.4784021
-              }
-            ],
-            [
-              {
-                "x": 236.30641,
-                "y": 1.9832306
-              },
-              {
-                "x": 235.91823,
-                "y": 1.4784021
-              },
-              {
-                "x": 236.6717,
-                "y": 1.4657164
-              }
-            ],
-            [
-              {
-                "x": 235.91823,
-                "y": 1.4784021
-              },
-              {
-                "x": 235.18254,
-                "y": 1.4733286
-              },
-              {
-                "x": 236.6717,
-                "y": 1.4657164
-              }
-            ],
-            [
-              {
-                "x": 237.04716,
-                "y": 1.9984512
-              },
-              {
-                "x": 236.6717,
-                "y": 1.4657164
-              },
-              {
-                "x": 237.42007,
-                "y": 1.4733276
-              }
-            ],
-            [
-              {
-                "x": 237.80064,
-                "y": 1.9959126
-              },
-              {
-                "x": 237.42007,
-                "y": 1.4733276
-              },
-              {
-                "x": 238.16847,
-                "y": 1.4707899
-              }
-            ],
-            [
-              {
-                "x": 237.42007,
-                "y": 1.4733276
-              },
-              {
-                "x": 236.6717,
-                "y": 1.4657164
-              },
-              {
-                "x": 238.16847,
-                "y": 1.4707899
-              }
-            ],
-            [
-              {
-                "x": 238.54646,
-                "y": 1.9857655
-              },
-              {
-                "x": 238.16847,
-                "y": 1.4707899
-              },
-              {
-                "x": 238.9143,
-                "y": 1.4707899
-              }
-            ],
-            [
-              {
-                "x": 238.16847,
-                "y": 1.4707899
-              },
-              {
-                "x": 236.6717,
-                "y": 1.4657164
-              },
-              {
-                "x": 239.678,
-                "y": 1.4504967
-              },
-              {
-                "x": 238.9143,
-                "y": 1.4707899
-              }
-            ],
-            [
-              {
-                "x": 239.30002,
-                "y": 1.9984512
-              },
-              {
-                "x": 238.9143,
-                "y": 1.4707899
-              },
-              {
-                "x": 239.678,
-                "y": 1.4504967
-              }
-            ],
-            [
-              {
-                "x": 236.6717,
-                "y": 1.4657164
-              },
-              {
-                "x": 233.68646,
-                "y": 1.4632921
-              },
-              {
-                "x": 239.678,
-                "y": 1.4504967
-              }
-            ],
-            [
-              {
-                "x": 233.68646,
-                "y": 1.4632921
-              },
-              {
-                "x": 232.93039,
-                "y": 1.4632921
-              },
-              {
-                "x": 232.9335,
-                "y": 0.68275166
-              },
-              {
-                "x": 244.9135,
-                "y": 0.68275166
-              },
-              {
-                "x": 239.678,
-                "y": 1.4504967
-              }
-            ],
-            [
-              {
-                "x": 240.03316,
-                "y": 1.9857674
-              },
-              {
-                "x": 239.678,
-                "y": 1.4504967
-              },
-              {
-                "x": 240.4213,
-                "y": 1.458108
-              }
-            ],
-            [
-              {
-                "x": 240.79173,
-                "y": 1.990839
-              },
-              {
-                "x": 240.4213,
-                "y": 1.458108
-              },
-              {
-                "x": 241.16464,
-                "y": 1.4707899
-              }
-            ],
-            [
-              {
-                "x": 241.55278,
-                "y": 2.0060596
-              },
-              {
-                "x": 241.16464,
-                "y": 1.4707899
-              },
-              {
-                "x": 241.90794,
-                "y": 1.458106
-              }
-            ],
-            [
-              {
-                "x": 241.16464,
-                "y": 1.4707899
-              },
-              {
-                "x": 240.4213,
-                "y": 1.458108
-              },
-              {
-                "x": 241.90794,
-                "y": 1.458106
-              }
-            ],
-            [
-              {
-                "x": 240.4213,
-                "y": 1.458108
-              },
-              {
-                "x": 239.678,
-                "y": 1.4504967
-              },
-              {
-                "x": 241.90794,
-                "y": 1.458106
-              }
-            ],
-            [
-              {
-                "x": 242.28342,
-                "y": 1.9883003
-              },
-              {
-                "x": 241.90794,
-                "y": 1.458106
-              },
-              {
-                "x": 242.66902,
-                "y": 1.470788
-              }
-            ],
-            [
-              {
-                "x": 243.03944,
-                "y": 1.9933758
-              },
-              {
-                "x": 242.66902,
-                "y": 1.470788
-              },
-              {
-                "x": 243.4149,
-                "y": 1.4733267
-              }
-            ],
-            [
-              {
-                "x": 242.66902,
-                "y": 1.470788
-              },
-              {
-                "x": 241.90794,
-                "y": 1.458106
-              },
-              {
-                "x": 244.16832,
-                "y": 1.4657145
-              },
-              {
-                "x": 243.4149,
-                "y": 1.4733267
-              }
-            ],
-            [
-              {
-                "x": 243.7929,
-                "y": 1.9806919
-              },
-              {
-                "x": 243.4149,
-                "y": 1.4733267
-              },
-              {
-                "x": 244.16832,
-                "y": 1.4657145
-              }
-            ],
-            [
-              {
-                "x": 241.90794,
-                "y": 1.458106
-              },
-              {
-                "x": 239.678,
-                "y": 1.4504967
-              },
-              {
-                "x": 244.9135,
-                "y": 0.68275166
-              },
-              {
-                "x": 244.16832,
-                "y": 1.4657145
-              }
-            ],
-            [
-              {
-                "x": 244.53363,
-                "y": 1.9857635
-              },
-              {
-                "x": 244.16832,
-                "y": 1.4657145
-              },
-              {
-                "x": 244.9135,
-                "y": 0.68275166
-              },
-              {
-                "x": 244.89894,
-                "y": 1.4758615
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "StaticBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 0.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": true,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
           "x": 222.6672,
           "y": 14.598245,
           "scaleX": 1.0,
@@ -8931,655 +7908,6 @@
               {
                 "x": 270.3186,
                 "y": 6.847537
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "StaticBody",
-          "friction": 1.0,
-          "density": 1.0,
-          "restitution": 0.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": true,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 209.17639,
-          "y": 0.10868263,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 5.99,
-          "originY": 0.655,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/g6086.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 11.98,
-          "height": 1.31,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 1,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "06538988-5b63-4006-b805-2fbd75c061e3",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "spike",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 209.17328,
-              "y": 0.8892231,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 209.17639,
-              "y": 0.10868263,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 221.15639,
-              "y": 0.10868263,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 221.14183,
-              "y": 0.9017925,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 220.77652,
-              "y": 1.411694,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 220.41121,
-              "y": 0.89164543,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 220.03578,
-              "y": 1.4066224,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 219.65779,
-              "y": 0.89925766,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 219.28233,
-              "y": 1.4193058,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 218.91191,
-              "y": 0.896719,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 218.5263,
-              "y": 1.4142308,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 218.15083,
-              "y": 0.884037,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 217.79567,
-              "y": 1.4319892,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 217.40753,
-              "y": 0.8967209,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 217.03462,
-              "y": 1.4167695,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 216.66418,
-              "y": 0.8840389,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 216.27605,
-              "y": 1.4116979,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 215.92088,
-              "y": 0.87642765,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 215.54291,
-              "y": 1.4243813,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 215.1572,
-              "y": 0.8967209,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 214.78935,
-              "y": 1.411696,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 214.41136,
-              "y": 0.8967209,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 214.04353,
-              "y": 1.4218426,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 213.66296,
-              "y": 0.8992586,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 213.29005,
-              "y": 1.4243813,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 212.9146,
-              "y": 0.89164734,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 212.5493,
-              "y": 1.4091611,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 212.16112,
-              "y": 0.9043331,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 211.7882,
-              "y": 1.4319911,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 211.42543,
-              "y": 0.89925957,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 211.05818,
-              "y": 1.420227,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 210.6819,
-              "y": 0.89625645,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 210.2986,
-              "y": 1.4131932,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 209.92935,
-              "y": 0.8892231,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 209.5566,
-              "y": 1.4131932,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 209.5566,
-                "y": 1.4131932
-              },
-              {
-                "x": 209.17328,
-                "y": 0.8892231
-              },
-              {
-                "x": 209.92935,
-                "y": 0.8892231
-              }
-            ],
-            [
-              {
-                "x": 210.2986,
-                "y": 1.4131932
-              },
-              {
-                "x": 209.92935,
-                "y": 0.8892231
-              },
-              {
-                "x": 210.6819,
-                "y": 0.89625645
-              }
-            ],
-            [
-              {
-                "x": 211.05818,
-                "y": 1.420227
-              },
-              {
-                "x": 210.6819,
-                "y": 0.89625645
-              },
-              {
-                "x": 211.42543,
-                "y": 0.89925957
-              }
-            ],
-            [
-              {
-                "x": 210.6819,
-                "y": 0.89625645
-              },
-              {
-                "x": 209.92935,
-                "y": 0.8892231
-              },
-              {
-                "x": 212.9146,
-                "y": 0.89164734
-              },
-              {
-                "x": 211.42543,
-                "y": 0.89925957
-              }
-            ],
-            [
-              {
-                "x": 211.7882,
-                "y": 1.4319911
-              },
-              {
-                "x": 211.42543,
-                "y": 0.89925957
-              },
-              {
-                "x": 212.16112,
-                "y": 0.9043331
-              }
-            ],
-            [
-              {
-                "x": 212.5493,
-                "y": 1.4091611
-              },
-              {
-                "x": 212.16112,
-                "y": 0.9043331
-              },
-              {
-                "x": 212.9146,
-                "y": 0.89164734
-              }
-            ],
-            [
-              {
-                "x": 212.16112,
-                "y": 0.9043331
-              },
-              {
-                "x": 211.42543,
-                "y": 0.89925957
-              },
-              {
-                "x": 212.9146,
-                "y": 0.89164734
-              }
-            ],
-            [
-              {
-                "x": 213.29005,
-                "y": 1.4243813
-              },
-              {
-                "x": 212.9146,
-                "y": 0.89164734
-              },
-              {
-                "x": 213.66296,
-                "y": 0.8992586
-              }
-            ],
-            [
-              {
-                "x": 214.04353,
-                "y": 1.4218426
-              },
-              {
-                "x": 213.66296,
-                "y": 0.8992586
-              },
-              {
-                "x": 214.41136,
-                "y": 0.8967209
-              }
-            ],
-            [
-              {
-                "x": 213.66296,
-                "y": 0.8992586
-              },
-              {
-                "x": 212.9146,
-                "y": 0.89164734
-              },
-              {
-                "x": 214.41136,
-                "y": 0.8967209
-              }
-            ],
-            [
-              {
-                "x": 214.78935,
-                "y": 1.411696
-              },
-              {
-                "x": 214.41136,
-                "y": 0.8967209
-              },
-              {
-                "x": 215.1572,
-                "y": 0.8967209
-              }
-            ],
-            [
-              {
-                "x": 214.41136,
-                "y": 0.8967209
-              },
-              {
-                "x": 212.9146,
-                "y": 0.89164734
-              },
-              {
-                "x": 215.92088,
-                "y": 0.87642765
-              },
-              {
-                "x": 215.1572,
-                "y": 0.8967209
-              }
-            ],
-            [
-              {
-                "x": 215.54291,
-                "y": 1.4243813
-              },
-              {
-                "x": 215.1572,
-                "y": 0.8967209
-              },
-              {
-                "x": 215.92088,
-                "y": 0.87642765
-              }
-            ],
-            [
-              {
-                "x": 212.9146,
-                "y": 0.89164734
-              },
-              {
-                "x": 209.92935,
-                "y": 0.8892231
-              },
-              {
-                "x": 215.92088,
-                "y": 0.87642765
-              }
-            ],
-            [
-              {
-                "x": 209.92935,
-                "y": 0.8892231
-              },
-              {
-                "x": 209.17328,
-                "y": 0.8892231
-              },
-              {
-                "x": 209.17639,
-                "y": 0.10868263
-              },
-              {
-                "x": 221.15639,
-                "y": 0.10868263
-              },
-              {
-                "x": 215.92088,
-                "y": 0.87642765
-              }
-            ],
-            [
-              {
-                "x": 216.27605,
-                "y": 1.4116979
-              },
-              {
-                "x": 215.92088,
-                "y": 0.87642765
-              },
-              {
-                "x": 216.66418,
-                "y": 0.8840389
-              }
-            ],
-            [
-              {
-                "x": 217.03462,
-                "y": 1.4167695
-              },
-              {
-                "x": 216.66418,
-                "y": 0.8840389
-              },
-              {
-                "x": 217.40753,
-                "y": 0.8967209
-              }
-            ],
-            [
-              {
-                "x": 217.79567,
-                "y": 1.4319892
-              },
-              {
-                "x": 217.40753,
-                "y": 0.8967209
-              },
-              {
-                "x": 218.15083,
-                "y": 0.884037
-              }
-            ],
-            [
-              {
-                "x": 217.40753,
-                "y": 0.8967209
-              },
-              {
-                "x": 216.66418,
-                "y": 0.8840389
-              },
-              {
-                "x": 218.15083,
-                "y": 0.884037
-              }
-            ],
-            [
-              {
-                "x": 216.66418,
-                "y": 0.8840389
-              },
-              {
-                "x": 215.92088,
-                "y": 0.87642765
-              },
-              {
-                "x": 218.15083,
-                "y": 0.884037
-              }
-            ],
-            [
-              {
-                "x": 218.5263,
-                "y": 1.4142308
-              },
-              {
-                "x": 218.15083,
-                "y": 0.884037
-              },
-              {
-                "x": 218.91191,
-                "y": 0.896719
-              }
-            ],
-            [
-              {
-                "x": 219.28233,
-                "y": 1.4193058
-              },
-              {
-                "x": 218.91191,
-                "y": 0.896719
-              },
-              {
-                "x": 219.65779,
-                "y": 0.89925766
-              }
-            ],
-            [
-              {
-                "x": 218.91191,
-                "y": 0.896719
-              },
-              {
-                "x": 218.15083,
-                "y": 0.884037
-              },
-              {
-                "x": 220.41121,
-                "y": 0.89164543
-              },
-              {
-                "x": 219.65779,
-                "y": 0.89925766
-              }
-            ],
-            [
-              {
-                "x": 220.03578,
-                "y": 1.4066224
-              },
-              {
-                "x": 219.65779,
-                "y": 0.89925766
-              },
-              {
-                "x": 220.41121,
-                "y": 0.89164543
-              }
-            ],
-            [
-              {
-                "x": 218.15083,
-                "y": 0.884037
-              },
-              {
-                "x": 215.92088,
-                "y": 0.87642765
-              },
-              {
-                "x": 221.15639,
-                "y": 0.10868263
-              },
-              {
-                "x": 220.41121,
-                "y": 0.89164543
-              }
-            ],
-            [
-              {
-                "x": 220.77652,
-                "y": 1.411694
-              },
-              {
-                "x": 220.41121,
-                "y": 0.89164543
-              },
-              {
-                "x": 221.15639,
-                "y": 0.10868263
-              },
-              {
-                "x": 221.14183,
-                "y": 0.9017925
               }
             ]
           ],
@@ -17880,26 +16208,47 @@
     {
       "components": [
         {
-          "x": 9.858985,
-          "y": 21.536976,
+          "x": 6.7522,
+          "y": 17.7943,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "@class": "Point"
+          "originX": 0.965,
+          "originY": 0.965,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/transball.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 1.93,
+          "height": 1.93,
+          "@class": "ProtoVisSprite"
         },
         {
           "layerId": 1,
           "@class": "Layer"
         },
         {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "9fc80250-56be-43c4-b87c-f80d14a84237",
+          "uuid": "8dc33a35-2901-49a6-9ba0-6f92f8b2ce5f",
           "@class": "VisUUID"
         },
         {
@@ -17907,21 +16256,8 @@
           "@class": "Renderable"
         },
         {
-          "id": "ballPosition",
+          "id": "ball",
           "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "Renderable",
-              "@class": "Class"
-            },
-            {
-              "@content": "Layer",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"
@@ -17965,6 +16301,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -17986,43 +16325,48 @@
     {
       "components": [
         {
-          "x": 12.6007,
-          "y": 16.5748,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
+          "x": 37.861027,
+          "y": 1.0927439,
+          "scaleX": 1.6,
+          "scaleY": 1.6,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
+          "originX": 10.0,
+          "originY": 1.885,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
           "asset": {
-            "imageScale": 0.5,
-            "relativePath": "spriter/animStar/StarAnimation.scml",
-            "@class": "SpriterAsset"
+            "relativePath": "images/backsnow.png",
+            "@class": "TextureRegionAsset"
           },
           "@class": "AssetReference"
         },
         {
-          "scale": 0.01,
           "flipX": false,
           "flipY": false,
-          "playOnStart": true,
-          "defaultAnimation": 0,
-          "@class": "ProtoVisSpriter"
+          "width": 20.0,
+          "height": 3.77,
+          "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 2,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
-          "uuid": "d6189786-8f27-476e-9fd8-a9c395adc152",
+          "uuid": "fc591573-f9f9-49d2-a720-9b6441d49416",
           "@class": "VisUUID"
-        },
-        {
-          "scale": 0.01,
-          "animation": 0,
-          "playOnStart": true,
-          "previewInEditor": false,
-          "@class": "SpriterProperties"
         },
         {
           "zIndex": 0,
@@ -18030,15 +16374,62 @@
         },
         {
           "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 5.878704,
+          "y": 1.0768,
+          "scaleX": 1.6,
+          "scaleY": 1.6,
+          "rotation": 0.0,
+          "@class": "Transform"
         },
         {
-          "componentsToDrop": [
-            {
-              "@content": "SpriterProperties",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
+          "originX": 10.0,
+          "originY": 1.885,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/backsnow.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 20.0,
+          "height": 3.77,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "97175d63-4f10-442c-aad0-1510a22cfa9c",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
         }
       ],
       "@class": "EntityScheme"

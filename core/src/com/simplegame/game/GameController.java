@@ -192,8 +192,8 @@ public class GameController implements Screen {
     @Override
     public void show() {
 //        loadMenuScene();
-        loadLevelOneScene();
-//        loadLevelTwoScene();
+//        loadLevelOneScene();
+        loadLevelTwoScene();
 //        loadLevelThreeScene();
     }
 

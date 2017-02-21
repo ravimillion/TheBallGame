@@ -60,7 +60,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         // create ball
         Own.box2d.factory.setWorld(physicsWorld);
         body = Own.box2d.factory.getCircleBody(BodyDef.BodyType.DynamicBody, new Vector2(transform.getX(), transform.getY()), 0, radius, density, friction, restitution, "ball");
-        body.setUserData(null);
+        body.setUserData("ball");
 
         state = GameData.RUNNING;
     }
