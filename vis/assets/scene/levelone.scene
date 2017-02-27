@@ -42,13 +42,13 @@
     {
       "name": "Controls",
       "id": 3,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 0,
+  "activeLayerId": 3,
   "groupIds": [],
   "schemes": [
     {
@@ -14048,16 +14048,16 @@
     {
       "components": [
         {
-          "x": 2.9928,
-          "y": 30.3527,
-          "scaleX": 7.0,
-          "scaleY": 7.0,
+          "x": 0.8471,
+          "y": 29.693,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 0.255,
-          "originY": 0.065,
+          "originX": 3.31,
+          "originY": 0.715,
           "@class": "Origin"
         },
         {
@@ -14065,14 +14065,14 @@
             "r": 1.0,
             "g": 1.0,
             "b": 1.0,
-            "a": 1.0
+            "a": 0.8509804
           },
           "@class": "Tint"
         },
         {
           "asset": {
-            "fontSize": 20,
-            "relativePath": "font/actor.ttf",
+            "fontSize": 200,
+            "relativePath": "font/zorque.ttf",
             "@class": "TtfFontAsset"
           },
           "@class": "AssetReference"
@@ -14083,7 +14083,7 @@
           "@class": "PixelsPerUnit"
         },
         {
-          "text": "Score:",
+          "text": "SCORE",
           "autoSetOriginToCenter": true,
           "isUsesDistanceField": false,
           "@class": "ProtoVisText"
@@ -14097,7 +14097,7 @@
           "@class": "VisGroup"
         },
         {
-          "uuid": "d06055a3-3e44-4533-94c5-355023c772c4",
+          "uuid": "5ab88e28-fd75-4444-9109-1b7c740d6bcc",
           "@class": "VisUUID"
         },
         {
@@ -14107,10 +14107,6 @@
         {
           "id": "idScore",
           "@class": "VisID"
-        },
-        {
-          "vertices": [],
-          "@class": "VisPolygon"
         },
         {
           "componentsToDrop": [

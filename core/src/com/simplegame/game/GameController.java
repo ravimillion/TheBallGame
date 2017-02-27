@@ -23,6 +23,7 @@ import com.simplegame.game.systems.ControlsSystem;
 import com.simplegame.game.systems.ParticleSystem;
 import com.simplegame.game.systems.PhysicsBodyContactSystem;
 import com.simplegame.game.systems.PlayerSystem;
+import com.simplegame.game.systems.ScoringSystem;
 import com.simplegame.game.systems.SpriteBoundsCreator;
 import com.simplegame.game.systems.SpriteBoundsUpdater;
 import com.simplegame.game.systems.SpriterPhysicsSystem;
@@ -87,6 +88,7 @@ public class GameController implements Screen {
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
         levelParams.config.addSystem(PhysicsBodyContactSystem.class);
+        levelParams.config.addSystem(ScoringSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -108,9 +110,10 @@ public class GameController implements Screen {
                 return new ControlsSystem(GameController.this);
             }
         });
+
         levelParams.config.addSystem(AlwaysInViewPortSystem.class);
 
-        scenePath = "scene/levelone.scene";
+        scenePath = GameData.SCENE_ONE;
         scene = manager.loadSceneNow(scenePath, levelParams);
 
     }
@@ -126,6 +129,7 @@ public class GameController implements Screen {
         levelParams.config.addSystem(ParticleSystem.class);
         levelParams.config.addSystem(SpriterPhysicsSystem.class);
         levelParams.config.addSystem(PhysicsBodyContactSystem.class);
+        levelParams.config.addSystem(ScoringSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -149,7 +153,7 @@ public class GameController implements Screen {
         });
 
         levelParams.config.addSystem(AlwaysInViewPortSystem.class);
-        scenePath = "scene/leveltwo.scene";
+        scenePath = GameData.SCENE_TWO;
         scene = manager.loadSceneNow(scenePath, levelParams);
 
     }
@@ -163,6 +167,7 @@ public class GameController implements Screen {
         levelParams.config.addSystem(SpriteBoundsCreator.class);
         levelParams.config.addSystem(SpriteBoundsUpdater.class);
         levelParams.config.addSystem(PhysicsBodyContactSystem.class);
+        levelParams.config.addSystem(ScoringSystem.class);
 
         levelParams.config.addSystem(new SystemProvider() {
             @Override
@@ -185,7 +190,7 @@ public class GameController implements Screen {
             }
         });
 
-        scenePath = "scene/levelthree.scene";
+        scenePath = GameData.SCENE_THREE;
         scene = manager.loadSceneNow(scenePath, levelParams);
     }
 

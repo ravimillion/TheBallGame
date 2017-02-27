@@ -23,7 +23,7 @@ public class AlwaysInViewPortSystem extends BaseSystem implements AfterSceneInit
     private HashMap<String, Float> posMap = new HashMap<String, Float>();
     private HashMap<String, Entity> entityMap = new HashMap<String, Entity>();
     private HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
-    private String[] entityIds = {"idBackground"};
+    private String[] entityIds = {"idScore", "idBackground"};
 
     @Override
     public void afterSceneInit() {
@@ -32,7 +32,6 @@ public class AlwaysInViewPortSystem extends BaseSystem implements AfterSceneInit
             Entity entity = idManager.get(entityId);
 
             entityMap.put(entityId, idManager.get(entityId));
-            boundsMap.put(entityId, boundsCm.get(entity));
             posMap.put(entityId, transformCm.get(entity).getX() - cameraManager.getCamera().viewportWidth / 2);
         }
 
@@ -40,7 +39,6 @@ public class AlwaysInViewPortSystem extends BaseSystem implements AfterSceneInit
 
     public void setControlsPosition() {
         Entity entity;
-        Bounds bounds;
         Transform transform;
 
         Object[] keys = entityMap.keySet().toArray();
@@ -48,8 +46,6 @@ public class AlwaysInViewPortSystem extends BaseSystem implements AfterSceneInit
         for (Object id : keys) {
             float newX = cameraManager.getCamera().position.x + posMap.get(id.toString());
             entity = entityMap.get(id.toString());
-            bounds = boundsCm.get(entity);
-            bounds.setX(newX);
 
             transform = transformCm.get(entity);
             transform.setX(newX);

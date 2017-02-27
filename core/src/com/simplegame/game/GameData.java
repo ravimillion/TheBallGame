@@ -18,4 +18,9 @@ public class GameData {
     public static final int LEVEL_TWO = 2;
     public static final int LEVEL_THREE = 3;
     public static final int MENU_SCREEN = 4;
+
+
+    public static final String SCENE_ONE = "scene/levelone.scene";
+    public static final String SCENE_TWO = "scene/leveltwo.scene";
+    public static final String SCENE_THREE = "scene/levelthree.scene";
 }
