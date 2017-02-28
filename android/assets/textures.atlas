@@ -333,107 +333,107 @@ filter: Nearest,Nearest
 repeat: none
 controls/imagebuttons
   rotate: false
-  xy: 2, 1032
+  xy: 2, 952
   size: 1024, 512
   orig: 1024, 512
   offset: 0, 0
   index: -1
 images/background2
   rotate: false
-  xy: 2, 606
+  xy: 2, 526
   size: 1024, 424
   orig: 1024, 424
   offset: 0, 0
   index: -1
 images/background4
   rotate: false
-  xy: 2, 1546
+  xy: 2, 18
   size: 1156, 461
   orig: 1156, 461
   offset: 0, 0
   index: -1
 images/bluewoodbox
   rotate: false
-  xy: 1160, 1355
+  xy: 1028, 1370
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
 images/boxleft
   rotate: false
-  xy: 1028, 701
+  xy: 1028, 716
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
-images/boxright
+images/fb
   rotate: false
-  xy: 1030, 47
-  size: 652, 652
-  orig: 652, 652
+  xy: 1160, 2
+  size: 512, 512
+  orig: 512, 512
   offset: 0, 0
   index: -1
-images/floor
+images/levelthree
   rotate: false
-  xy: 2, 150
-  size: 1023, 202
-  orig: 1023, 202
+  xy: 1028, 516
+  size: 601, 198
+  orig: 601, 198
   offset: 0, 0
   index: -1
-images/ground
+images/snowbackground
   rotate: false
-  xy: 2, 2
-  size: 1026, 146
-  orig: 1026, 146
-  offset: 0, 0
-  index: -1
-images/stoneground
-  rotate: false
-  xy: 2, 354
-  size: 1026, 250
-  orig: 1026, 250
+  xy: 2, 1466
+  size: 1024, 556
+  orig: 1024, 556
   offset: 0, 0
   index: -1
 particle/cloud_1_256x256
   rotate: false
-  xy: 1684, 66
+  xy: 1682, 481
   size: 256, 255
   orig: 256, 255
   offset: 0, 0
   index: -1
 particle/cloud_5_256x256
   rotate: false
-  xy: 1682, 1097
+  xy: 1682, 1512
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
   index: -1
 particle/cloud_6_256x256
   rotate: false
-  xy: 1682, 839
+  xy: 1682, 1254
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
   index: -1
 particle/energy_blob_small
   rotate: false
-  xy: 1814, 1807
+  xy: 1674, 279
   size: 183, 200
   orig: 183, 200
   offset: 0, 0
   index: -1
 particle/energy_swirly1
   rotate: false
-  xy: 1684, 581
+  xy: 1682, 996
   size: 256, 256
   orig: 256, 256
   offset: 0, 0
   index: -1
 particle/energy_swirly2
   rotate: false
-  xy: 1684, 323
+  xy: 1682, 738
   size: 256, 256
   orig: 256, 256
+  offset: 0, 0
+  index: -1
+particle/fire
+  rotate: false
+  xy: 1682, 1770
+  size: 265, 252
+  orig: 265, 252
   offset: 0, 0
   index: -1
 
@@ -442,25 +442,25 @@ size: 2048,2048
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+images/boxright
+  rotate: false
+  xy: 2, 1370
+  size: 652, 652
+  orig: 652, 652
+  offset: 0, 0
+  index: -1
 images/darkbox
   rotate: false
-  xy: 2, 689
+  xy: 2, 716
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
 images/darkerbox
   rotate: false
-  xy: 606, 1370
+  xy: 656, 1370
   size: 652, 652
   orig: 652, 652
-  offset: 0, 0
-  index: -1
-images/fb
-  rotate: false
-  xy: 656, 202
-  size: 512, 512
-  orig: 512, 512
   offset: 0, 0
   index: -1
 images/greenpaint
@@ -472,21 +472,14 @@ images/greenpaint
   index: -1
 images/greenwoodbox
   rotate: false
-  xy: 2, 35
+  xy: 2, 62
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
-images/levelthree
-  rotate: false
-  xy: 656, 2
-  size: 601, 198
-  orig: 601, 198
-  offset: 0, 0
-  index: -1
 images/leveltwo
   rotate: false
-  xy: 1259, 2
+  xy: 1260, 2
   size: 601, 198
   orig: 601, 198
   offset: 0, 0
@@ -500,21 +493,21 @@ images/redpaint
   index: -1
 images/splash
   rotate: false
-  xy: 2, 1343
+  xy: 656, 35
   size: 602, 679
   orig: 602, 679
   offset: 0, 0
   index: -1
 images/topwoodbox
   rotate: false
-  xy: 1260, 1370
+  xy: 656, 716
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
   index: -1
 images/woodbox
   rotate: false
-  xy: 656, 716
+  xy: 1310, 1370
   size: 652, 652
   orig: 652, 652
   offset: 0, 0
@@ -527,113 +520,133 @@ filter: Nearest,Nearest
 repeat: none
 controls/congratulations
   rotate: false
-  xy: 1125, 1275
+  xy: 1030, 508
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
 controls/gameover
   rotate: false
-  xy: 1125, 1022
+  xy: 1027, 255
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
 controls/pause
   rotate: false
-  xy: 611, 761
+  xy: 2, 236
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
 controls/play
   rotate: false
-  xy: 516, 508
+  xy: 604, 2
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
 controls/quit
   rotate: false
-  xy: 1213, 769
-  size: 600, 251
-  orig: 600, 251
-  offset: 0, 0
-  index: -1
-controls/ready
-  rotate: false
-  xy: 604, 255
-  size: 600, 251
-  orig: 600, 251
-  offset: 0, 0
-  index: -1
-controls/restart
-  rotate: false
-  xy: 604, 2
-  size: 600, 251
-  orig: 600, 251
-  offset: 0, 0
-  index: -1
-controls/resume
-  rotate: false
-  xy: 1213, 516
+  xy: 1206, 2
   size: 600, 251
   orig: 600, 251
   offset: 0, 0
   index: -1
 controls/touchToStart
   rotate: false
-  xy: 2, 106
+  xy: 1030, 761
   size: 600, 252
   orig: 600, 252
   offset: 0, 0
   index: -1
+images/floor
+  rotate: false
+  xy: 2, 489
+  size: 1023, 202
+  orig: 1023, 202
+  offset: 0, 0
+  index: -1
 images/settings
   rotate: false
-  xy: 611, 1528
+  xy: 1220, 1529
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
+images/stoneground
+  rotate: false
+  xy: 2, 693
+  size: 1026, 250
+  orig: 1026, 250
+  offset: 0, 0
+  index: -1
 images/twitter
   rotate: false
-  xy: 611, 1014
+  xy: 2, 945
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 images/volume
   rotate: false
-  xy: 1125, 1528
+  xy: 516, 945
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
 images/whitepaint
   rotate: false
-  xy: 2, 1458
+  xy: 2, 1459
   size: 607, 582
   orig: 607, 582
   offset: 0, 0
   index: -1
 images/yellowpaint
   rotate: false
-  xy: 2, 874
+  xy: 611, 1459
   size: 607, 582
   orig: 607, 582
   offset: 0, 0
   index: -1
-particle/fire
-  rotate: false
-  xy: 1639, 1788
-  size: 265, 252
-  orig: 265, 252
-  offset: 0, 0
-  index: -1
 particle/tunnel_ring
   rotate: false
-  xy: 2, 360
+  xy: 1220, 1015
   size: 512, 512
   orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+textures6.png
+size: 2048,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+controls/ready
+  rotate: false
+  xy: 2, 107
+  size: 600, 251
+  orig: 600, 251
+  offset: 0, 0
+  index: -1
+controls/restart
+  rotate: false
+  xy: 1030, 255
+  size: 600, 251
+  orig: 600, 251
+  offset: 0, 0
+  index: -1
+controls/resume
+  rotate: false
+  xy: 604, 2
+  size: 600, 251
+  orig: 600, 251
+  offset: 0, 0
+  index: -1
+images/ground
+  rotate: false
+  xy: 2, 360
+  size: 1026, 146
+  orig: 1026, 146
   offset: 0, 0
   index: -1

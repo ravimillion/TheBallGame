@@ -189,16 +189,16 @@ public class GameController implements Screen {
                 return new ControlsSystem(GameController.this);
             }
         });
-
+        levelParams.config.addSystem(AlwaysInViewPortSystem.class);
         scenePath = GameData.SCENE_THREE;
         scene = manager.loadSceneNow(scenePath, levelParams);
     }
 
     @Override
     public void show() {
-//        loadMenuScene();
+        loadMenuScene();
 //        loadLevelOneScene();
-        loadLevelTwoScene();
+//        loadLevelTwoScene();
 //        loadLevelThreeScene();
     }
 

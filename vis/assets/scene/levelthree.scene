@@ -16,7 +16,7 @@
   },
   "layers": [
     {
-      "name": "Ground",
+      "name": "Background",
       "id": 0,
       "locked": false,
       "visible": true,
@@ -24,8 +24,16 @@
       "@class": "EditorLayer"
     },
     {
-      "name": "PhysicsObjects",
+      "name": "Ground",
       "id": 1,
+      "locked": false,
+      "visible": true,
+      "cordsSystem": "WORLD",
+      "@class": "EditorLayer"
+    },
+    {
+      "name": "PhysicsObjects",
+      "id": 2,
       "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
@@ -35,18 +43,18 @@
       "name": "Controls",
       "id": 3,
       "locked": true,
-      "visible": false,
+      "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 1,
+  "activeLayerId": 3,
   "groupIds": [],
   "schemes": [
     {
       "components": [
         {
-          "x": 27.4501,
+          "x": 28.235983,
           "y": 5.9915,
           "scaleX": 1.0,
           "scaleY": 1.0,
@@ -82,7 +90,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -104,22 +112,22 @@
         {
           "vertices": [
             {
-              "x": 33.9601,
+              "x": 34.745987,
               "y": 12.501497,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 33.9601,
-              "y": 7.2914996,
+              "x": 34.745987,
+              "y": 7.291499,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 33.959877,
+              "x": 34.745766,
               "y": 5.9974575,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 27.460098,
+              "x": 28.245981,
               "y": 6.0015,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
@@ -127,20 +135,20 @@
           "faces": [
             [
               {
-                "x": 33.9601,
+                "x": 34.745987,
                 "y": 12.501497
               },
               {
-                "x": 27.460098,
+                "x": 28.245981,
                 "y": 6.0015
               },
               {
-                "x": 33.959877,
+                "x": 34.745766,
                 "y": 5.9974575
               },
               {
-                "x": 33.9601,
-                "y": 7.2914996
+                "x": 34.745987,
+                "y": 7.291499
               }
             ]
           ],
@@ -206,7 +214,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -330,7 +338,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -464,7 +472,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -588,9 +596,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -646,9 +651,6 @@
           "width": 6.0,
           "height": 2.51,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 3,
@@ -708,9 +710,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -766,9 +765,6 @@
           "width": 6.0,
           "height": 2.52,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 3,
@@ -828,9 +824,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -888,9 +881,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 3,
           "@class": "Layer"
         },
@@ -923,7 +913,7 @@
           "@class": "Point"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1126,7 +1116,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1245,7 +1235,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1369,7 +1359,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1493,7 +1483,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1612,7 +1602,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1728,7 +1718,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -2377,7 +2367,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -3026,7 +3016,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -3155,7 +3145,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -3804,7 +3794,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -3927,7 +3917,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4051,7 +4041,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4175,7 +4165,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4299,7 +4289,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -4948,7 +4938,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5072,7 +5062,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5196,7 +5186,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5845,7 +5835,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -5969,7 +5959,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -6093,7 +6083,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -6217,7 +6207,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -6866,7 +6856,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -6985,7 +6975,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7109,7 +7099,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7233,7 +7223,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -7352,7 +7342,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -8001,7 +7991,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -8124,7 +8114,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -8248,7 +8238,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -8372,7 +8362,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9021,7 +9011,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9145,7 +9135,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9269,7 +9259,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9393,7 +9383,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9517,7 +9507,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9641,7 +9631,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9765,7 +9755,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -9889,7 +9879,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -10538,7 +10528,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -10662,7 +10652,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -10796,7 +10786,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -10920,7 +10910,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -11054,7 +11044,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -11178,7 +11168,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -11302,7 +11292,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -11421,7 +11411,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -11545,7 +11535,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -11669,7 +11659,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -11788,7 +11778,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -12437,7 +12427,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13086,7 +13076,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13209,7 +13199,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13333,7 +13323,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -13457,7 +13447,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -14106,7 +14096,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -14230,7 +14220,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -14354,7 +14344,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -14478,7 +14468,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -14602,7 +14592,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -14726,7 +14716,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -14850,7 +14840,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -14974,7 +14964,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -15623,7 +15613,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -16272,7 +16262,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 1,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -16327,9 +16317,6 @@
           "width": 6.0,
           "height": 2.51,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 3,
@@ -16389,7 +16376,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16445,7 +16432,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16506,7 +16493,7 @@
           "@class": "ProtoVisText"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16572,7 +16559,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16628,7 +16615,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16684,7 +16671,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16740,7 +16727,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16796,7 +16783,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16852,7 +16839,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16908,7 +16895,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -16964,7 +16951,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -17020,7 +17007,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -17076,7 +17063,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -17132,7 +17119,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -17188,7 +17175,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -17244,7 +17231,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -17300,7 +17287,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -17356,7 +17343,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -17412,7 +17399,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 1,
           "@class": "Layer"
         },
         {
@@ -17424,6 +17411,67 @@
           "@class": "Renderable"
         },
         {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 22.1996,
+          "y": 18.202,
+          "scaleX": 5.5,
+          "scaleY": 5.5,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 5.12,
+          "originY": 2.78,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/snowbackground.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 10.24,
+          "height": 5.56,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "12b2b28e-4870-4975-9d9d-16f3fa4ec23b",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idBackground",
           "@class": "VisID"
         }
       ],
