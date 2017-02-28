@@ -11,12 +11,7 @@ import com.kotcrab.vis.runtime.component.VisText;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 
-/**
- * Created by ravi on 26.02.17.
- */
-
 public class ScoringSystem extends EntityProcessingSystem implements AfterSceneInit {
-
     private ComponentMapper<VisID> visIDCm;
     private ComponentMapper<VisText> visTextCm;
 
