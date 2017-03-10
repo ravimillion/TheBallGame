@@ -42,13 +42,13 @@
     {
       "name": "Controls",
       "id": 3,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 3,
+  "activeLayerId": 1,
   "groupIds": [],
   "schemes": [
     {
@@ -16466,10 +16466,10 @@
         },
         {
           "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 0.88235295
+            "r": 0.0,
+            "g": 0.6,
+            "b": 0.5803922,
+            "a": 0.8117647
           },
           "@class": "Tint"
         },
