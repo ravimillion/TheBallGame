@@ -1,6 +1,7 @@
 package com.simplegame.game;
 
 import com.artemis.BaseSystem;
+import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -11,7 +12,9 @@ import com.kotcrab.vis.runtime.RuntimeContext;
 import com.kotcrab.vis.runtime.data.SceneData;
 import com.kotcrab.vis.runtime.font.FreeTypeFontProvider;
 import com.kotcrab.vis.runtime.scene.Scene;
+import com.kotcrab.vis.runtime.scene.SceneFeature;
 import com.kotcrab.vis.runtime.scene.SceneLoader;
+import com.kotcrab.vis.runtime.scene.SceneLoader.SceneParameter;
 import com.kotcrab.vis.runtime.scene.SystemProvider;
 import com.kotcrab.vis.runtime.scene.VisAssetManager;
 import com.kotcrab.vis.runtime.util.EntityEngineConfiguration;
@@ -27,6 +30,7 @@ import com.simplegame.game.systems.ScoringSystem;
 import com.simplegame.game.systems.SpriteBoundsCreator;
 import com.simplegame.game.systems.SpriteBoundsUpdater;
 import com.simplegame.game.systems.SpriterPhysicsSystem;
+import com.simplegame.game.systems.VisibilitySystem;
 
 import ownLib.Own;
 
@@ -36,12 +40,15 @@ public class GameController implements Screen {
     public static int VIEWPORT_WIDTH = 53;
     public static int level;
     public SpriteBatch spriteBatch;
-    GameEntry game;
+
+    private GameEntry game;
+    private boolean BOX2D_DEBUG = true;
     private Scene scene = null;
     private VisAssetManager manager;
     private String scenePath;
 
     public GameController(GameEntry game, SpriteBatch spriteBatch) {
+        Gdx.app.setLogLevel(Application.LOG_DEBUG);
         this.spriteBatch = spriteBatch;
         this.game = game;
 
@@ -50,6 +57,15 @@ public class GameController implements Screen {
         manager.registerSupport(new SpriterSupport());
         manager.getLogger().setLevel(Logger.ERROR);
 
+    }
+
+    private void loadScene(String sp, SceneParameter sceneParameter) {
+        if (BOX2D_DEBUG && !sp.equals(GameData.MENU)) sceneParameter.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
+
+        long ts1 = System.currentTimeMillis();
+        scenePath = sp;
+        scene = manager.loadSceneNow(sp, sceneParameter);
+        Own.log("Total loading time: " + (double)(System.currentTimeMillis() - ts1) / 1000 + " Secs");
     }
 
     private void unloadPreviousScene() {
@@ -61,144 +77,139 @@ public class GameController implements Screen {
     }
 
     public void loadMenuScene() {
-        this.level = GameData.MENU_SCREEN;
+        level = GameData.MENU_SCREEN;
         unloadPreviousScene();
-        SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
+        SceneParameter sceneParameter = new SceneLoader.SceneParameter();
 
-        levelParams.config.addSystem(SpriteBoundsCreator.class);
-        levelParams.config.addSystem(SpriteBoundsUpdater.class);
+        sceneParameter.config.addSystem(SpriteBoundsCreator.class);
+        sceneParameter.config.addSystem(SpriteBoundsUpdater.class);
 
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new MenuScreen(GameController.this);
             }
         });
 
-        scenePath = "scene/menu.scene";
-        scene = manager.loadSceneNow(scenePath, levelParams);
+        loadScene(GameData.MENU, sceneParameter);
     }
 
     public void loadLevelOneScene() {
-        this.level = GameData.LEVEL_ONE;
+        level = GameData.LEVEL_ONE;
         unloadPreviousScene();
+        SceneParameter sceneParameter = new SceneParameter();
+        sceneParameter.config.addSystem(SpriteBoundsCreator.class);
+        sceneParameter.config.addSystem(SpriteBoundsUpdater.class);
+        sceneParameter.config.addSystem(PhysicsBodyContactSystem.class);
+        sceneParameter.config.addSystem(ScoringSystem.class);
 
-        SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
-//        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
-        levelParams.config.addSystem(SpriteBoundsCreator.class);
-        levelParams.config.addSystem(SpriteBoundsUpdater.class);
-        levelParams.config.addSystem(PhysicsBodyContactSystem.class);
-        levelParams.config.addSystem(ScoringSystem.class);
-
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new CameraControllerSystem(GameController.this);
             }
         });
 
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new PlayerSystem(GameController.this);
             }
         });
 
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new ControlsSystem(GameController.this);
             }
         });
 
-        levelParams.config.addSystem(AlwaysInViewPortSystem.class);
-
-        scenePath = GameData.SCENE_ONE;
-        scene = manager.loadSceneNow(scenePath, levelParams);
-
+        sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
+        sceneParameter.config.addSystem(VisibilitySystem.class);
+        loadScene(GameData.SCENE_ONE, sceneParameter);
     }
 
     public void loadLevelTwoScene() {
-        this.level = GameData.LEVEL_TWO;
+        level = GameData.LEVEL_TWO;
         unloadPreviousScene();
 
-        SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
-//        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
-        levelParams.config.addSystem(SpriteBoundsCreator.class);
-        levelParams.config.addSystem(SpriteBoundsUpdater.class);
-        levelParams.config.addSystem(ParticleSystem.class);
-        levelParams.config.addSystem(SpriterPhysicsSystem.class);
-        levelParams.config.addSystem(PhysicsBodyContactSystem.class);
-        levelParams.config.addSystem(ScoringSystem.class);
+        SceneParameter sceneParameter = new SceneParameter();
+        sceneParameter.config.addSystem(SpriteBoundsCreator.class);
+        sceneParameter.config.addSystem(SpriteBoundsUpdater.class);
+        sceneParameter.config.addSystem(ParticleSystem.class);
+        sceneParameter.config.addSystem(SpriterPhysicsSystem.class);
+        sceneParameter.config.addSystem(PhysicsBodyContactSystem.class);
+        sceneParameter.config.addSystem(ScoringSystem.class);
 
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new CameraControllerSystem(GameController.this);
             }
         });
 
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new PlayerSystem(GameController.this);
             }
         });
 
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new ControlsSystem(GameController.this);
             }
         });
 
-        levelParams.config.addSystem(AlwaysInViewPortSystem.class);
-        scenePath = GameData.SCENE_TWO;
-        scene = manager.loadSceneNow(scenePath, levelParams);
+        sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
+        sceneParameter.config.addSystem(VisibilitySystem.class);
+        loadScene(GameData.SCENE_TWO, sceneParameter);
 
     }
 
     public void loadLevelThreeScene() {
-        this.level = GameData.LEVEL_THREE;
+        level = GameData.LEVEL_THREE;
         unloadPreviousScene();
 
-        SceneLoader.SceneParameter levelParams = new SceneLoader.SceneParameter();
-//        levelParams.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
-        levelParams.config.addSystem(SpriteBoundsCreator.class);
-        levelParams.config.addSystem(SpriteBoundsUpdater.class);
-        levelParams.config.addSystem(PhysicsBodyContactSystem.class);
-        levelParams.config.addSystem(ScoringSystem.class);
+        SceneParameter sceneParameter = new SceneParameter();
 
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(SpriteBoundsCreator.class);
+        sceneParameter.config.addSystem(SpriteBoundsUpdater.class);
+        sceneParameter.config.addSystem(PhysicsBodyContactSystem.class);
+        sceneParameter.config.addSystem(ScoringSystem.class);
+
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new CameraControllerSystem(GameController.this);
             }
         });
 
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new PlayerSystem(GameController.this);
             }
         });
 
-        levelParams.config.addSystem(new SystemProvider() {
+        sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
                 return new ControlsSystem(GameController.this);
             }
         });
-        levelParams.config.addSystem(AlwaysInViewPortSystem.class);
-        scenePath = GameData.SCENE_THREE;
-        scene = manager.loadSceneNow(scenePath, levelParams);
+
+        sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
+        sceneParameter.config.addSystem(VisibilitySystem.class);
+        loadScene(GameData.SCENE_THREE, sceneParameter);
     }
 
     @Override
     public void show() {
-        loadMenuScene();
+//        loadMenuScene();
 //        loadLevelOneScene();
-//        loadLevelTwoScene();
+        loadLevelTwoScene();
 //        loadLevelThreeScene();
     }
 
@@ -270,5 +281,9 @@ public class GameController implements Screen {
     public void exitApp() {
         Own.log("Exit app");
         Gdx.app.exit();
+    }
+
+    public void debugMode(boolean mode) {
+        this.BOX2D_DEBUG = mode;
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r10">
     <folder id="0">
-        <file id="0" name="star1.png" width="752" height="737" pivot_x="0.5" pivot_y="0.45"/>
-        <file id="1" name="star2.png" width="750" height="734" pivot_x="0.5" pivot_y="0.45"/>
-        <file id="2" name="star3.png" width="750" height="734" pivot_x="0.5" pivot_y="0.45"/>
-        <file id="3" name="star4.png" width="750" height="734" pivot_x="0.5" pivot_y="0.45"/>
+        <file id="0" name="star1.png" width="128" height="125" pivot_x="0.5" pivot_y="0.45"/>
+        <file id="1" name="star2.png" width="128" height="125" pivot_x="0.5" pivot_y="0.45"/>
+        <file id="2" name="star3.png" width="128" height="125" pivot_x="0.5" pivot_y="0.45"/>
+        <file id="3" name="star4.png" width="128" height="125" pivot_x="0.5" pivot_y="0.45"/>
     </folder>
     <entity id="0" name="entity_000">
         <animation id="0" name="NewAnimation" length="700" interval="100">

@@ -1,48 +1,58 @@
 package com.simplegame.game.systems;
 
-import com.artemis.Aspect;
+import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
-import com.artemis.Entity;
-import com.artemis.systems.EntityProcessingSystem;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.Gdx;
 import com.kotcrab.vis.runtime.component.VisID;
 import com.kotcrab.vis.runtime.component.VisText;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 
-public class ScoringSystem extends EntityProcessingSystem implements AfterSceneInit {
+public class ScoringSystem extends BaseSystem implements AfterSceneInit {
     private ComponentMapper<VisID> visIDCm;
     private ComponentMapper<VisText> visTextCm;
 
-    private VisIDManager visIDManager;
-    private int currentScore = 0;
-    private OrthographicCamera camera = null;
-    private SpriteBatch spriteBatch = null;
+    private VisIDManager idManager;
 
-    public ScoringSystem() {
-        super(Aspect.all(VisText.class));
-    }
+    private int score;
+    private String currentScore = "SCORE: ";
+    private int counter = 0;
+    private int accumulateFactor = 60;
+    private float accumulatedFps = 0;
+
+    // variable cache
+    private VisText scoreText;
+    private VisText fpsText;
 
     @Override
-    protected void process(Entity e) {
-        VisID visID = visIDCm.get(e);
+    protected void processSystem() {
+        scoreText.setText(this.currentScore);
 
-        if (visID != null && visID.id.equals("idScore")) {
-            VisText visText = visTextCm.get(e);
-            visText.setText("SCORE: " + String.valueOf(this.currentScore));
+        // fps calculate
+        if (counter >= accumulateFactor) {
+            fpsText.setText("FPS:" + (int) this.accumulatedFps / accumulateFactor);
+            this.accumulatedFps = counter = 0;
+        } else {
+            this.accumulatedFps += (int) (1 / Gdx.graphics.getDeltaTime());
+            counter++;
         }
     }
 
     public int scoreDown() {
-        return currentScore--;
+        this.score++;
+        this.currentScore = "SCORE: " + this.score;
+        return this.score;
     }
 
-    public void scoreUP() {
-        this.currentScore++;
+    public int scoreUP() {
+        this.score--;
+        this.currentScore = "SCORE: " + this.score;
+        return this.score;
     }
 
     @Override
     public void afterSceneInit() {
+        scoreText = visTextCm.get(idManager.get("idScore"));
+        fpsText = visTextCm.get(idManager.get("idFPS"));
     }
 }

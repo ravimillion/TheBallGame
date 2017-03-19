@@ -10,7 +10,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.World;
-import com.kotcrab.vis.runtime.component.Invisible;
+import com.kotcrab.vis.runtime.component.Origin;
 import com.kotcrab.vis.runtime.component.PhysicsBody;
 import com.kotcrab.vis.runtime.component.Transform;
 import com.kotcrab.vis.runtime.component.VisID;
@@ -33,13 +33,22 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     private ComponentMapper<PhysicsBody> physicsCm;
     private ComponentMapper<Transform> transformCm;
     private ComponentMapper<VisSprite> visSpriteCm;
+    private ComponentMapper<Origin> originCm;
     private VisIDManager idManager;
     private CameraManager cameraManager;
     private PhysicsSystem physicsSystem;
     private ControlsSystem controlsSystem;
-    private PhysicsBodyContactSystem physicsBodyContactSystem;
-    private VisSprite ballSprite;
     private GameController gameController;
+    private PhysicsBodyContactSystem physicsBodyContactSystem;
+
+    // variable cache
+    private Entity ballEntity;
+    private Transform transform;
+    private Origin origin;
+
+    private int BALL_FORCE = 1500;
+    private  float TOP_LIN_VELOCITY = 50f;
+    private float TOP_ANG_VELOCITY = 25f;
 
     public PlayerSystem(GameController gameController) {
         this.gameController = gameController;
@@ -51,12 +60,12 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         physicsWorld.setContactListener(physicsBodyContactSystem);
 
         // get the ball sprite info and hide the entity
-        Entity entity = idManager.get("ball");
-        entity.edit().add(new Invisible());
+        ballEntity = idManager.get("ball");
 
-        Transform transform = transformCm.get(entity);
-        ballSprite = visSpriteCm.get(entity);
-
+        transform = transformCm.get(ballEntity);
+        origin = originCm.get(this.ballEntity);
+        float scaleFactor = (2.0f * radius) / (2 * origin.getOriginX());
+        transform.setScale(scaleFactor, scaleFactor);
         // create ball
         Own.box2d.factory.setWorld(physicsWorld);
         body = Own.box2d.factory.getCircleBody(BodyDef.BodyType.DynamicBody, new Vector2(transform.getX(), transform.getY()), 0, radius, density, friction, restitution, "ball");
@@ -88,26 +97,23 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     }
 
     private void limitVelocity() {
-        float topAngularVelocity = 20f;
-        float topLinearVelocity = 45f;
-
         float angularVelocity = body.getAngularVelocity();
 
-        if (angularVelocity > topAngularVelocity) body.setAngularVelocity(topAngularVelocity);
-        if (angularVelocity < -topAngularVelocity) body.setAngularVelocity(-topAngularVelocity);
+        if (angularVelocity > TOP_ANG_VELOCITY) body.setAngularVelocity(TOP_ANG_VELOCITY);
+        if (angularVelocity < -TOP_ANG_VELOCITY) body.setAngularVelocity(-TOP_ANG_VELOCITY);
 
         // limit horizontal velocity
         Vector2 velocity = body.getLinearVelocity();
         // moving right
-        if (velocity.x > topLinearVelocity) body.setLinearVelocity(topLinearVelocity, velocity.y);
+        if (velocity.x > TOP_LIN_VELOCITY) body.setLinearVelocity(TOP_LIN_VELOCITY, velocity.y);
         // moving left
-        if (velocity.x < -topLinearVelocity) body.setLinearVelocity(-topLinearVelocity, velocity.y);
+        if (velocity.x < -TOP_LIN_VELOCITY) body.setLinearVelocity(-TOP_LIN_VELOCITY, velocity.y);
 
         // limit vertical velocity
         // moving up
-        if (velocity.y > topLinearVelocity) body.setLinearVelocity(velocity.x, topLinearVelocity);
+        if (velocity.y > TOP_LIN_VELOCITY) body.setLinearVelocity(velocity.x, TOP_LIN_VELOCITY);
         // moving down
-        if (velocity.y < -topLinearVelocity) body.setLinearVelocity(velocity.x, -topLinearVelocity);
+        if (velocity.y < -TOP_LIN_VELOCITY) body.setLinearVelocity(velocity.x, -TOP_LIN_VELOCITY);
     }
 
     private boolean isLevelEnd() {
@@ -115,24 +121,11 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     }
 
     private void drawBall() {
-        gameController.spriteBatch.setProjectionMatrix(cameraManager.getCamera().combined);
-        gameController.spriteBatch.begin();
-        gameController.spriteBatch.draw(ballSprite.getRegion(),
-                body.getPosition().x - radius, // x
-                body.getPosition().y - radius, // y
-                radius, // rotationCenterX
-                radius, // rotationCenterY
-                radius * 2, // width
-                radius * 2, // height
-                1, // scaleX
-                1, // scaleY
-                body.getAngle() * MathUtils.radiansToDegrees);
-        gameController.spriteBatch.end();
+        transform.setPosition(body.getPosition().x - origin.getOriginX(), body.getPosition().y - origin.getOriginY());
+        transform.setRotation(body.getAngle() * MathUtils.radiansToDegrees);
     }
 
     private void handleInput() {
-        int BALL_FORCE = 1500;
-
         if (Gdx.input.isTouched()) {
             if (Gdx.input.getX() > Own.device.getScreenWidth() / 2) {
                 body.applyTorque(BALL_FORCE * -1, true);

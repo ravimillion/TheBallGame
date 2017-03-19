@@ -5,6 +5,7 @@ import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
 import com.kotcrab.vis.runtime.component.Invisible;
 import com.kotcrab.vis.runtime.component.Transform;
@@ -37,23 +38,29 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
     private HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
     private String[] buttons = {"idCongrats", "idPause", "idResume", "idReady", "idQuit", "idRestart", "idGameOver"};
 
+    // variable cache
+    private OrthographicCamera camera;
+
     public ControlsSystem(GameController gameController) {
         this.gameController = gameController;
     }
 
     @Override
     public void afterSceneInit() {
+        camera = cameraManager.getCamera();
+
         for (int i = 0; i < buttons.length; i++) {
             String btnId = buttons[i];
             Entity entity = idManager.get(btnId);
 
             entityMap.put(btnId, idManager.get(btnId));
             boundsMap.put(btnId, boundsCm.get(entity));
-            posMap.put(btnId, transformCm.get(entity).getX() - cameraManager.getCamera().viewportWidth / 2);
+            posMap.put(btnId, transformCm.get(entity).getX() - camera.viewportWidth / 2);
         }
 
         Own.io.addProcessor(this);
         setState(GameData.READY);
+
     }
 
     public void setState(int state) {
@@ -131,33 +138,22 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
             default:
                 Own.log("Error: No next level info found: " + buttonId);
                 return GameData.RUNNING;
-//                break;
-        }
-
-//        return -1;
-    }
-
-    public void setControlsPosition() {
-        Entity entity;
-        Bounds bounds;
-        Transform transform;
-
-        Object[] keys = entityMap.keySet().toArray();
-
-        for (Object id : keys) {
-            float newX = cameraManager.getCamera().position.x + posMap.get(id.toString());
-            entity = entityMap.get(id.toString());
-            bounds = boundsCm.get(entity);
-            bounds.setX(newX);
-
-            transform = transformCm.get(entity);
-            transform.setX(newX);
         }
     }
+
 
     @Override
     protected void processSystem() {
-        setControlsPosition();
+        // update controls position.
+
+        float cameraX = camera.position.x;
+
+        for (int i = 0; i < buttons.length; i++) {
+            Entity entity = entityMap.get(buttons[i]);
+            float newX = cameraX + posMap.get(buttons[i]);
+            boundsCm.get(entity).setX(newX);
+            transformCm.get(entity).setX(newX);
+        }
     }
 
     private void show(String buttonId) {

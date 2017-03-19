@@ -4,12 +4,14 @@ import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
 import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.Shape.Type;
 import com.badlogic.gdx.utils.Array;
+import com.kotcrab.vis.runtime.component.PhysicsBody;
 import com.kotcrab.vis.runtime.component.VisID;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.simplegame.game.utils.CameraShaker;
@@ -21,6 +23,7 @@ import ownLib.listener.OnContactListener;
 
 public class PhysicsBodyContactSystem extends BaseSystem implements ContactListener {
     private ComponentMapper<VisID> visIDCm;
+    private ComponentMapper<PhysicsBody> physicsCm;
 
     private VisIDManager idManager;
     private ControlsSystem controlsSystem;
@@ -124,6 +127,10 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
                 @Override
                 public void run() {
                     finalCollisionData.entity.deleteFromWorld();
+                    Body body = physicsCm.get(finalCollisionData.entity).body;
+
+                    // remove physics body
+                    body.getWorld().destroyBody(body);
                     scoringSystem.scoreUP();
                 }
             });

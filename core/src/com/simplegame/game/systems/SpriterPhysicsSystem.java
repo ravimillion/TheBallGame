@@ -5,8 +5,10 @@ import com.artemis.ComponentMapper;
 import com.artemis.Entity;
 import com.artemis.EntitySystem;
 import com.artemis.utils.Bag;
-import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.brashmonkey.spriter.Player;
 import com.kotcrab.vis.plugin.spriter.runtime.component.VisSpriter;
+import com.kotcrab.vis.runtime.component.Invisible;
 import com.kotcrab.vis.runtime.component.OriginalRotation;
 import com.kotcrab.vis.runtime.component.PhysicsBody;
 import com.kotcrab.vis.runtime.component.Transform;
@@ -22,9 +24,16 @@ public class SpriterPhysicsSystem extends EntitySystem implements AfterSceneInit
     private ComponentMapper<VisID> visIdCm;
     private ComponentMapper<PhysicsBody> physicsCm;
     private ComponentMapper<VisSpriter> visSpriterCm;
+    private ComponentMapper<Invisible> invisibleCm;
     private ComponentMapper<Transform> transformCm;
     private ComponentMapper<OriginalRotation> originalRotationCm;
     private PhysicsBodyManager physicsBodyManager;
+    private VisibilitySystem visibilitySystem;
+
+    // variable cache
+    private Body body;
+    private Player player;
+    private Bag<Entity> entityBag;
 
     public SpriterPhysicsSystem() {
         super(Aspect.one(VisSpriter.class));
@@ -37,21 +46,35 @@ public class SpriterPhysicsSystem extends EntitySystem implements AfterSceneInit
 
     @Override
     protected void processSystem() {
-        Bag<Entity> entityBag = getEntities();
-        for (Entity e : entityBag) {
-            PhysicsBody physics = physicsCm.get(e);
-            if (physics.body == null) return;
+        for (Entity e: entityBag) {
+            if (e == null) continue;
+            // ask visibility system to fix visibility of in viewport
+            visibilitySystem.process(e);
 
-            VisSpriter visSpriter = visSpriterCm.get(e);
-            visSpriter.getPlayer().setPosition(physics.body.getPosition().x, physics.body.getPosition().y);
-            OriginalRotation originalRotation = originalRotationCm.get(e);
-            visSpriter.getPlayer().setAngle(originalRotation.rotation + physics.body.getAngle() * MathUtils.radiansToDegrees);
+            // if visibility system decided that the object is visible
+            if (invisibleCm.get(e) == null) {
+                PhysicsBody physicsBody = physicsCm.get(e);
+                if (physicsBody == null) continue;
+
+                body = physicsCm.get(e).body;
+                if (body == null) return;
+
+                player = visSpriterCm.get(e).getPlayer();
+                player.setPosition(body.getPosition().x, body.getPosition().y);
+
+                // set rotation #enable if animations are moving.
+//                player.setAngle(originalRotationCm.get(e).rotation + body.getAngle() * MathUtils.radiansToDegrees);
+            }
         }
 
     }
 
     @Override
     public void afterSceneInit() {
-
+        entityBag = getEntities();
+        // initially hide all the entities and let the visibility system decide which entity needs to be shown
+        for (Entity e: entityBag) {
+            e.edit().add(new Invisible());
+        }
     }
 }

@@ -12,6 +12,6 @@ public class Logger {
 
     public void log(String msg) {
         String TAG = "Logger";
-        Gdx.app.log(TAG, msg);
+        Gdx.app.debug(TAG, msg);
     }
 }

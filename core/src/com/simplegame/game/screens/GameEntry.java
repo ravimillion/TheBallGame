@@ -13,10 +13,15 @@ public class GameEntry extends Game {
     private String TAG = "GameEntry";
     private Splash splashScreen;
     private AdHandler handler;
+    private boolean debug;
     private GameController gameController;
 
     public GameEntry(AdHandler handler) {
         this.handler = handler;
+    }
+
+    public void debugMode(boolean mode) {
+        debug = mode;
     }
 
     @Override
@@ -40,6 +45,7 @@ public class GameEntry extends Game {
 
     public void finishLoading() {
         this.gameController = new GameController(this, spriteBatch);
+        this.gameController.debugMode(debug);
         this.setScreen(this.gameController);
     }
 }

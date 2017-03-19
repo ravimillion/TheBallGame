@@ -96,11 +96,7 @@ public class Splash implements Screen {
     }
 
     public boolean isLoading() {
-        if (!Own.assets.update()) {
-            return true;
-        }
-
-        return false;
+        return !Own.assets.update();
     }
 
     @Override

@@ -42,13 +42,13 @@
     {
       "name": "Controls",
       "id": 3,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 2,
+  "activeLayerId": 3,
   "groupIds": [],
   "schemes": [
     {
@@ -867,16 +867,16 @@
     {
       "components": [
         {
-          "x": 24.1458,
-          "y": 16.2629,
+          "x": 22.0,
+          "y": 15.0,
           "scaleX": 2.0,
           "scaleY": 2.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.0,
-          "originY": 1.255,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -928,16 +928,16 @@
     {
       "components": [
         {
-          "x": 24.0657,
-          "y": 16.1026,
+          "x": 22.0,
+          "y": 15.0,
           "scaleX": 2.0,
           "scaleY": 2.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.0,
-          "originY": 1.255,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -985,16 +985,16 @@
     {
       "components": [
         {
-          "x": 24.3487,
-          "y": 12.9459,
-          "scaleX": 1.2,
-          "scaleY": 1.2,
+          "x": 25.0,
+          "y": 12.0,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.0,
-          "originY": 1.255,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -1042,7 +1042,7 @@
     {
       "components": [
         {
-          "x": 41.793,
+          "x": 41.0,
           "y": 29.0,
           "scaleX": 1.0,
           "scaleY": 1.0,
@@ -1099,16 +1099,16 @@
     {
       "components": [
         {
-          "x": 24.3487,
-          "y": 18.8335,
-          "scaleX": 1.2,
-          "scaleY": 1.2,
+          "x": 25.0,
+          "y": 20.0,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.0,
-          "originY": 1.255,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -13907,16 +13907,16 @@
     {
       "components": [
         {
-          "x": 0.8471,
-          "y": 29.693,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
+          "x": 22.5071,
+          "y": 14.0,
+          "scaleX": 5.4,
+          "scaleY": 2.63,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.31,
-          "originY": 0.715,
+          "originX": 5.115,
+          "originY": 5.005,
           "@class": "Origin"
         },
         {
@@ -13924,39 +13924,30 @@
             "r": 1.0,
             "g": 1.0,
             "b": 1.0,
-            "a": 0.8509804
+            "a": 1.0
           },
           "@class": "Tint"
         },
         {
           "asset": {
-            "fontSize": 200,
-            "relativePath": "font/zorque.ttf",
-            "@class": "TtfFontAsset"
+            "relativePath": "images/wall2.png",
+            "@class": "TextureRegionAsset"
           },
           "@class": "AssetReference"
         },
         {
-          "pixelsPerUnits": 100.0,
-          "scale": 0.01,
-          "@class": "PixelsPerUnit"
+          "flipX": false,
+          "flipY": false,
+          "width": 10.23,
+          "height": 10.01,
+          "@class": "ProtoVisSprite"
         },
         {
-          "text": "SCORE",
-          "autoSetOriginToCenter": true,
-          "isUsesDistanceField": false,
-          "@class": "ProtoVisText"
-        },
-        {
-          "layerId": 3,
+          "layerId": 0,
           "@class": "Layer"
         },
         {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "5ab88e28-fd75-4444-9109-1b7c740d6bcc",
+          "uuid": "63f5690d-94b7-4199-9fe7-c0ff62bbe93d",
           "@class": "VisUUID"
         },
         {
@@ -13964,17 +13955,8 @@
           "@class": "Renderable"
         },
         {
-          "id": "idScore",
+          "id": "idBackground",
           "@class": "VisID"
-        },
-        {
-          "componentsToDrop": [
-            {
-              "@content": "PixelsPerUnit",
-              "@class": "Class"
-            }
-          ],
-          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"
@@ -13982,16 +13964,16 @@
     {
       "components": [
         {
-          "x": 24.3088,
-          "y": 15.8294,
+          "x": 19.0,
+          "y": 14.0,
           "scaleX": 3.0,
           "scaleY": 3.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.0,
-          "originY": 1.26,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -14039,7 +14021,7 @@
     {
       "components": [
         {
-          "x": 48.6074,
+          "x": 48.0,
           "y": 29.0,
           "scaleX": 1.0,
           "scaleY": 1.0,
@@ -14220,16 +14202,91 @@
     {
       "components": [
         {
-          "x": 22.5071,
-          "y": 23.243784,
-          "scaleX": 5.4,
-          "scaleY": 4.6,
+          "x": 0.8471,
+          "y": 29.693,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 5.115,
-          "originY": 5.005,
+          "originX": 3.31,
+          "originY": 0.715,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 0.8509804
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "fontSize": 200,
+            "relativePath": "font/zorque.ttf",
+            "@class": "TtfFontAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "pixelsPerUnits": 100.0,
+          "scale": 0.01,
+          "@class": "PixelsPerUnit"
+        },
+        {
+          "text": "SCORE",
+          "autoSetOriginToCenter": true,
+          "isUsesDistanceField": false,
+          "@class": "ProtoVisText"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "5ab88e28-fd75-4444-9109-1b7c740d6bcc",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idScore",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "PixelsPerUnit",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 26.05408,
+          "y": 30.635698,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 1.3,
+          "originY": 0.5,
           "@class": "Origin"
         },
         {
@@ -14243,24 +14300,29 @@
         },
         {
           "asset": {
-            "relativePath": "images/wall2.png",
-            "@class": "TextureRegionAsset"
+            "fontSize": 150,
+            "relativePath": "font/SF Atarian System.ttf",
+            "@class": "TtfFontAsset"
           },
           "@class": "AssetReference"
         },
         {
-          "flipX": false,
-          "flipY": false,
-          "width": 10.23,
-          "height": 10.01,
-          "@class": "ProtoVisSprite"
+          "pixelsPerUnits": 100.0,
+          "scale": 0.01,
+          "@class": "PixelsPerUnit"
         },
         {
-          "layerId": 0,
+          "text": "FPS: ",
+          "autoSetOriginToCenter": true,
+          "isUsesDistanceField": false,
+          "@class": "ProtoVisText"
+        },
+        {
+          "layerId": 2,
           "@class": "Layer"
         },
         {
-          "uuid": "63f5690d-94b7-4199-9fe7-c0ff62bbe93d",
+          "uuid": "512c43ad-ccc1-4972-b956-bca598aedad3",
           "@class": "VisUUID"
         },
         {
@@ -14268,8 +14330,17 @@
           "@class": "Renderable"
         },
         {
-          "id": "idBackground",
+          "id": "idFPS",
           "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "PixelsPerUnit",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"
