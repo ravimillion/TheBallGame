@@ -50,13 +50,13 @@
     {
       "name": "Controls",
       "id": 4,
-      "locked": false,
+      "locked": true,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 4,
+  "activeLayerId": 3,
   "groupIds": [],
   "schemes": [
     {
@@ -1089,6 +1089,10 @@
         {
           "layerId": 2,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "8cfe0d94-a428-4c8f-af6b-9374bae09e32",

@@ -21,15 +21,15 @@ public class Text {
 
     private BitmapFont splashFont;
 
-    public void showProgress(SpriteBatch batch, int progress, Vector2 pos) {
-        splashFont.draw(batch, progress + " %", pos.x, pos.y);
+    public void showProgress(SpriteBatch batch, String progressMessage, Vector2 pos) {
+        splashFont.draw(batch, progressMessage, pos.x, pos.y);
     }
 
-    public void createFontForSplash() {
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/desyrel.ttf"));
+    public void createFontForSplash(Color color) {
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/SF Atarian System.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
         parameter.size = 32;
-        parameter.color = Color.BLACK;
+        parameter.color = color;
         splashFont = generator.generateFont(parameter); // font size 12 pixels
         generator.dispose();
     }

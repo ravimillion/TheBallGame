@@ -16,9 +16,9 @@ import com.kotcrab.vis.runtime.scene.SceneFeature;
 import com.kotcrab.vis.runtime.scene.SceneLoader;
 import com.kotcrab.vis.runtime.scene.SceneLoader.SceneParameter;
 import com.kotcrab.vis.runtime.scene.SystemProvider;
-import com.kotcrab.vis.runtime.scene.VisAssetManager;
 import com.kotcrab.vis.runtime.util.EntityEngineConfiguration;
 import com.simplegame.game.screens.GameEntry;
+import com.simplegame.game.screens.LoadingScreen;
 import com.simplegame.game.screens.MenuScreen;
 import com.simplegame.game.systems.AlwaysInViewPortSystem;
 import com.simplegame.game.systems.CameraControllerSystem;
@@ -44,28 +44,28 @@ public class GameController implements Screen {
     private GameEntry game;
     private boolean BOX2D_DEBUG = true;
     private Scene scene = null;
-    private VisAssetManager manager;
+    private OwnSceneLoader manager;
     private String scenePath;
+    private LoadingScreen loadingScreen;
 
     public GameController(GameEntry game, SpriteBatch spriteBatch) {
         Gdx.app.setLogLevel(Application.LOG_DEBUG);
         this.spriteBatch = spriteBatch;
         this.game = game;
 
-        manager = new VisAssetManager(spriteBatch);
+        manager = new OwnSceneLoader(spriteBatch);
         manager.enableFreeType(new FreeTypeFontProvider());
         manager.registerSupport(new SpriterSupport());
         manager.getLogger().setLevel(Logger.ERROR);
-
+        loadingScreen = new LoadingScreen(game, this, spriteBatch, manager);
     }
 
-    private void loadScene(String sp, SceneParameter sceneParameter) {
-        if (BOX2D_DEBUG && !sp.equals(GameData.MENU)) sceneParameter.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
+    private void loadScene(String scenePath, SceneParameter sceneParameter) {
+        if (BOX2D_DEBUG && !scenePath.equals(GameData.MENU)) sceneParameter.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
 
-        long ts1 = System.currentTimeMillis();
-        scenePath = sp;
-        scene = manager.loadSceneNow(sp, sceneParameter);
-        Own.log("Total loading time: " + (double)(System.currentTimeMillis() - ts1) / 1000 + " Secs");
+        this.scenePath = scenePath;
+        this.scene = null;
+        this.loadingScreen.startLoading(scenePath, sceneParameter);
     }
 
     private void unloadPreviousScene() {
@@ -83,7 +83,6 @@ public class GameController implements Screen {
 
         sceneParameter.config.addSystem(SpriteBoundsCreator.class);
         sceneParameter.config.addSystem(SpriteBoundsUpdater.class);
-
         sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
@@ -132,7 +131,6 @@ public class GameController implements Screen {
     public void loadLevelTwoScene() {
         level = GameData.LEVEL_TWO;
         unloadPreviousScene();
-
         SceneParameter sceneParameter = new SceneParameter();
         sceneParameter.config.addSystem(SpriteBoundsCreator.class);
         sceneParameter.config.addSystem(SpriteBoundsUpdater.class);
@@ -144,14 +142,13 @@ public class GameController implements Screen {
         sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
-                return new CameraControllerSystem(GameController.this);
+                return new PlayerSystem(GameController.this);
             }
         });
-
         sceneParameter.config.addSystem(new SystemProvider() {
             @Override
             public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
-                return new PlayerSystem(GameController.this);
+                return new CameraControllerSystem(GameController.this);
             }
         });
 
@@ -207,10 +204,12 @@ public class GameController implements Screen {
 
     @Override
     public void show() {
-//        loadMenuScene();
-//        loadLevelOneScene();
-        loadLevelTwoScene();
-//        loadLevelThreeScene();
+        if (this.scene == null) {  // Load scene for the first time as there is no scene is loaded
+            loadMenuScene();
+//            loadLevelOneScene();
+//            loadLevelTwoScene();
+//            loadLevelThreeScene();
+        }
     }
 
     @Override
@@ -285,5 +284,9 @@ public class GameController implements Screen {
 
     public void debugMode(boolean mode) {
         this.BOX2D_DEBUG = mode;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 }

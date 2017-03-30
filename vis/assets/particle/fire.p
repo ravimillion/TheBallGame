@@ -4,11 +4,11 @@ active: true
 lowMin: 0.0
 lowMax: 0.0
 - Duration - 
-lowMin: 5000.0
-lowMax: 5000.0
+lowMin: 10.0
+lowMax: 10.0
 - Count - 
 min: 0
-max: 100
+max: 35
 - Emission - 
 lowMin: 100.0
 lowMax: 100.0

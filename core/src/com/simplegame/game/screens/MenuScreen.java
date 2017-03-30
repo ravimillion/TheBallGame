@@ -83,16 +83,16 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
 
         switch (buttonId) {
             case "idOne":
-                gameController.loadLevelOneScene();
                 this.dispose();
+                gameController.loadLevelOneScene();
                 break;
             case "idTwo":
-                gameController.loadLevelTwoScene();
                 this.dispose();
+                gameController.loadLevelTwoScene();
                 break;
             case "idThree":
-                gameController.loadLevelThreeScene();
                 this.dispose();
+                gameController.loadLevelThreeScene();
                 break;
             default:
                 Own.log(buttonId + "pressed");

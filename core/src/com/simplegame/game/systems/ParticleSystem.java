@@ -36,6 +36,7 @@ public class ParticleSystem extends EntitySystem implements AfterSceneInit{
     private Body body;
     private ParticleEmitter particleEmitter;
     private Bag<Entity> entityBag;
+    private int RESET_DIST = 8;
 
     public ParticleSystem() {
         super(Aspect.all(VisParticle.class, VisPolygon.class, PhysicsProperties.class));
@@ -65,7 +66,7 @@ public class ParticleSystem extends EntitySystem implements AfterSceneInit{
                 particleEmitter = visParticle.getEffect().getEmitters().get(0);
                 particleEmitter.setPosition(bodyPos.x, bodyPos.y);
 
-                if (bodyPos.y < 8) {
+                if (bodyPos.y < RESET_DIST) {
                     body.setTransform(bodyPos.x, GameController.WORLD_HEIGHT - 1, body.getAngle());
                     body.setLinearVelocity(0, 0);
                     body.setAwake(true);

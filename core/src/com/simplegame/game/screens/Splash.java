@@ -2,12 +2,12 @@ package com.simplegame.game.screens;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import com.simplegame.game.GameController;
 import com.simplegame.game.SpriteAccessor;
 
 import aurelienribon.tweenengine.BaseTween;
@@ -17,7 +17,6 @@ import aurelienribon.tweenengine.TweenManager;
 import ownLib.Own;
 
 public class Splash implements Screen {
-    GameController gameController;
     private SpriteBatch spriteBatch;
 
     private float LOGO_WIDTH = Own.device.getScreenHeight() / 2.5f;
@@ -34,7 +33,7 @@ public class Splash implements Screen {
     public Splash(GameEntry gameEntry, SpriteBatch spriteBatch) {
         this.gameEntry = gameEntry;
         this.spriteBatch = spriteBatch;
-        Own.text.createFontForSplash();
+        Own.text.createFontForSplash(Color.FIREBRICK);
         splashSprite = new Sprite(new Texture(Gdx.files.internal("images/splash.png")));
         splashSprite.setSize(LOGO_WIDTH, LOGO_HEIGHT);
         splashSprite.setPosition(LOGO_POSITION.x, LOGO_POSITION.y);
