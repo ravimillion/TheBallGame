@@ -23,6 +23,7 @@ import com.simplegame.game.screens.MenuScreen;
 import com.simplegame.game.systems.AlwaysInViewPortSystem;
 import com.simplegame.game.systems.CameraControllerSystem;
 import com.simplegame.game.systems.ControlsSystem;
+import com.simplegame.game.systems.MovingPlatform;
 import com.simplegame.game.systems.ParticleSystem;
 import com.simplegame.game.systems.PhysicsBodyContactSystem;
 import com.simplegame.game.systems.PlayerSystem;
@@ -101,6 +102,7 @@ public class GameController implements Screen {
         sceneParameter.config.addSystem(SpriteBoundsUpdater.class);
         sceneParameter.config.addSystem(PhysicsBodyContactSystem.class);
         sceneParameter.config.addSystem(ScoringSystem.class);
+        sceneParameter.config.addSystem(MovingPlatform.class);
 
         sceneParameter.config.addSystem(new SystemProvider() {
             @Override
@@ -205,8 +207,8 @@ public class GameController implements Screen {
     @Override
     public void show() {
         if (this.scene == null) {  // Load scene for the first time as there is no scene is loaded
-            loadMenuScene();
-//            loadLevelOneScene();
+//            loadMenuScene();
+            loadLevelOneScene();
 //            loadLevelTwoScene();
 //            loadLevelThreeScene();
         }

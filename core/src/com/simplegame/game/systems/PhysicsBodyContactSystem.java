@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.Array;
 import com.kotcrab.vis.runtime.component.PhysicsBody;
 import com.kotcrab.vis.runtime.component.VisID;
 import com.kotcrab.vis.runtime.system.VisIDManager;
+import com.simplegame.game.GameData;
 import com.simplegame.game.utils.CameraShaker;
 
 import java.util.Hashtable;
@@ -71,7 +72,6 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     @Override
     protected void processSystem() {
         Iterator<String> iter = collisionMap.keySet().iterator();
-//        Own.log("Size: " + collisionMap.size());
         while (iter.hasNext()) {
             CollisionData collisionData = collisionMap.get(iter.next());
             // process entry
@@ -93,7 +93,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-//                    controlsSystem.setState(GameData.RESTART_LEVEL);
+                    controlsSystem.setState(GameData.GAME_OVER);
                 }
             });
         }

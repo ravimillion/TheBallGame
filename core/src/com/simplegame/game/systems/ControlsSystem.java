@@ -85,6 +85,9 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
             case GameData.RESTART_LEVEL:
                 gameController.notify(GameData.RESTART_LEVEL);
                 break;
+            case GameData.GAME_OVER:
+                show("idGameOver");
+                break;
             case GameData.QUIT:
                 gameController.notify(GameData.QUIT);
             default:
@@ -135,6 +138,8 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
                 return GameData.RUNNING;
             case "idRestart":
                 return GameData.RESTART_LEVEL;
+            case "idGameOver":
+                return GameData.QUIT;
             default:
                 Own.log("Error: No next level info found: " + buttonId);
                 return GameData.RUNNING;
@@ -203,6 +208,8 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
             case Input.Keys.Q:
                 setState(getNextState("idQuit"));
                 break;
+            case Input.Keys.R:
+                setState(getNextState("idRestart"));
         }
 
         return false;
