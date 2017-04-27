@@ -69,6 +69,5 @@ build/
 .directory
 .DS_Store
 Thumbs.db
-## VisEditor
-vis/
-vis/**/.*
+
+
