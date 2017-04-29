@@ -47,7 +47,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     private Origin origin;
 
     private int BALL_FORCE = 1500;
-    private float TOP_LIN_VELOCITY = 25f;
+    private float TOP_LIN_VELOCITY = 35f;
     private float TOP_ANG_VELOCITY = 20f;
 
     public PlayerSystem(GameController gameController) {
