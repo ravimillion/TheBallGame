@@ -100,6 +100,7 @@ public class GameController implements Screen {
         SceneParameter sceneParameter = new SceneParameter();
         sceneParameter.config.addSystem(SpriteBoundsCreator.class);
         sceneParameter.config.addSystem(SpriteBoundsUpdater.class);
+        sceneParameter.config.addSystem(SpriterPhysicsSystem.class);
         sceneParameter.config.addSystem(PhysicsBodyContactSystem.class);
         sceneParameter.config.addSystem(ScoringSystem.class);
         sceneParameter.config.addSystem(MovingPlatform.class);
@@ -208,8 +209,8 @@ public class GameController implements Screen {
     public void show() {
         if (this.scene == null) {  // Load scene for the first time as there is no scene is loaded
 //            loadMenuScene();
-//            loadLevelOneScene();
-            loadLevelTwoScene();
+            loadLevelOneScene();
+//            loadLevelTwoScene();
 //            loadLevelThreeScene();
         }
     }

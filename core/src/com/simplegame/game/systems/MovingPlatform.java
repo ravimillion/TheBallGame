@@ -53,13 +53,13 @@ public class MovingPlatform extends BaseSystem implements AfterSceneInit {
 
                 if (dir.equals("up")) {
                     if (pos.y > MAX_HEIGHT) {
-                        body.setTransform(pos.x, MIN_HEIGHT, body.getAngle());
+                        variableCm.get(e).put("dir", "down");
                     } else {
                         body.setTransform(pos.x, pos.y + speed, body.getAngle());
                     }
                 } else if (dir.equals("down")) {
                     if (pos.y < MIN_HEIGHT) {
-                        body.setTransform(pos.x, MAX_HEIGHT, body.getAngle());
+                        variableCm.get(e).put("dir", "up");
                     } else {
                         body.setTransform(pos.x, pos.y - speed, body.getAngle());
                     }

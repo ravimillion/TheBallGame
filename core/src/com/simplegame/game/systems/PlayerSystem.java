@@ -28,7 +28,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     public Body body;
     public int state = GameData.RUNNING;
     // ball parameters
-    float radius = 2f, restitution = 0.5f, density = 1f, friction = 2.5f;
+    float radius = 2f, restitution = 0.3f, density = 1f, friction = 2.5f;
     private ComponentMapper<VisID> visIDCm;
     private ComponentMapper<PhysicsBody> physicsCm;
     private ComponentMapper<Transform> transformCm;
@@ -47,8 +47,8 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     private Origin origin;
 
     private int BALL_FORCE = 1500;
-    private  float TOP_LIN_VELOCITY = 50f;
-    private float TOP_ANG_VELOCITY = 25f;
+    private float TOP_LIN_VELOCITY = 25f;
+    private float TOP_ANG_VELOCITY = 20f;
 
     public PlayerSystem(GameController gameController) {
         this.gameController = gameController;
