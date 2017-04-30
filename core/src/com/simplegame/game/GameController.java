@@ -209,8 +209,8 @@ public class GameController implements Screen {
     public void show() {
         if (this.scene == null) {  // Load scene for the first time as there is no scene is loaded
 //            loadMenuScene();
-            loadLevelOneScene();
-//            loadLevelTwoScene();
+//            loadLevelOneScene();
+            loadLevelTwoScene();
 //            loadLevelThreeScene();
         }
     }

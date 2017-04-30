@@ -141,6 +141,16 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
             body.applyTorque(BALL_FORCE, true);
         }
     }
+
+    public void applyPower(String powerID) {
+        switch (powerID) {
+            case "idPowerBigger":
+                int POWER_BIGGER = 5;
+                body.getFixtureList().get(0).getShape().setRadius(POWER_BIGGER);
+                transform.setScale(POWER_BIGGER, POWER_BIGGER);
+                break;
+        }
+    }
 }
 
 

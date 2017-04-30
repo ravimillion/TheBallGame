@@ -1,6 +1,5 @@
 package ownLib.box2d;
 
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -8,7 +7,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.simplegame.game.objects.GameObject;
 import com.simplegame.game.userdata.CircleUserData;
 import com.simplegame.game.userdata.JsonUserData;
 
@@ -18,12 +16,6 @@ import ownLib.Own;
  * Created by ravi on 17.09.16.
  */
 public class GUI {
-    public void putOffScreen(GameObject gameObject, OrthographicCamera box2DCam) {
-        if (gameObject.getPosition().x + gameObject.getWidth() < box2DCam.position.x - box2DCam.viewportWidth / 2) {
-            gameObject.setPosition(new Vector2(box2DCam.position.x + box2DCam.viewportWidth / 2, gameObject.getPosition().y));
-        }
-    }
-
     public void drawCircleWithRotation(Batch batch, String textRegionID, Body body) {
         float radius = ((CircleUserData) body.getUserData()).getRadius();
         batch.draw(new TextureRegion(Own.assets.getTexture(textRegionID)),

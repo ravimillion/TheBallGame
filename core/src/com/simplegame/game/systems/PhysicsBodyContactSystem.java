@@ -30,6 +30,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     private ControlsSystem controlsSystem;
     private OnContactListener contactListener;
     private CameraControllerSystem cameraControllerSystem;
+    private PlayerSystem playerSystem;
     private ScoringSystem scoringSystem;
     private Hashtable<String, CollisionData> collisionMap = new Hashtable();
 
@@ -78,13 +79,36 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
             removeOnCollision(collisionData);
             shakeCameraOnCollision(collisionData);
             changeGameStateOnCollision(collisionData);
+            applySuperPower(collisionData);
             // remove entry
             iter.remove();
         }
     }
 
+    public void applySuperPower(CollisionData collisionData) {
+        String[] powerList = {"idPowerBigger"};
+
+        Array<String> powerArray = new Array(powerList);
+
+        final VisID visID = visIDCm.get(collisionData.entity);
+        if (visID != null && powerArray.indexOf(visID.id, false) >= 0) {
+
+            Gdx.app.postRunnable(new Runnable() {
+                @Override
+                public void run() {
+                    switch (visID.id) {
+                        case "idPowerBigger":
+                            playerSystem.applyPower("idPowerBigger");
+                            break;
+                    }
+//                    controlsSystem.setState(GameData.GAME_OVER);
+                }
+            });
+        }
+    }
+
     public void changeGameStateOnCollision(CollisionData collisionData) {
-        String[] cameraShakeList = {"spike"};
+        String[] cameraShakeList = {"spike", "idFire"};
 
         Array<String> removalArray = new Array(cameraShakeList);
 
@@ -100,7 +124,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     }
 
     public void shakeCameraOnCollision(CollisionData collisionData) {
-        String[] cameraShakeList = {"spike"};
+        String[] cameraShakeList = {"spike", "idFire"};
 
         Array<String> removalArray = new Array(cameraShakeList);
         float threshold = 100f;
@@ -122,6 +146,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
         Array<String> removalArray = new Array(removalList);
         final CollisionData finalCollisionData = collisionData;
         VisID visID = visIDCm.get(collisionData.entity);
+
         if (visID != null && removalArray.indexOf(visID.id, false) > -1) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
