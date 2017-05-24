@@ -10,7 +10,6 @@ import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.Shape.Type;
-import com.badlogic.gdx.utils.Array;
 import com.kotcrab.vis.runtime.component.PhysicsBody;
 import com.kotcrab.vis.runtime.component.VisID;
 import com.kotcrab.vis.runtime.system.VisIDManager;
@@ -31,6 +30,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     private OnContactListener contactListener;
     private CameraControllerSystem cameraControllerSystem;
     private PlayerSystem playerSystem;
+    private SoundSystem soundSystem;
     private ScoringSystem scoringSystem;
     private Hashtable<String, CollisionData> collisionMap = new Hashtable();
 
@@ -76,6 +76,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
         while (iter.hasNext()) {
             CollisionData collisionData = collisionMap.get(iter.next());
             // process entry
+            soundEffect(collisionData);
             removeOnCollision(collisionData);
             shakeCameraOnCollision(collisionData);
             changeGameStateOnCollision(collisionData);
@@ -85,35 +86,28 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
         }
     }
 
+    public void soundEffect(CollisionData collisionData) {
+        soundSystem.triggerSoundEffect(collisionData);
+    }
+
     public void applySuperPower(CollisionData collisionData) {
-        String[] powerList = {"idPowerBigger"};
-
-        Array<String> powerArray = new Array(powerList);
-
         final VisID visID = visIDCm.get(collisionData.entity);
-        if (visID != null && powerArray.indexOf(visID.id, false) >= 0) {
+        if (visID != null && GameData.SUPER_POWER_LIST.indexOf(visID.id, false) >= 0) {
 
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    switch (visID.id) {
-                        case "idPowerBigger":
-                            playerSystem.applyPower("idPowerBigger");
-                            break;
-                    }
-//                    controlsSystem.setState(GameData.GAME_OVER);
+                    playerSystem.applyPower(visID.id);
                 }
             });
         }
     }
 
     public void changeGameStateOnCollision(CollisionData collisionData) {
-        String[] cameraShakeList = {"spike", "idFire"};
-
-        Array<String> removalArray = new Array(cameraShakeList);
-
         VisID visID = visIDCm.get(collisionData.entity);
-        if (visID != null && removalArray.indexOf(visID.id, false) > -1) {
+        if (visID == null) return;
+
+        if (GameData.STATE_CHANGE_LIST.indexOf(visID.id, false) >= 0) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
@@ -124,13 +118,10 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     }
 
     public void shakeCameraOnCollision(CollisionData collisionData) {
-        String[] cameraShakeList = {"spike", "idFire"};
-
-        Array<String> removalArray = new Array(cameraShakeList);
         float threshold = 100f;
 
         VisID visID = visIDCm.get(collisionData.entity);
-        if (visID != null && removalArray.indexOf(visID.id, false) > -1 && collisionData.impulse > threshold) {
+        if (visID != null && GameData.CAMERA_SHAKE_LIST.indexOf(visID.id, false) > -1 && collisionData.impulse > threshold) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
@@ -141,13 +132,10 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     }
 
     public void removeOnCollision(CollisionData collisionData) {
-        String[] removalList = {"idAnimStar"};
-
-        Array<String> removalArray = new Array(removalList);
         final CollisionData finalCollisionData = collisionData;
         VisID visID = visIDCm.get(collisionData.entity);
 
-        if (visID != null && removalArray.indexOf(visID.id, false) > -1) {
+        if (visID != null && GameData.REMOVE_ON_COLLISIOIN_LIST.indexOf(visID.id, false) > -1) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {

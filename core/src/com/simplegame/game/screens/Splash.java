@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import com.simplegame.game.GameData;
 import com.simplegame.game.SpriteAccessor;
 
 import aurelienribon.tweenengine.BaseTween;
@@ -21,8 +22,6 @@ public class Splash implements Screen {
 
     private float LOGO_WIDTH = Own.device.getScreenHeight() / 2.5f;
     private float LOGO_HEIGHT = LOGO_WIDTH * 1.1f;
-    private float FADE_IN_TIME = 0f;
-    private float FADE_OUT_TIME = 0f;
 
     private Vector2 LOGO_POSITION = new Vector2(Own.device.getScreenWidth() / 2 - LOGO_WIDTH / 2, Own.device.getScreenHeight() / 2 - LOGO_HEIGHT * 0.3f);
     private TweenManager tweenManager;
@@ -48,7 +47,7 @@ public class Splash implements Screen {
         Tween.registerAccessor(Sprite.class, new SpriteAccessor());
 
         Tween.set(splashSprite, SpriteAccessor.FADE_IN_OUT).target(0).start(tweenManager);
-        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, FADE_IN_TIME).target(1).start(tweenManager).setCallback(new TweenCallback() {
+        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.SPLASH_HIDE_DELAY).target(1).start(tweenManager).setCallback(new TweenCallback() {
             @Override
             public void onEvent(int type, BaseTween<?> source) {
                 Gdx.app.postRunnable(new Runnable() {
@@ -60,7 +59,7 @@ public class Splash implements Screen {
                                 // when loading finishes trigger fade out after creating assets
                                 Own.text.createFonts();
                                 Own.assets.createImageAssets();
-                                Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, FADE_OUT_TIME).target(0).start(tweenManager).setCallback(new TweenCallback() {
+                                Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.SPLASH_SHOW_DELAY).target(0).start(tweenManager).setCallback(new TweenCallback() {
                                     @Override
                                     public void onEvent(int type, BaseTween<?> source) {
                                         Gdx.app.postRunnable(new Runnable() {

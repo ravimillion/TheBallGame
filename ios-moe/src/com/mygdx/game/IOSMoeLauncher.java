@@ -2,8 +2,9 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.backends.iosmoe.IOSApplication;
 import com.badlogic.gdx.backends.iosmoe.IOSApplicationConfiguration;
-import org.moe.natj.general.Pointer;
 import com.simplegame.game.screens.GameEntry;
+
+import org.moe.natj.general.Pointer;
 
 import apple.uikit.c.UIKit;
 

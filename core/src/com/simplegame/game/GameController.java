@@ -28,6 +28,7 @@ import com.simplegame.game.systems.ParticleSystem;
 import com.simplegame.game.systems.PhysicsBodyContactSystem;
 import com.simplegame.game.systems.PlayerSystem;
 import com.simplegame.game.systems.ScoringSystem;
+import com.simplegame.game.systems.SoundSystem;
 import com.simplegame.game.systems.SpriteBoundsCreator;
 import com.simplegame.game.systems.SpriteBoundsUpdater;
 import com.simplegame.game.systems.SpriterPhysicsSystem;
@@ -126,6 +127,7 @@ public class GameController implements Screen {
             }
         });
 
+        sceneParameter.config.addSystem(SoundSystem.class);
         sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
         sceneParameter.config.addSystem(VisibilitySystem.class);
         loadScene(GameData.SCENE_ONE, sceneParameter);
@@ -162,8 +164,9 @@ public class GameController implements Screen {
             }
         });
 
-        sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
+        sceneParameter.config.addSystem(SoundSystem.class);
         sceneParameter.config.addSystem(VisibilitySystem.class);
+        sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
         loadScene(GameData.SCENE_TWO, sceneParameter);
 
     }
@@ -200,17 +203,18 @@ public class GameController implements Screen {
             }
         });
 
-        sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
+        sceneParameter.config.addSystem(SoundSystem.class);
         sceneParameter.config.addSystem(VisibilitySystem.class);
+        sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
         loadScene(GameData.SCENE_THREE, sceneParameter);
     }
 
     @Override
     public void show() {
         if (this.scene == null) {  // Load scene for the first time as there is no scene is loaded
-//            loadMenuScene();
+            loadMenuScene();
 //            loadLevelOneScene();
-            loadLevelTwoScene();
+//            loadLevelTwoScene();
 //            loadLevelThreeScene();
         }
     }

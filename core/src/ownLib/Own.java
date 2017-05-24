@@ -19,7 +19,7 @@ public class Own {
 //    public static BodyContact bodyContact = new BodyContact();
 
     public static void dispose() {
-        assets.dispose();
+//        assets.dispose();
     }
 
     public static int getRandomInRange(int lowerBound, int upperBound) {

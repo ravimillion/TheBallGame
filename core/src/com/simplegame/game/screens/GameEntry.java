@@ -27,7 +27,7 @@ public class GameEntry extends Game {
     @Override
     public void create() {
         spriteBatch = new SpriteBatch();
-        if (handler != null) handler.showAds(false); // enable ads
+        if (handler != null) handler.showAds(true); // enable ads
         splashScreen = new Splash(this, spriteBatch);
         this.setScreen(splashScreen);
     }

@@ -1,6 +1,5 @@
 package ownLib.assets;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.assets.loaders.FileHandleResolver;
 import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
@@ -98,13 +97,12 @@ public class Assets extends AssetManager {
         audioAssets = assetMap.getAudioAssets();
         imageAssets = assetMap.getImageAssets();
         fontAssets = assetMap.getFontAssets();
-        jsonAssets = assetMap.getJsonAssets();
+//        jsonAssets = assetMap.getJsonAssets();
 
         // load assets
         loadAudioAssets();
         loadImageAssets();
         loadFontAssets();
-        loadJsonAssets();
     }
 
     private void loadFontAssets() {
@@ -137,20 +135,6 @@ public class Assets extends AssetManager {
                     generator = this.get(fontAssets.getString(key));
                     fontObjects.put(fontType, generator.generateFont(parameter));
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-        }
-    }
-
-    private void loadJsonAssets() {
-        // with reference to the chart on this link - http://reeddesign.co.uk/test/points-pixels.html
-        Iterator<String> iter = jsonAssets.keys();
-        while (iter.hasNext()) {
-            try {
-                String key = iter.next(); // key would be the name of the font in capital letters
-                jsonObjects.put(key, Gdx.files.internal(jsonAssets.getString(key)));
             } catch (JSONException e) {
                 e.printStackTrace();
             }

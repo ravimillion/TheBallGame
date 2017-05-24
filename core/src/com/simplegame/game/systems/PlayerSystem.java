@@ -21,6 +21,7 @@ import com.kotcrab.vis.runtime.system.physics.PhysicsSystem;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 import com.simplegame.game.GameController;
 import com.simplegame.game.GameData;
+import com.simplegame.game.components.Timeout;
 
 import ownLib.Own;
 
@@ -45,6 +46,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     private Entity ballEntity;
     private Transform transform;
     private Origin origin;
+    private World physicsWorld;
 
     private int BALL_FORCE = 1500;
     private float TOP_LIN_VELOCITY = 35f;
@@ -56,7 +58,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
 
     @Override
     public void afterSceneInit() {
-        World physicsWorld = physicsSystem.getPhysicsWorld();
+        physicsWorld = physicsSystem.getPhysicsWorld();
         physicsWorld.setContactListener(physicsBodyContactSystem);
 
         // get the ball sprite info and hide the entity
@@ -142,12 +144,43 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         }
     }
 
+    public void changeBallSize(int size) {
+        body.getFixtureList().get(0).getShape().setRadius(size);
+        transform.setScale(size, size);
+    }
+
     public void applyPower(String powerID) {
         switch (powerID) {
-            case "idPowerBigger":
-                int POWER_BIGGER = 5;
-                body.getFixtureList().get(0).getShape().setRadius(POWER_BIGGER);
-                transform.setScale(POWER_BIGGER, POWER_BIGGER);
+            case "idPowerSize":
+                changeBallSize(5);
+                // stop power
+                new Timeout(new Runnable() {
+                    @Override
+                    public void run() {
+                        changeBallSize(2);
+                    }
+                }, 10000);
+                break;
+            case "idPowerBounce":
+                body.getFixtureList().get(0).setRestitution(0.8f);
+                // stop power
+                new Timeout(new Runnable() {
+                    @Override
+                    public void run() {
+                        body.getFixtureList().get(0).setRestitution(0.3f);
+                    }
+                }, 10000);
+                break;
+            case "idPowerGravity":
+                final Vector2 gravity = physicsWorld.getGravity();
+                physicsWorld.setGravity(new Vector2(0, gravity.y / 4));
+                // stop power
+                new Timeout(new Runnable() {
+                    @Override
+                    public void run() {
+                        physicsWorld.setGravity(gravity);
+                    }
+                }, 10000);
                 break;
         }
     }

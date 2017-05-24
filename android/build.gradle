@@ -18,6 +18,7 @@ android {
         applicationId "com.theballgame.game"
         minSdkVersion 19
         targetSdkVersion 23
+        multiDexEnabled true
     }
     packagingOptions {
         exclude 'META-INF/LICENSE.txt'
@@ -140,4 +141,5 @@ idea {
 dependencies {
     compile 'com.firebase:firebase-client-android:2.3.1'
     compile 'com.google.android.gms:play-services:9.8.0'
+    compile 'com.android.support:multidex:1.0.1'
 }
