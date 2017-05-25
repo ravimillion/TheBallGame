@@ -47,7 +47,7 @@ public class SoundSystem extends EntitySystem implements AfterSceneInit {
 
     public void triggerSoundEffect(PhysicsBodyContactSystem.CollisionData collisionData) {
         final VisID visID = visIDCm.get(collisionData.entity);
-        if (visID == null) return;
+        if (visID == null || true) return;
 
 
         switch (visID.id) {

@@ -686,8 +686,8 @@
     {
       "components": [
         {
-          "x": 481.7574,
-          "y": 8.178742,
+          "x": 477.27213,
+          "y": 8.358151,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -6782,7 +6782,7 @@
       "components": [
         {
           "x": 505.4678,
-          "y": 13.962627,
+          "y": 20.600815,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -6831,22 +6831,22 @@
           "vertices": [
             {
               "x": 504.8439,
-              "y": 13.394802,
+              "y": 20.03299,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 506.12393,
-              "y": 13.394802,
+              "y": 20.03299,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 506.12393,
-              "y": 14.644804,
+              "y": 21.282991,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 504.8439,
-              "y": 14.644804,
+              "y": 21.282991,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
@@ -6854,19 +6854,19 @@
             [
               {
                 "x": 504.8439,
-                "y": 14.644804
+                "y": 21.282991
               },
               {
                 "x": 504.8439,
-                "y": 13.394802
+                "y": 20.03299
               },
               {
                 "x": 506.12393,
-                "y": 13.394802
+                "y": 20.03299
               },
               {
                 "x": 506.12393,
-                "y": 14.644804
+                "y": 21.282991
               }
             ]
           ],
@@ -7936,130 +7936,6 @@
     {
       "components": [
         {
-          "x": 517.30444,
-          "y": 6.026255,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 3.26,
-          "originY": 3.26,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/boxright.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 6.52,
-          "height": 6.52,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 2,
-          "@class": "Layer"
-        },
-        {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "4a4f41c9-d8e9-4542-8bf6-5508ea4a157a",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "downslopebox",
-          "@class": "VisID"
-        },
-        {
-          "vertices": [
-            {
-              "x": 517.29626,
-              "y": 12.549944,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 523.82434,
-              "y": 6.029818,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 518.6045,
-              "y": 6.0362535,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 517.3032,
-              "y": 6.0419507,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 517.29626,
-                "y": 12.549944
-              },
-              {
-                "x": 517.3032,
-                "y": 6.0419507
-              },
-              {
-                "x": 518.6045,
-                "y": 6.0362535
-              },
-              {
-                "x": 523.82434,
-                "y": 6.029818
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "bodyType": "StaticBody",
-          "friction": 1.0,
-          "density": 0.2,
-          "restitution": 3.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": true,
-          "adjustOrigin": true,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
           "x": 207.51657,
           "y": 6.0183015,
           "scaleX": 1.0,
@@ -8435,7 +8311,7 @@
       "components": [
         {
           "x": 502.5533,
-          "y": 6.022452,
+          "y": 9.9695,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -8493,22 +8369,22 @@
           "vertices": [
             {
               "x": 502.5533,
-              "y": 6.022452,
+              "y": 9.9695,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 509.07336,
-              "y": 6.022452,
+              "y": 9.9695,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 509.07336,
-              "y": 12.542452,
+              "y": 16.4895,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 502.5533,
-              "y": 12.542452,
+              "y": 16.4895,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
@@ -8516,26 +8392,26 @@
             [
               {
                 "x": 502.5533,
-                "y": 12.542452
+                "y": 16.4895
               },
               {
                 "x": 502.5533,
-                "y": 6.022452
+                "y": 9.9695
               },
               {
                 "x": 509.07336,
-                "y": 6.022452
+                "y": 9.9695
               },
               {
                 "x": 509.07336,
-                "y": 12.542452
+                "y": 16.4895
               }
             ]
           ],
           "@class": "VisPolygon"
         },
         {
-          "bodyType": "DynamicBody",
+          "bodyType": "StaticBody",
           "friction": 0.3,
           "density": 0.1,
           "restitution": 0.0,
