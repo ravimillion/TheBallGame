@@ -56,7 +56,7 @@
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 3,
+  "activeLayerId": 2,
   "groupIds": [],
   "schemes": [
     {
@@ -8683,8 +8683,8 @@
     {
       "components": [
         {
-          "x": 7.6389923,
-          "y": 10.800411,
+          "x": 11.44664,
+          "y": 8.420639,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -11748,8 +11748,8 @@
     {
       "components": [
         {
-          "x": 54.095528,
-          "y": 16.652279,
+          "x": 20.804,
+          "y": 9.487875,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -11797,43 +11797,43 @@
         {
           "vertices": [
             {
-              "x": 53.471634,
-              "y": 16.084454,
+              "x": 20.180107,
+              "y": 8.92005,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 54.751633,
-              "y": 16.084454,
+              "x": 21.460106,
+              "y": 8.92005,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 54.751633,
-              "y": 17.334454,
+              "x": 21.460106,
+              "y": 10.17005,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 53.471634,
-              "y": 17.334454,
+              "x": 20.180107,
+              "y": 10.17005,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 53.471634,
-                "y": 17.334454
+                "x": 20.180107,
+                "y": 10.17005
               },
               {
-                "x": 53.471634,
-                "y": 16.084454
+                "x": 20.180107,
+                "y": 8.92005
               },
               {
-                "x": 54.751633,
-                "y": 16.084454
+                "x": 21.460106,
+                "y": 8.92005
               },
               {
-                "x": 54.751633,
-                "y": 17.334454
+                "x": 21.460106,
+                "y": 10.17005
               }
             ]
           ],
@@ -12112,6 +12112,370 @@
     {
       "components": [
         {
+          "x": 25.78006,
+          "y": 8.064901,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 1.0,
+          "originY": 1.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/powerbounce.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 2.0,
+          "height": 2.0,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "80191315-e892-46b9-9409-cfb0fb2d71f4",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idPowerBounce",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 25.78006,
+              "y": 8.064901,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 27.78006,
+              "y": 8.064901,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 27.78006,
+              "y": 10.064901,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 25.78006,
+              "y": 10.064901,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 25.78006,
+                "y": 10.064901
+              },
+              {
+                "x": 25.78006,
+                "y": 8.064901
+              },
+              {
+                "x": 27.78006,
+                "y": 8.064901
+              },
+              {
+                "x": 27.78006,
+                "y": 10.064901
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 55.6496,
+          "y": -7.15,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "sound/mario-coin.mp3",
+            "@class": "SoundAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "@class": "ProtoVisSound"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "6605a99b-c48d-4793-8f72-30469343778f",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idSoundStar",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Transform",
+              "@class": "Class"
+            },
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            },
+            {
+              "@content": "VisGroup",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 54.365772,
+          "y": 19.760082,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.01,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "d554441f-10ad-407d-bce5-b71b99a850ea",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.01,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 53.74188,
+              "y": 19.192257,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 55.021877,
+              "y": 19.192257,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 55.021877,
+              "y": 20.442257,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 53.74188,
+              "y": 20.442257,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 53.74188,
+                "y": 20.442257
+              },
+              {
+                "x": 53.74188,
+                "y": 19.192257
+              },
+              {
+                "x": 55.021877,
+                "y": 19.192257
+              },
+              {
+                "x": 55.021877,
+                "y": 20.442257
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": false,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 37.7852,
+          "y": -8.366,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "sound/power-up.mp3",
+            "@class": "SoundAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "@class": "ProtoVisSound"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "fa03b257-f8f7-4e6a-898d-0d1fede9efd2",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idSoundPower",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Transform",
+              "@class": "Class"
+            },
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            },
+            {
+              "@content": "VisGroup",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
           "x": 232.1858,
           "y": 7.7476,
           "scaleX": 1.0,
@@ -12152,7 +12516,7 @@
           "@class": "Layer"
         },
         {
-          "uuid": "80191315-e892-46b9-9409-cfb0fb2d71f4",
+          "uuid": "8f5c8e35-d266-4a82-b5fb-76ad5355a847",
           "@class": "VisUUID"
         },
         {

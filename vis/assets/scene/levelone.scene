@@ -298,7 +298,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -422,7 +422,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "topbox",
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -1382,6 +1382,7 @@
           "@class": "Renderable"
         },
         {
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -1505,7 +1506,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -1629,7 +1630,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -1995,6 +1996,10 @@
         {
           "zIndex": 0,
           "@class": "Renderable"
+        },
+        {
+          "id": "idUphill",
+          "@class": "VisID"
         },
         {
           "vertices": [
@@ -4064,6 +4069,7 @@
           "@class": "Renderable"
         },
         {
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -4187,7 +4193,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -4311,7 +4317,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "topbox",
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -4429,6 +4435,10 @@
         {
           "zIndex": 0,
           "@class": "Renderable"
+        },
+        {
+          "id": "idUphill",
+          "@class": "VisID"
         },
         {
           "vertices": [
@@ -4799,7 +4809,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -5167,6 +5177,10 @@
           "@class": "Renderable"
         },
         {
+          "id": "idUphill",
+          "@class": "VisID"
+        },
+        {
           "vertices": [
             {
               "x": 403.13162,
@@ -5287,7 +5301,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "topbox",
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -8238,7 +8252,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "topbox",
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -8362,7 +8376,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "topbox",
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -8482,6 +8496,7 @@
           "@class": "Renderable"
         },
         {
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -12424,7 +12439,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -12548,7 +12563,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -12672,7 +12687,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -12796,7 +12811,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -13495,7 +13510,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -13619,7 +13634,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
