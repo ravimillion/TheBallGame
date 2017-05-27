@@ -46,7 +46,7 @@ public class SpriterPhysicsSystem extends EntitySystem implements AfterSceneInit
 
     @Override
     protected void processSystem() {
-        for (Entity e: entityBag) {
+        for (Entity e : entityBag) {
             if (e == null) continue;
             // ask visibility system to fix visibility of in viewport
             visibilitySystem.process(e);
@@ -73,7 +73,7 @@ public class SpriterPhysicsSystem extends EntitySystem implements AfterSceneInit
     public void afterSceneInit() {
         entityBag = getEntities();
         // initially hide all the entities and let the visibility system decide which entity needs to be shown
-        for (Entity e: entityBag) {
+        for (Entity e : entityBag) {
             e.edit().add(new Invisible());
         }
     }

@@ -20,7 +20,7 @@ public class OwnSceneLoader extends VisAssetManager {
     }
 
     @Override
-    public Scene loadSceneNow (String scenePath, SceneParameter parameter) {
+    public Scene loadSceneNow(String scenePath, SceneParameter parameter) {
         this.scenePath = scenePath;
         load(scenePath, Scene.class, parameter);
         return null;

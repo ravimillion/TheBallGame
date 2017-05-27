@@ -40,6 +40,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     private PhysicsSystem physicsSystem;
     private ControlsSystem controlsSystem;
     private GameController gameController;
+    private GameSaverSystem gameSaverSystem;
     private PhysicsBodyContactSystem physicsBodyContactSystem;
 
     // variable cache
@@ -64,16 +65,35 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         // get the ball sprite info and hide the entity
         ballEntity = idManager.get("ball");
 
-        transform = transformCm.get(ballEntity);
         origin = originCm.get(this.ballEntity);
         float scaleFactor = (2.0f * radius) / (2 * origin.getOriginX());
+
+        transform = transformCm.get(ballEntity);
         transform.setScale(scaleFactor, scaleFactor);
+
         // create ball
         Own.box2d.factory.setWorld(physicsWorld);
-        body = Own.box2d.factory.getCircleBody(BodyDef.BodyType.DynamicBody, new Vector2(transform.getX(), transform.getY()), 0, radius, density, friction, restitution, "ball");
+        body = Own.box2d.factory.getCircleBody(BodyDef.BodyType.DynamicBody, loadPlayerPosition(), 0, radius, density, friction, restitution, "ball");
         body.setUserData("ball");
 
+
         state = GameData.RUNNING;
+        gameSaverSystem.updateLevelStatus(gameController.CURRENT_LEVEL, GameData.LEVEL_IN_PROGRESS);
+    }
+
+    public Vector2 loadPlayerPosition() {
+        // load game state
+        Vector2 position = new Vector2();
+
+        if (gameSaverSystem.isStateFound() == false || gameSaverSystem.getStatusForLevel(gameController.CURRENT_LEVEL) == GameData.LEVEL_NOT_YET_PLAYED) {
+            Own.log("No game state found, falling back to default");
+            position.set(transform.getX(), transform.getY());
+        } else {
+            Own.log("Game state found, loading from saved state for level");
+            position.set(gameSaverSystem.getPlayerPosition().x, GameData.WORLD_HEIGHT - radius + 1);
+        }
+
+        return position;
     }
 
     @Override
@@ -87,8 +107,10 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
             if (!physicsSystem.isEnabled()) physicsSystem.setEnabled(true);
             limitVelocity();
             handleInput();
+            saveGame();
 
             if (isLevelEnd()) {
+                gameSaverSystem.updateLevelStatus(gameController.CURRENT_LEVEL, GameData.LEVEL_ALREADY_FINISHED);
                 controlsSystem.setState(GameData.LEVEL_END);
             }
         } else {
@@ -119,12 +141,19 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     }
 
     private boolean isLevelEnd() {
-        return body.getPosition().x > GameController.WORLD_WIDTH - 5;
+        return body.getPosition().x > GameData.WORLD_WIDTH - 15;
     }
 
     private void drawBall() {
         transform.setPosition(body.getPosition().x - origin.getOriginX(), body.getPosition().y - origin.getOriginY());
         transform.setRotation(body.getAngle() * MathUtils.radiansToDegrees);
+    }
+
+    private void saveGame() {
+        int x = (int) body.getPosition().x;
+        if (x % 20 == 0) {
+            gameSaverSystem.saveGame();
+        }
     }
 
     private void handleInput() {
@@ -162,16 +191,19 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
                 }, 10000);
                 break;
             case "idPowerBounce":
-                body.getFixtureList().get(0).setRestitution(0.8f);
+                Own.log("Apply bounce");
+//                body.getFixtureList().get(0).setRestitution(0.8f);
                 // stop power
-                new Timeout(new Runnable() {
-                    @Override
-                    public void run() {
-                        body.getFixtureList().get(0).setRestitution(0.3f);
-                    }
-                }, 10000);
+//                new Timeout(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Own.log("Removing power");
+//                        body.getFixtureList().get(0).setRestitution(0.3f);
+//                    }
+//                }, 10000);
                 break;
             case "idPowerGravity":
+                Own.log("Apply Gravity");
                 final Vector2 gravity = physicsWorld.getGravity();
                 physicsWorld.setGravity(new Vector2(0, gravity.y / 4));
                 // stop power

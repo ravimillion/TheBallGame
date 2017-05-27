@@ -79,7 +79,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
             soundEffect(collisionData);
             removeOnCollision(collisionData);
             shakeCameraOnCollision(collisionData);
-            changeGameStateOnCollision(collisionData);
+//            changeGameStateOnCollision(collisionData);
             applySuperPower(collisionData);
             // remove entry
             iter.remove();
@@ -92,8 +92,9 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
 
     public void applySuperPower(CollisionData collisionData) {
         final VisID visID = visIDCm.get(collisionData.entity);
-        if (visID != null && GameData.SUPER_POWER_LIST.indexOf(visID.id, false) >= 0) {
+        if (visID == null) return;
 
+        if (GameData.SUPER_POWER_LIST.indexOf(visID.id, false) >= 0) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
@@ -133,18 +134,19 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
 
     public void removeOnCollision(CollisionData collisionData) {
         final CollisionData finalCollisionData = collisionData;
-        VisID visID = visIDCm.get(collisionData.entity);
+        final VisID visID = visIDCm.get(collisionData.entity);
 
         if (visID != null && GameData.REMOVE_ON_COLLISIOIN_LIST.indexOf(visID.id, false) > -1) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    finalCollisionData.entity.deleteFromWorld();
-                    Body body = physicsCm.get(finalCollisionData.entity).body;
-
                     // remove physics body
+                    Body body = physicsCm.get(finalCollisionData.entity).body;
                     body.getWorld().destroyBody(body);
-                    scoringSystem.scoreUP();
+
+                    finalCollisionData.entity.deleteFromWorld();
+
+                    if (visID.id.equals("idAnimStar")) scoringSystem.scoreUP();
                 }
             });
 

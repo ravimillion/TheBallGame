@@ -18,9 +18,9 @@ import com.kotcrab.vis.runtime.component.VisParticle;
 import com.kotcrab.vis.runtime.component.VisPolygon;
 import com.kotcrab.vis.runtime.system.physics.PhysicsBodyManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
-import com.simplegame.game.GameController;
+import com.simplegame.game.GameData;
 
-public class ParticleSystem extends EntitySystem implements AfterSceneInit{
+public class ParticleSystem extends EntitySystem implements AfterSceneInit {
 
     private ComponentMapper<VisParticle> visParticleCm;
     private ComponentMapper<VisID> visIdCm;
@@ -49,7 +49,7 @@ public class ParticleSystem extends EntitySystem implements AfterSceneInit{
 
     @Override
     protected void processSystem() {
-        for (Entity e: entityBag) {
+        for (Entity e : entityBag) {
             // ask visibility system to fix visibility of in viewport
             visibilitySystem.process(e);
 
@@ -67,7 +67,7 @@ public class ParticleSystem extends EntitySystem implements AfterSceneInit{
                 particleEmitter.setPosition(bodyPos.x, bodyPos.y);
 
                 if (bodyPos.y < RESET_DIST) {
-                    body.setTransform(bodyPos.x, GameController.WORLD_HEIGHT - 1, body.getAngle());
+                    body.setTransform(bodyPos.x, GameData.WORLD_HEIGHT - 1, body.getAngle());
                     body.setLinearVelocity(0, 0);
                     body.setAwake(true);
                 }
@@ -80,7 +80,7 @@ public class ParticleSystem extends EntitySystem implements AfterSceneInit{
     public void afterSceneInit() {
         entityBag = getEntities();
         // initially hide all the entities and let the visibility system decide which entity needs to be shown
-        for (Entity e: entityBag) {
+        for (Entity e : entityBag) {
             e.edit().add(new Invisible());
         }
     }

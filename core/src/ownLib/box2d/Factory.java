@@ -13,20 +13,10 @@ import com.badlogic.gdx.physics.box2d.Shape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
 import com.badlogic.gdx.utils.Array;
-import com.simplegame.game.BodyEditorLoader;
-import com.simplegame.game.userdata.BoundaryUserData;
 import com.simplegame.game.userdata.CircleUserData;
-import com.simplegame.game.userdata.JsonUserData;
 import com.simplegame.game.userdata.RectUserData;
 import com.simplegame.game.userdata.UserData;
 
-import ownLib.Own;
-
-//import aurelienribon.bodyeditor.com.simplegame.game.BodyEditorLoader;
-
-/**
- * Created by ravi on 14.08.16.
- */
 public class Factory {
     private World world = null;
     private BodyDef bodyDef = null;
@@ -134,35 +124,6 @@ public class Factory {
 //        chainShape.dispose();
 
         body.createFixture(fixtureDef).setUserData(new UserData("chain", "chain", body.getPosition()));
-        body.setSleepingAllowed(false);
-        return body;
-    }
-
-    public Body createJsonBody(String assetId, String name, BodyType bodyType, Vector2 pos, float angle, float width, float height, float density, float friction, float restitution, String id) {
-        BodyEditorLoader loader = new BodyEditorLoader(Own.assets.getJsonAsset(assetId));
-        bodyDef = getBodyDef(bodyType, pos, angle);
-        body = world.createBody(bodyDef);
-
-        fixtureDef = getFixtureDef(null, density, friction, restitution);
-
-        loader.attachFixture(body, name, fixtureDef, width);
-        Vector2 origin = loader.getOrigin(name, height).cpy();
-        JsonUserData jsonUserData = new JsonUserData(id, "JSON", pos, origin, name, assetId, width, height);
-        body.setUserData(jsonUserData);
-
-        return body;
-    }
-
-    public Body getEdgeBody(BodyType bodyType, Vector2 pos, float angle, float x1, float y1, float x2, float y2, float density, float friction, float restitution, String id) {
-        bodyDef = getBodyDef(bodyType, pos, angle);
-        body = world.createBody(bodyDef);
-
-        EdgeShape edgeShape = getEdgeShape(x1, y1, x2, y2);
-        fixtureDef = getFixtureDef(edgeShape, density, friction, restitution);
-
-
-        body.createFixture(fixtureDef).setUserData(new UserData(id, "edge", body.getPosition()));
-        body.setUserData(new BoundaryUserData(id, "Edge", pos));
         body.setSleepingAllowed(false);
         return body;
     }

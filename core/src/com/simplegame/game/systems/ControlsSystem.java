@@ -141,7 +141,7 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
             case "idGameOver":
                 return GameData.QUIT;
             default:
-                Own.log("Error: No next level info found: " + buttonId);
+                Own.log("Error: No next CURRENT_LEVEL info found: " + buttonId);
                 return GameData.RUNNING;
         }
     }

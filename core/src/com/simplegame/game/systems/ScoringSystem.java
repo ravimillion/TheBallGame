@@ -13,9 +13,11 @@ public class ScoringSystem extends BaseSystem implements AfterSceneInit {
     private ComponentMapper<VisText> visTextCm;
 
     private VisIDManager idManager;
+    private GameSaverSystem gameSaverSystem;
 
     private int score;
-    private String currentScore = "SCORE: ";
+    private String currentScoreText = "STAR: 0";
+    private String textPrefix = "STAR: ";
     private int counter = 0;
     private int accumulateFactor = 60;
     private float accumulatedFps = 0;
@@ -26,7 +28,7 @@ public class ScoringSystem extends BaseSystem implements AfterSceneInit {
 
     @Override
     protected void processSystem() {
-        scoreText.setText(this.currentScore);
+        scoreText.setText(this.currentScoreText);
 
         // fps calculate
         if (counter >= accumulateFactor) {
@@ -39,14 +41,18 @@ public class ScoringSystem extends BaseSystem implements AfterSceneInit {
     }
 
     public int scoreDown() {
-        this.score++;
-        this.currentScore = "SCORE: " + this.score;
+        this.score--;
+        this.currentScoreText = this.textPrefix + this.score;
+
+        gameSaverSystem.saveGame();
         return this.score;
     }
 
     public int scoreUP() {
-        this.score--;
-        this.currentScore = "SCORE: " + this.score;
+        this.score++;
+        this.currentScoreText = this.textPrefix + this.score;
+
+        gameSaverSystem.saveGame();
         return this.score;
     }
 
@@ -54,5 +60,9 @@ public class ScoringSystem extends BaseSystem implements AfterSceneInit {
     public void afterSceneInit() {
         scoreText = visTextCm.get(idManager.get("idScore"));
         fpsText = visTextCm.get(idManager.get("idFPS"));
+    }
+
+    public int getScore() {
+        return score;
     }
 }

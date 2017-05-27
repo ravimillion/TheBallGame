@@ -52,14 +52,15 @@ public class SoundSystem extends EntitySystem implements AfterSceneInit {
 
         switch (visID.id) {
             case "idWoodBox":
-                if (collisionData.impulse > 100) effectMap.get("idSoundWoodBox").play();
+                if (collisionData.impulse > 20) effectMap.get("idSoundWoodBox").play();
                 break;
             case "idUphill":
+            case "idUpDown":
             case "idBoundary":
                 if (collisionData.impulse > 100) effectMap.get("idSoundGlass").play();
                 break;
             case "idSpike":
-                if (collisionData.impulse > 0) effectMap.get("idSoundGlassBreak").play();
+                if (collisionData.impulse > 50) effectMap.get("idSoundGlassBreak").play();
                 break;
             case "idPowerGravity":
             case "idPowerBounce":

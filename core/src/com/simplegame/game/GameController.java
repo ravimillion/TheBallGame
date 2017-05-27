@@ -23,6 +23,7 @@ import com.simplegame.game.screens.MenuScreen;
 import com.simplegame.game.systems.AlwaysInViewPortSystem;
 import com.simplegame.game.systems.CameraControllerSystem;
 import com.simplegame.game.systems.ControlsSystem;
+import com.simplegame.game.systems.GameSaverSystem;
 import com.simplegame.game.systems.MovingPlatform;
 import com.simplegame.game.systems.ParticleSystem;
 import com.simplegame.game.systems.PhysicsBodyContactSystem;
@@ -37,10 +38,7 @@ import com.simplegame.game.systems.VisibilitySystem;
 import ownLib.Own;
 
 public class GameController implements Screen {
-    public static int WORLD_WIDTH = 573;
-    public static int WORLD_HEIGHT = 32;
-    public static int VIEWPORT_WIDTH = 53;
-    public static int level;
+    public static int CURRENT_LEVEL;
     public SpriteBatch spriteBatch;
 
     private GameEntry game;
@@ -63,7 +61,8 @@ public class GameController implements Screen {
     }
 
     private void loadScene(String scenePath, SceneParameter sceneParameter) {
-        if (BOX2D_DEBUG && !scenePath.equals(GameData.MENU)) sceneParameter.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
+        if (BOX2D_DEBUG && !scenePath.equals(GameData.SCENE_MENU))
+            sceneParameter.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
 
         this.scenePath = scenePath;
         this.scene = null;
@@ -79,7 +78,6 @@ public class GameController implements Screen {
     }
 
     public void loadMenuScene() {
-        level = GameData.MENU_SCREEN;
         unloadPreviousScene();
         SceneParameter sceneParameter = new SceneLoader.SceneParameter();
 
@@ -92,11 +90,11 @@ public class GameController implements Screen {
             }
         });
 
-        loadScene(GameData.MENU, sceneParameter);
+        loadScene(GameData.SCENE_MENU, sceneParameter);
     }
 
     public void loadLevelOneScene() {
-        level = GameData.LEVEL_ONE;
+        CURRENT_LEVEL = GameData.LEVEL_ONE;
         unloadPreviousScene();
         SceneParameter sceneParameter = new SceneParameter();
         sceneParameter.config.addSystem(SpriteBoundsCreator.class);
@@ -105,6 +103,7 @@ public class GameController implements Screen {
         sceneParameter.config.addSystem(PhysicsBodyContactSystem.class);
         sceneParameter.config.addSystem(ScoringSystem.class);
         sceneParameter.config.addSystem(MovingPlatform.class);
+        sceneParameter.config.addSystem(GameSaverSystem.class);
 
         sceneParameter.config.addSystem(new SystemProvider() {
             @Override
@@ -134,7 +133,7 @@ public class GameController implements Screen {
     }
 
     public void loadLevelTwoScene() {
-        level = GameData.LEVEL_TWO;
+        CURRENT_LEVEL = GameData.LEVEL_TWO;
         unloadPreviousScene();
         SceneParameter sceneParameter = new SceneParameter();
         sceneParameter.config.addSystem(SpriteBoundsCreator.class);
@@ -143,6 +142,8 @@ public class GameController implements Screen {
         sceneParameter.config.addSystem(SpriterPhysicsSystem.class);
         sceneParameter.config.addSystem(PhysicsBodyContactSystem.class);
         sceneParameter.config.addSystem(ScoringSystem.class);
+        sceneParameter.config.addSystem(SoundSystem.class);
+        sceneParameter.config.addSystem(GameSaverSystem.class);
 
         sceneParameter.config.addSystem(new SystemProvider() {
             @Override
@@ -164,7 +165,6 @@ public class GameController implements Screen {
             }
         });
 
-        sceneParameter.config.addSystem(SoundSystem.class);
         sceneParameter.config.addSystem(VisibilitySystem.class);
         sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
         loadScene(GameData.SCENE_TWO, sceneParameter);
@@ -172,7 +172,7 @@ public class GameController implements Screen {
     }
 
     public void loadLevelThreeScene() {
-        level = GameData.LEVEL_THREE;
+        CURRENT_LEVEL = GameData.LEVEL_THREE;
         unloadPreviousScene();
 
         SceneParameter sceneParameter = new SceneParameter();
@@ -204,6 +204,7 @@ public class GameController implements Screen {
             }
         });
 
+        sceneParameter.config.addSystem(GameSaverSystem.class);
         sceneParameter.config.addSystem(SoundSystem.class);
         sceneParameter.config.addSystem(VisibilitySystem.class);
         sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
@@ -213,10 +214,10 @@ public class GameController implements Screen {
     @Override
     public void show() {
         if (this.scene == null) {  // Load scene for the first time as there is no scene is loaded
-//            loadMenuScene();
+            loadMenuScene();
 //            loadLevelOneScene();
 //            loadLevelTwoScene();
-            loadLevelThreeScene();
+//            loadLevelThreeScene();
         }
     }
 
@@ -252,10 +253,10 @@ public class GameController implements Screen {
     }
 
     private void restartLevel() {
-        switch (this.level) {
-            case GameData.MENU_SCREEN:
-                loadMenuScene();
-                break;
+        switch (this.CURRENT_LEVEL) {
+//            case GameData.MENU_SCREEN:
+//                loadMenuScene();
+//                break;
             case GameData.LEVEL_ONE:
                 loadLevelOneScene();
                 break;
@@ -266,7 +267,9 @@ public class GameController implements Screen {
                 loadLevelThreeScene();
                 break;
             default:
-                Own.log("Error: Invalid level info: " + this.level);
+                loadMenuScene();
+                Own.log("Error: Invalid CURRENT_LEVEL info: " + this.CURRENT_LEVEL);
+                break;
         }
 
     }

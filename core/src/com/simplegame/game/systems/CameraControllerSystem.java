@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 import com.simplegame.game.GameController;
+import com.simplegame.game.GameData;
 import com.simplegame.game.utils.CameraShaker;
 
 public class CameraControllerSystem extends BaseSystem implements AfterSceneInit {
@@ -40,7 +41,7 @@ public class CameraControllerSystem extends BaseSystem implements AfterSceneInit
         }
 
 
-        if (bodyPosition.x > ballMinFollowCamera  && bodyPosition.x < ballMaxFollowCamera) {
+        if (bodyPosition.x > ballMinFollowCamera && bodyPosition.x < ballMaxFollowCamera) {
             camera.position.x = bodyPosition.x;
             camera.position.y = camera.viewportHeight / 2f;
 //            camera.update();
@@ -58,7 +59,7 @@ public class CameraControllerSystem extends BaseSystem implements AfterSceneInit
     public void afterSceneInit() {
         camera = cameraManager.getCamera();
         this.cameraShaker = new CameraShaker(camera.position.x, camera.position.y);
-        this.ballMaxFollowCamera = GameController.WORLD_WIDTH - camera.viewportWidth / 2;
+        this.ballMaxFollowCamera = GameData.WORLD_WIDTH - camera.viewportWidth / 2;
         this.ballMinFollowCamera = camera.viewportWidth / 2;
     }
 }

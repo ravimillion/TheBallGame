@@ -11,7 +11,7 @@ import com.kotcrab.vis.runtime.component.Transform;
 import com.kotcrab.vis.runtime.component.VisSprite;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
-import com.simplegame.game.GameController;
+import com.simplegame.game.GameData;
 import com.simplegame.game.components.Bounds;
 
 
@@ -44,8 +44,8 @@ public class VisibilitySystem extends EntityProcessingSystem implements AfterSce
 
         float eX = transform.getX();
 
-        float xMax = camera.position.x + GameController.VIEWPORT_WIDTH / 2;
-        float xMin = camera.position.x - GameController.VIEWPORT_WIDTH / 2;
+        float xMax = camera.position.x + GameData.VIEWPORT_WIDTH / 2;
+        float xMin = camera.position.x - GameData.VIEWPORT_WIDTH / 2;
 
         xMin -= bounds != null ? bounds.getWidth() * transform.getScaleX() : 5;
         xMax += bounds != null ? bounds.getWidth() * transform.getScaleX() : 1;

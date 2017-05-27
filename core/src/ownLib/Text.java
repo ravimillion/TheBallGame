@@ -14,7 +14,7 @@ public class Text {
     public String GOUDY_PAR = "GOUDY_PAR";
     public String DESYREL_PAR = "DESYREL_PAR";
     public String SCORE = "SCORE";
-    public String MENU = "MENU";
+    public String MENU = "SCENE_MENU";
     private String TAG = "Text";
     private BitmapFont font;
     private FreeTypeFontGenerator.FreeTypeFontParameter parameter;

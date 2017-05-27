@@ -18,10 +18,10 @@ public class IO extends InputMultiplexer {
     }
 
     @Override
-    public void addProcessor (InputProcessor processor) {
+    public void addProcessor(InputProcessor processor) {
         boolean alreadyAdded = false;
 
-        for (InputProcessor inputProcessor: this.getProcessors()) {
+        for (InputProcessor inputProcessor : this.getProcessors()) {
             if (processor.equals(inputProcessor)) {
                 alreadyAdded = true;
             }

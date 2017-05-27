@@ -48,8 +48,8 @@ public class LoadingScreen implements Screen {
 
         if (isLoading()) {
             spriteBatch.begin();
-            Own.log("Progress: " + (int) (manager.getProgress() * 100));
-            Own.text.showProgress(spriteBatch, "Loading... " + (int) (manager.getProgress() * 100) + " %", new Vector2(Own.device.getScreenWidth()/2, Own.device.getScreenHeight()/2));
+//            Own.log("Progress: " + (int) (manager.getProgress() * 100));
+            Own.text.showProgress(spriteBatch, "Loading... " + (int) (manager.getProgress() * 100) + " %", new Vector2(Own.device.getScreenWidth() / 2, Own.device.getScreenHeight() / 2));
             spriteBatch.end();
         } else {
             Gdx.app.postRunnable(new Runnable() {
