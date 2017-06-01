@@ -1,4 +1,4 @@
-package com.theballgame.game;
+package com.jauntymarble.game;
 
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
