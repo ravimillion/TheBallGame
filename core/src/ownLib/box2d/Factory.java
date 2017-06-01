@@ -13,9 +13,9 @@ import com.badlogic.gdx.physics.box2d.Shape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.physics.box2d.joints.RopeJointDef;
 import com.badlogic.gdx.utils.Array;
-import com.simplegame.game.userdata.CircleUserData;
-import com.simplegame.game.userdata.RectUserData;
-import com.simplegame.game.userdata.UserData;
+import com.jauntymarble.game.userdata.CircleUserData;
+import com.jauntymarble.game.userdata.RectUserData;
+import com.jauntymarble.game.userdata.UserData;
 
 public class Factory {
     private World world = null;

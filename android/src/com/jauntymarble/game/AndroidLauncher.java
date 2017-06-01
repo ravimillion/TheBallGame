@@ -13,8 +13,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.simplegame.game.AdHandler;
-import com.simplegame.game.screens.GameEntry;
+import com.jauntymarble.game.screens.GameEntry;
 
 public class AndroidLauncher extends AndroidApplication implements AdHandler {
     private static final String TAG = "AndroidLauncher";

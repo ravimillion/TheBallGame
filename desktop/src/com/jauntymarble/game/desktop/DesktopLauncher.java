@@ -2,7 +2,7 @@ package com.jauntymarble.game.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.simplegame.game.screens.GameEntry;
+import com.jauntymarble.game.screens.GameEntry;
 
 public class DesktopLauncher {
     public static void main(String[] arg) {

@@ -7,8 +7,8 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
-import com.simplegame.game.userdata.CircleUserData;
-import com.simplegame.game.userdata.JsonUserData;
+import com.jauntymarble.game.userdata.CircleUserData;
+import com.jauntymarble.game.userdata.JsonUserData;
 
 import ownLib.Own;
 
