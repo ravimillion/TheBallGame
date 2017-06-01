@@ -16,6 +16,8 @@ import com.kotcrab.vis.runtime.component.VisParticle;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
+import com.simplegame.game.GameController;
+import com.simplegame.game.GameData;
 
 import static java.lang.Float.parseFloat;
 
@@ -40,6 +42,8 @@ public class MovingPlatform extends BaseSystem implements AfterSceneInit {
 
     @Override
     protected void processSystem() {
+        if (GameController.CURRENT_LEVEL == GameData.ID_LEVEL_TUTORIAL) return;
+
         for (int i = 0, len = platforms.size; i < len; i++) {
             Entity e = platforms.get(i);
             visibilitySystem.process(e);
@@ -84,6 +88,7 @@ public class MovingPlatform extends BaseSystem implements AfterSceneInit {
 
     @Override
     public void afterSceneInit() {
+        if (GameController.CURRENT_LEVEL == GameData.ID_LEVEL_TUTORIAL) return;
         platforms = idManager.getMultiple("idMovingPlatform");
     }
 }

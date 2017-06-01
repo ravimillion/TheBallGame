@@ -16,10 +16,11 @@ import com.kotcrab.vis.runtime.component.VisParticle;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
+import com.simplegame.game.GameController;
 import com.simplegame.game.GameData;
-import com.simplegame.game.savegame.GameState;
+import com.simplegame.game.savegame.LevelState;
 
-import ownLib.Own;
+import java.util.HashMap;
 
 /**
  * Created by ravi on 27.05.17.
@@ -39,7 +40,6 @@ public class GameSaverSystem extends BaseSystem implements AfterSceneInit {
     private ScoringSystem scoringSystem;
     private CameraManager cameraManager;
     private VisibilitySystem visibilitySystem;
-    private GameState coldGameState = null;
     // variable cache
     private FileHandle fileHandle = Gdx.files.local(GAME_STATE_PERSIST_FILE);
     private Json json = new Json();
@@ -50,80 +50,78 @@ public class GameSaverSystem extends BaseSystem implements AfterSceneInit {
         if (!saveNow) return;
         saveNow = false;
 
-        coldGameState = getColdGameState();
+        LevelState coldLevelState = getLevelState(GameController.CURRENT_LEVEL);
         // generate hotGame State base
-        GameState hotGameState = new GameState(coldGameState);
+        LevelState hotLevelState = new LevelState(coldLevelState);
 
         // hot playerScore
-        hotGameState.playerScore = scoringSystem.getScore();
+        hotLevelState.playerScore = scoringSystem.getScore();
         // hot player position
         if (playerSystem.body != null) {
-            hotGameState.playerPosition = (int) playerSystem.body.getPosition().x;
+            hotLevelState.playerPosition = (int) playerSystem.body.getPosition().x;
         }
 
         // save state if hot and cold are different
-        if (hotGameState.isEqual(coldGameState) == false) {
-            coldGameState = hotGameState;
-
-            saveToDisk(hotGameState);
-            Own.log("Saving: " + json.toJson(hotGameState));
+        if (hotLevelState.isEqual(coldLevelState) == false) {
+            flushData(GameController.CURRENT_LEVEL, hotLevelState);
+//            Own.log("updating: " + json.prettyPrint(hotLevelState));
         }
     }
 
-    private void saveToDisk(GameState gameState) {
-        fileHandle.writeString(json.toJson(gameState), false);
-    }
-
-    public GameState createInitState() {
-        GameState gameState = new GameState();
-        gameState.tutorial = GameData.LEVEL_NOT_YET_PLAYED;
-        gameState.levelOne = GameData.LEVEL_NOT_YET_PLAYED;
-        gameState.levelTwo = GameData.LEVEL_NOT_YET_PLAYED;
-        gameState.levelThree = GameData.LEVEL_NOT_YET_PLAYED;
-
-        // game running hot settings
-        gameState.playerScore = 0;
-        gameState.playerPosition = 5;
-        saveToDisk(gameState);
-        return gameState;
-    }
-
-    public GameState getColdGameState() {
-        if (coldGameState != null) return coldGameState;
+    private void flushData(String levelId, LevelState levelState) {
+        HashMap<String, LevelState> states = null;
 
         if (fileHandle.exists()) {
-            coldGameState = json.fromJson(GameState.class, fileHandle);
-            Own.log("Loading from disk: " + json.toJson(coldGameState));
+            states = json.fromJson(HashMap.class, fileHandle);
         } else {
-            coldGameState = createInitState();
+            states = createInitState();
+        }
+        // replace new state
+        states.put(levelId, levelState);
+        fileHandle.writeString(json.toJson(states), false);
+//        Own.log("Flushing: " + json.prettyPrint(states));
+    }
+
+    private HashMap<String, LevelState> createInitState() {
+        HashMap<String, LevelState> states = new HashMap<>();
+
+        states.put(GameData.ID_LEVEL_ONE, new LevelState());
+        states.put(GameData.ID_LEVEL_TWO, new LevelState());
+        states.put(GameData.ID_LEVEL_THREE, new LevelState());
+        states.put(GameData.ID_LEVEL_TUTORIAL, new LevelState());
+
+        return states;
+    }
+
+    public LevelState getLevelState(String levelId) {
+        HashMap<String, LevelState> states;
+        if (fileHandle.exists()) {
+            states = json.fromJson(HashMap.class, fileHandle);
+//            Own.log("Loading from disk: " + states.size() + " data: " + json.toJson(states.get(levelId)));
+        } else {
+            states = createInitState();
+//            Own.log("Creating new: " + json.toJson(states.get(levelId)));
         }
 
-        return coldGameState;
+        return states.get(levelId);
     }
 
     @Override
     public void afterSceneInit() {
-        // always start with new state
+//        always start with new state
 //        fileHandle.delete();
     }
 
-    public void updateLevelStatus(int currentLevel, int status) {
-        GameState gameState = getColdGameState();
-        switch (currentLevel) {
-            case GameData.LEVEL_ONE:
-                gameState.levelOne = status;
-                break;
-            case GameData.LEVEL_TWO:
-                gameState.levelTwo = status;
-                break;
-            case GameData.LEVEL_THREE:
-                gameState.levelThree = status;
-                break;
-            case GameData.LEVEL_TUTORIAL:
-                gameState.tutorial = status;
-                break;
-        }
-        saveToDisk(gameState);
+    public void updatePlayingStatus(String levelId, String status) {
+        LevelState levelState = getLevelState(levelId);
+        levelState.levelCompletionState = status;
+        flushData(levelId, levelState);
+    }
+
+    public void updatePlayerPosition(String levelId, int position) {
+        LevelState levelState = getLevelState(levelId);
+        levelState.playerPosition = position;
+        flushData(levelId, levelState);
     }
 
     public boolean isStateFound() {
@@ -134,25 +132,18 @@ public class GameSaverSystem extends BaseSystem implements AfterSceneInit {
         saveNow = true;
     }
 
-    public int getStatusForLevel(int currentLevel) {
-        GameState gameState = getColdGameState();
-
-        switch (currentLevel) {
-            case GameData.LEVEL_ONE:
-                return gameState.levelOne;
-            case GameData.LEVEL_TWO:
-                return gameState.levelTwo;
-            case GameData.LEVEL_THREE:
-                return gameState.levelThree;
-            case GameData.LEVEL_TUTORIAL:
-                return gameState.tutorial;
-        }
-
-        return 0;
+    public int getPlayerScore(String levelId) {
+        LevelState levelState = getLevelState(levelId);
+        return levelState.playerScore;
     }
 
-    public Vector2 getPlayerPosition() {
-        GameState coldGameState = getColdGameState();
-        return new Vector2(coldGameState.playerPosition, GameData.WORLD_HEIGHT - 5);
+    public String getPlayingStatus(String levelId) {
+        LevelState levelState = getLevelState(levelId);
+        return levelState.levelCompletionState;
+    }
+
+    public Vector2 getPlayerPosition(String levelId) {
+        LevelState coldLevelState = getLevelState(levelId);
+        return new Vector2(coldLevelState.playerPosition, GameData.WORLD_HEIGHT - 5);
     }
 }

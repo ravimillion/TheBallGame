@@ -78,19 +78,22 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
 
 
         state = GameData.RUNNING;
-        gameSaverSystem.updateLevelStatus(gameController.CURRENT_LEVEL, GameData.LEVEL_IN_PROGRESS);
+        if (gameSaverSystem.getPlayingStatus(gameController.CURRENT_LEVEL).equals(GameData.LEVEL_FINISHED) == false) {
+            gameSaverSystem.updatePlayingStatus(gameController.CURRENT_LEVEL, GameData.LEVEL_IN_PROGRESS);
+        }
+
     }
 
     public Vector2 loadPlayerPosition() {
-        // load game state
         Vector2 position = new Vector2();
-
-        if (gameSaverSystem.isStateFound() == false || gameSaverSystem.getStatusForLevel(gameController.CURRENT_LEVEL) == GameData.LEVEL_NOT_YET_PLAYED) {
-            Own.log("No game state found, falling back to default");
+        if (!gameSaverSystem.isStateFound() ||
+                gameSaverSystem.getPlayingStatus(gameController.CURRENT_LEVEL).equals(GameData.LEVEL_NOT_PLAYED) ||
+                gameSaverSystem.getPlayingStatus(gameController.CURRENT_LEVEL).equals(GameData.LEVEL_FINISHED)) {
+            Own.log("No game state found");
             position.set(transform.getX(), transform.getY());
         } else {
-            Own.log("Game state found, loading from saved state for level");
-            position.set(gameSaverSystem.getPlayerPosition().x, GameData.WORLD_HEIGHT - radius + 1);
+            Own.log("Game state found");
+            position.set(gameSaverSystem.getPlayerPosition(GameController.CURRENT_LEVEL).x, GameData.WORLD_HEIGHT - radius + 1);
         }
 
         return position;
@@ -110,7 +113,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
             saveGame();
 
             if (isLevelEnd()) {
-                gameSaverSystem.updateLevelStatus(gameController.CURRENT_LEVEL, GameData.LEVEL_ALREADY_FINISHED);
+                gameSaverSystem.updatePlayingStatus(gameController.CURRENT_LEVEL, GameData.LEVEL_FINISHED);
                 controlsSystem.setState(GameData.LEVEL_END);
             }
         } else {

@@ -27,6 +27,8 @@ public class CameraControllerSystem extends BaseSystem implements AfterSceneInit
 
     @Override
     protected void processSystem() {
+        if (GameController.CURRENT_LEVEL.equals(GameData.ID_LEVEL_TUTORIAL)) return;
+
         Vector2 bodyPosition = playerSystem.body.getPosition();
 
         if (cameraShaker.isShaking()) {

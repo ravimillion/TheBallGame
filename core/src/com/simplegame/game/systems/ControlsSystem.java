@@ -60,7 +60,6 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
 
         Own.io.addProcessor(this);
         setState(GameData.READY);
-
     }
 
     public void setState(int state) {
@@ -149,6 +148,8 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
 
     @Override
     protected void processSystem() {
+        if (GameController.CURRENT_LEVEL == GameData.ID_LEVEL_TUTORIAL) return;
+
         // update controls position.
 
         float cameraX = camera.position.x;

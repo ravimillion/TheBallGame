@@ -63,7 +63,7 @@
       "components": [
         {
           "x": 79.7145,
-          "y": 6.0353217,
+          "y": 6.0353,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -114,29 +114,29 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
           "vertices": [
             {
               "x": 86.2245,
-              "y": 12.5453205,
+              "y": 12.545299,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 86.2245,
-              "y": 7.335322,
+              "y": 7.3353,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 86.22429,
-              "y": 6.0412793,
+              "y": 6.0412574,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 79.724495,
-              "y": 6.045322,
+              "y": 6.0453,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
@@ -144,19 +144,19 @@
             [
               {
                 "x": 86.2245,
-                "y": 12.5453205
+                "y": 12.545299
               },
               {
                 "x": 79.724495,
-                "y": 6.045322
+                "y": 6.0453
               },
               {
                 "x": 86.22429,
-                "y": 6.0412793
+                "y": 6.0412574
               },
               {
                 "x": 86.2245,
-                "y": 7.335322
+                "y": 7.3353
               }
             ]
           ],
@@ -238,7 +238,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "topbox",
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -362,7 +362,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "downslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -445,7 +445,7 @@
       "components": [
         {
           "x": 145.5829,
-          "y": 13.148542,
+          "y": 13.1485,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -496,29 +496,29 @@
           "@class": "Renderable"
         },
         {
-          "id": "fourbox",
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
           "vertices": [
             {
               "x": 145.5829,
-              "y": 13.148542,
+              "y": 13.1485,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 153.3129,
-              "y": 13.148542,
+              "y": 13.1485,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 153.3129,
-              "y": 15.078543,
+              "y": 15.078501,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 145.5829,
-              "y": 15.078543,
+              "y": 15.078501,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
@@ -526,19 +526,19 @@
             [
               {
                 "x": 145.5829,
-                "y": 15.078543
+                "y": 15.078501
               },
               {
                 "x": 145.5829,
-                "y": 13.148542
+                "y": 13.1485
               },
               {
                 "x": 153.3129,
-                "y": 13.148542
+                "y": 13.1485
               },
               {
                 "x": 153.3129,
-                "y": 15.078543
+                "y": 15.078501
               }
             ]
           ],
@@ -900,7 +900,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "boundary",
+          "id": "idBoundary",
           "@class": "VisID"
         },
         {
@@ -1103,6 +1103,7 @@
           "@class": "Renderable"
         },
         {
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -1174,8 +1175,8 @@
     {
       "components": [
         {
-          "x": 35.607746,
-          "y": 6.024482,
+          "x": 35.6077,
+          "y": 6.0245,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -1226,49 +1227,49 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
           "vertices": [
             {
-              "x": 42.11774,
-              "y": 12.534486,
+              "x": 42.117695,
+              "y": 12.534504,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 42.11774,
-              "y": 7.324481,
+              "x": 42.117695,
+              "y": 7.324499,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 42.11751,
-              "y": 6.0304394,
+              "x": 42.117466,
+              "y": 6.0304575,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 35.617756,
-              "y": 6.034482,
+              "x": 35.61771,
+              "y": 6.0345,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 42.11774,
-                "y": 12.534486
+                "x": 42.117695,
+                "y": 12.534504
               },
               {
-                "x": 35.617756,
-                "y": 6.034482
+                "x": 35.61771,
+                "y": 6.0345
               },
               {
-                "x": 42.11751,
-                "y": 6.0304394
+                "x": 42.117466,
+                "y": 6.0304575
               },
               {
-                "x": 42.11774,
-                "y": 7.324481
+                "x": 42.117695,
+                "y": 7.324499
               }
             ]
           ],
@@ -1350,7 +1351,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -1423,7 +1424,7 @@
       "components": [
         {
           "x": 98.2618,
-          "y": 6.0101,
+          "y": 6.0,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -1470,28 +1471,29 @@
           "@class": "Renderable"
         },
         {
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
           "vertices": [
             {
               "x": 98.2618,
-              "y": 6.0101,
+              "y": 6.0,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 104.78178,
-              "y": 6.0101,
+              "y": 6.0,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 104.78178,
-              "y": 12.5301,
+              "y": 12.52,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
               "x": 98.2618,
-              "y": 12.5301,
+              "y": 12.52,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
@@ -1499,19 +1501,19 @@
             [
               {
                 "x": 98.2618,
-                "y": 12.5301
+                "y": 12.52
               },
               {
                 "x": 98.2618,
-                "y": 6.0101
+                "y": 6.0
               },
               {
                 "x": 104.78178,
-                "y": 6.0101
+                "y": 6.0
               },
               {
                 "x": 104.78178,
-                "y": 12.5301
+                "y": 12.52
               }
             ]
           ],
@@ -1708,6 +1710,10 @@
         {
           "zIndex": 0,
           "@class": "Renderable"
+        },
+        {
+          "id": "idUphill",
+          "@class": "VisID"
         },
         {
           "vertices": [
@@ -2475,7 +2481,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "spike",
+          "id": "idSpike",
           "@class": "VisID"
         },
         {
@@ -3777,6 +3783,7 @@
           "@class": "Renderable"
         },
         {
+          "id": "idWoodBox",
           "@class": "VisID"
         },
         {
@@ -3900,7 +3907,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "downslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -4024,7 +4031,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -4400,7 +4407,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -4524,7 +4531,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -4648,7 +4655,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -4772,6 +4779,7 @@
           "@class": "Renderable"
         },
         {
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -4891,7 +4899,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "spike",
+          "id": "idSpike",
           "@class": "VisID"
         },
         {
@@ -6189,7 +6197,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "spike",
+          "id": "idSpike",
           "@class": "VisID"
         },
         {
@@ -7090,7 +7098,7 @@
           "@class": "Renderable"
         },
         {
-          "id": "upslopebox",
+          "id": "idUphill",
           "@class": "VisID"
         },
         {
@@ -7337,8 +7345,8 @@
     {
       "components": [
         {
-          "x": 55.32514,
-          "y": 6.0001426,
+          "x": 55.3251,
+          "y": 6.0001,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -7389,448 +7397,449 @@
           "@class": "Renderable"
         },
         {
+          "id": "idPaintBox",
           "@class": "VisID"
         },
         {
           "vertices": [
             {
-              "x": 56.10768,
-              "y": 10.819948,
+              "x": 56.10764,
+              "y": 10.819906,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 55.79525,
-              "y": 10.672258,
+              "x": 55.795208,
+              "y": 10.672216,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 55.666855,
-              "y": 10.469538,
+              "x": 55.666813,
+              "y": 10.469496,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 55.410072,
-              "y": 10.307356,
+              "x": 55.41003,
+              "y": 10.307314,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 55.356018,
-              "y": 9.9627285,
+              "x": 55.355976,
+              "y": 9.962687,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 55.358177,
-              "y": 9.473545,
+              "x": 55.358135,
+              "y": 9.473503,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 55.680496,
-              "y": 8.721455,
+              "x": 55.680454,
+              "y": 8.721413,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 56.085472,
-              "y": 8.29995,
+              "x": 56.08543,
+              "y": 8.299908,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 56.065315,
-              "y": 6.5174117,
+              "x": 56.065273,
+              "y": 6.5173693,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 56.862694,
-              "y": 6.1246696,
+              "x": 56.86265,
+              "y": 6.124627,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 57.053116,
-              "y": 6.0056567,
+              "x": 57.053074,
+              "y": 6.0056143,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 59.742817,
-              "y": 5.981855,
+              "x": 59.742775,
+              "y": 5.9818125,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 59.980854,
-              "y": 6.172273,
+              "x": 59.980812,
+              "y": 6.1722307,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.611603,
-              "y": 6.4579062,
+              "x": 60.61156,
+              "y": 6.457864,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.617737,
-              "y": 8.37151,
+              "x": 60.617695,
+              "y": 8.371468,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.98212,
-              "y": 8.740898,
+              "x": 60.98208,
+              "y": 8.740856,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 61.19927,
-              "y": 9.112774,
+              "x": 61.199226,
+              "y": 9.112732,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 61.388966,
-              "y": 9.61195,
+              "x": 61.388924,
+              "y": 9.611908,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 61.393955,
-              "y": 10.036249,
+              "x": 61.393913,
+              "y": 10.036207,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 61.26415,
-              "y": 10.330759,
+              "x": 61.264107,
+              "y": 10.330717,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 61.02953,
-              "y": 10.400644,
+              "x": 61.029488,
+              "y": 10.400602,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.929707,
-              "y": 10.645239,
+              "x": 60.929665,
+              "y": 10.645197,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.62021,
-              "y": 10.792498,
+              "x": 60.620167,
+              "y": 10.792456,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.612717,
-              "y": 11.161888,
+              "x": 60.612675,
+              "y": 11.161846,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.47798,
-              "y": 11.386524,
+              "x": 60.47794,
+              "y": 11.386482,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.378143,
-              "y": 11.271713,
+              "x": 60.3781,
+              "y": 11.271671,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.420563,
-              "y": 11.126953,
+              "x": 60.42052,
+              "y": 11.126911,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 60.073658,
-              "y": 10.824949,
+              "x": 60.073616,
+              "y": 10.824907,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 59.414738,
-              "y": 10.647741,
+              "x": 59.414696,
+              "y": 10.647699,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 58.488758,
-              "y": 10.562872,
+              "x": 58.488716,
+              "y": 10.56283,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 57.183403,
-              "y": 10.6677,
+              "x": 57.18336,
+              "y": 10.667658,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 56.364754,
-              "y": 10.992163,
+              "x": 56.36471,
+              "y": 10.992121,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 56.314835,
-              "y": 11.2217865,
+              "x": 56.314793,
+              "y": 11.221745,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 56.115166,
-              "y": 11.224281,
+              "x": 56.115124,
+              "y": 11.224239,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 56.115166,
-                "y": 11.224281
+                "x": 56.115124,
+                "y": 11.224239
               },
               {
-                "x": 56.10768,
-                "y": 10.819948
+                "x": 56.10764,
+                "y": 10.819906
               },
               {
-                "x": 56.364754,
-                "y": 10.992163
+                "x": 56.36471,
+                "y": 10.992121
               },
               {
-                "x": 56.314835,
-                "y": 11.2217865
+                "x": 56.314793,
+                "y": 11.221745
               }
             ],
             [
               {
-                "x": 56.364754,
-                "y": 10.992163
+                "x": 56.36471,
+                "y": 10.992121
               },
               {
-                "x": 56.10768,
-                "y": 10.819948
+                "x": 56.10764,
+                "y": 10.819906
               },
               {
-                "x": 57.183403,
-                "y": 10.6677
+                "x": 57.18336,
+                "y": 10.667658
               }
             ],
             [
               {
-                "x": 60.378143,
-                "y": 11.271713
+                "x": 60.3781,
+                "y": 11.271671
               },
               {
-                "x": 60.420563,
-                "y": 11.126953
+                "x": 60.42052,
+                "y": 11.126911
               },
               {
-                "x": 60.612717,
-                "y": 11.161888
+                "x": 60.612675,
+                "y": 11.161846
               },
               {
-                "x": 60.47798,
-                "y": 11.386524
+                "x": 60.47794,
+                "y": 11.386482
               }
             ],
             [
               {
-                "x": 60.420563,
-                "y": 11.126953
+                "x": 60.42052,
+                "y": 11.126911
               },
               {
-                "x": 60.073658,
-                "y": 10.824949
+                "x": 60.073616,
+                "y": 10.824907
               },
               {
-                "x": 60.62021,
-                "y": 10.792498
+                "x": 60.620167,
+                "y": 10.792456
               },
               {
-                "x": 60.612717,
-                "y": 11.161888
+                "x": 60.612675,
+                "y": 11.161846
               }
             ],
             [
               {
-                "x": 60.073658,
-                "y": 10.824949
+                "x": 60.073616,
+                "y": 10.824907
               },
               {
-                "x": 59.414738,
-                "y": 10.647741
+                "x": 59.414696,
+                "y": 10.647699
               },
               {
-                "x": 60.929707,
-                "y": 10.645239
+                "x": 60.929665,
+                "y": 10.645197
               },
               {
-                "x": 60.62021,
-                "y": 10.792498
+                "x": 60.620167,
+                "y": 10.792456
               }
             ],
             [
               {
-                "x": 59.414738,
-                "y": 10.647741
+                "x": 59.414696,
+                "y": 10.647699
               },
               {
-                "x": 58.488758,
-                "y": 10.562872
+                "x": 58.488716,
+                "y": 10.56283
               },
               {
-                "x": 61.02953,
-                "y": 10.400644
+                "x": 61.029488,
+                "y": 10.400602
               },
               {
-                "x": 60.929707,
-                "y": 10.645239
+                "x": 60.929665,
+                "y": 10.645197
               }
             ],
             [
               {
-                "x": 61.02953,
-                "y": 10.400644
+                "x": 61.029488,
+                "y": 10.400602
               },
               {
-                "x": 58.488758,
-                "y": 10.562872
+                "x": 58.488716,
+                "y": 10.56283
               },
               {
-                "x": 61.26415,
-                "y": 10.330759
+                "x": 61.264107,
+                "y": 10.330717
               }
             ],
             [
               {
-                "x": 58.488758,
-                "y": 10.562872
+                "x": 58.488716,
+                "y": 10.56283
               },
               {
-                "x": 57.183403,
-                "y": 10.6677
+                "x": 57.18336,
+                "y": 10.667658
               },
               {
-                "x": 61.393955,
-                "y": 10.036249
+                "x": 61.393913,
+                "y": 10.036207
               },
               {
-                "x": 61.26415,
-                "y": 10.330759
+                "x": 61.264107,
+                "y": 10.330717
               }
             ],
             [
               {
-                "x": 57.183403,
-                "y": 10.6677
+                "x": 57.18336,
+                "y": 10.667658
               },
               {
-                "x": 56.10768,
-                "y": 10.819948
+                "x": 56.10764,
+                "y": 10.819906
               },
               {
-                "x": 60.617737,
-                "y": 8.37151
+                "x": 60.617695,
+                "y": 8.371468
               },
               {
-                "x": 60.98212,
-                "y": 8.740898
+                "x": 60.98208,
+                "y": 8.740856
               },
               {
-                "x": 61.19927,
-                "y": 9.112774
+                "x": 61.199226,
+                "y": 9.112732
               },
               {
-                "x": 61.388966,
-                "y": 9.61195
+                "x": 61.388924,
+                "y": 9.611908
               },
               {
-                "x": 61.393955,
-                "y": 10.036249
+                "x": 61.393913,
+                "y": 10.036207
               }
             ],
             [
               {
-                "x": 60.617737,
-                "y": 8.37151
+                "x": 60.617695,
+                "y": 8.371468
               },
               {
-                "x": 56.10768,
-                "y": 10.819948
+                "x": 56.10764,
+                "y": 10.819906
               },
               {
-                "x": 59.980854,
-                "y": 6.172273
+                "x": 59.980812,
+                "y": 6.1722307
               },
               {
-                "x": 60.611603,
-                "y": 6.4579062
+                "x": 60.61156,
+                "y": 6.457864
               }
             ],
             [
               {
-                "x": 59.980854,
-                "y": 6.172273
+                "x": 59.980812,
+                "y": 6.1722307
               },
               {
-                "x": 56.10768,
-                "y": 10.819948
+                "x": 56.10764,
+                "y": 10.819906
               },
               {
-                "x": 56.085472,
-                "y": 8.29995
+                "x": 56.08543,
+                "y": 8.299908
               },
               {
-                "x": 56.862694,
-                "y": 6.1246696
+                "x": 56.86265,
+                "y": 6.124627
               },
               {
-                "x": 57.053116,
-                "y": 6.0056567
+                "x": 57.053074,
+                "y": 6.0056143
               },
               {
-                "x": 59.742817,
-                "y": 5.981855
+                "x": 59.742775,
+                "y": 5.9818125
               }
             ],
             [
               {
-                "x": 56.065315,
-                "y": 6.5174117
+                "x": 56.065273,
+                "y": 6.5173693
               },
               {
-                "x": 56.862694,
-                "y": 6.1246696
+                "x": 56.86265,
+                "y": 6.124627
               },
               {
-                "x": 56.085472,
-                "y": 8.29995
+                "x": 56.08543,
+                "y": 8.299908
               }
             ],
             [
               {
-                "x": 56.085472,
-                "y": 8.29995
+                "x": 56.08543,
+                "y": 8.299908
               },
               {
-                "x": 56.10768,
-                "y": 10.819948
+                "x": 56.10764,
+                "y": 10.819906
               },
               {
-                "x": 55.79525,
-                "y": 10.672258
+                "x": 55.795208,
+                "y": 10.672216
               },
               {
-                "x": 55.666855,
-                "y": 10.469538
+                "x": 55.666813,
+                "y": 10.469496
               },
               {
-                "x": 55.356018,
-                "y": 9.9627285
+                "x": 55.355976,
+                "y": 9.962687
               },
               {
-                "x": 55.358177,
-                "y": 9.473545
+                "x": 55.358135,
+                "y": 9.473503
               },
               {
-                "x": 55.680496,
-                "y": 8.721455
+                "x": 55.680454,
+                "y": 8.721413
               }
             ],
             [
               {
-                "x": 55.410072,
-                "y": 10.307356
+                "x": 55.41003,
+                "y": 10.307314
               },
               {
-                "x": 55.356018,
-                "y": 9.9627285
+                "x": 55.355976,
+                "y": 9.962687
               },
               {
-                "x": 55.666855,
-                "y": 10.469538
+                "x": 55.666813,
+                "y": 10.469496
               }
             ]
           ],
@@ -8683,8 +8692,8 @@
     {
       "components": [
         {
-          "x": 364.65784,
-          "y": 19.283878,
+          "x": 8.666885,
+          "y": 22.406609,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -12087,6 +12096,246 @@
         },
         {
           "id": "idSoundPower",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Transform",
+              "@class": "Class"
+            },
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            },
+            {
+              "@content": "VisGroup",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 45.967,
+          "y": -7.4294,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "sound/glass.mp3",
+            "@class": "SoundAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "@class": "ProtoVisSound"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "a9f77b99-522a-4869-a7e9-ac5806a0813e",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idSoundGlass",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Transform",
+              "@class": "Class"
+            },
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            },
+            {
+              "@content": "VisGroup",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 51.7283,
+          "y": -9.0453,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "sound/glassbreak.ogg",
+            "@class": "SoundAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "@class": "ProtoVisSound"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "cbd00a68-c5f1-4076-a5db-c3096137b61e",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idSoundGlassBreak",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Transform",
+              "@class": "Class"
+            },
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            },
+            {
+              "@content": "VisGroup",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 82.2613,
+          "y": -16.0007,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "sound/power-up.mp3",
+            "@class": "SoundAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "@class": "ProtoVisSound"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "d93743e2-04d9-4797-b2da-f0f6fc03d89d",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idSoundPowerUp",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Transform",
+              "@class": "Class"
+            },
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            },
+            {
+              "@content": "VisGroup",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 61.4161,
+          "y": -17.3601,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "sound/woodbox.ogg",
+            "@class": "SoundAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "@class": "ProtoVisSound"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "4324776b-7b4d-4211-8bff-e22106f82143",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idSoundWoodBox",
           "@class": "VisID"
         },
         {

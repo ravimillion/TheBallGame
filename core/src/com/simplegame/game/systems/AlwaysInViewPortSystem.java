@@ -8,6 +8,8 @@ import com.kotcrab.vis.runtime.component.Transform;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
+import com.simplegame.game.GameController;
+import com.simplegame.game.GameData;
 
 import java.util.HashMap;
 
@@ -26,6 +28,8 @@ public class AlwaysInViewPortSystem extends BaseSystem implements AfterSceneInit
 
     @Override
     public void afterSceneInit() {
+        if (GameController.CURRENT_LEVEL.equals(GameData.ID_LEVEL_TUTORIAL)) return;
+
         for (int i = 0, len = entityIds.length; i < len; i++) {
             String entityId = entityIds[i];
             Entity entity = idManager.get(entityId);
@@ -46,6 +50,8 @@ public class AlwaysInViewPortSystem extends BaseSystem implements AfterSceneInit
 
     @Override
     protected void processSystem() {
+        if (GameController.CURRENT_LEVEL.equals(GameData.ID_LEVEL_TUTORIAL)) return;
+
         setControlsPosition();
     }
 }

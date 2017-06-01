@@ -2,11 +2,15 @@ package com.simplegame.game.systems;
 
 import com.artemis.BaseSystem;
 import com.artemis.ComponentMapper;
+import com.artemis.Entity;
 import com.badlogic.gdx.Gdx;
+import com.kotcrab.vis.runtime.component.Invisible;
 import com.kotcrab.vis.runtime.component.VisID;
 import com.kotcrab.vis.runtime.component.VisText;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
+import com.simplegame.game.GameController;
+import com.simplegame.game.GameData;
 
 public class ScoringSystem extends BaseSystem implements AfterSceneInit {
     private ComponentMapper<VisID> visIDCm;
@@ -28,15 +32,20 @@ public class ScoringSystem extends BaseSystem implements AfterSceneInit {
 
     @Override
     protected void processSystem() {
+        if (GameController.CURRENT_LEVEL.equals(GameData.ID_LEVEL_TUTORIAL)) return;
+
         scoreText.setText(this.currentScoreText);
 
-        // fps calculate
-        if (counter >= accumulateFactor) {
-            fpsText.setText("FPS:" + (int) this.accumulatedFps / accumulateFactor);
-            this.accumulatedFps = counter = 0;
-        } else {
-            this.accumulatedFps += (int) (1 / Gdx.graphics.getDeltaTime());
-            counter++;
+        if (GameData.RELEASE == false) {
+            // fps calculate
+            if (counter >= accumulateFactor) {
+                if (fpsText != null)
+                    fpsText.setText("FPS:" + (int) this.accumulatedFps / accumulateFactor);
+                this.accumulatedFps = counter = 0;
+            } else {
+                this.accumulatedFps += (int) (1 / Gdx.graphics.getDeltaTime());
+                counter++;
+            }
         }
     }
 
@@ -58,8 +67,24 @@ public class ScoringSystem extends BaseSystem implements AfterSceneInit {
 
     @Override
     public void afterSceneInit() {
+        if (GameController.CURRENT_LEVEL.equals(GameData.ID_LEVEL_TUTORIAL)) return;
+
+        if (gameSaverSystem.getPlayingStatus(GameController.CURRENT_LEVEL).equals(GameData.LEVEL_FINISHED)) {
+            this.score = 0;
+            this.currentScoreText = this.textPrefix + this.score;
+        } else {
+            this.score = gameSaverSystem.getPlayerScore(GameController.CURRENT_LEVEL);
+            this.currentScoreText = this.textPrefix + this.score;
+        }
+
         scoreText = visTextCm.get(idManager.get("idScore"));
-        fpsText = visTextCm.get(idManager.get("idFPS"));
+
+        if (GameData.RELEASE) {
+            Entity fpsEntity = idManager.get("idFPS");
+            fpsEntity.edit().add(new Invisible());
+        } else {
+            fpsText = visTextCm.get(idManager.get("idFPS"));
+        }
     }
 
     public int getScore() {

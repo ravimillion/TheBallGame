@@ -20,7 +20,7 @@ import com.simplegame.game.GameController;
 import com.simplegame.game.GameData;
 import com.simplegame.game.TintAccessor;
 import com.simplegame.game.components.Bounds;
-import com.simplegame.game.savegame.GameState;
+import com.simplegame.game.savegame.LevelState;
 import com.simplegame.game.systems.GameSaverSystem;
 
 import java.util.HashMap;
@@ -38,12 +38,9 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
     VisIDManager idManager;
     CameraManager cameraManager;
     TweenManager tweenManager = new TweenManager();
-
-
     String DISABLED_TINT = "4c4c4cff";
-
     GameController gameController;
-    String[] buttons = {"idOne", "idTwo", "idThree", "idFacebook", "idTwitter", "idSettings", "idVolume"};
+    String[] buttons = {"idOne", "idTwo", "idThree", "idFacebook", "idTwitter", "idSettings", "idVolume", "idTutorial"};
     HashMap<String, Entity> entityMap = new HashMap<String, Entity>();
     HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
 
@@ -68,50 +65,72 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         // TWEEN MANAGER
         Tween.registerAccessor(Tint.class, new TintAccessor());
 
-        Entity entity = idManager.get("idOne");
+        Entity entity = idManager.get("idTutorial");
         Tween.set(tintCm.get(entity), TintAccessor.FADE_IN_OUT).target(0).start(tweenManager);
         Tween.to(tintCm.get(entity), TintAccessor.FADE_IN_OUT, 1).target(1f).start(tweenManager);
 
-        entity = idManager.get("idTwo");
+        entity = idManager.get("idOne");
         Tween.set(tintCm.get(entity), TintAccessor.FADE_IN_OUT).target(0).start(tweenManager);
         Tween.to(tintCm.get(entity), TintAccessor.FADE_IN_OUT, 1.5f).target(1f).start(tweenManager);
 
-        entity = idManager.get("idThree");
+        entity = idManager.get("idTwo");
         Tween.set(tintCm.get(entity), TintAccessor.FADE_IN_OUT).target(0).start(tweenManager);
         Tween.to(tintCm.get(entity), TintAccessor.FADE_IN_OUT, 2f).target(1f).start(tweenManager);
+
+        entity = idManager.get("idThree");
+        Tween.set(tintCm.get(entity), TintAccessor.FADE_IN_OUT).target(0).start(tweenManager);
+        Tween.to(tintCm.get(entity), TintAccessor.FADE_IN_OUT, 2.5f).target(1f).start(tweenManager);
     }
 
     private void configureButtonStates() {
-        // init button state
         FileHandle fileHandle = Gdx.files.local(GameSaverSystem.GAME_STATE_PERSIST_FILE);
         Json json = new Json();
+
+        setDisabled(GameData.MUTE, "idVolume");
+
         if (fileHandle.exists()) {
-            Own.log("Loading button state from file");
-            GameState gameState = json.fromJson(GameState.class, fileHandle);
+            HashMap<String, LevelState> levelStates = json.fromJson(HashMap.class, fileHandle);
+            LevelState levelTutorial = levelStates.get(GameData.ID_LEVEL_TUTORIAL);
+            LevelState levelOne = levelStates.get(GameData.ID_LEVEL_ONE);
+            LevelState levelTwo = levelStates.get(GameData.ID_LEVEL_TWO);
+            LevelState levelThree = levelStates.get(GameData.ID_LEVEL_THREE);
 
+            setDisabled(true, "idOne");
+            setDisabled(true, "idTwo");
+            setDisabled(true, "idThree");
 
-            if (gameState.levelOne == GameData.LEVEL_ALREADY_FINISHED) {
+            boolean isNew = true;
+            if (levelTutorial.levelCompletionState.equals(GameData.LEVEL_IN_PROGRESS)) {
                 setDisabled(false, "idOne");
+                isNew = false;
+            }
+            if (levelOne.levelCompletionState.equals(GameData.LEVEL_FINISHED)) {
                 setDisabled(false, "idTwo");
-                setDisabled(true, "idThree");
-            } else if (gameState.levelTwo == GameData.LEVEL_ALREADY_FINISHED) {
-                setDisabled(false, "idOne");
-                setDisabled(false, "idTwo");
+                isNew = false;
+            }
+//
+            if (levelTwo.levelCompletionState.equals(GameData.LEVEL_FINISHED)) {
                 setDisabled(false, "idThree");
-            } else if (gameState.levelThree == GameData.LEVEL_ALREADY_FINISHED) {
-                Own.log("Game Finished");
-            } else {
-                setDisabled(false, "idOne");
+                isNew = false;
+            }
+//
+//            if (levelState.levelThree == GameData.LEVEL_FINISHED) {
+//                Own.log("Game Finished");
+//            }
+
+            if (isNew) {
+                setDisabled(false, "idTutorial");
+                setDisabled(true, "idOne");
                 setDisabled(true, "idTwo");
                 setDisabled(true, "idThree");
             }
         } else {
             Own.log("Loading button state from state");
-            setDisabled(false, "idOne");
+            setDisabled(false, "idTutorial");
+            setDisabled(true, "idOne");
             setDisabled(true, "idTwo");
             setDisabled(true, "idThree");
         }
-
     }
 
     @Override
@@ -124,6 +143,11 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         if (buttonId == null) return false;
 
         switch (buttonId) {
+            case "idTutorial":
+                if (isDisabled(buttonId)) return false;
+                this.dispose();
+                gameController.loadLevelTutorial();
+                break;
             case "idOne":
                 if (isDisabled(buttonId)) return false;
                 this.dispose();
@@ -139,18 +163,15 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
                 this.dispose();
                 gameController.loadLevelThreeScene();
                 break;
-            case "idVolume":
-                Entity entity = entityMap.get(buttonId);
-                Tint tint = tintCm.get(entity);
-                if (isMute == false) {
-                    FileHandle fileHandle = Gdx.files.local(GameSaverSystem.GAME_STATE_PERSIST_FILE);
-                    if (fileHandle.exists()) fileHandle.delete();
-                    tint.set(1f, 1f, 1f, 0.5f);
-                    isMute = true;
-                } else {
-                    tint.set(1, 1, 1, 1);
-                    isMute = false;
+            case "idSettings":
+                FileHandle fileHandle = Gdx.files.local(GameSaverSystem.GAME_STATE_PERSIST_FILE);
+                if (fileHandle.exists()) {
+                    if (fileHandle.delete()) Own.log("Deleted file");
                 }
+                break;
+            case "idVolume":
+                GameData.MUTE = !GameData.MUTE;
+                setDisabled(GameData.MUTE, buttonId);
                 break;
             default:
                 Own.log(buttonId + "pressed");
@@ -168,7 +189,6 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
     private void setDisabled(boolean disable, String buttonId) {
         Entity entity = entityMap.get(buttonId);
         Tint tint = tintCm.get(entity);
-        Own.log("Tint: " + tint.getTint().toString());
         if (disable) {
             tint.set(0.3f, 0.3f, 0.3f, 1);
         } else {
@@ -208,6 +228,10 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
     @Override
     public boolean keyDown(int keycode) {
         switch (keycode) {
+            case Keys.NUM_0:
+                this.dispose();
+                gameController.loadLevelTutorial();
+                break;
             case Keys.NUM_1:
                 this.dispose();
                 gameController.loadLevelOneScene();

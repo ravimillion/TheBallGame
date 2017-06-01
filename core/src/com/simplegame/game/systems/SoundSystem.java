@@ -12,6 +12,7 @@ import com.kotcrab.vis.runtime.component.VisSound;
 import com.kotcrab.vis.runtime.system.CameraManager;
 import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
+import com.simplegame.game.GameData;
 
 import java.util.HashMap;
 
@@ -47,7 +48,7 @@ public class SoundSystem extends EntitySystem implements AfterSceneInit {
 
     public void triggerSoundEffect(PhysicsBodyContactSystem.CollisionData collisionData) {
         final VisID visID = visIDCm.get(collisionData.entity);
-        if (visID == null) return;
+        if (visID == null || GameData.MUTE) return;
 
 
         switch (visID.id) {
@@ -58,6 +59,9 @@ public class SoundSystem extends EntitySystem implements AfterSceneInit {
             case "idUpDown":
             case "idBoundary":
                 if (collisionData.impulse > 100) effectMap.get("idSoundGlass").play();
+                break;
+            case "idPaintBox":
+                if (collisionData.impulse > 100) effectMap.get("idSoundPowerUp").play();
                 break;
             case "idSpike":
                 if (collisionData.impulse > 50) effectMap.get("idSoundGlassBreak").play();

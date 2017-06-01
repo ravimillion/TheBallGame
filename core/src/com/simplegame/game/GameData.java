@@ -7,6 +7,8 @@ import com.badlogic.gdx.utils.Array;
  */
 
 public class GameData {
+    public static final boolean RELEASE = false;
+    public static boolean MUTE = false;
     // game states
     public static final int READY = 0;
     public static final int RUNNING = 1;
@@ -19,20 +21,21 @@ public class GameData {
     public static final int SPLASH_SHOW_DELAY = 0;
     public static final int SPLASH_HIDE_DELAY = 0;
     // game running info
-    public static final int LEVEL_ONE = 1;
-    public static final int LEVEL_TWO = 2;
-    public static final int LEVEL_THREE = 3;
-    //    public static final int MENU_SCREEN = 4;
-    public static final int LEVEL_TUTORIAL = 0;
+    public static final String ID_MENU = "ID_MENU";
+    public static final String ID_LEVEL_ONE = "ID_LEVEL_ONE";
+    public static final String ID_LEVEL_TWO = "ID_LEVEL_TWO";
+    public static final String ID_LEVEL_THREE = "ID_LEVEL_THREE";
+    public static final String ID_LEVEL_TUTORIAL = "ID_LEVEL_TUTORIAL";
     // CURRENT_LEVEL info
-    public static final int LEVEL_NOT_YET_PLAYED = 10;
-    public static final int LEVEL_IN_PROGRESS = 11;
-    public static final int LEVEL_ALREADY_FINISHED = 12;
+    public static final String LEVEL_NOT_PLAYED = "NOT_PLAYED";
+    public static final String LEVEL_IN_PROGRESS = "IN_PROGRESS";
+    public static final String LEVEL_FINISHED = "FINISHED";
+
     public static final String SCENE_MENU = "scene/menu.scene";
+    public static final String SCENE_TUTORIAL = "scene/tutorial.scene";
     public static final String SCENE_ONE = "scene/levelone.scene";
     public static final String SCENE_TWO = "scene/leveltwo.scene";
     public static final String SCENE_THREE = "scene/levelthree.scene";
-    public static final String SCENE_TUTORIAL = "scene/leveltutorial.scene";
     // add ids of super powers
     public static final Array<String> SUPER_POWER_LIST = new Array(
             new String[]{"idPowerSize", "idPowerBounce", "idPowerGravity"}
@@ -50,4 +53,6 @@ public class GameData {
     public static int WORLD_WIDTH = 573;
     public static int WORLD_HEIGHT = 32;
     public static int VIEWPORT_WIDTH = 53;
+
+
 }

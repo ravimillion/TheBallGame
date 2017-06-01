@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.simplegame.game.AdHandler;
 import com.simplegame.game.GameController;
+import com.simplegame.game.GameData;
 
 import ownLib.Own;
 
@@ -27,7 +28,7 @@ public class GameEntry extends Game {
     @Override
     public void create() {
         spriteBatch = new SpriteBatch();
-        if (handler != null) handler.showAds(false); // enable ads
+        if (handler != null) handler.showAds(GameData.RELEASE); // enable ads
         splashScreen = new Splash(this, spriteBatch);
         this.setScreen(splashScreen);
     }

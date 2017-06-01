@@ -79,7 +79,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
             soundEffect(collisionData);
             removeOnCollision(collisionData);
             shakeCameraOnCollision(collisionData);
-//            changeGameStateOnCollision(collisionData);
+            changeGameStateOnCollision(collisionData);
             applySuperPower(collisionData);
             // remove entry
             iter.remove();
@@ -112,7 +112,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    controlsSystem.setState(GameData.GAME_OVER);
+                    if (GameData.RELEASE) controlsSystem.setState(GameData.GAME_OVER);
                 }
             });
         }

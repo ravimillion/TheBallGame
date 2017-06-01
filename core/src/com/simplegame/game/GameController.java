@@ -38,7 +38,7 @@ import com.simplegame.game.systems.VisibilitySystem;
 import ownLib.Own;
 
 public class GameController implements Screen {
-    public static int CURRENT_LEVEL;
+    public static String CURRENT_LEVEL;
     public SpriteBatch spriteBatch;
 
     private GameEntry game;
@@ -93,8 +93,47 @@ public class GameController implements Screen {
         loadScene(GameData.SCENE_MENU, sceneParameter);
     }
 
+    public void loadLevelTutorial() {
+        CURRENT_LEVEL = GameData.ID_LEVEL_TUTORIAL;
+        unloadPreviousScene();
+        SceneParameter sceneParameter = new SceneParameter();
+        sceneParameter.config.addSystem(SpriteBoundsCreator.class);
+        sceneParameter.config.addSystem(SpriteBoundsUpdater.class);
+        sceneParameter.config.addSystem(SpriterPhysicsSystem.class);
+        sceneParameter.config.addSystem(PhysicsBodyContactSystem.class);
+        sceneParameter.config.addSystem(ScoringSystem.class);
+        sceneParameter.config.addSystem(MovingPlatform.class);
+        sceneParameter.config.addSystem(GameSaverSystem.class);
+
+        sceneParameter.config.addSystem(new SystemProvider() {
+            @Override
+            public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
+                return new CameraControllerSystem(GameController.this);
+            }
+        });
+
+        sceneParameter.config.addSystem(new SystemProvider() {
+            @Override
+            public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
+                return new PlayerSystem(GameController.this);
+            }
+        });
+
+        sceneParameter.config.addSystem(new SystemProvider() {
+            @Override
+            public BaseSystem create(EntityEngineConfiguration config, RuntimeContext context, SceneData data) {
+                return new ControlsSystem(GameController.this);
+            }
+        });
+
+        sceneParameter.config.addSystem(SoundSystem.class);
+        sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
+        sceneParameter.config.addSystem(VisibilitySystem.class);
+        loadScene(GameData.SCENE_TUTORIAL, sceneParameter);
+    }
+
     public void loadLevelOneScene() {
-        CURRENT_LEVEL = GameData.LEVEL_ONE;
+        CURRENT_LEVEL = GameData.ID_LEVEL_ONE;
         unloadPreviousScene();
         SceneParameter sceneParameter = new SceneParameter();
         sceneParameter.config.addSystem(SpriteBoundsCreator.class);
@@ -133,7 +172,7 @@ public class GameController implements Screen {
     }
 
     public void loadLevelTwoScene() {
-        CURRENT_LEVEL = GameData.LEVEL_TWO;
+        CURRENT_LEVEL = GameData.ID_LEVEL_TWO;
         unloadPreviousScene();
         SceneParameter sceneParameter = new SceneParameter();
         sceneParameter.config.addSystem(SpriteBoundsCreator.class);
@@ -172,7 +211,7 @@ public class GameController implements Screen {
     }
 
     public void loadLevelThreeScene() {
-        CURRENT_LEVEL = GameData.LEVEL_THREE;
+        CURRENT_LEVEL = GameData.ID_LEVEL_THREE;
         unloadPreviousScene();
 
         SceneParameter sceneParameter = new SceneParameter();
@@ -215,6 +254,7 @@ public class GameController implements Screen {
     public void show() {
         if (this.scene == null) {  // Load scene for the first time as there is no scene is loaded
             loadMenuScene();
+//            loadLevelTutorial();
 //            loadLevelOneScene();
 //            loadLevelTwoScene();
 //            loadLevelThreeScene();
@@ -257,13 +297,13 @@ public class GameController implements Screen {
 //            case GameData.MENU_SCREEN:
 //                loadMenuScene();
 //                break;
-            case GameData.LEVEL_ONE:
+            case GameData.ID_LEVEL_ONE:
                 loadLevelOneScene();
                 break;
-            case GameData.LEVEL_TWO:
+            case GameData.ID_LEVEL_TWO:
                 loadLevelTwoScene();
                 break;
-            case GameData.LEVEL_THREE:
+            case GameData.ID_LEVEL_THREE:
                 loadLevelThreeScene();
                 break;
             default:
