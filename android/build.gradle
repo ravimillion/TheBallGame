@@ -15,7 +15,7 @@ android {
         instrumentTest.setRoot('tests')
     }
     defaultConfig {
-        applicationId "com.theballgame.game"
+        applicationId "com.jauntymarble.game"
         minSdkVersion 19
         targetSdkVersion 23
         multiDexEnabled true

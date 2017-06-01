@@ -44,8 +44,6 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
     HashMap<String, Entity> entityMap = new HashMap<String, Entity>();
     HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
 
-    boolean isMute = false;
-
     public MenuScreen(GameController gameController) {
         this.gameController = gameController;
     }
@@ -86,7 +84,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         FileHandle fileHandle = Gdx.files.local(GameSaverSystem.GAME_STATE_PERSIST_FILE);
         Json json = new Json();
         if (fileHandle.exists()) {
-            if (fileHandle.delete()) Own.log("Deleted file");
+//            if (fileHandle.delete()) Own.log("Errrrrrrrrrrr: Deleted file");
         }
         setDisabled(GameData.MUTE, "idVolume");
 
