@@ -1,5 +1,7 @@
 package ownLib;
 
+import com.jauntymarble.game.GameData;
+
 import java.util.Random;
 
 import ownLib.assets.Assets;
@@ -16,10 +18,9 @@ public class Own {
     public static IO io = new IO();
     public static Text text = new Text();
     public static Box2d box2d = new Box2d();
-//    public static BodyContact bodyContact = new BodyContact();
 
     public static void dispose() {
-//        assets.dispose();
+        assets.dispose();
     }
 
     public static int getRandomInRange(int lowerBound, int upperBound) {
@@ -32,6 +33,7 @@ public class Own {
     }
 
     public static void log(String msg) {
+        if (GameData.RELEASE) return;
         Own.logger.log(msg);
     }
 }

@@ -2,7 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.backends.iosmoe.IOSApplication;
 import com.badlogic.gdx.backends.iosmoe.IOSApplicationConfiguration;
-import com.simplegame.game.screens.GameEntry;
+import com.jauntymarble.game.screens.GameEntry;
 
 import org.moe.natj.general.Pointer;
 

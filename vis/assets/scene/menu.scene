@@ -30,16 +30,16 @@
     {
       "components": [
         {
-          "x": 25.540703,
-          "y": 17.591793,
+          "x": 21.747105,
+          "y": 18.0,
           "scaleX": 2.0,
           "scaleY": 2.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.005,
-          "originY": 1.04,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -87,16 +87,16 @@
     {
       "components": [
         {
-          "x": 25.458534,
-          "y": 7.618161,
+          "x": 21.747105,
+          "y": 6.0,
           "scaleX": 2.0,
           "scaleY": 2.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.005,
-          "originY": 0.99,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -144,16 +144,16 @@
     {
       "components": [
         {
-          "x": 25.540705,
-          "y": 12.5638895,
+          "x": 21.747105,
+          "y": 12.0,
           "scaleX": 2.0,
           "scaleY": 2.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.005,
-          "originY": 0.99,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -201,130 +201,16 @@
     {
       "components": [
         {
-          "x": 47.8262,
-          "y": 1.2932,
+          "x": 9.007465,
+          "y": 3.9899716,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 2.56,
-          "originY": 2.56,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/twitter.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 5.12,
-          "height": 5.12,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "c96b399e-0908-4696-9349-581df79bf186",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "idTwitter",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 9.5447,
-          "y": 1.3983,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 2.56,
-          "originY": 2.56,
-          "@class": "Origin"
-        },
-        {
-          "tint": {
-            "r": 1.0,
-            "g": 1.0,
-            "b": 1.0,
-            "a": 1.0
-          },
-          "@class": "Tint"
-        },
-        {
-          "asset": {
-            "relativePath": "images/settings.png",
-            "@class": "TextureRegionAsset"
-          },
-          "@class": "AssetReference"
-        },
-        {
-          "flipX": false,
-          "flipY": false,
-          "width": 5.12,
-          "height": 5.12,
-          "@class": "ProtoVisSprite"
-        },
-        {
-          "layerId": 0,
-          "@class": "Layer"
-        },
-        {
-          "uuid": "3b572f16-016d-4041-8fd1-71dcdfcaa167",
-          "@class": "VisUUID"
-        },
-        {
-          "zIndex": 0,
-          "@class": "Renderable"
-        },
-        {
-          "id": "idSettings",
-          "@class": "VisID"
-        }
-      ],
-      "@class": "EntityScheme"
-    },
-    {
-      "components": [
-        {
-          "x": 2.9476,
-          "y": 1.3139,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
-          "rotation": 0.0,
-          "@class": "Transform"
-        },
-        {
-          "originX": 2.56,
-          "originY": 2.56,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -372,16 +258,16 @@
     {
       "components": [
         {
-          "x": 41.0602,
-          "y": 1.2311,
-          "scaleX": 1.0,
-          "scaleY": 1.0,
+          "x": 40.6663,
+          "y": 3.9899716,
+          "scaleX": 2.6,
+          "scaleY": 2.6,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 2.56,
-          "originY": 2.56,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -395,7 +281,7 @@
         },
         {
           "asset": {
-            "relativePath": "images/fb.png",
+            "relativePath": "images/fbshare.png",
             "@class": "TextureRegionAsset"
           },
           "@class": "AssetReference"
@@ -403,8 +289,8 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 5.12,
-          "height": 5.12,
+          "width": 4.31,
+          "height": 1.59,
           "@class": "ProtoVisSprite"
         },
         {
@@ -412,7 +298,7 @@
           "@class": "Layer"
         },
         {
-          "uuid": "7ac4461f-4858-4183-a8f1-26f7578a90c8",
+          "uuid": "5b7ef723-58ef-44c7-885e-23d2abe7b804",
           "@class": "VisUUID"
         },
         {
@@ -429,16 +315,16 @@
     {
       "components": [
         {
-          "x": 17.363,
-          "y": 9.592,
+          "x": -1.0145988,
+          "y": -2.5894566,
           "scaleX": 2.8,
           "scaleY": 2.8,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 10.115,
-          "originY": 6.375,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -485,16 +371,16 @@
     {
       "components": [
         {
-          "x": 25.3712,
-          "y": 23.4026,
+          "x": 21.747105,
+          "y": 25.0,
           "scaleX": 2.0,
           "scaleY": 2.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 3.005,
-          "originY": 1.04,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {

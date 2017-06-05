@@ -4,6 +4,7 @@ import com.artemis.BaseSystem;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Logger;
@@ -35,11 +36,14 @@ import com.kotcrab.vis.runtime.scene.SceneLoader.SceneParameter;
 import com.kotcrab.vis.runtime.scene.SystemProvider;
 import com.kotcrab.vis.runtime.util.EntityEngineConfiguration;
 
+import de.tomgrill.gdxdialogs.core.GDXDialogs;
+import de.tomgrill.gdxdialogs.core.GDXDialogsSystem;
 import ownLib.Own;
 
 public class GameController implements Screen {
     public static String CURRENT_LEVEL;
     public SpriteBatch spriteBatch;
+    public static GDXDialogs gdxDialogs = null;
 
     private GameEntry game;
     private boolean BOX2D_DEBUG = true;
@@ -47,9 +51,17 @@ public class GameController implements Screen {
     private OwnSceneLoader manager;
     private String scenePath;
     private LoadingScreen loadingScreen;
+    public Music musicMenu = Gdx.audio.newMusic(Gdx.files.internal("sound/menu.mp3"));
+    public Music musicTutorial = Gdx.audio.newMusic(Gdx.files.internal("sound/tutorial.mp3"));
+    public Music musicLevel1 = Gdx.audio.newMusic(Gdx.files.internal("sound/level1.mp3"));
+    public Music musicLevel2 = Gdx.audio.newMusic(Gdx.files.internal("sound/level2.mp3"));
+    public Music musicLevel3 = Gdx.audio.newMusic(Gdx.files.internal("sound/level3.mp3"));
+
+    private Music music = null;
 
     public GameController(GameEntry game, SpriteBatch spriteBatch) {
         Gdx.app.setLogLevel(Application.LOG_DEBUG);
+
         this.spriteBatch = spriteBatch;
         this.game = game;
 
@@ -58,6 +70,7 @@ public class GameController implements Screen {
         manager.registerSupport(new SpriterSupport());
         manager.getLogger().setLevel(Logger.ERROR);
         loadingScreen = new LoadingScreen(game, this, spriteBatch, manager);
+        gdxDialogs = GDXDialogsSystem.install();
     }
 
     private void loadScene(String scenePath, SceneParameter sceneParameter) {
@@ -69,7 +82,16 @@ public class GameController implements Screen {
         this.loadingScreen.startLoading(scenePath, sceneParameter);
     }
 
+    public void stopMusic() {
+        if (music != null) {
+            music.stop();
+            music = null;
+        }
+    }
+
     private void unloadPreviousScene() {
+        stopMusic();
+
         if (scenePath != null) {
             manager.unload(scenePath);
             scenePath = null;
@@ -77,7 +99,36 @@ public class GameController implements Screen {
         }
     }
 
+    public void playMusic() {
+        switch (CURRENT_LEVEL) {
+            case GameData.ID_MENU:
+                music = musicMenu;
+                break;
+            case GameData.ID_LEVEL_TUTORIAL:
+                music = musicTutorial;
+                break;
+            case GameData.ID_LEVEL_ONE:
+                music = musicLevel1;
+                break;
+            case GameData.ID_LEVEL_TWO:
+                music = musicLevel2;
+                break;
+            case GameData.ID_LEVEL_THREE:
+                music = musicLevel3;
+                break;
+        }
+
+        music.setLooping(true);
+        music.setVolume(GameData.VOLUME);
+        music.play();
+    }
+
+    public void setMute() {
+        if (music != null) music.setVolume(GameData.VOLUME);
+    }
+
     public void loadMenuScene() {
+        CURRENT_LEVEL = GameData.ID_MENU;
         unloadPreviousScene();
         SceneParameter sceneParameter = new SceneLoader.SceneParameter();
 
@@ -289,14 +340,15 @@ public class GameController implements Screen {
     }
 
     public void dispose() {
+        music.dispose();
         spriteBatch.dispose();
     }
 
     private void restartLevel() {
         switch (this.CURRENT_LEVEL) {
-//            case GameData.MENU_SCREEN:
-//                loadMenuScene();
-//                break;
+            case GameData.ID_LEVEL_TUTORIAL:
+                loadLevelTutorial();
+                break;
             case GameData.ID_LEVEL_ONE:
                 loadLevelOneScene();
                 break;
@@ -311,7 +363,6 @@ public class GameController implements Screen {
                 Own.log("Error: Invalid CURRENT_LEVEL info: " + this.CURRENT_LEVEL);
                 break;
         }
-
     }
 
     public void notify(int gameState) {

@@ -8,7 +8,6 @@ import com.badlogic.gdx.utils.Array;
 
 public class GameData {
     public static final boolean RELEASE = false;
-    public static boolean MUTE = false;
     // game states
     public static final int READY = 0;
     public static final int RUNNING = 1;
@@ -55,4 +54,5 @@ public class GameData {
     public static int VIEWPORT_WIDTH = 53;
 
 
+    public static float VOLUME = 0.5f;
 }

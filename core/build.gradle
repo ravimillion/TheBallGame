@@ -7,4 +7,5 @@ eclipse.project {
 }
 dependencies {
     compile 'org.json:json:20170516'
+    compile "com.kotcrab.vis:vis-ui:1.4.0-SNAPSHOT"
 }

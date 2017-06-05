@@ -2,7 +2,7 @@ package com.jauntymarble.game;
 
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
-import com.simplegame.game.screens.GameEntry;
+import com.jauntymarble.game.screens.GameEntry;
 
 import org.robovm.apple.foundation.NSAutoreleasePool;
 import org.robovm.apple.uikit.UIApplication;

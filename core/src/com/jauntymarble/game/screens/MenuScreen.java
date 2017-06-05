@@ -14,6 +14,7 @@ import com.jauntymarble.game.GameData;
 import com.jauntymarble.game.TintAccessor;
 import com.jauntymarble.game.components.Bounds;
 import com.jauntymarble.game.savegame.LevelState;
+import com.jauntymarble.game.social.FacebookManager;
 import com.jauntymarble.game.systems.GameSaverSystem;
 import com.kotcrab.vis.runtime.component.Invisible;
 import com.kotcrab.vis.runtime.component.Tint;
@@ -40,7 +41,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
     TweenManager tweenManager = new TweenManager();
     String DISABLED_TINT = "4c4c4cff";
     GameController gameController;
-    String[] buttons = {"idOne", "idTwo", "idThree", "idFacebook", "idTwitter", "idSettings", "idVolume", "idTutorial"};
+    String[] buttons = {"idTutorial", "idOne", "idTwo", "idThree", "idFacebook", "idVolume"};
     HashMap<String, Entity> entityMap = new HashMap<String, Entity>();
     HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
 
@@ -86,7 +87,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         if (fileHandle.exists()) {
 //            if (fileHandle.delete()) Own.log("Errrrrrrrrrrr: Deleted file");
         }
-        setDisabled(GameData.MUTE, "idVolume");
+        setDisabled(GameData.VOLUME <= 0, "idVolume");
 
         if (fileHandle.exists()) {
             HashMap<String, LevelState> levelStates = json.fromJson(HashMap.class, fileHandle);
@@ -108,15 +109,13 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
                 setDisabled(false, "idTwo");
                 isNew = false;
             }
-//
             if (levelTwo.levelCompletionState.equals(GameData.LEVEL_FINISHED)) {
                 setDisabled(false, "idThree");
                 isNew = false;
             }
-//
-//            if (levelState.levelThree == GameData.LEVEL_FINISHED) {
-//                Own.log("Game Finished");
-//            }
+            if (levelThree.levelCompletionState.equals(GameData.LEVEL_FINISHED)) {
+                Own.log("Game Finished");
+            }
 
             if (isNew) {
                 setDisabled(false, "idTutorial");
@@ -134,7 +133,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
     }
 
     @Override
-    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
         Vector3 touchPoint = new Vector3();
         touchPoint.set(screenX, screenY, 0);
         cameraManager.getCamera().unproject(touchPoint);
@@ -170,8 +169,12 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
                 }
                 break;
             case "idVolume":
-                GameData.MUTE = !GameData.MUTE;
-                setDisabled(GameData.MUTE, buttonId);
+                muteVolume(buttonId);
+                break;
+            case "idFacebook":
+                FacebookManager.getInstance().postMessageOnWall();
+                break;
+            case "idTwitter":
                 break;
             default:
                 Own.log(buttonId + "pressed");
@@ -180,10 +183,22 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         return false;
     }
 
+    @Override
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        return false;
+    }
+
+    private void muteVolume(String buttonId) {
+        GameData.VOLUME = GameData.VOLUME > 0 ? 0.0f : 0.5f;
+        setDisabled(GameData.VOLUME <= 0, buttonId);
+
+        gameController.setMute();
+    }
+
     private boolean isDisabled(String buttonId) {
         Entity entity = entityMap.get(buttonId);
         Tint tint = tintCm.get(entity);
-        return tint.getTint().toString().equals(DISABLED_TINT);
+        return tint.getTint().a < 1 || tint.getTint().toString().equals(DISABLED_TINT);
     }
 
     private void setDisabled(boolean disable, String buttonId) {
@@ -262,10 +277,6 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         return false;
     }
 
-    @Override
-    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-        return false;
-    }
 
     @Override
     public boolean touchDragged(int screenX, int screenY, int pointer) {

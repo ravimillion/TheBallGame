@@ -48,7 +48,6 @@ public class LoadingScreen implements Screen {
 
         if (isLoading()) {
             spriteBatch.begin();
-//            Own.log("Progress: " + (int) (manager.getProgress() * 100));
             Own.text.showProgress(spriteBatch, "Loading... " + (int) (manager.getProgress() * 100) + " %", new Vector2(Own.device.getScreenWidth() / 2, Own.device.getScreenHeight() / 2));
             spriteBatch.end();
         } else {
@@ -59,9 +58,10 @@ public class LoadingScreen implements Screen {
                     Scene scene = manager.getScene();
                     gameController.setScene(scene);
                     gameEntry.setScreen(gameController);
+                    // start the music for the level
+                    gameController.playMusic();
                 }
             });
-
         }
     }
 
@@ -93,7 +93,6 @@ public class LoadingScreen implements Screen {
     public void dispose() {
         Own.log("Disposing Splash Screen");
     }
-
 
     public void startLoading(String scenePath, SceneParameter sceneParameter) {
         this.scenePath = scenePath;
