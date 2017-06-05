@@ -46,34 +46,10 @@ public class SoundSystem extends EntitySystem implements AfterSceneInit {
         }
     }
 
-    public void triggerSoundEffect(PhysicsBodyContactSystem.CollisionData collisionData) {
-        final VisID visID = visIDCm.get(collisionData.entity);
-        if (visID == null || GameData.VOLUME <= 0f) return;
+    public void triggerSoundEffect(String soundId) {
+        if (GameData.VOLUME <= 0f) return;
 
-
-        switch (visID.id) {
-            case "idWoodBox":
-                if (collisionData.impulse > 20) effectMap.get("idSoundWoodBox").play();
-                break;
-            case "idUphill":
-            case "idUpDown":
-            case "idBoundary":
-                if (collisionData.impulse > 100) effectMap.get("idSoundGlass").play();
-                break;
-            case "idPaintBox":
-                if (collisionData.impulse > 100) effectMap.get("idSoundPaintBox").play();
-                break;
-            case "idSpike":
-                if (collisionData.impulse > 50) effectMap.get("idSoundGlassBreak").play();
-                break;
-            case "idPowerGravity":
-            case "idPowerBounce":
-                effectMap.get("idSoundPower").play();
-                break;
-            case "idAnimStar":
-                effectMap.get("idSoundStar").play();
-                break;
-        }
+        effectMap.get(soundId).play();
     }
 
     @Override

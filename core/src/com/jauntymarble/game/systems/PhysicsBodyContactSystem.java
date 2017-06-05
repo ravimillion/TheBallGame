@@ -26,12 +26,12 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     private ComponentMapper<PhysicsBody> physicsCm;
 
     private VisIDManager idManager;
+    private SoundSystem soundSystem;
+    private PlayerSystem playerSystem;
+    private ScoringSystem scoringSystem;
     private ControlsSystem controlsSystem;
     private OnContactListener contactListener;
     private CameraControllerSystem cameraControllerSystem;
-    private PlayerSystem playerSystem;
-    private SoundSystem soundSystem;
-    private ScoringSystem scoringSystem;
     private Hashtable<String, CollisionData> collisionMap = new Hashtable();
 
     @Override
@@ -87,7 +87,40 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     }
 
     public void soundEffect(CollisionData collisionData) {
-        soundSystem.triggerSoundEffect(collisionData);
+        VisID visID = visIDCm.get(collisionData.entity);
+        if (visID == null) return;
+
+        switch (visID.id) {
+            case "idWoodBox":
+                if (collisionData.impulse > 20) {
+                    soundSystem.triggerSoundEffect("idSoundWoodBox");
+                }
+                break;
+            case "idUphill":
+            case "idUpDown":
+            case "idBoundary":
+                if (collisionData.impulse > 100) {
+                    soundSystem.triggerSoundEffect("idSoundGlass");
+                }
+                break;
+            case "idPaintBox":
+                if (collisionData.impulse > 100) {
+                    soundSystem.triggerSoundEffect("idSoundPaintBox");
+                }
+                break;
+            case "idSpike":
+                if (collisionData.impulse > 50) {
+                    soundSystem.triggerSoundEffect("idSoundGlassBreak");
+                }
+                break;
+            case "idPowerGravity":
+            case "idPowerBounce":
+                soundSystem.triggerSoundEffect("idSoundPower");
+                break;
+            case "idAnimStar":
+                soundSystem.triggerSoundEffect("idSoundStar");
+                break;
+        }
     }
 
     public void applySuperPower(CollisionData collisionData) {
@@ -112,7 +145,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    if (GameData.RELEASE) controlsSystem.setState(GameData.GAME_OVER);
+                    controlsSystem.setState(GameData.GAME_OVER);
                 }
             });
         }

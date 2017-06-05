@@ -47,7 +47,7 @@ public class Splash implements Screen {
         Tween.registerAccessor(Sprite.class, new SpriteAccessor());
 
         Tween.set(splashSprite, SpriteAccessor.FADE_IN_OUT).target(0).start(tweenManager);
-        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.SPLASH_HIDE_DELAY).target(1).start(tweenManager).setCallback(new TweenCallback() {
+        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.getConfigData("SPLASH_HIDE_DELAY")).target(1).start(tweenManager).setCallback(new TweenCallback() {
             @Override
             public void onEvent(int type, BaseTween<?> source) {
                 Gdx.app.postRunnable(new Runnable() {
@@ -59,7 +59,7 @@ public class Splash implements Screen {
                                 // when loading finishes trigger fade out after creating assets
                                 Own.text.createFonts();
                                 Own.assets.createImageAssets();
-                                Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.SPLASH_SHOW_DELAY).target(0).start(tweenManager).setCallback(new TweenCallback() {
+                                Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.getConfigData("SPLASH_SHOW_DELAY")).target(0).start(tweenManager).setCallback(new TweenCallback() {
                                     @Override
                                     public void onEvent(int type, BaseTween<?> source) {
                                         Gdx.app.postRunnable(new Runnable() {

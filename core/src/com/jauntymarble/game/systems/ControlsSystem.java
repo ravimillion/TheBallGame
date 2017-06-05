@@ -30,6 +30,7 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
     private VisIDManager idManager;
     private PlayerSystem playerSystem;
     private CameraManager cameraManager;
+    private SoundSystem soundSystem;
 
     private GameController gameController;
 
@@ -79,7 +80,7 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
                 show("idReady");
                 break;
             case GameData.LEVEL_END:
-                gameController.notify(GameData.LEVEL_END);
+                show("idCongrats");
                 break;
             case GameData.RESTART_LEVEL:
                 gameController.notify(GameData.RESTART_LEVEL);
@@ -96,12 +97,6 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-        Vector3 touchPoint = new Vector3();
-        touchPoint.set(screenX, screenY, 0);
-        cameraManager.getCamera().unproject(touchPoint);
-
-        String buttonId = getPressedButtonId(touchPoint);
-        if (buttonId != null) setState(getNextState(buttonId));
 
         return false;
     }
@@ -135,6 +130,8 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
                 return GameData.QUIT;
             case "idResume":
                 return GameData.RUNNING;
+            case "idCongrats":
+                return GameData.QUIT;
             case "idRestart":
                 return GameData.RESTART_LEVEL;
             case "idGameOver":
@@ -184,6 +181,14 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
 
     @Override
     public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        Vector3 touchPoint = new Vector3();
+        touchPoint.set(screenX, screenY, 0);
+        cameraManager.getCamera().unproject(touchPoint);
+
+        String buttonId = getPressedButtonId(touchPoint);
+        Own.log("Pressed: " + buttonId);
+        if (buttonId != null) setState(getNextState(buttonId));
+
         return false;
     }
 

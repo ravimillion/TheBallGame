@@ -16,9 +16,7 @@ public class GameData {
     public static final int GAME_OVER = 4;
     public static final int QUIT = 5;
     public static final int RESTART_LEVEL = 6;
-    // splash screen
-    public static final int SPLASH_SHOW_DELAY = 0;
-    public static final int SPLASH_HIDE_DELAY = 0;
+
     // game running info
     public static final String ID_MENU = "ID_MENU";
     public static final String ID_LEVEL_ONE = "ID_LEVEL_ONE";
@@ -55,4 +53,15 @@ public class GameData {
 
 
     public static float VOLUME = 0.5f;
+
+    public static float getConfigData(String KEY) {
+        switch (KEY) {
+            case "SPLASH_SHOW_DELAY":
+                return GameData.RELEASE ? 3f : 0;
+            case "SPLASH_HIDE_DELAY":
+                return GameData.RELEASE ? 2f : 0;
+        }
+
+        return 0;
+    }
 }

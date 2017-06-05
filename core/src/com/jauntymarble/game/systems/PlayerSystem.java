@@ -86,6 +86,8 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
 
     public Vector2 loadPlayerPosition() {
         Vector2 position = new Vector2();
+//        position.set(gameSaverSystem.getPlayerPosition(GameController.CURRENT_LEVEL).x, GameData.WORLD_HEIGHT - radius + 1);
+
         if (!gameSaverSystem.isStateFound() ||
                 gameSaverSystem.getPlayingStatus(gameController.CURRENT_LEVEL).equals(GameData.LEVEL_NOT_PLAYED) ||
                 gameSaverSystem.getPlayingStatus(gameController.CURRENT_LEVEL).equals(GameData.LEVEL_FINISHED)) {
