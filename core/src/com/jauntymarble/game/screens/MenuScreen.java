@@ -189,7 +189,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
     }
 
     private void muteVolume(String buttonId) {
-        GameData.VOLUME = GameData.VOLUME > 0 ? 0.0f : GameData.VOLUME;
+        GameData.VOLUME = GameData.VOLUME > 0 ? 0.0f : 0.5f;
         setDisabled(GameData.VOLUME <= 0, buttonId);
 
         gameController.setMute();

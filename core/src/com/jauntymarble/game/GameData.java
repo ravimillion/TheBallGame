@@ -7,7 +7,8 @@ import com.badlogic.gdx.utils.Array;
  */
 
 public class GameData {
-    public static final boolean RELEASE = false;
+    public static final boolean RELEASE = true;
+    public static final boolean SHOW_ADS = false;
     // game states
     public static final int READY = 0;
     public static final int RUNNING = 1;

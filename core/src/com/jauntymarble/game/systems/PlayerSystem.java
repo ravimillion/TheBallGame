@@ -12,7 +12,6 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.jauntymarble.game.GameController;
 import com.jauntymarble.game.GameData;
-import com.jauntymarble.game.components.Timeout;
 import com.kotcrab.vis.runtime.component.Origin;
 import com.kotcrab.vis.runtime.component.PhysicsBody;
 import com.kotcrab.vis.runtime.component.Transform;
@@ -78,7 +77,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
 
 
         state = GameData.RUNNING;
-        if (gameSaverSystem.getPlayingStatus(gameController.CURRENT_LEVEL).equals(GameData.LEVEL_FINISHED) == false) {
+        if (gameSaverSystem.isLevelFinished(GameController.CURRENT_LEVEL) || gameSaverSystem.isLevelNotPlayed(GameController.CURRENT_LEVEL)) {
             gameSaverSystem.updatePlayingStatus(gameController.CURRENT_LEVEL, GameData.LEVEL_IN_PROGRESS);
         }
 
@@ -86,11 +85,8 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
 
     public Vector2 loadPlayerPosition() {
         Vector2 position = new Vector2();
-//        position.set(gameSaverSystem.getPlayerPosition(GameController.CURRENT_LEVEL).x, GameData.WORLD_HEIGHT - radius + 1);
 
-        if (!gameSaverSystem.isStateFound() ||
-                gameSaverSystem.getPlayingStatus(gameController.CURRENT_LEVEL).equals(GameData.LEVEL_NOT_PLAYED) ||
-                gameSaverSystem.getPlayingStatus(gameController.CURRENT_LEVEL).equals(GameData.LEVEL_FINISHED)) {
+        if (!gameSaverSystem.isStateFound() || gameSaverSystem.isLevelNotPlayed(GameController.CURRENT_LEVEL) || gameSaverSystem.isLevelFinished(GameController.CURRENT_LEVEL)) {
             Own.log("No game state found");
             position.set(transform.getX(), transform.getY());
         } else {
@@ -146,7 +142,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     }
 
     private boolean isLevelEnd() {
-        return body.getPosition().x > GameData.WORLD_WIDTH - 15;
+        return body.getPosition().x > GameData.WORLD_WIDTH - 20;
     }
 
     private void drawBall() {
@@ -188,12 +184,12 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
             case "idPowerSize":
                 changeBallSize(5);
                 // stop power
-                new Timeout(new Runnable() {
-                    @Override
-                    public void run() {
-                        changeBallSize(2);
-                    }
-                }, 10000);
+//                new Timeout(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        changeBallSize(2);
+//                    }
+//                }, 10000);
                 break;
             case "idPowerBounce":
                 Own.log("Apply bounce");
@@ -209,15 +205,15 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
                 break;
             case "idPowerGravity":
                 Own.log("Apply Gravity");
-                final Vector2 gravity = physicsWorld.getGravity();
-                physicsWorld.setGravity(new Vector2(0, gravity.y / 4));
-                // stop power
-                new Timeout(new Runnable() {
-                    @Override
-                    public void run() {
-                        physicsWorld.setGravity(gravity);
-                    }
-                }, 10000);
+//                final Vector2 gravity = physicsWorld.getGravity();
+//                physicsWorld.setGravity(new Vector2(0, gravity.y / 4));
+//                // stop power
+//                new Timeout(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        physicsWorld.setGravity(gravity);
+//                    }
+//                }, 10000);
                 break;
         }
     }

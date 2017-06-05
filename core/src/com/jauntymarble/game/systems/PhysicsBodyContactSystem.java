@@ -141,7 +141,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
         VisID visID = visIDCm.get(collisionData.entity);
         if (visID == null) return;
 
-        if (GameData.STATE_CHANGE_LIST.indexOf(visID.id, false) >= 0) {
+        if (GameData.STATE_CHANGE_LIST.indexOf(visID.id, false) >= 0 && collisionData.impulse > 50) {
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {

@@ -83,6 +83,7 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
                 show("idCongrats");
                 break;
             case GameData.RESTART_LEVEL:
+                // possiblity to show an ad here
                 gameController.notify(GameData.RESTART_LEVEL);
                 break;
             case GameData.GAME_OVER:
@@ -135,7 +136,7 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
             case "idRestart":
                 return GameData.RESTART_LEVEL;
             case "idGameOver":
-                return GameData.QUIT;
+                return GameData.RESTART_LEVEL;
             default:
                 Own.log("Error: No next CURRENT_LEVEL info found: " + buttonId);
                 return GameData.RUNNING;

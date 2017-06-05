@@ -22,6 +22,8 @@ import com.kotcrab.vis.runtime.util.AfterSceneInit;
 
 import java.util.HashMap;
 
+import ownLib.Own;
+
 /**
  * Created by ravi on 27.05.17.
  */
@@ -64,7 +66,7 @@ public class GameSaverSystem extends BaseSystem implements AfterSceneInit {
         // save state if hot and cold are different
         if (hotLevelState.isEqual(coldLevelState) == false) {
             flushData(GameController.CURRENT_LEVEL, hotLevelState);
-//            Own.log("updating: " + json.prettyPrint(hotLevelState));
+            Own.log("updating: " + json.prettyPrint(hotLevelState));
         }
     }
 
@@ -145,5 +147,17 @@ public class GameSaverSystem extends BaseSystem implements AfterSceneInit {
     public Vector2 getPlayerPosition(String levelId) {
         LevelState coldLevelState = getLevelState(levelId);
         return new Vector2(coldLevelState.playerPosition, GameData.WORLD_HEIGHT - 5);
+    }
+
+    public boolean isLevelFinished(String currentLevel) {
+        return this.getPlayingStatus(currentLevel).equals(GameData.LEVEL_FINISHED);
+    }
+
+    public boolean isLevelInProgress(String currentLevel) {
+        return this.getPlayingStatus(currentLevel).equals(GameData.LEVEL_IN_PROGRESS);
+    }
+
+    public boolean isLevelNotPlayed(String currentLevel) {
+        return this.getPlayingStatus(currentLevel).equals(GameData.LEVEL_NOT_PLAYED);
     }
 }
