@@ -2,6 +2,8 @@ package com.jauntymarble.game;
 
 import com.badlogic.gdx.utils.Array;
 
+import ownLib.Own;
+
 /**
  * Created by ravi on 06.10.16.
  */
@@ -9,6 +11,7 @@ import com.badlogic.gdx.utils.Array;
 public class GameData {
     public static final boolean RELEASE = true;
     public static final boolean SHOW_ADS = false;
+    //
     // game states
     public static final int READY = 0;
     public static final int RUNNING = 1;
@@ -64,5 +67,29 @@ public class GameData {
         }
 
         return 0;
+    }
+
+    public static float getNearestRespawn(String levelId, float killPoint) {
+        float[] levelTutorial = new float[]{5.0f};
+        float[] levelOne = new float[]{10.0f, 88.0f, 118.0f, 171f, 262.0f, 317f, 389f, 470f};
+        float[] levelTwo = new float[]{10.0f, 66.0f, 120.0f, 209f, 285.0f, 376f, 450f};
+        float[] levelThree = new float[]{10.0f, 60f, 122.0f, 232f, 333.0f};
+
+        float[] respawn = null;
+
+        if (levelId.equals(GameData.ID_LEVEL_TUTORIAL)) respawn = levelTutorial;
+        if (levelId.equals(GameData.ID_LEVEL_ONE)) respawn = levelOne;
+        if (levelId.equals(GameData.ID_LEVEL_TWO)) respawn = levelTwo;
+        if (levelId.equals(GameData.ID_LEVEL_THREE)) respawn = levelThree;
+
+
+        for (int i = respawn.length - 1; i >= 0; i--) {
+            if (respawn[i] < killPoint) {
+                Own.log("Kill point: " + killPoint + " Respawn: " + respawn[i]);
+                return respawn[i];
+            }
+        }
+
+        return respawn[0];
     }
 }

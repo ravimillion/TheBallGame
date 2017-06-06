@@ -83,32 +83,12 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
 
     }
 
-    public Vector2 loadPlayerPosition() {
-        Vector2 position = new Vector2();
-
-        if (!gameSaverSystem.isStateFound() || gameSaverSystem.isLevelNotPlayed(GameController.CURRENT_LEVEL) || gameSaverSystem.isLevelFinished(GameController.CURRENT_LEVEL)) {
-            Own.log("No game state found");
-            position.set(transform.getX(), transform.getY());
-        } else {
-            Own.log("Game state found");
-            position.set(gameSaverSystem.getPlayerPosition(GameController.CURRENT_LEVEL).x, GameData.WORLD_HEIGHT - radius + 1);
-        }
-
-        return position;
-    }
-
-    @Override
-    protected boolean checkProcessing() {
-        return true;
-    }
-
     @Override
     protected void processSystem() {
         if (state == GameData.RUNNING) {
             if (!physicsSystem.isEnabled()) physicsSystem.setEnabled(true);
             limitVelocity();
             handleInput();
-            saveGame();
 
             if (isLevelEnd()) {
                 gameSaverSystem.updatePlayingStatus(gameController.CURRENT_LEVEL, GameData.LEVEL_FINISHED);
@@ -120,6 +100,32 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
 
         drawBall();
     }
+
+    public void setPlayerPosition() {
+        Own.log("Saved player position");
+        gameSaverSystem.saveGame();
+    }
+
+    private Vector2 loadPlayerPosition() {
+        Vector2 position = new Vector2();
+
+        if (!gameSaverSystem.isStateFound() || gameSaverSystem.isLevelNotPlayed(GameController.CURRENT_LEVEL) || gameSaverSystem.isLevelFinished(GameController.CURRENT_LEVEL)) {
+            Own.log("No game state found");
+            position.set(transform.getX(), transform.getY());
+        } else {
+            Own.log("Game state found");
+            float respawnX = GameData.getNearestRespawn(GameController.CURRENT_LEVEL, gameSaverSystem.getPlayerPosition(GameController.CURRENT_LEVEL).x);
+            position.set(respawnX, GameData.WORLD_HEIGHT - (radius + 3));
+        }
+
+        return position;
+    }
+
+    @Override
+    protected boolean checkProcessing() {
+        return true;
+    }
+
 
     private void limitVelocity() {
         float angularVelocity = body.getAngularVelocity();
@@ -150,13 +156,6 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         transform.setRotation(body.getAngle() * MathUtils.radiansToDegrees);
     }
 
-    private void saveGame() {
-        int x = (int) body.getPosition().x;
-        if (x % 20 == 0) {
-            gameSaverSystem.saveGame();
-        }
-    }
-
     private void handleInput() {
         if (Gdx.input.isTouched()) {
             if (Gdx.input.getX() > Own.device.getScreenWidth() / 2) {
@@ -174,7 +173,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         }
     }
 
-    public void changeBallSize(int size) {
+    private void changeBallSize(int size) {
         body.getFixtureList().get(0).getShape().setRadius(size);
         transform.setScale(size, size);
     }
@@ -217,6 +216,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
                 break;
         }
     }
+
 }
 
 

@@ -145,6 +145,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
+                    playerSystem.setPlayerPosition();
                     controlsSystem.setState(GameData.GAME_OVER);
                 }
             });
