@@ -56,7 +56,7 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
         adView.setAdUnitId("ca-app-pub-4120235782147855/5980717523");
         AdRequest.Builder builder = new AdRequest.Builder();
 //		 remove this test device id to show actual ads
-        builder.addTestDevice("AD7F868BA605FAB451A8B4D9C9C1D5F5");
+//        builder.addTestDevice("AD7F868BA605FAB451A8B4D9C9C1D5F5");
         RelativeLayout.LayoutParams adParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
