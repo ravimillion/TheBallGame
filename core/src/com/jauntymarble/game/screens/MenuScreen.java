@@ -180,11 +180,32 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
                 Own.log(buttonId + "pressed");
         }
 
+        if (!isDisabled(buttonId)) touchUpEffect(buttonId);
         return false;
+    }
+
+    private void touchUpEffect(String buttonId) {
+        Entity entity = entityMap.get(buttonId);
+        Tint tint = tintCm.get(entity);
+        tint.set(1, 1, 1, 1);
+    }
+
+    private void touchDownEffect(String buttonId) {
+        Entity entity = entityMap.get(buttonId);
+        Tint tint = tintCm.get(entity);
+        tint.set(0.4f, 0.4f, 0.4f, 1);
     }
 
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        Vector3 touchPoint = new Vector3();
+        touchPoint.set(screenX, screenY, 0);
+        cameraManager.getCamera().unproject(touchPoint);
+
+        String buttonId = getPressedButtonId(touchPoint);
+        if (buttonId == null) return false;
+
+        if (!isDisabled(buttonId)) touchDownEffect(buttonId);
         return false;
     }
 

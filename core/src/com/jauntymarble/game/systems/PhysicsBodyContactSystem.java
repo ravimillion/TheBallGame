@@ -80,7 +80,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
             removeOnCollision(collisionData);
             shakeCameraOnCollision(collisionData);
             changeGameStateOnCollision(collisionData);
-            applySuperPower(collisionData);
+//            applySuperPower(collisionData);
             // remove entry
             iter.remove();
         }
@@ -107,6 +107,9 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
                 if (collisionData.impulse > 100) {
                     soundSystem.triggerSoundEffect("idSoundPaintBox");
                 }
+                break;
+            case "idFire":
+                soundSystem.triggerSoundEffect("idSoundGlassBreak");
                 break;
             case "idSpike":
                 if (collisionData.impulse > 50) {
@@ -141,7 +144,9 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
         VisID visID = visIDCm.get(collisionData.entity);
         if (visID == null) return;
 
-        if (GameData.STATE_CHANGE_LIST.indexOf(visID.id, false) >= 0 && collisionData.impulse > 50) {
+        if (GameData.STATE_CHANGE_LIST.indexOf(visID.id, false) >= 0) {
+            if (visID.id.equals("idSpike") && collisionData.impulse < 50) return;
+
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {

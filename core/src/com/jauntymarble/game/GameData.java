@@ -10,7 +10,7 @@ import ownLib.Own;
 
 public class GameData {
     public static final boolean RELEASE = true;
-    public static final boolean SHOW_ADS = false;
+    public static final boolean SHOW_ADS = true;
     //
     // game states
     public static final int READY = 0;

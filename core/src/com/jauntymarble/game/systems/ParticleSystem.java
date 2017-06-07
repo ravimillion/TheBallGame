@@ -31,6 +31,7 @@ public class ParticleSystem extends EntitySystem implements AfterSceneInit {
 
     private PhysicsBodyManager physicsBodyManager;
     private VisibilitySystem visibilitySystem;
+    private SoundSystem soundSystem;
 
     // variable cache
     private Body body;
@@ -69,6 +70,7 @@ public class ParticleSystem extends EntitySystem implements AfterSceneInit {
                 if (bodyPos.y < RESET_DIST) {
                     body.setTransform(bodyPos.x, GameData.WORLD_HEIGHT - 1, body.getAngle());
                     body.setLinearVelocity(0, 0);
+                    soundSystem.triggerSoundEffect("idSoundFire");
                     body.setAwake(true);
                 }
             }

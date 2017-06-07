@@ -18,7 +18,7 @@
     {
       "name": "Background",
       "id": 0,
-      "locked": true,
+      "locked": false,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -50,8 +50,8 @@
     {
       "name": "Controls",
       "id": 4,
-      "locked": false,
-      "visible": true,
+      "locked": true,
+      "visible": false,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
@@ -604,6 +604,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 4,
           "@class": "Layer"
         },
@@ -663,6 +666,9 @@
           "width": 6.0,
           "height": 2.51,
           "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
         },
         {
           "layerId": 4,
@@ -726,6 +732,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 4,
           "@class": "Layer"
         },
@@ -787,6 +796,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 4,
           "@class": "Layer"
         },
@@ -846,6 +858,9 @@
           "width": 10.24,
           "height": 5.86,
           "@class": "ProtoVisSprite"
+        },
+        {
+          "@class": "Invisible"
         },
         {
           "layerId": 4,
@@ -7206,6 +7221,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 4,
           "@class": "Layer"
         },
@@ -13279,6 +13297,9 @@
           "@class": "ProtoVisSprite"
         },
         {
+          "@class": "Invisible"
+        },
+        {
           "layerId": 4,
           "@class": "Layer"
         },
@@ -13551,6 +13572,66 @@
           "maskBits": -1,
           "categoryBits": 1,
           "@class": "PhysicsProperties"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 53.8094,
+          "y": -35.7878,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "sound/idSoundFire.mp3",
+            "@class": "SoundAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "@class": "ProtoVisSound"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "08b6b9ee-f09f-4da5-bb12-a1272867650d",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idSoundFire",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Transform",
+              "@class": "Class"
+            },
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            },
+            {
+              "@content": "VisGroup",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"

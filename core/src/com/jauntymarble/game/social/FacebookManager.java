@@ -21,19 +21,17 @@ import de.tomgrill.gdxfacebook.core.SignInResult;
 import ownLib.Own;
 
 public class FacebookManager {
+    // singleton instance
+    private static FacebookManager facebookManager;
     private String FB_INVITE_MESSAGE = "Hey guys!! Do try this game, its awesome!!";
     private String FB_WALL_MESSAGE = "Hey guys!! Do try this game, its awesome!!";
-    private String FB_WALL_LINK = "http://www.caesiumgames.com";
+    private String FB_WALL_LINK = "http://www.caesiumgames.com/2017/02/blog-post.html";
     private String FB_WALL_CAPTION = "Jaunty Marble";
-
     private Preferences prefs;
     private GDXFacebook gdxFacebook = null;
     private Array<String> permissionsRead = new Array<String>();
     private Array<String> permissionsPublish = new Array<String>();
     private Array<String> REQUEST_QUEUE = new Array<>();
-
-    // singleton instance
-    private static FacebookManager facebookManager;
 
     private FacebookManager() {
     }
@@ -78,7 +76,7 @@ public class FacebookManager {
     public void postMessageOnWall() {
         GDXFacebookGraphRequest request = new GDXFacebookGraphRequest().setNode("me/feed").useCurrentAccessToken();
         request.setMethod(Net.HttpMethods.POST);
-        request.putField("message", FB_WALL_MESSAGE);
+//        request.putField("message", FB_WALL_MESSAGE);
         request.putField("link", FB_WALL_LINK);
         request.putField("caption", FB_WALL_CAPTION);
 
