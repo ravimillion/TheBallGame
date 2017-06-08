@@ -84,7 +84,9 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
                 break;
             case GameData.RESTART_LEVEL:
                 // possiblity to show an ad here
-                gameController.notify(GameData.RESTART_LEVEL);
+                show("idPause");
+                show("idRestart");
+                playerSystem.respawnPlayer();
                 break;
             case GameData.GAME_OVER:
                 show("idGameOver");

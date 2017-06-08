@@ -8302,8 +8302,8 @@
     {
       "components": [
         {
-          "x": 564.4586,
-          "y": 24.11895,
+          "x": 531.6175,
+          "y": 27.070957,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -8344,43 +8344,43 @@
         {
           "vertices": [
             {
-              "x": 564.0786,
-              "y": 23.73895,
+              "x": 531.2375,
+              "y": 26.690958,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 564.8386,
-              "y": 23.73895,
+              "x": 531.9975,
+              "y": 26.690958,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 564.8386,
-              "y": 24.498951,
+              "x": 531.9975,
+              "y": 27.450958,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 564.0786,
-              "y": 24.498951,
+              "x": 531.2375,
+              "y": 27.450958,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 564.0786,
-                "y": 24.498951
+                "x": 531.2375,
+                "y": 27.450958
               },
               {
-                "x": 564.0786,
-                "y": 23.73895
+                "x": 531.2375,
+                "y": 26.690958
               },
               {
-                "x": 564.8386,
-                "y": 23.73895
+                "x": 531.9975,
+                "y": 26.690958
               },
               {
-                "x": 564.8386,
-                "y": 24.498951
+                "x": 531.9975,
+                "y": 27.450958
               }
             ]
           ],
@@ -8419,8 +8419,8 @@
     {
       "components": [
         {
-          "x": 537.7218,
-          "y": 23.218967,
+          "x": 507.24225,
+          "y": 26.244778,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -8461,43 +8461,43 @@
         {
           "vertices": [
             {
-              "x": 537.3418,
-              "y": 22.838968,
+              "x": 506.86224,
+              "y": 25.864779,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 538.1018,
-              "y": 22.838968,
+              "x": 507.62225,
+              "y": 25.864779,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 538.1018,
-              "y": 23.598969,
+              "x": 507.62225,
+              "y": 26.624779,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 537.3418,
-              "y": 23.598969,
+              "x": 506.86224,
+              "y": 26.624779,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 537.3418,
-                "y": 23.598969
+                "x": 506.86224,
+                "y": 26.624779
               },
               {
-                "x": 537.3418,
-                "y": 22.838968
+                "x": 506.86224,
+                "y": 25.864779
               },
               {
-                "x": 538.1018,
-                "y": 22.838968
+                "x": 507.62225,
+                "y": 25.864779
               },
               {
-                "x": 538.1018,
-                "y": 23.598969
+                "x": 507.62225,
+                "y": 26.624779
               }
             ]
           ],
@@ -8536,8 +8536,8 @@
     {
       "components": [
         {
-          "x": 542.81793,
-          "y": 23.455275,
+          "x": 512.7811,
+          "y": 26.407282,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -8578,43 +8578,43 @@
         {
           "vertices": [
             {
-              "x": 542.4379,
-              "y": 23.075275,
+              "x": 512.4011,
+              "y": 26.027283,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 543.19794,
-              "y": 23.075275,
+              "x": 513.16113,
+              "y": 26.027283,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 543.19794,
-              "y": 23.835276,
+              "x": 513.16113,
+              "y": 26.787283,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 542.4379,
-              "y": 23.835276,
+              "x": 512.4011,
+              "y": 26.787283,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 542.4379,
-                "y": 23.835276
+                "x": 512.4011,
+                "y": 26.787283
               },
               {
-                "x": 542.4379,
-                "y": 23.075275
+                "x": 512.4011,
+                "y": 26.027283
               },
               {
-                "x": 543.19794,
-                "y": 23.075275
+                "x": 513.16113,
+                "y": 26.027283
               },
               {
-                "x": 543.19794,
-                "y": 23.835276
+                "x": 513.16113,
+                "y": 26.787283
               }
             ]
           ],
@@ -12850,8 +12850,8 @@
     {
       "components": [
         {
-          "x": 522.1392,
-          "y": 22.872301,
+          "x": 492.9881,
+          "y": 26.562313,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -12892,43 +12892,43 @@
         {
           "vertices": [
             {
-              "x": 521.7592,
-              "y": 22.492302,
+              "x": 492.6081,
+              "y": 26.182314,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 522.5192,
-              "y": 22.492302,
+              "x": 493.3681,
+              "y": 26.182314,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 522.5192,
-              "y": 23.252302,
+              "x": 493.3681,
+              "y": 26.942314,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 521.7592,
-              "y": 23.252302,
+              "x": 492.6081,
+              "y": 26.942314,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 521.7592,
-                "y": 23.252302
+                "x": 492.6081,
+                "y": 26.942314
               },
               {
-                "x": 521.7592,
-                "y": 22.492302
+                "x": 492.6081,
+                "y": 26.182314
               },
               {
-                "x": 522.5192,
-                "y": 22.492302
+                "x": 493.3681,
+                "y": 26.182314
               },
               {
-                "x": 522.5192,
-                "y": 23.252302
+                "x": 493.3681,
+                "y": 26.942314
               }
             ]
           ],
@@ -12967,8 +12967,8 @@
     {
       "components": [
         {
-          "x": 515.4203,
-          "y": 22.755318,
+          "x": 486.56436,
+          "y": 24.674126,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -13009,43 +13009,43 @@
         {
           "vertices": [
             {
-              "x": 515.0403,
-              "y": 22.375319,
+              "x": 486.18436,
+              "y": 24.294127,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 515.8003,
-              "y": 22.375319,
+              "x": 486.94437,
+              "y": 24.294127,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 515.8003,
-              "y": 23.135319,
+              "x": 486.94437,
+              "y": 25.054127,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 515.0403,
-              "y": 23.135319,
+              "x": 486.18436,
+              "y": 25.054127,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 515.0403,
-                "y": 23.135319
+                "x": 486.18436,
+                "y": 25.054127
               },
               {
-                "x": 515.0403,
-                "y": 22.375319
+                "x": 486.18436,
+                "y": 24.294127
               },
               {
-                "x": 515.8003,
-                "y": 22.375319
+                "x": 486.94437,
+                "y": 24.294127
               },
               {
-                "x": 515.8003,
-                "y": 23.135319
+                "x": 486.94437,
+                "y": 25.054127
               }
             ]
           ],
@@ -13084,8 +13084,8 @@
     {
       "components": [
         {
-          "x": 557.6991,
-          "y": 24.145546,
+          "x": 528.0314,
+          "y": 26.654755,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -13126,43 +13126,43 @@
         {
           "vertices": [
             {
-              "x": 557.3191,
-              "y": 23.765547,
+              "x": 527.65137,
+              "y": 26.274755,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 558.0791,
-              "y": 23.765547,
+              "x": 528.4114,
+              "y": 26.274755,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 558.0791,
-              "y": 24.525547,
+              "x": 528.4114,
+              "y": 27.034756,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 557.3191,
-              "y": 24.525547,
+              "x": 527.65137,
+              "y": 27.034756,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 557.3191,
-                "y": 24.525547
+                "x": 527.65137,
+                "y": 27.034756
               },
               {
-                "x": 557.3191,
-                "y": 23.765547
+                "x": 527.65137,
+                "y": 26.274755
               },
               {
-                "x": 558.0791,
-                "y": 23.765547
+                "x": 528.4114,
+                "y": 26.274755
               },
               {
-                "x": 558.0791,
-                "y": 24.525547
+                "x": 528.4114,
+                "y": 27.034756
               }
             ]
           ],
@@ -13632,6 +13632,402 @@
             }
           ],
           "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 284.3275,
+          "y": 6.0,
+          "scaleX": 2.0,
+          "scaleY": 2.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.0,
+          "originY": 0.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/cross.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 2.56,
+          "height": 3.75,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "f95d1b71-3365-45db-9ece-bd10d68578dd",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 70.4906,
+          "y": 6.0,
+          "scaleX": 2.0,
+          "scaleY": 2.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.0,
+          "originY": 0.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/cross.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 2.56,
+          "height": 3.75,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 3,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "561b9909-0fbe-428e-9f02-cd0ba5d6b698",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 490.82172,
+          "y": 5.974468,
+          "scaleX": 2.0,
+          "scaleY": 2.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.0,
+          "originY": 0.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/skeletan.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 2.56,
+          "height": 1.24,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "85ebedb6-2f3b-40df-b4ad-3ed360137eaa",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 400.31375,
+          "y": 6.0,
+          "scaleX": 2.0,
+          "scaleY": 2.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.0,
+          "originY": 0.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/skeletan.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 2.56,
+          "height": 1.24,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "c3aad350-e273-40c9-bd97-c79a3aed90f9",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 408.04605,
+          "y": 6.0,
+          "scaleX": 2.0,
+          "scaleY": 2.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.0,
+          "originY": 0.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/skeletan.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 2.56,
+          "height": 1.24,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "c8526b30-6aed-4104-9c52-ac040cdb224d",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 494.2592,
+          "y": 6.0,
+          "scaleX": 2.0,
+          "scaleY": 2.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.0,
+          "originY": 0.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/tombston.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 2.56,
+          "height": 2.61,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "bae141e2-b86b-4a9e-a2ce-0eef59e65f98",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 415.4451,
+          "y": 6.0,
+          "scaleX": 2.0,
+          "scaleY": 2.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.0,
+          "originY": 0.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/tombston.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 2.56,
+          "height": 2.61,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "38762dfb-394d-4f0b-a31d-a670bcd30ebf",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "@class": "VisID"
         }
       ],
       "@class": "EntityScheme"

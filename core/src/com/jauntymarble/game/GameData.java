@@ -4,13 +4,9 @@ import com.badlogic.gdx.utils.Array;
 
 import ownLib.Own;
 
-/**
- * Created by ravi on 06.10.16.
- */
-
 public class GameData {
     public static final boolean RELEASE = true;
-    public static final boolean SHOW_ADS = true;
+    public static final boolean SHOW_ADS = false;
     //
     // game states
     public static final int READY = 0;

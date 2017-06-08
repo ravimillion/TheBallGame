@@ -106,6 +106,14 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         gameSaverSystem.saveGame();
     }
 
+    public void respawnPlayer() {
+        body.setTransform(loadPlayerPosition(), 0);
+        body.setLinearVelocity(0, 0);
+        body.setAngularVelocity(0);
+
+        state = GameData.RUNNING;
+    }
+
     private Vector2 loadPlayerPosition() {
         Vector2 position = new Vector2();
 
