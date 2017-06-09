@@ -13,6 +13,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.jauntymarble.game.screens.GameEntry;
 
 public class AndroidLauncher extends AndroidApplication implements AdHandler {
@@ -20,7 +21,6 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
     private final int SHOW_ADS = 1;
     private final int HIDE_ADS = 0;
     protected AdView adView = null;
-
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -33,7 +33,7 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
             }
         }
     };
-
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
         View gameView = initializeForView(new GameEntry(this), config);
         layout.addView(gameView);
 
+        // create ad view
         adView = new AdView(this);
         adView.setAdListener(new AdListener() {
             @Override
@@ -62,11 +63,16 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
         adParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-
         layout.addView(adView, adParams);
-
         adView.loadAd(builder.build());
 
+        // firebase logging
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+//        Bundle bundle = new Bundle();
+//        bundle.putString(FirebaseAnalytics.Event.APP_OPEN, null);//Param.ITEM_ID, id);
+//        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
+//        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.APP_OPEN, null);
         setContentView(layout);
     }
 

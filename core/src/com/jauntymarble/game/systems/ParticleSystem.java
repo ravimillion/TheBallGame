@@ -37,7 +37,7 @@ public class ParticleSystem extends EntitySystem implements AfterSceneInit {
     private Body body;
     private ParticleEmitter particleEmitter;
     private Bag<Entity> entityBag;
-    private int RESET_DIST = 8;
+    private int RESET_DIST = 7;
 
     public ParticleSystem() {
         super(Aspect.all(VisParticle.class, VisPolygon.class, PhysicsProperties.class));
@@ -68,7 +68,7 @@ public class ParticleSystem extends EntitySystem implements AfterSceneInit {
                 particleEmitter.setPosition(bodyPos.x, bodyPos.y);
 
                 if (bodyPos.y < RESET_DIST) {
-                    body.setTransform(bodyPos.x, GameData.WORLD_HEIGHT - 1, body.getAngle());
+                    body.setTransform(bodyPos.x, GameData.WORLD_HEIGHT - 1, 0);
                     body.setLinearVelocity(0, 0);
                     soundSystem.triggerSoundEffect("idSoundFire");
                     body.setAwake(true);

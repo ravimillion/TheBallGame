@@ -158,10 +158,10 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     }
 
     public void shakeCameraOnCollision(CollisionData collisionData) {
-        float threshold = 100f;
-
         VisID visID = visIDCm.get(collisionData.entity);
-        if (visID != null && GameData.CAMERA_SHAKE_LIST.indexOf(visID.id, false) > -1 && collisionData.impulse > threshold) {
+        if (visID != null && GameData.CAMERA_SHAKE_LIST.indexOf(visID.id, false) >= 0) {
+            if (visID.id.equals("idSpike") && collisionData.impulse < 50) return;
+
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {

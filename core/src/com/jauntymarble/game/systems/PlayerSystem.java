@@ -136,23 +136,20 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
 
 
     private void limitVelocity() {
-        float angularVelocity = body.getAngularVelocity();
+        float aVel = body.getAngularVelocity();
 
-        if (angularVelocity > TOP_ANG_VELOCITY) body.setAngularVelocity(TOP_ANG_VELOCITY);
-        if (angularVelocity < -TOP_ANG_VELOCITY) body.setAngularVelocity(-TOP_ANG_VELOCITY);
+
+        float newVelocity = Math.min(Math.max(aVel, -TOP_ANG_VELOCITY), TOP_ANG_VELOCITY);
+        if (aVel != newVelocity) body.setAngularVelocity(newVelocity);
 
         // limit horizontal velocity
         Vector2 velocity = body.getLinearVelocity();
-        // moving right
-        if (velocity.x > TOP_LIN_VELOCITY) body.setLinearVelocity(TOP_LIN_VELOCITY, velocity.y);
-        // moving left
-        if (velocity.x < -TOP_LIN_VELOCITY) body.setLinearVelocity(-TOP_LIN_VELOCITY, velocity.y);
+        newVelocity = Math.min(Math.max(velocity.x, -TOP_LIN_VELOCITY), TOP_LIN_VELOCITY);
+        if (velocity.x != newVelocity) body.setLinearVelocity(newVelocity, velocity.y);
 
-        // limit vertical velocity
-        // moving up
-        if (velocity.y > TOP_LIN_VELOCITY) body.setLinearVelocity(velocity.x, TOP_LIN_VELOCITY);
-        // moving down
-        if (velocity.y < -TOP_LIN_VELOCITY) body.setLinearVelocity(velocity.x, -TOP_LIN_VELOCITY);
+        // limit horizontal velocity
+        newVelocity = Math.min(Math.max(velocity.y, -TOP_LIN_VELOCITY), TOP_LIN_VELOCITY);
+        if (velocity.y != newVelocity) body.setLinearVelocity(velocity.x, newVelocity);
     }
 
     private boolean isLevelEnd() {
@@ -174,6 +171,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         }
 
         // for pc mode
+        if (!GameData.PC_MODE) return;
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
             body.applyTorque(BALL_FORCE * -1, true);
         } else if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {

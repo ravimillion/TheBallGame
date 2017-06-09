@@ -6,6 +6,5 @@ eclipse.project {
     name = appName + "-core"
 }
 dependencies {
-    compile 'org.json:json:20170516'
-    compile "com.kotcrab.vis:vis-ui:1.4.0-SNAPSHOT"
+    compile 'com.kotcrab.vis:vis-ui:1.4.0-SNAPSHOT'
 }

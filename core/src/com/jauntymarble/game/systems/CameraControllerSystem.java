@@ -17,8 +17,8 @@ public class CameraControllerSystem extends BaseSystem implements AfterSceneInit
     private CameraShaker cameraShaker;
 
     // variable cache
-    private float ballMaxFollowCamera;
-    private float ballMinFollowCamera;
+    private float MAX_FOLLOW;
+    private float MIN_FOLLOW;
 
     public CameraControllerSystem(GameController gameController) {
         this.gameController = gameController;
@@ -43,12 +43,12 @@ public class CameraControllerSystem extends BaseSystem implements AfterSceneInit
         }
 
 
-        if (bodyPosition.x > ballMinFollowCamera && bodyPosition.x < ballMaxFollowCamera) {
-            camera.position.x = bodyPosition.x;
-            camera.position.y = camera.viewportHeight / 2f;
-//            camera.update();
-        }
+        // camera y
+        camera.position.y = camera.viewportHeight / 2f;
 
+        // camera x
+        float x = Math.max(bodyPosition.x, MIN_FOLLOW);
+        camera.position.x = Math.min(x, MAX_FOLLOW);
     }
 
     public void shakeCamera(float intensity, float diminishFactor) {
@@ -61,7 +61,7 @@ public class CameraControllerSystem extends BaseSystem implements AfterSceneInit
     public void afterSceneInit() {
         camera = cameraManager.getCamera();
         this.cameraShaker = new CameraShaker(camera.position.x, camera.position.y);
-        this.ballMaxFollowCamera = GameData.WORLD_WIDTH - camera.viewportWidth / 2;
-        this.ballMinFollowCamera = camera.viewportWidth / 2;
+        this.MAX_FOLLOW = GameData.WORLD_WIDTH - camera.viewportWidth / 2;
+        this.MIN_FOLLOW = camera.viewportWidth / 2;
     }
 }

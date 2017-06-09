@@ -41,6 +41,7 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
 
     // variable cache
     private OrthographicCamera camera;
+    private Entity entity;
 
     public ControlsSystem(GameController gameController) {
         this.gameController = gameController;
@@ -148,15 +149,17 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
 
     @Override
     protected void processSystem() {
-        if (GameController.CURRENT_LEVEL == GameData.ID_LEVEL_TUTORIAL) return;
+        if (GameController.CURRENT_LEVEL.equals(GameData.ID_LEVEL_TUTORIAL)) return;
 
         // update controls position.
 
         float cameraX = camera.position.x;
 
-        for (int i = 0; i < buttons.length; i++) {
-            Entity entity = entityMap.get(buttons[i]);
+        for (int i = 0, len = buttons.length; i < len; i++) {
+            entity = entityMap.get(buttons[i]);
+
             float newX = cameraX + posMap.get(buttons[i]);
+
             boundsCm.get(entity).setX(newX);
             transformCm.get(entity).setX(newX);
         }

@@ -37,16 +37,16 @@ public class ScoringSystem extends BaseSystem implements AfterSceneInit {
 
         scoreText.setText(this.currentScoreText);
 
-        if (GameData.RELEASE == false) {
-            // fps calculate
-            if (counter >= accumulateFactor) {
-                if (fpsText != null)
-                    fpsText.setText("FPS:" + (int) this.accumulatedFps / accumulateFactor);
-                this.accumulatedFps = counter = 0;
-            } else {
-                this.accumulatedFps += (int) (1 / Gdx.graphics.getDeltaTime());
-                counter++;
-            }
+        if (GameData.RELEASE) return;
+
+        // fps calculate
+        if (counter >= accumulateFactor) {
+            if (fpsText != null)
+                fpsText.setText("FPS:" + (int) this.accumulatedFps / accumulateFactor);
+            this.accumulatedFps = counter = 0;
+        } else {
+            this.accumulatedFps += (int) (1 / Gdx.graphics.getDeltaTime());
+            counter++;
         }
     }
 
@@ -72,15 +72,15 @@ public class ScoringSystem extends BaseSystem implements AfterSceneInit {
 
         if (gameSaverSystem.getPlayingStatus(GameController.CURRENT_LEVEL).equals(GameData.LEVEL_FINISHED)) {
             this.score = 0;
-            this.currentScoreText = this.textPrefix + this.score;
         } else {
             this.score = gameSaverSystem.getPlayerScore(GameController.CURRENT_LEVEL);
-            this.currentScoreText = this.textPrefix + this.score;
         }
+        this.currentScoreText = this.textPrefix + this.score;
 
         scoreText = visTextCm.get(idManager.get("idScore"));
 
         if (GameData.RELEASE) {
+            // make fps invisible
             Entity fpsEntity = idManager.get("idFPS");
             fpsEntity.edit().add(new Invisible());
         } else {

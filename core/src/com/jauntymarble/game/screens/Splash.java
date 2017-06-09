@@ -47,37 +47,35 @@ public class Splash implements Screen {
         Tween.registerAccessor(Sprite.class, new SpriteAccessor());
 
         Tween.set(splashSprite, SpriteAccessor.FADE_IN_OUT).target(0).start(tweenManager);
-        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.getConfigData("SPLASH_HIDE_DELAY")).target(1).start(tweenManager).setCallback(new TweenCallback() {
+        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.getConfigData("SPLASH_SHOW_DELAY")).target(1).start(tweenManager).setCallback(new TweenCallback() {
             @Override
             public void onEvent(int type, BaseTween<?> source) {
                 Gdx.app.postRunnable(new Runnable() {
                     @Override
                     public void run() {
                         // start loading when the logo is fully shown
-                        while (true) {
-                            if (Own.assets.update()) {
-                                // when loading finishes trigger fade out after creating assets
-                                Own.text.createFonts();
-                                Own.assets.createImageAssets();
-                                Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.getConfigData("SPLASH_SHOW_DELAY")).target(0).start(tweenManager).setCallback(new TweenCallback() {
-                                    @Override
-                                    public void onEvent(int type, BaseTween<?> source) {
-                                        Gdx.app.postRunnable(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                dispose();
-                                                gameEntry.finishLoading();
-                                            }
-                                        });
-                                    }
-                                }).start(tweenManager);
-                                break;
-                            }
+                        while (!Own.assets.update()) {
                         }
+                        // when loading finishes trigger fade out after creating assets
+                        Own.text.createFonts();
+                        Own.assets.createImageAssets();
+                        Tween.to(splashSprite, SpriteAccessor.FADE_IN_OUT, GameData.getConfigData("SPLASH_HIDE_DELAY")).target(0).start(tweenManager).setCallback(new TweenCallback() {
+                            @Override
+                            public void onEvent(int type, BaseTween<?> source) {
+                                Gdx.app.postRunnable(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        dispose();
+                                        gameEntry.finishLoading();
+                                    }
+                                });
+                            }
+                        });
+
                     }
                 });
             }
-        }).start(tweenManager);
+        });
     }
 
     @Override

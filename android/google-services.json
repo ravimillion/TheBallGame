@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "573376994223",
+    "firebase_url": "https://jaunty-marble.firebaseio.com",
+    "project_id": "jaunty-marble",
+    "storage_bucket": "jaunty-marble.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573376994223:android:0cdb72d5d1efe99a",
+        "android_client_info": {
+          "package_name": "com.jauntymarble.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573376994223-e5qk265akrof92gatjq0h05r4aekko4e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jauntymarble.game",
+            "certificate_hash": "3f2ec3fa92acc291a23bf74138b34fcbe2d5c6b6"
+          }
+        },
+        {
+          "client_id": "573376994223-cfs0adq4sjs1i72klhe8be39qplc0t6f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWZNfMtT5wSvi_Jo3yrTr33_CgueOBA9Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573376994223-cfs0adq4sjs1i72klhe8be39qplc0t6f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

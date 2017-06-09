@@ -50,13 +50,13 @@
     {
       "name": "Controls",
       "id": 4,
-      "locked": true,
-      "visible": false,
+      "locked": false,
+      "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 2,
+  "activeLayerId": 4,
   "groupIds": [],
   "schemes": [
     {
@@ -604,9 +604,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 4,
           "@class": "Layer"
         },
@@ -666,9 +663,6 @@
           "width": 6.0,
           "height": 2.51,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 4,
@@ -732,9 +726,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 4,
           "@class": "Layer"
         },
@@ -796,9 +787,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 4,
           "@class": "Layer"
         },
@@ -858,9 +846,6 @@
           "width": 10.24,
           "height": 5.86,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 4,
@@ -7221,9 +7206,6 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "@class": "Invisible"
-        },
-        {
           "layerId": 4,
           "@class": "Layer"
         },
@@ -7245,16 +7227,16 @@
     {
       "components": [
         {
-          "x": 22.2213,
-          "y": 16.6571,
+          "x": -4.6942463,
+          "y": 5.96095,
           "scaleX": 5.65,
           "scaleY": 5.65,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 5.78,
-          "originY": 2.305,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -9586,8 +9568,8 @@
           "@class": "Transform"
         },
         {
-          "originX": 3.3849998,
-          "originY": 0.715,
+          "originX": 0.0,
+          "originY": 0.0,
           "@class": "Origin"
         },
         {
@@ -9614,13 +9596,17 @@
         },
         {
           "text": "ABCDE",
-          "autoSetOriginToCenter": true,
+          "autoSetOriginToCenter": false,
           "isUsesDistanceField": false,
           "@class": "ProtoVisText"
         },
         {
-          "layerId": 2,
+          "layerId": 4,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "87e2cdcb-6bae-4892-a4c4-ad4ee3547f58",
@@ -13295,9 +13281,6 @@
           "width": 10.24,
           "height": 5.86,
           "@class": "ProtoVisSprite"
-        },
-        {
-          "@class": "Invisible"
         },
         {
           "layerId": 4,

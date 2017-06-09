@@ -53,9 +53,8 @@ public class Toaster {
     private void showANewProgressDialog() {
         GDXProgressDialog progressDialog = GameController.gdxDialogs.newDialog(GDXProgressDialog.class);
 
-        progressDialog.setTitle("Loading");
+        progressDialog.setTitle("Loading...");
         progressDialog.setMessage("Loading new level from server...");
-
 //        showProgressUntilTime = TimeUtils.millis() + 5000;
         progressDialog.build().show();
 
@@ -72,7 +71,7 @@ public class Toaster {
 
             @Override
             public void click(int button) {
-//                buttonClickedFontActor.setText("Last clicked button: " + button);
+                //                buttonClickedFontActor.setText("Last clicked button: " + button);
             }
         });
 

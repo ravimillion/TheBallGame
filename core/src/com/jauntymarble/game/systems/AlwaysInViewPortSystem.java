@@ -34,7 +34,7 @@ public class AlwaysInViewPortSystem extends BaseSystem implements AfterSceneInit
             String entityId = entityIds[i];
             Entity entity = idManager.get(entityId);
 
-            entityMap.put(entityId, idManager.get(entityId));
+            entityMap.put(entityId, entity);
             posMap.put(entityId, transformCm.get(entity).getX() - cameraManager.getCamera().viewportWidth / 2);
         }
 
@@ -44,7 +44,7 @@ public class AlwaysInViewPortSystem extends BaseSystem implements AfterSceneInit
     public void setControlsPosition() {
         for (int i = 0; i < entityIds.length; i++) {
             String id = entityIds[i];
-            transformCm.get(entityMap.get(id)).setX(camera.position.x + posMap.get(entityIds[i]));
+            transformCm.get(entityMap.get(id)).setX(camera.position.x + posMap.get(id));
         }
     }
 

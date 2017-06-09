@@ -5,9 +5,11 @@ import com.badlogic.gdx.utils.Array;
 import ownLib.Own;
 
 public class GameData {
+    // release build
     public static final boolean RELEASE = true;
     public static final boolean SHOW_ADS = false;
-    //
+    public static final boolean PC_MODE = false;
+
     // game states
     public static final int READY = 0;
     public static final int RUNNING = 1;
@@ -15,8 +17,8 @@ public class GameData {
     public static final int LEVEL_END = 3;
     public static final int GAME_OVER = 4;
     public static final int QUIT = 5;
-    public static final int RESTART_LEVEL = 6;
 
+    public static final int RESTART_LEVEL = 6;
     // game running info
     public static final String ID_MENU = "ID_MENU";
     public static final String ID_LEVEL_ONE = "ID_LEVEL_ONE";
@@ -26,8 +28,8 @@ public class GameData {
     // CURRENT_LEVEL info
     public static final String LEVEL_NOT_PLAYED = "NOT_PLAYED";
     public static final String LEVEL_IN_PROGRESS = "IN_PROGRESS";
-    public static final String LEVEL_FINISHED = "FINISHED";
 
+    public static final String LEVEL_FINISHED = "FINISHED";
     public static final String SCENE_MENU = "scene/menu.scene";
     public static final String SCENE_TUTORIAL = "scene/tutorial.scene";
     public static final String SCENE_ONE = "scene/levelone.scene";

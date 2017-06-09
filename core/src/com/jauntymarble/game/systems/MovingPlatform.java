@@ -39,35 +39,54 @@ public class MovingPlatform extends BaseSystem implements AfterSceneInit {
     private Array<Entity> platforms;
     private float MIN_HEIGHT = 8;
     private float MAX_HEIGHT = 20;
-
+    private String dir;
+    private Body body = null;
     @Override
     protected void processSystem() {
-        if (GameController.CURRENT_LEVEL == GameData.ID_LEVEL_TUTORIAL) return;
+        if (GameController.CURRENT_LEVEL.equals(GameData.ID_LEVEL_TUTORIAL)) return;
+
 
         for (int i = 0, len = platforms.size; i < len; i++) {
             Entity e = platforms.get(i);
             visibilitySystem.process(e);
 
             if (invisibleCm.get(e) == null) {
-                PhysicsBody physicsBody = physicsCm.get(e);
-                Body body = physicsBody.body;
+                body = physicsCm.get(e).body;
                 Vector2 pos = body.getPosition();
-                String dir = variableCm.get(e).get("dir");
+
+                dir = variableCm.get(e).get("dir");
                 float speed = parseFloat(variableCm.get(e).get("speed"));
 
-                if (dir.equals("up")) {
-                    if (pos.y > MAX_HEIGHT) {
-                        variableCm.get(e).put("dir", "down");
-                    } else {
-                        body.setTransform(pos.x, pos.y + speed, body.getAngle());
-                    }
-                } else if (dir.equals("down")) {
-                    if (pos.y < MIN_HEIGHT) {
-                        variableCm.get(e).put("dir", "up");
-                    } else {
-                        body.setTransform(pos.x, pos.y - speed, body.getAngle());
-                    }
+                switch (dir) {
+                    case "up":
+                        if (pos.y > MAX_HEIGHT) {
+                            variableCm.get(e).put("dir", "down");
+                        } else {
+                            body.setTransform(pos.x, pos.y + speed, body.getAngle());
+                        }
+                        break;
+                    case "down":
+                        if (pos.y < MIN_HEIGHT) {
+                            variableCm.get(e).put("dir", "up");
+                        } else {
+                            body.setTransform(pos.x, pos.y - speed, body.getAngle());
+                        }
+                        break;
                 }
+
+//                if (dir.equals("up")) {
+//                    if (pos.y > MAX_HEIGHT) {
+//                        variableCm.get(e).put("dir", "down");
+//                    } else {
+//                        body.setTransform(pos.x, pos.y + speed, body.getAngle());
+//                    }
+//                } else if (dir.equals("down")) {
+//                    if (pos.y < MIN_HEIGHT) {
+//                        variableCm.get(e).put("dir", "up");
+//                    } else {
+//                        body.setTransform(pos.x, pos.y - speed, body.getAngle());
+//                    }
+//                }
 //                Note: Need to set the anchor position for this
 //                else if (dir.equals("left")) {
 //                    if (pos.y < MIN_HEIGHT) {
@@ -88,7 +107,7 @@ public class MovingPlatform extends BaseSystem implements AfterSceneInit {
 
     @Override
     public void afterSceneInit() {
-        if (GameController.CURRENT_LEVEL == GameData.ID_LEVEL_TUTORIAL) return;
+        if (GameController.CURRENT_LEVEL.equals(GameData.ID_LEVEL_TUTORIAL)) return;
         platforms = idManager.getMultiple("idMovingPlatform");
     }
 }
