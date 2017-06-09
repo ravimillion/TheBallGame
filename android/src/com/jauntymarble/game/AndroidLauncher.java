@@ -7,14 +7,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.utils.Json;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.jauntymarble.game.savegame.LevelState;
 import com.jauntymarble.game.screens.GameEntry;
+import com.jauntymarble.game.systems.GameSaverSystem;
+
+import java.util.HashMap;
 
 public class AndroidLauncher extends AndroidApplication implements AdHandler {
     private static final String TAG = "AndroidLauncher";
@@ -68,11 +75,23 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
 
         // firebase logging
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-//        Bundle bundle = new Bundle();
+        Bundle bundle = new Bundle();
 //        bundle.putString(FirebaseAnalytics.Event.APP_OPEN, null);//Param.ITEM_ID, id);
 //        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
 //        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.APP_OPEN, null);
+
+        FileHandle fileHandle = Gdx.files.local(GameSaverSystem.GAME_STATE_PERSIST_FILE);
+        if (fileHandle.exists()) {
+            Json json = new Json();
+            HashMap<String, LevelState> levelStates = json.fromJson(HashMap.class, fileHandle);
+            for (String key : levelStates.keySet()) {
+                bundle.putString(key, levelStates.get(key).toString());
+            }
+        } else {
+            Log.d(TAG, "No State found");
+        }
+
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.APP_OPEN, bundle);
         setContentView(layout);
     }
 

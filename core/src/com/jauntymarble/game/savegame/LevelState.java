@@ -29,4 +29,9 @@ public class LevelState {
 
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Score: " + playerScore + " Status: " + levelCompletionState;
+    }
 }
