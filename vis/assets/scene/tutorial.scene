@@ -40,7 +40,7 @@
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 1,
+  "activeLayerId": 0,
   "groupIds": [],
   "schemes": [
     {
@@ -96,6 +96,11 @@
         {
           "vertices": [
             {
+              "x": -0.54490304,
+              "y": 33.690372,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
               "x": -1.425499,
               "y": 0.028599977,
               "@class": "com.badlogic.gdx.math.Vector2"
@@ -121,42 +126,47 @@
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": -0.011171579,
-              "y": 32.00307,
+              "x": -0.016052961,
+              "y": 31.992344,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 54.965904,
+              "y": 32.19447,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": -0.011171579,
-                "y": 32.00307
+                "x": 54.965904,
+                "y": 32.19447
               },
               {
-                "x": -1.425499,
-                "y": 0.028599977
+                "x": -0.54490304,
+                "y": 33.690372
               },
               {
-                "x": 0.015119135,
-                "y": 3.6940038
+                "x": -0.016052961,
+                "y": 31.992344
               }
             ],
             [
               {
-                "x": 0.015119135,
-                "y": 3.6940038
+                "x": -0.016052961,
+                "y": 31.992344
+              },
+              {
+                "x": -0.54490304,
+                "y": 33.690372
               },
               {
                 "x": -1.425499,
                 "y": 0.028599977
               },
               {
-                "x": 57.0145,
-                "y": 0.028599977
-              },
-              {
-                "x": 54.99895,
-                "y": 3.6964812
+                "x": 0.015119135,
+                "y": 3.6940038
               }
             ],
             [
@@ -167,6 +177,24 @@
               {
                 "x": 54.99895,
                 "y": 3.6964812
+              },
+              {
+                "x": 57.0145,
+                "y": 0.028599977
+              }
+            ],
+            [
+              {
+                "x": 54.99895,
+                "y": 3.6964812
+              },
+              {
+                "x": 0.015119135,
+                "y": 3.6940038
+              },
+              {
+                "x": -1.425499,
+                "y": 0.028599977
               },
               {
                 "x": 57.0145,
@@ -204,8 +232,8 @@
     {
       "components": [
         {
-          "x": 8.811632,
-          "y": 27.059097,
+          "x": 7.039732,
+          "y": 26.334227,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -265,16 +293,16 @@
     {
       "components": [
         {
-          "x": 1.8740449,
-          "y": 19.08202,
+          "x": 20.881042,
+          "y": 30.394423,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 8.61,
-          "originY": 1.49,
+          "originX": 6.26,
+          "originY": 0.41,
           "@class": "Origin"
         },
         {
@@ -288,8 +316,8 @@
         },
         {
           "asset": {
-            "fontSize": 150,
-            "relativePath": "font/goudy.ttf",
+            "fontSize": 120,
+            "relativePath": "font/actor.ttf",
             "@class": "TtfFontAsset"
           },
           "@class": "AssetReference"
@@ -300,7 +328,7 @@
           "@class": "PixelsPerUnit"
         },
         {
-          "text": "Touch on LEFT Half Of the \nScreen to Move Left",
+          "text": "Touch LEFT to move left",
           "autoSetOriginToCenter": true,
           "isUsesDistanceField": true,
           "@class": "ProtoVisText"
@@ -335,31 +363,31 @@
     {
       "components": [
         {
-          "x": 36.92436,
-          "y": 18.871176,
+          "x": 11.679,
+          "y": 22.997,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 8.495,
-          "originY": 1.49,
+          "originX": 3.09,
+          "originY": 0.41,
           "@class": "Origin"
         },
         {
           "tint": {
             "r": 1.0,
             "g": 1.0,
-            "b": 1.0,
+            "b": 0.0,
             "a": 1.0
           },
           "@class": "Tint"
         },
         {
           "asset": {
-            "fontSize": 150,
-            "relativePath": "font/goudy.ttf",
+            "fontSize": 120,
+            "relativePath": "font/actor.ttf",
             "@class": "TtfFontAsset"
           },
           "@class": "AssetReference"
@@ -370,7 +398,7 @@
           "@class": "PixelsPerUnit"
         },
         {
-          "text": "Touch on Right Half Of the \nScreen to Move Right",
+          "text": "Collect Star!",
           "autoSetOriginToCenter": true,
           "isUsesDistanceField": true,
           "@class": "ProtoVisText"
@@ -405,16 +433,16 @@
     {
       "components": [
         {
-          "x": 17.4546,
-          "y": 3.7071,
-          "scaleX": 4.0,
-          "scaleY": 4.0,
+          "x": 20.881042,
+          "y": 28.67158,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 0.0,
-          "originY": 0.0,
+          "originX": 6.9750004,
+          "originY": 0.41,
           "@class": "Origin"
         },
         {
@@ -428,28 +456,29 @@
         },
         {
           "asset": {
-            "relativePath": "images/boxleft.png",
-            "@class": "TextureRegionAsset"
+            "fontSize": 120,
+            "relativePath": "font/actor.ttf",
+            "@class": "TtfFontAsset"
           },
           "@class": "AssetReference"
         },
         {
-          "flipX": false,
-          "flipY": false,
-          "width": 1.28,
-          "height": 1.28,
-          "@class": "ProtoVisSprite"
+          "pixelsPerUnits": 100.0,
+          "scale": 0.01,
+          "@class": "PixelsPerUnit"
         },
         {
-          "layerId": 1,
+          "text": "Touch RIGHT to move right",
+          "autoSetOriginToCenter": true,
+          "isUsesDistanceField": true,
+          "@class": "ProtoVisText"
+        },
+        {
+          "layerId": 0,
           "@class": "Layer"
         },
         {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "877b630e-2723-4910-9cf1-8595d1adcece",
+          "uuid": "e38d34de-efec-4cee-9d55-d8e4e53a78e9",
           "@class": "VisUUID"
         },
         {
@@ -457,71 +486,16 @@
           "@class": "Renderable"
         },
         {
-          "vertices": [
-            {
-              "x": 17.4546,
-              "y": 3.7071,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 22.574598,
-              "y": 3.7071,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 22.574598,
-              "y": 8.827096,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            },
-            {
-              "x": 19.804085,
-              "y": 6.061791,
-              "@class": "com.badlogic.gdx.math.Vector2"
-            }
-          ],
-          "faces": [
-            [
-              {
-                "x": 19.804085,
-                "y": 6.061791
-              },
-              {
-                "x": 17.4546,
-                "y": 3.7071
-              },
-              {
-                "x": 22.574598,
-                "y": 3.7071
-              },
-              {
-                "x": 22.574598,
-                "y": 8.827096
-              }
-            ]
-          ],
-          "@class": "VisPolygon"
-        },
-        {
-          "id": "idUphill",
           "@class": "VisID"
         },
         {
-          "bodyType": "DynamicBody",
-          "friction": 1.0,
-          "density": 0.1,
-          "restitution": 0.0,
-          "sensor": false,
-          "gravityScale": 1.0,
-          "linearDamping": 0.0,
-          "angularDamping": 0.0,
-          "bullet": true,
-          "fixedRotation": false,
-          "active": true,
-          "sleepingAllowed": true,
-          "adjustOrigin": false,
-          "maskBits": -1,
-          "categoryBits": 1,
-          "@class": "PhysicsProperties"
+          "componentsToDrop": [
+            {
+              "@content": "PixelsPerUnit",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
         }
       ],
       "@class": "EntityScheme"
@@ -529,16 +503,16 @@
     {
       "components": [
         {
-          "x": 36.4718,
-          "y": 3.7046,
+          "x": 25.814207,
+          "y": 13.328899,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 0.0,
-          "originY": 0.0,
+          "originX": 3.865,
+          "originY": 0.965,
           "@class": "Origin"
         },
         {
@@ -552,7 +526,7 @@
         },
         {
           "asset": {
-            "relativePath": "images/darkbox.png",
+            "relativePath": "images/horiplatform.png",
             "@class": "TextureRegionAsset"
           },
           "@class": "AssetReference"
@@ -560,8 +534,8 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 6.52,
-          "height": 6.52,
+          "width": 7.73,
+          "height": 1.93,
           "@class": "ProtoVisSprite"
         },
         {
@@ -569,11 +543,7 @@
           "@class": "Layer"
         },
         {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "79986c3a-aae4-4656-b96f-453c91d57b69",
+          "uuid": "0ae1a1ed-085f-4742-bf13-1e6213cde97b",
           "@class": "VisUUID"
         },
         {
@@ -583,66 +553,62 @@
         {
           "vertices": [
             {
-              "x": 36.4718,
-              "y": 3.7046,
+              "x": 25.814207,
+              "y": 13.328899,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 42.9918,
-              "y": 3.7046,
+              "x": 33.544193,
+              "y": 13.328899,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 42.9918,
-              "y": 10.2246,
+              "x": 33.544193,
+              "y": 15.2589,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 36.4718,
-              "y": 10.2246,
+              "x": 25.814207,
+              "y": 15.2589,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 36.4718,
-                "y": 10.2246
+                "x": 25.814207,
+                "y": 15.2589
               },
               {
-                "x": 36.4718,
-                "y": 3.7046
+                "x": 25.814207,
+                "y": 13.328899
               },
               {
-                "x": 42.9918,
-                "y": 3.7046
+                "x": 33.544193,
+                "y": 13.328899
               },
               {
-                "x": 42.9918,
-                "y": 10.2246
+                "x": 33.544193,
+                "y": 15.2589
               }
             ]
           ],
           "@class": "VisPolygon"
         },
         {
-          "id": "idWoodBox",
-          "@class": "VisID"
-        },
-        {
-          "bodyType": "DynamicBody",
+          "bodyType": "StaticBody",
           "friction": 1.0,
-          "density": 0.3,
+          "density": 1.0,
           "restitution": 0.0,
           "sensor": false,
           "gravityScale": 1.0,
           "linearDamping": 0.0,
           "angularDamping": 0.0,
-          "bullet": true,
+          "bullet": false,
           "fixedRotation": false,
           "active": true,
           "sleepingAllowed": true,
-          "adjustOrigin": false,
+          "adjustOrigin": true,
           "maskBits": -1,
           "categoryBits": 1,
           "@class": "PhysicsProperties"
@@ -834,8 +800,8 @@
     {
       "components": [
         {
-          "x": -0.9688,
-          "y": -0.0907,
+          "x": -0.51723546,
+          "y": -0.14158043,
           "scaleX": 5.5,
           "scaleY": 5.5,
           "rotation": 0.0,
@@ -931,8 +897,12 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 2,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "017cf775-91ea-43ea-b9f4-4cdaab7432e9",
@@ -988,8 +958,12 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 2,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "2f83c657-7cbe-47f1-bf1d-1ed2e48a2b67",
@@ -1070,8 +1044,8 @@
     {
       "components": [
         {
-          "x": -0.7038,
-          "y": -0.0869,
+          "x": -0.5066381,
+          "y": -0.18230176,
           "scaleX": 5.5,
           "scaleY": 5.5,
           "rotation": 0.0,
@@ -1167,7 +1141,7 @@
           "@class": "ProtoVisSprite"
         },
         {
-          "layerId": 0,
+          "layerId": 2,
           "@class": "Layer"
         },
         {
@@ -1248,7 +1222,7 @@
     {
       "components": [
         {
-          "x": 44.3868,
+          "x": 40.186783,
           "y": 3.7006,
           "scaleX": 1.0,
           "scaleY": 1.0,
@@ -1302,22 +1276,22 @@
         {
           "vertices": [
             {
-              "x": 44.3868,
+              "x": 40.186783,
               "y": 3.7006,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 50.9068,
+              "x": 46.706783,
               "y": 3.7006,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 47.764244,
+              "x": 43.564228,
               "y": 6.733249,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 44.3868,
+              "x": 40.186783,
               "y": 10.2206,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
@@ -1325,29 +1299,29 @@
           "faces": [
             [
               {
-                "x": 44.3868,
+                "x": 40.186783,
                 "y": 10.2206
               },
               {
-                "x": 44.3868,
+                "x": 40.186783,
                 "y": 3.7006
               },
               {
-                "x": 47.764244,
+                "x": 43.564228,
                 "y": 6.733249
               }
             ],
             [
               {
-                "x": 50.9068,
+                "x": 46.706783,
                 "y": 3.7006
               },
               {
-                "x": 47.764244,
+                "x": 43.564228,
                 "y": 6.733249
               },
               {
-                "x": 44.3868,
+                "x": 40.186783,
                 "y": 3.7006
               }
             ]
@@ -1358,9 +1332,396 @@
           "@class": "VisID"
         },
         {
-          "bodyType": "DynamicBody",
+          "bodyType": "StaticBody",
           "friction": 1.0,
           "density": 1.0,
+          "restitution": 3.0,
+          "sensor": false,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": false,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 14.6015835,
+          "y": 21.21017,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "becc6461-2969-4042-942f-e58eab16bb9c",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "vertices": [
+            {
+              "x": 13.337578,
+              "y": 21.603,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 14.093918,
+              "y": 21.040594,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 13.8418045,
+              "y": 20.051535,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 15.383574,
+              "y": 20.090322,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 15.141157,
+              "y": 21.040594,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 15.916891,
+              "y": 21.603,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 14.918135,
+              "y": 21.632092,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 14.646549,
+              "y": 22.58045,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 14.268459,
+              "y": 21.622395,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 14.646549,
+                "y": 22.58045
+              },
+              {
+                "x": 14.268459,
+                "y": 21.622395
+              },
+              {
+                "x": 14.918135,
+                "y": 21.632092
+              }
+            ],
+            [
+              {
+                "x": 14.268459,
+                "y": 21.622395
+              },
+              {
+                "x": 13.337578,
+                "y": 21.603
+              },
+              {
+                "x": 15.141157,
+                "y": 21.040594
+              },
+              {
+                "x": 15.916891,
+                "y": 21.603
+              },
+              {
+                "x": 14.918135,
+                "y": 21.632092
+              }
+            ],
+            [
+              {
+                "x": 15.141157,
+                "y": 21.040594
+              },
+              {
+                "x": 13.337578,
+                "y": 21.603
+              },
+              {
+                "x": 14.093918,
+                "y": 21.040594
+              },
+              {
+                "x": 15.383574,
+                "y": 20.090322
+              }
+            ],
+            [
+              {
+                "x": 13.8418045,
+                "y": 20.051535
+              },
+              {
+                "x": 15.383574,
+                "y": 20.090322
+              },
+              {
+                "x": 14.093918,
+                "y": 21.040594
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": true,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": false,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 30.9209,
+          "y": -6.4718,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "relativePath": "sound/mario-coin.mp3",
+            "@class": "SoundAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "@class": "ProtoVisSound"
+        },
+        {
+          "layerId": 0,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "0abffa08-2480-437c-bc76-2590fc66b164",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idSoundStar",
+          "@class": "VisID"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "Transform",
+              "@class": "Class"
+            },
+            {
+              "@content": "Renderable",
+              "@class": "Class"
+            },
+            {
+              "@content": "Layer",
+              "@class": "Class"
+            },
+            {
+              "@content": "VisGroup",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 11.452005,
+          "y": 3.6946628,
+          "scaleX": 4.0,
+          "scaleY": 4.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "originX": 0.0,
+          "originY": 0.0,
+          "@class": "Origin"
+        },
+        {
+          "tint": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "@class": "Tint"
+        },
+        {
+          "asset": {
+            "relativePath": "images/boxleft.png",
+            "@class": "TextureRegionAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "flipX": false,
+          "flipY": false,
+          "width": 1.28,
+          "height": 1.28,
+          "@class": "ProtoVisSprite"
+        },
+        {
+          "layerId": 1,
+          "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
+          "uuid": "3763e785-ea46-42f7-a377-c8b73e56a7c9",
+          "@class": "VisUUID"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "vertices": [
+            {
+              "x": 11.452005,
+              "y": 3.6946628,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 16.57201,
+              "y": 3.6946628,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 16.57201,
+              "y": 8.814661,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 13.801491,
+              "y": 6.0493536,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 13.801491,
+                "y": 6.0493536
+              },
+              {
+                "x": 11.452005,
+                "y": 3.6946628
+              },
+              {
+                "x": 16.57201,
+                "y": 3.6946628
+              },
+              {
+                "x": 16.57201,
+                "y": 8.814661
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "id": "idUphill",
+          "@class": "VisID"
+        },
+        {
+          "bodyType": "DynamicBody",
+          "friction": 1.0,
+          "density": 0.1,
           "restitution": 0.0,
           "sensor": false,
           "gravityScale": 1.0,

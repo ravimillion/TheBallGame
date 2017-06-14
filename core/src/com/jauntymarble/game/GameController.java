@@ -42,21 +42,19 @@ import ownLib.Own;
 
 public class GameController implements Screen {
     public static String CURRENT_LEVEL;
-    public SpriteBatch spriteBatch;
     public static GDXDialogs gdxDialogs = null;
-
+    public SpriteBatch spriteBatch;
+    public Music musicMenu = Gdx.audio.newMusic(Gdx.files.internal("sound/menu.mp3"));
+    public Music musicTutorial = Gdx.audio.newMusic(Gdx.files.internal("sound/tutorial.mp3"));
+    public Music musicLevel1 = Gdx.audio.newMusic(Gdx.files.internal("sound/level1.mp3"));
+    public Music musicLevel2 = Gdx.audio.newMusic(Gdx.files.internal("sound/level2.mp3"));
+    public Music musicLevel3 = Gdx.audio.newMusic(Gdx.files.internal("sound/level3.mp3"));
     private GameEntry game;
     private boolean BOX2D_DEBUG = true;
     private Scene scene = null;
     private OwnSceneLoader manager;
     private String scenePath;
     private LoadingScreen loadingScreen;
-    public Music musicMenu = Gdx.audio.newMusic(Gdx.files.internal("sound/menu.mp3"));
-    public Music musicTutorial = Gdx.audio.newMusic(Gdx.files.internal("sound/tutorial.mp3"));
-    public Music musicLevel1 = Gdx.audio.newMusic(Gdx.files.internal("sound/level1.mp3"));
-    public Music musicLevel2 = Gdx.audio.newMusic(Gdx.files.internal("sound/level2.mp3"));
-    public Music musicLevel3 = Gdx.audio.newMusic(Gdx.files.internal("sound/level3.mp3"));
-
     private Music music = null;
 
     public GameController(GameEntry game, SpriteBatch spriteBatch) {
@@ -80,6 +78,8 @@ public class GameController implements Screen {
         this.scenePath = scenePath;
         this.scene = null;
         this.loadingScreen.startLoading(scenePath, sceneParameter);
+        // show ad on every scene load
+//        this.game.handler.showInterstitialAd();
     }
 
     public void stopMusic() {
@@ -390,5 +390,9 @@ public class GameController implements Screen {
 
     public void setScene(Scene scene) {
         this.scene = scene;
+    }
+
+    public void showInterstitialAd() {
+        this.game.handler.showInterstitialAd();
     }
 }

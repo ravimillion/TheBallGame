@@ -8,6 +8,7 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.math.Vector3;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Json;
 import com.jauntymarble.game.GameController;
 import com.jauntymarble.game.GameData;
@@ -81,6 +82,18 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         Tween.to(tintCm.get(entity), TintAccessor.FADE_IN_OUT, 2.5f).target(1f).start(tweenManager);
     }
 
+    private void startCelebration(boolean celeb) {
+        Array<Entity> stars = idManager.getMultiple("idCelebrate");
+        for (int i = 0; i < stars.size; i++) {
+            if (celeb == false) {
+                stars.get(i).edit().add(new Invisible());
+            } else {
+                stars.get(i).edit().remove(Invisible.class);
+            }
+        }
+    }
+
+
     private void configureButtonStates() {
         FileHandle fileHandle = Gdx.files.local(GameSaverSystem.GAME_STATE_PERSIST_FILE);
         Json json = new Json();
@@ -88,6 +101,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
 //            if (fileHandle.delete()) Own.log("Errrrrrrrrrrr: Deleted file");
         }
         setDisabled(GameData.VOLUME <= 0, "idVolume");
+        startCelebration(false);
 
         if (fileHandle.exists()) {
             HashMap<String, LevelState> levelStates = json.fromJson(HashMap.class, fileHandle);
@@ -115,6 +129,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
             }
             if (levelThree.levelCompletionState.equals(GameData.LEVEL_FINISHED)) {
                 Own.log("Game Finished");
+                startCelebration(true);
             }
 
             if (isNew) {

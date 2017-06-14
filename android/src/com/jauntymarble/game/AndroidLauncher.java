@@ -16,6 +16,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.jauntymarble.game.savegame.LevelState;
 import com.jauntymarble.game.screens.GameEntry;
@@ -40,6 +41,7 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
             }
         }
     };
+    private InterstitialAd mInterstitialAd;
     private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
@@ -51,7 +53,28 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
         View gameView = initializeForView(new GameEntry(this), config);
         layout.addView(gameView);
 
-        // create ad view
+        // interstitial ads
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-4120235782147855/9080079921");
+        AdRequest.Builder interstitialAdBuilder = new AdRequest.Builder();
+//        interstitialAdBuilder.addTestDevice("BE2F070AF06CBB8EBA25EEEA6B740174");
+        mInterstitialAd.loadAd(interstitialAdBuilder.build());
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                // Load the next interstitial.
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            }
+
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                Log.i(TAG, "Interstitial Ad Loadded...");
+            }
+        });
+
+        // banner ads
         adView = new AdView(this);
         adView.setAdListener(new AdListener() {
             @Override
@@ -62,18 +85,19 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
         });
         adView.setAdSize(AdSize.SMART_BANNER);
         adView.setAdUnitId("ca-app-pub-4120235782147855/5980717523");
-        AdRequest.Builder builder = new AdRequest.Builder();
+        AdRequest.Builder bannerAdBuilder = new AdRequest.Builder();
 //		 remove this test device id to show actual ads
-//        builder.addTestDevice("AD7F868BA605FAB451A8B4D9C9C1D5F5");
+//        bannerAdBuilder.addTestDevice("AD7F868BA605FAB451A8B4D9C9C1D5F5");
+
         RelativeLayout.LayoutParams adParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
         adParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         layout.addView(adView, adParams);
-        adView.loadAd(builder.build());
+        adView.loadAd(bannerAdBuilder.build());
 
-        // firebase logging
+        // firebase
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Bundle bundle = new Bundle();
 //        bundle.putString(FirebaseAnalytics.Event.APP_OPEN, null);//Param.ITEM_ID, id);
@@ -98,5 +122,21 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
     @Override
     public void showAds(boolean show) {
         handler.sendEmptyMessage(show ? SHOW_ADS : HIDE_ADS);
+    }
+
+    @Override
+    public void showInterstitialAd() {
+        if (!GameData.SHOW_ADS) return;
+
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                }
+            }
+        });
     }
 }

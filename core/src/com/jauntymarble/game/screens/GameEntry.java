@@ -11,9 +11,10 @@ import ownLib.Own;
 
 public class GameEntry extends Game {
     public static SpriteBatch spriteBatch;
+    public AdHandler handler;
+
     private String TAG = "GameEntry";
     private Splash splashScreen;
-    private AdHandler handler;
     private boolean debug;
     private GameController gameController;
 
