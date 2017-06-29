@@ -75,9 +75,6 @@ public class CameraShaker {
     private void diminishShake(Vector2 origin) {
         if (shakeIntensity < 0.01) {
             isShaking = false;
-//            shakeIntensity = this.shakeIntensity;
-//            curCamCenter.x = x;
-//            curCamCenter.y = y;
             return;
         }
 

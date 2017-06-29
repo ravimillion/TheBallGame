@@ -6,7 +6,6 @@ import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.JsonWriter;
-import com.jauntymarble.game.utils.Toaster;
 
 import de.tomgrill.gdxfacebook.core.GDXFacebook;
 import de.tomgrill.gdxfacebook.core.GDXFacebookCallback;
@@ -21,24 +20,22 @@ import de.tomgrill.gdxfacebook.core.SignInResult;
 import ownLib.Own;
 
 public class FacebookManager {
-    // singleton instance
     private static FacebookManager facebookManager;
+    // singleton instance
+    private String TAG = "FacebookManager";
     private String FB_INVITE_MESSAGE = "Hey guys!! Do try this game, its awesome!!";
-    private String FB_WALL_MESSAGE = "Hey guys!! Do try this game, its awesome!!";
     private String FB_WALL_LINK = "http://www.caesiumgames.com/2017/02/blog-post.html";
     private String FB_WALL_CAPTION = "Jaunty Marble";
+
     private Preferences prefs;
     private GDXFacebook gdxFacebook = null;
     private Array<String> permissionsRead = new Array<String>();
     private Array<String> permissionsPublish = new Array<String>();
     private Array<String> REQUEST_QUEUE = new Array<>();
 
-    private FacebookManager() {
-    }
-
     public static FacebookManager getInstance() {
         if (facebookManager == null) {
-            Own.log("Creating facebook manager");
+            //creating facebook manager
             facebookManager = new FacebookManager();
         }
 
@@ -48,17 +45,17 @@ public class FacebookManager {
     public void postInvitationToFriends() {
         GDXFacebookGameRequest request = new GDXFacebookGameRequest();
         request.setMessage(FB_INVITE_MESSAGE);
+
         gdxFacebook.showGameRequest(request, new GDXFacebookCallback<GameRequestResult>() {
             @Override
             public void onSuccess(GameRequestResult result) {
-                Own.log("ReqId: " + result.getRequestId());
-                Own.log("Invited Friends: " + result.getRecipients().toString());
+                Gdx.app.debug(TAG, "ReqId: " + result.getRequestId());
+                Gdx.app.debug(TAG, "Invited Friends: " + result.getRecipients().toString());
             }
 
             @Override
             public void onError(GDXFacebookError error) {
-                Own.log(error.getErrorMessage());
-                Toaster.getToaster().showSingleButtonDialog("Error ", error.getErrorMessage());
+                Gdx.app.error(TAG, error.getErrorMessage());
             }
 
             @Override
@@ -68,7 +65,7 @@ public class FacebookManager {
 
             @Override
             public void onCancel() {
-                Own.log("User canceled request");
+                Gdx.app.error(TAG, "User canceled request");
             }
         });
     }
@@ -76,20 +73,26 @@ public class FacebookManager {
     public void postMessageOnWall() {
         GDXFacebookGraphRequest request = new GDXFacebookGraphRequest().setNode("me/feed").useCurrentAccessToken();
         request.setMethod(Net.HttpMethods.POST);
+        // facebook doesn't allow putting message on behalf of users
 //        request.putField("message", FB_WALL_MESSAGE);
+
+        // you can put link info and caption for the wall post
         request.putField("link", FB_WALL_LINK);
         request.putField("caption", FB_WALL_CAPTION);
 
+        // fist time post message, may be the user is not logged in so make an entry into the request queue
         if (gdxFacebook == null) {
             REQUEST_QUEUE.add("MESSAGE_ON_WALL");
             loginWithPublishPermissions();
+            // return from here because this function will be called again from loginWithPublishPermissions() as callback after login;
             return;
         }
+
+        // post on the wall and wait for the response
         gdxFacebook.graph(request, new GDXFacebookCallback<JsonResult>() {
             @Override
             public void onFail(Throwable t) {
-                Own.log("Exception occured while trying to post to user wall.");
-                t.printStackTrace();
+                Gdx.app.debug(TAG, "Exception occured while trying to post to user wall.");
             }
 
             @Override
@@ -99,32 +102,32 @@ public class FacebookManager {
 
             @Override
             public void onSuccess(JsonResult result) {
-                Own.log("Posted to user wall successful." + result.getJsonValue().prettyPrint(JsonWriter.OutputType.json, 1));
+                Gdx.app.debug(TAG, "Posted to user wall successful." + result.getJsonValue().prettyPrint(JsonWriter.OutputType.json, 1));
             }
 
             @Override
             public void onError(GDXFacebookError error) {
-                Own.log("Error: " + error.getErrorMessage());
-                Toaster.getToaster().showSingleButtonDialog("Error ", error.getErrorMessage());
+                Gdx.app.error(TAG, "Error: " + error.getErrorMessage());
             }
         });
     }
 
     public void loginWithPublishPermissions() {
-        prefs = Gdx.app.getPreferences("gdx-facebook-app-data.txt");
-
         permissionsRead.add("email");
         permissionsRead.add("public_profile");
         permissionsRead.add("user_friends");
 
+        // this is the permission which facebook needs to approve for posting on the wall
         permissionsPublish.add("publish_actions");
 
         FacebookAppConfig config = new FacebookAppConfig();
-
         gdxFacebook = GDXFacebookSystem.install(config);
+
+        // attempt signing in
         gdxFacebook.signIn(SignInMode.PUBLISH, permissionsPublish, new GDXFacebookCallback<SignInResult>() {
             @Override
             public void onSuccess(SignInResult result) {
+                // on successful singing in process the request queue
                 for (int i = 0; i < REQUEST_QUEUE.size; i++) {
                     switch (REQUEST_QUEUE.get(i)) {
                         case "MESSAGE_ON_WALL":
@@ -134,26 +137,24 @@ public class FacebookManager {
                     }
 
                 }
-                Own.log("SIGN IN (publish permissions): User logged in successfully.");
+                Gdx.app.debug(TAG, "User logged in successfully.");
                 gainMoreUserInfo();
             }
 
             @Override
             public void onCancel() {
-                Own.log("SIGN IN (publish permissions): User canceled login process");
+                Gdx.app.debug(TAG, "User canceled login process");
             }
 
             @Override
             public void onFail(Throwable t) {
-                Own.log("SIGN IN (publish permissions): Technical error occured:");
+                Gdx.app.debug(TAG, "Technical error occured:");
                 logout();
-                t.printStackTrace();
             }
 
             @Override
             public void onError(GDXFacebookError error) {
-                Toaster.getToaster().showSingleButtonDialog("Error ", error.getErrorMessage());
-                Own.log("SIGN IN (publish permissions): Error login: " + error.getErrorMessage());
+                Gdx.app.error(TAG, error.getErrorMessage());
                 logout();
             }
         });
@@ -161,6 +162,7 @@ public class FacebookManager {
 
     private void gainMoreUserInfo() {
         GDXFacebookGraphRequest request = new GDXFacebookGraphRequest().setNode("me").useCurrentAccessToken();
+
         gdxFacebook.newGraphRequest(request, new GDXFacebookCallback<JsonResult>() {
             @Override
             public void onSuccess(JsonResult result) {
@@ -169,25 +171,24 @@ public class FacebookManager {
                 String fbNickname = root.getString("name");
                 String fbIdForThisApp = root.getString("id");
 
-                Own.log("Hello " + fbNickname + ", your unique ID is: " + fbIdForThisApp);
+                Gdx.app.debug(TAG, "Username " + fbNickname + ", user unique ID is: " + fbIdForThisApp);
             }
 
             @Override
             public void onCancel() {
-                Own.log("Graph Reqest: Request cancelled. Reason unknown.");
+                Gdx.app.debug(TAG, "Graph Reqest: Request cancelled. Reason unknown.");
                 logout();
             }
 
             @Override
             public void onFail(Throwable t) {
-                Own.log("Graph Reqest: Failed with exception.");
+                Gdx.app.debug(TAG, "Graph Reqest: Failed with exception.");
                 logout();
-                t.printStackTrace();
             }
 
             @Override
             public void onError(GDXFacebookError error) {
-                Own.log("Graph Request: Error. Something went wrong with the access token.");
+                Gdx.app.debug(TAG, "Graph Request: Error. Something went wrong with the access token.");
                 logout();
             }
         });

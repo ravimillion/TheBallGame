@@ -5,6 +5,5 @@ package com.jauntymarble.game;
  */
 public interface AdHandler {
     void showAds(boolean show);
-
     void showInterstitialAd();
 }
