@@ -7,7 +7,7 @@ import ownLib.Own;
 public class GameData {
     // release build
     public static final boolean RELEASE = true;
-    public static final boolean SHOW_ADS = false;
+    public static final boolean SHOW_ADS = true;
     public static final boolean PC_MODE = false;
 
     // game states
