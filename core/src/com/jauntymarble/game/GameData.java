@@ -59,9 +59,9 @@ public class GameData {
     public static float getConfigData(String KEY) {
         switch (KEY) {
             case "SPLASH_SHOW_DELAY":
-                return GameData.RELEASE ? 3f : 0;
+                return GameData.RELEASE ? 1f : 0;
             case "SPLASH_HIDE_DELAY":
-                return GameData.RELEASE ? 2f : 0;
+                return GameData.RELEASE ? 1f : 0;
         }
 
         return 0;

@@ -16,8 +16,8 @@ android {
     }
     defaultConfig {
         applicationId "com.jauntymarble.game"
-        minSdkVersion 16
-        targetSdkVersion 23
+        minSdkVersion 19
+        targetSdkVersion 25
         multiDexEnabled true
     }
     packagingOptions {
@@ -96,8 +96,8 @@ eclipse {
     }
 
     jdt {
-        sourceCompatibility = 1.6
-        targetCompatibility = 1.6
+        sourceCompatibility = 1.7
+        targetCompatibility = 1.7
     }
 
     classpath {
