@@ -43,7 +43,7 @@ public class GameData {
             new String[]{"idSpike", "idFire"}
     );
     public static final Array<String> STATE_CHANGE_LIST = new Array(
-            new String[]{"idSpike", "idFire"}
+            new String[]{"idSpike", "idFire", "idAnimStar"}
     );
     public static final Array<String> REMOVE_ON_COLLISIOIN_LIST = new Array(
             new String[]{"idAnimStar", "idPowerBounce", "idPowerGravity", "idPowerSize"}

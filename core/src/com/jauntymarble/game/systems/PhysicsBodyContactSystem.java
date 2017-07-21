@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.Shape.Type;
+import com.jauntymarble.game.GameController;
 import com.jauntymarble.game.GameData;
 import com.jauntymarble.game.utils.CameraShaker;
 import com.kotcrab.vis.runtime.component.PhysicsBody;
@@ -141,7 +142,7 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
     }
 
     public void changeGameStateOnCollision(CollisionData collisionData) {
-        VisID visID = visIDCm.get(collisionData.entity);
+        final VisID visID = visIDCm.get(collisionData.entity);
         if (visID == null) return;
 
         if (GameData.STATE_CHANGE_LIST.indexOf(visID.id, false) >= 0) {
@@ -150,8 +151,16 @@ public class PhysicsBodyContactSystem extends BaseSystem implements ContactListe
             Gdx.app.postRunnable(new Runnable() {
                 @Override
                 public void run() {
-                    playerSystem.setPlayerPosition();
-                    controlsSystem.setState(GameData.GAME_OVER);
+                    if (visID.id.equals("idAnimStar")) {
+                        if (GameController.CURRENT_LEVEL.equals(GameData.ID_LEVEL_TUTORIAL)) {
+                            controlsSystem.setState(GameData.LEVEL_END);
+                        }
+
+                        return;
+                    } else {
+                        playerSystem.setPlayerPosition();
+                        controlsSystem.setState(GameData.GAME_OVER);
+                    }
                 }
             });
         }
