@@ -56,7 +56,7 @@
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 0,
+  "activeLayerId": 4,
   "groupIds": [],
   "schemes": [
     {
@@ -812,10 +812,10 @@
     {
       "components": [
         {
-          "x": -0.6893,
-          "y": -0.2315,
-          "scaleX": 5.5,
-          "scaleY": 5.5,
+          "x": 23.456459,
+          "y": 17.510618,
+          "scaleX": 3.0,
+          "scaleY": 3.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
@@ -843,8 +843,8 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 10.24,
-          "height": 5.86,
+          "width": 3.54,
+          "height": 1.53,
           "@class": "ProtoVisSprite"
         },
         {
@@ -852,15 +852,11 @@
           "@class": "Layer"
         },
         {
-          "groupIds": [],
-          "@class": "VisGroup"
-        },
-        {
-          "uuid": "b4b3d368-ac7d-4ae7-b153-700516322abf",
+          "uuid": "1e8c3731-7cb8-4f84-b30b-6443ecfa42b6",
           "@class": "VisUUID"
         },
         {
-          "zIndex": 2,
+          "zIndex": 0,
           "@class": "Renderable"
         },
         {

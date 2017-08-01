@@ -162,8 +162,17 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     }
 
     private void handleInput() {
-        if (Gdx.input.isTouched()) {
-            if (Gdx.input.getX() > Own.device.getScreenWidth() / 2) {
+
+        if (Gdx.input.isTouched(0)) {
+            Own.log("X: " + Gdx.input.getX());
+            if (Gdx.input.getX(0) > Own.device.getScreenWidth() / 2) {
+                body.applyTorque(BALL_FORCE * -1, true);
+            } else {
+                body.applyTorque(BALL_FORCE, true);
+            }
+        } else if (Gdx.input.isTouched(1)) {
+            Own.log("X: " + Gdx.input.getX());
+            if (Gdx.input.getX(1) > Own.device.getScreenWidth() / 2) {
                 body.applyTorque(BALL_FORCE * -1, true);
             } else {
                 body.applyTorque(BALL_FORCE, true);

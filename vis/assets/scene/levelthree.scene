@@ -48,7 +48,7 @@
       "@class": "EditorLayer"
     }
   ],
-  "activeLayerId": 1,
+  "activeLayerId": 3,
   "groupIds": [],
   "schemes": [
     {
@@ -4750,10 +4750,10 @@
     {
       "components": [
         {
-          "x": -0.6671076,
-          "y": -0.052682877,
-          "scaleX": 5.5,
-          "scaleY": 5.5,
+          "x": 23.3668,
+          "y": 16.9117,
+          "scaleX": 3.0,
+          "scaleY": 3.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
@@ -4781,8 +4781,8 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 10.24,
-          "height": 5.86,
+          "width": 3.54,
+          "height": 1.53,
           "@class": "ProtoVisSprite"
         },
         {
@@ -4790,7 +4790,7 @@
           "@class": "Layer"
         },
         {
-          "uuid": "bf94237d-5d93-42f8-89d9-30d314d6d1a5",
+          "uuid": "76fd18b2-6a9a-40cd-bea7-8402834c6d84",
           "@class": "VisUUID"
         },
         {
