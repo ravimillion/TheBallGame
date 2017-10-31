@@ -71,27 +71,26 @@ public class AndroidLauncher extends AndroidApplication implements AdHandler {
         });
 
         // banner ads
-        adView = new AdView(this);
-        adView.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-                Log.i(TAG, "Ad Loadded...");
-            }
-        });
-
-        adView.setAdSize(AdSize.SMART_BANNER);
-        adView.setAdUnitId("ca-app-pub-4120235782147855/5980717523");
-        AdRequest.Builder bannerAdBuilder = new AdRequest.Builder();
-
-        bannerAdBuilder.addTestDevice(TEST_DEVICE_ID);
-
+        AdRequest.Builder bannerAdBuilder = new AdRequest.Builder().addTestDevice(TEST_DEVICE_ID);
         RelativeLayout.LayoutParams adParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.MATCH_PARENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
 
         adParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+
+        adView = new AdView(this);
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                Log.i(TAG, "Banner Ad Loaded...");
+                handler.sendEmptyMessage(GameData.SHOW_ADS ? SHOW_ADS : HIDE_ADS);
+            }
+        });
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-4120235782147855/5980717523");
+
         layout.addView(adView, adParams);
         adView.loadAd(bannerAdBuilder.build());
 
