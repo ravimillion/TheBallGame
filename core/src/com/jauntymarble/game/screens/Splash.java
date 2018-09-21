@@ -21,7 +21,7 @@ public class Splash implements Screen {
     private SpriteBatch spriteBatch;
 
     private float LOGO_WIDTH = Own.device.getScreenHeight() / 2.5f;
-    private float LOGO_HEIGHT = LOGO_WIDTH * 1.1f;
+    private float LOGO_HEIGHT = LOGO_WIDTH;
 
     private Vector2 LOGO_POSITION = new Vector2(Own.device.getScreenWidth() / 2 - LOGO_WIDTH / 2, Own.device.getScreenHeight() / 2 - LOGO_HEIGHT * 0.3f);
     private TweenManager tweenManager;

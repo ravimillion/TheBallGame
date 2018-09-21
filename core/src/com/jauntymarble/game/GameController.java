@@ -395,4 +395,8 @@ public class GameController implements Screen {
     public void showInterstitialAd() {
         this.game.handler.showInterstitialAd();
     }
+
+    public void openPrivacyPolicy() {
+        Gdx.net.openURI("https://caesiumstudio.com/privacy-policy");
+    }
 }

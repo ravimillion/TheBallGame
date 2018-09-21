@@ -18,6 +18,7 @@ import com.kotcrab.vis.runtime.system.VisIDManager;
 import com.kotcrab.vis.runtime.util.AfterSceneInit;
 
 import java.util.HashMap;
+import java.util.Random;
 
 import ownLib.Own;
 
@@ -88,7 +89,10 @@ public class ControlsSystem extends BaseSystem implements AfterSceneInit, InputP
                 show("idPause");
                 show("idRestart");
                 playerSystem.respawnPlayer();
-                this.gameController.showInterstitialAd();
+                Random rand = new Random();
+                int randomNumber = rand.nextInt(5);
+                Own.log("Random number: " + randomNumber);
+                if (randomNumber == 2) this.gameController.showInterstitialAd();
                 break;
             case GameData.GAME_OVER:
                 show("idGameOver");

@@ -42,7 +42,7 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
     TweenManager tweenManager = new TweenManager();
     String DISABLED_TINT = "4c4c4cff";
     GameController gameController;
-    String[] buttons = {"idTutorial", "idOne", "idTwo", "idThree", "idFacebook", "idVolume"};
+    String[] buttons = {"idTutorial", "idOne", "idTwo", "idThree", "idVolume", "idPrivacyPolicy"};
     HashMap<String, Entity> entityMap = new HashMap<String, Entity>();
     HashMap<String, Bounds> boundsMap = new HashMap<String, Bounds>();
 
@@ -157,6 +157,9 @@ public class MenuScreen extends BaseSystem implements AfterSceneInit, InputProce
         if (buttonId == null) return false;
 
         switch (buttonId) {
+            case "idPrivacyPolicy":
+                gameController.openPrivacyPolicy();
+                break;
             case "idTutorial":
                 if (isDisabled(buttonId)) return false;
                 this.dispose();
