@@ -72,6 +72,7 @@ public class GameController implements Screen {
     }
 
     private void loadScene(String scenePath, SceneParameter sceneParameter) {
+        this.game.handler.showAds(GameData.SHOW_ADS);
         if (BOX2D_DEBUG && !scenePath.equals(GameData.SCENE_MENU))
             sceneParameter.config.enable(SceneFeature.BOX2D_DEBUG_RENDER_SYSTEM);
 
