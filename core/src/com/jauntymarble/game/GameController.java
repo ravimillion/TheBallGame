@@ -259,7 +259,6 @@ public class GameController implements Screen {
         sceneParameter.config.addSystem(VisibilitySystem.class);
         sceneParameter.config.addSystem(AlwaysInViewPortSystem.class);
         loadScene(GameData.SCENE_TWO, sceneParameter);
-
     }
 
     public void loadLevelThreeScene() {

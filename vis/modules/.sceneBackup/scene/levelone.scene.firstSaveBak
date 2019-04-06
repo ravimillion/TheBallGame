@@ -18,7 +18,7 @@
     {
       "name": "Background",
       "id": 0,
-      "locked": false,
+      "locked": true,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -26,7 +26,7 @@
     {
       "name": "Ground",
       "id": 1,
-      "locked": false,
+      "locked": true,
       "visible": true,
       "cordsSystem": "WORLD",
       "@class": "EditorLayer"
@@ -686,16 +686,16 @@
     {
       "components": [
         {
-          "x": 5.734337,
-          "y": 24.158932,
+          "x": 4.1123,
+          "y": 22.1334,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
         {
-          "originX": 0.965,
-          "originY": 0.965,
+          "originX": 2.56,
+          "originY": 2.56,
           "@class": "Origin"
         },
         {
@@ -717,8 +717,8 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 1.93,
-          "height": 1.93,
+          "width": 5.12,
+          "height": 5.12,
           "@class": "ProtoVisSprite"
         },
         {
@@ -726,7 +726,7 @@
           "@class": "Layer"
         },
         {
-          "uuid": "622cf6c3-37ee-4029-bda1-dd0ada48cb53",
+          "uuid": "349ed327-d187-47e2-a1f6-6c5e64a46132",
           "@class": "VisUUID"
         },
         {
@@ -907,6 +907,10 @@
           "@class": "Layer"
         },
         {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
           "uuid": "554c4208-bf20-4603-8e49-27ddc77a58ad",
           "@class": "VisUUID"
         },
@@ -924,10 +928,10 @@
     {
       "components": [
         {
-          "x": -0.2322,
-          "y": -0.0863,
-          "scaleX": 5.5,
-          "scaleY": 5.5,
+          "x": 23.087412,
+          "y": 15.616432,
+          "scaleX": 3.0,
+          "scaleY": 3.0,
           "rotation": 0.0,
           "@class": "Transform"
         },
@@ -955,8 +959,8 @@
         {
           "flipX": false,
           "flipY": false,
-          "width": 10.24,
-          "height": 5.86,
+          "width": 3.54,
+          "height": 1.53,
           "@class": "ProtoVisSprite"
         },
         {
@@ -968,11 +972,11 @@
           "@class": "VisGroup"
         },
         {
-          "uuid": "53370b0f-56e6-4856-9397-f42fa893eeea",
+          "uuid": "009eeaae-f2f2-4f91-bc1c-208aa7b30ec1",
           "@class": "VisUUID"
         },
         {
-          "zIndex": 4,
+          "zIndex": 0,
           "@class": "Renderable"
         },
         {
@@ -1082,6 +1086,10 @@
           "@class": "Layer"
         },
         {
+          "groupIds": [],
+          "@class": "VisGroup"
+        },
+        {
           "uuid": "97703f83-eabb-44e4-b4fe-e5fb47ae1e36",
           "@class": "VisUUID"
         },
@@ -1137,6 +1145,10 @@
         {
           "layerId": 3,
           "@class": "Layer"
+        },
+        {
+          "groupIds": [],
+          "@class": "VisGroup"
         },
         {
           "uuid": "67885eb1-eb30-4fc5-882d-88d181f716aa",
@@ -6832,8 +6844,8 @@
     {
       "components": [
         {
-          "x": 118.765564,
-          "y": 17.824095,
+          "x": 88.86428,
+          "y": 24.716234,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -6881,43 +6893,43 @@
         {
           "vertices": [
             {
-              "x": 117.51778,
-              "y": 16.688446,
+              "x": 87.61649,
+              "y": 23.580585,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 120.07779,
-              "y": 16.688446,
+              "x": 90.176506,
+              "y": 23.580585,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 120.07779,
-              "y": 19.188446,
+              "x": 90.176506,
+              "y": 26.080585,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 117.51778,
-              "y": 19.188446,
+              "x": 87.61649,
+              "y": 26.080585,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 117.51778,
-                "y": 19.188446
+                "x": 87.61649,
+                "y": 26.080585
               },
               {
-                "x": 117.51778,
-                "y": 16.688446
+                "x": 87.61649,
+                "y": 23.580585
               },
               {
-                "x": 120.07779,
-                "y": 16.688446
+                "x": 90.176506,
+                "y": 23.580585
               },
               {
-                "x": 120.07779,
-                "y": 19.188446
+                "x": 90.176506,
+                "y": 26.080585
               }
             ]
           ],
@@ -13752,7 +13764,7 @@
           "@class": "Transform"
         },
         {
-          "originX": 3.31,
+          "originX": 3.2450001,
           "originY": 0.715,
           "@class": "Origin"
         },
@@ -13827,7 +13839,7 @@
           "@class": "Transform"
         },
         {
-          "originX": 1.3,
+          "originX": 1.27,
           "originY": 0.5,
           "@class": "Origin"
         },
@@ -14282,8 +14294,8 @@
     {
       "components": [
         {
-          "x": 427.90652,
-          "y": 16.931425,
+          "x": 399.66547,
+          "y": 16.638268,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -14331,43 +14343,43 @@
         {
           "vertices": [
             {
-              "x": 426.65875,
-              "y": 15.795776,
+              "x": 398.4177,
+              "y": 15.502619,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 429.21878,
-              "y": 15.795776,
+              "x": 400.97772,
+              "y": 15.502619,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 429.21878,
-              "y": 18.295778,
+              "x": 400.97772,
+              "y": 18.00262,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 426.65875,
-              "y": 18.295778,
+              "x": 398.4177,
+              "y": 18.00262,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 426.65875,
-                "y": 18.295778
+                "x": 398.4177,
+                "y": 18.00262
               },
               {
-                "x": 426.65875,
-                "y": 15.795776
+                "x": 398.4177,
+                "y": 15.502619
               },
               {
-                "x": 429.21878,
-                "y": 15.795776
+                "x": 400.97772,
+                "y": 15.502619
               },
               {
-                "x": 429.21878,
-                "y": 18.295778
+                "x": 400.97772,
+                "y": 18.00262
               }
             ]
           ],
@@ -14530,8 +14542,8 @@
     {
       "components": [
         {
-          "x": 39.398067,
-          "y": 18.687803,
+          "x": 25.575722,
+          "y": 16.210968,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -14579,43 +14591,43 @@
         {
           "vertices": [
             {
-              "x": 38.15028,
-              "y": 17.552155,
+              "x": 24.327934,
+              "y": 15.075319,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 40.710278,
-              "y": 17.552155,
+              "x": 26.887932,
+              "y": 15.075319,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 40.710278,
-              "y": 20.052155,
+              "x": 26.887932,
+              "y": 17.57532,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 38.15028,
-              "y": 20.052155,
+              "x": 24.327934,
+              "y": 17.57532,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 38.15028,
-                "y": 20.052155
+                "x": 24.327934,
+                "y": 17.57532
               },
               {
-                "x": 38.15028,
-                "y": 17.552155
+                "x": 24.327934,
+                "y": 15.075319
               },
               {
-                "x": 40.710278,
-                "y": 17.552155
+                "x": 26.887932,
+                "y": 15.075319
               },
               {
-                "x": 40.710278,
-                "y": 20.052155
+                "x": 26.887932,
+                "y": 17.57532
               }
             ]
           ],
@@ -14778,8 +14790,8 @@
     {
       "components": [
         {
-          "x": 153.75151,
-          "y": 8.071377,
+          "x": 319.48453,
+          "y": 14.911768,
           "scaleX": 1.0,
           "scaleY": 1.0,
           "rotation": 0.0,
@@ -14827,43 +14839,43 @@
         {
           "vertices": [
             {
-              "x": 152.50372,
-              "y": 6.935728,
+              "x": 318.23672,
+              "y": 13.776117,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 155.06374,
-              "y": 6.935728,
+              "x": 320.79675,
+              "y": 13.776117,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 155.06374,
-              "y": 9.435728,
+              "x": 320.79675,
+              "y": 16.276127,
               "@class": "com.badlogic.gdx.math.Vector2"
             },
             {
-              "x": 152.50372,
-              "y": 9.435728,
+              "x": 318.23672,
+              "y": 16.276127,
               "@class": "com.badlogic.gdx.math.Vector2"
             }
           ],
           "faces": [
             [
               {
-                "x": 152.50372,
-                "y": 9.435728
+                "x": 318.23672,
+                "y": 16.276127
               },
               {
-                "x": 152.50372,
-                "y": 6.935728
+                "x": 318.23672,
+                "y": 13.776117
               },
               {
-                "x": 155.06374,
-                "y": 6.935728
+                "x": 320.79675,
+                "y": 13.776117
               },
               {
-                "x": 155.06374,
-                "y": 9.435728
+                "x": 320.79675,
+                "y": 16.276127
               }
             ]
           ],
@@ -15584,6 +15596,130 @@
     {
       "components": [
         {
+          "x": 70.18866,
+          "y": 21.947067,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "da26ab97-f163-4400-9b19-4b419e763a8f",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 68.94087,
+              "y": 20.811419,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 71.50087,
+              "y": 20.811419,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 71.50087,
+              "y": 23.311419,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 68.94087,
+              "y": 23.311419,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 68.94087,
+                "y": 23.311419
+              },
+              {
+                "x": 68.94087,
+                "y": 20.811419
+              },
+              {
+                "x": 71.50087,
+                "y": 20.811419
+              },
+              {
+                "x": 71.50087,
+                "y": 23.311419
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
           "x": 72.7454,
           "y": 16.5939,
           "scaleX": 1.0,
@@ -15612,7 +15748,7 @@
           "@class": "Layer"
         },
         {
-          "uuid": "da26ab97-f163-4400-9b19-4b419e763a8f",
+          "uuid": "e791db7d-a61e-47f0-8869-19bcd36e1a90",
           "@class": "VisUUID"
         },
         {
@@ -15670,6 +15806,2486 @@
               {
                 "x": 74.05761,
                 "y": 17.958252
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 65.95406,
+          "y": 16.434107,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "14038a2c-87a6-4cc0-8c8c-71935fbe3ed8",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 64.706276,
+              "y": 15.298458,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 67.26627,
+              "y": 15.298458,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 67.26627,
+              "y": 17.798458,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 64.706276,
+              "y": 17.798458,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 64.706276,
+                "y": 17.798458
+              },
+              {
+                "x": 64.706276,
+                "y": 15.298458
+              },
+              {
+                "x": 67.26627,
+                "y": 15.298458
+              },
+              {
+                "x": 67.26627,
+                "y": 17.798458
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 39.398067,
+          "y": 18.687803,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "ce787d39-8c03-488b-8047-23e471dfceb4",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 38.15028,
+              "y": 17.552155,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 40.710278,
+              "y": 17.552155,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 40.710278,
+              "y": 20.052155,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 38.15028,
+              "y": 20.052155,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 38.15028,
+                "y": 20.052155
+              },
+              {
+                "x": 38.15028,
+                "y": 17.552155
+              },
+              {
+                "x": 40.710278,
+                "y": 17.552155
+              },
+              {
+                "x": 40.710278,
+                "y": 20.052155
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 32.526844,
+          "y": 18.288315,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "39a83f8f-834b-4b60-a664-68d84cbe35c9",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 31.279057,
+              "y": 17.152666,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 33.839054,
+              "y": 17.152666,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 33.839054,
+              "y": 19.652666,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 31.279057,
+              "y": 19.652666,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 31.279057,
+                "y": 19.652666
+              },
+              {
+                "x": 31.279057,
+                "y": 17.152666
+              },
+              {
+                "x": 33.839054,
+                "y": 17.152666
+              },
+              {
+                "x": 33.839054,
+                "y": 19.652666
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 118.765564,
+          "y": 17.824095,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "c999d69d-f9a8-4b23-8044-5079b1365c67",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 117.51778,
+              "y": 16.688446,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 120.07779,
+              "y": 16.688446,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 120.07779,
+              "y": 19.188446,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 117.51778,
+              "y": 19.188446,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 117.51778,
+                "y": 19.188446
+              },
+              {
+                "x": 117.51778,
+                "y": 16.688446
+              },
+              {
+                "x": 120.07779,
+                "y": 16.688446
+              },
+              {
+                "x": 120.07779,
+                "y": 19.188446
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 108.79848,
+          "y": 18.036163,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "6c2bc9b8-4cb2-4587-8e6f-d2ae49154a77",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 107.55069,
+              "y": 16.900515,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 110.1107,
+              "y": 16.900515,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 110.1107,
+              "y": 19.400515,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 107.55069,
+              "y": 19.400515,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 107.55069,
+                "y": 19.400515
+              },
+              {
+                "x": 107.55069,
+                "y": 16.900515
+              },
+              {
+                "x": 110.1107,
+                "y": 16.900515
+              },
+              {
+                "x": 110.1107,
+                "y": 19.400515
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 98.30121,
+          "y": 17.293934,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "9dbda323-0bd4-4b53-b167-e67d8ab7254b",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 97.05342,
+              "y": 16.158285,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 99.613434,
+              "y": 16.158285,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 99.613434,
+              "y": 18.658285,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 97.05342,
+              "y": 18.658285,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 97.05342,
+                "y": 18.658285
+              },
+              {
+                "x": 97.05342,
+                "y": 16.158285
+              },
+              {
+                "x": 99.613434,
+                "y": 16.158285
+              },
+              {
+                "x": 99.613434,
+                "y": 18.658285
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 153.75151,
+          "y": 8.071377,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "afc4e821-381a-4cfc-ab01-45520badc2f1",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 152.50372,
+              "y": 6.935728,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 155.06374,
+              "y": 6.935728,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 155.06374,
+              "y": 9.435728,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 152.50372,
+              "y": 9.435728,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 152.50372,
+                "y": 9.435728
+              },
+              {
+                "x": 152.50372,
+                "y": 6.935728
+              },
+              {
+                "x": 155.06374,
+                "y": 6.935728
+              },
+              {
+                "x": 155.06374,
+                "y": 9.435728
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 150.23358,
+          "y": 7.973653,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "8d949708-3f9a-43a8-bba8-e3b955029aad",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 148.9858,
+              "y": 6.838004,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 151.5458,
+              "y": 6.838004,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 151.5458,
+              "y": 9.338004,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 148.9858,
+              "y": 9.338004,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 148.9858,
+                "y": 9.338004
+              },
+              {
+                "x": 148.9858,
+                "y": 6.838004
+              },
+              {
+                "x": 151.5458,
+                "y": 6.838004
+              },
+              {
+                "x": 151.5458,
+                "y": 9.338004
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 152.67659,
+          "y": 17.159327,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "49b30264-723d-4bad-87a9-d14bd8133ef6",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 151.4288,
+              "y": 16.023678,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 153.98882,
+              "y": 16.023678,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 153.98882,
+              "y": 18.52368,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 151.4288,
+              "y": 18.52368,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 151.4288,
+                "y": 18.52368
+              },
+              {
+                "x": 151.4288,
+                "y": 16.023678
+              },
+              {
+                "x": 153.98882,
+                "y": 16.023678
+              },
+              {
+                "x": 153.98882,
+                "y": 18.52368
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 130.00555,
+          "y": 11.491571,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "f5f801ef-0acd-4b4a-a969-d0c7dbdbb83c",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 128.75777,
+              "y": 10.355923,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 131.31778,
+              "y": 10.355923,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 131.31778,
+              "y": 12.855927,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 128.75777,
+              "y": 12.855927,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 128.75777,
+                "y": 12.855927
+              },
+              {
+                "x": 128.75777,
+                "y": 10.355923
+              },
+              {
+                "x": 131.31778,
+                "y": 10.355923
+              },
+              {
+                "x": 131.31778,
+                "y": 12.855927
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 173.8818,
+          "y": 9.244015,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "c199d99b-4256-4915-b4df-6463870b741e",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 172.63402,
+              "y": 8.108366,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 175.19403,
+              "y": 8.108366,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 175.19403,
+              "y": 10.608372,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 172.63402,
+              "y": 10.608372,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 172.63402,
+                "y": 10.608372
+              },
+              {
+                "x": 172.63402,
+                "y": 8.108366
+              },
+              {
+                "x": 175.19403,
+                "y": 8.108366
+              },
+              {
+                "x": 175.19403,
+                "y": 10.608372
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 184.0447,
+          "y": 9.830337,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "e3d9dddd-572c-4510-aaaf-01ff2f4521fd",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 182.7969,
+              "y": 8.694688,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 185.35692,
+              "y": 8.694688,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 185.35692,
+              "y": 11.194694,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 182.7969,
+              "y": 11.194694,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 182.7969,
+                "y": 11.194694
+              },
+              {
+                "x": 182.7969,
+                "y": 8.694688
+              },
+              {
+                "x": 185.35692,
+                "y": 8.694688
+              },
+              {
+                "x": 185.35692,
+                "y": 11.194694
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 194.59845,
+          "y": 9.928055,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "83852d2b-b706-4ebc-b938-1a5ddfba9d38",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 193.35066,
+              "y": 8.792406,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 195.91068,
+              "y": 8.792406,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 195.91068,
+              "y": 11.292412,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 193.35066,
+              "y": 11.292412,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 193.35066,
+                "y": 11.292412
+              },
+              {
+                "x": 193.35066,
+                "y": 8.792406
+              },
+              {
+                "x": 195.91068,
+                "y": 8.792406
+              },
+              {
+                "x": 195.91068,
+                "y": 11.292412
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 194.59845,
+          "y": 9.928055,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "37597b36-5422-416b-b4a2-dfcafd80bd2f",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 193.35066,
+              "y": 8.792406,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 195.91068,
+              "y": 8.792406,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 195.91068,
+              "y": 11.292412,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 193.35066,
+              "y": 11.292412,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 193.35066,
+                "y": 11.292412
+              },
+              {
+                "x": 193.35066,
+                "y": 8.792406
+              },
+              {
+                "x": 195.91068,
+                "y": 8.792406
+              },
+              {
+                "x": 195.91068,
+                "y": 11.292412
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 210.42908,
+          "y": 19.113731,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "81f89cf4-9d22-4ed6-99c0-182be2d91fed",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 209.18129,
+              "y": 17.97808,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 211.7413,
+              "y": 17.97808,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 211.7413,
+              "y": 20.478088,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 209.18129,
+              "y": 20.478088,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 209.18129,
+                "y": 20.478088
+              },
+              {
+                "x": 209.18129,
+                "y": 17.97808
+              },
+              {
+                "x": 211.7413,
+                "y": 17.97808
+              },
+              {
+                "x": 211.7413,
+                "y": 20.478088
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 237.39978,
+          "y": 18.52741,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "d7bd6fd8-8c63-407e-b454-440a37308b34",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 236.152,
+              "y": 17.39176,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 238.712,
+              "y": 17.39176,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 238.712,
+              "y": 19.891768,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 236.152,
+              "y": 19.891768,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 236.152,
+                "y": 19.891768
+              },
+              {
+                "x": 236.152,
+                "y": 17.39176
+              },
+              {
+                "x": 238.712,
+                "y": 17.39176
+              },
+              {
+                "x": 238.712,
+                "y": 19.891768
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 251.08058,
+          "y": 18.722845,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "d5c143f5-bdf7-4fdf-88a3-fa460141e048",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 249.8328,
+              "y": 17.587194,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 252.3928,
+              "y": 17.587194,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 252.3928,
+              "y": 20.087202,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 249.8328,
+              "y": 20.087202,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 249.8328,
+                "y": 20.087202
+              },
+              {
+                "x": 249.8328,
+                "y": 17.587194
+              },
+              {
+                "x": 252.3928,
+                "y": 17.587194
+              },
+              {
+                "x": 252.3928,
+                "y": 20.087202
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 275.31512,
+          "y": 24.78148,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "14d6109a-f320-4718-913f-94f42d4c2e30",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 274.06732,
+              "y": 23.64583,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 276.62735,
+              "y": 23.64583,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 276.62735,
+              "y": 26.145838,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 274.06732,
+              "y": 26.145838,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 274.06732,
+                "y": 26.145838
+              },
+              {
+                "x": 274.06732,
+                "y": 23.64583
+              },
+              {
+                "x": 276.62735,
+                "y": 23.64583
+              },
+              {
+                "x": 276.62735,
+                "y": 26.145838
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 292.9047,
+          "y": 17.550205,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "3430ea55-21b7-4700-a8ab-020111d3789d",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 291.6569,
+              "y": 16.414555,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 294.21692,
+              "y": 16.414555,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 294.21692,
+              "y": 18.914562,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 291.6569,
+              "y": 18.914562,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 291.6569,
+                "y": 18.914562
+              },
+              {
+                "x": 291.6569,
+                "y": 16.414555
+              },
+              {
+                "x": 294.21692,
+                "y": 16.414555
+              },
+              {
+                "x": 294.21692,
+                "y": 18.914562
+              }
+            ]
+          ],
+          "@class": "VisPolygon"
+        },
+        {
+          "bodyType": "StaticBody",
+          "friction": 1.0,
+          "density": 1.0,
+          "restitution": 0.0,
+          "sensor": true,
+          "gravityScale": 1.0,
+          "linearDamping": 0.0,
+          "angularDamping": 0.0,
+          "bullet": false,
+          "fixedRotation": false,
+          "active": true,
+          "sleepingAllowed": true,
+          "adjustOrigin": true,
+          "maskBits": -1,
+          "categoryBits": 1,
+          "@class": "PhysicsProperties"
+        },
+        {
+          "componentsToDrop": [
+            {
+              "@content": "SpriterProperties",
+              "@class": "Class"
+            }
+          ],
+          "@class": "ExporterDropsComponent"
+        }
+      ],
+      "@class": "EntityScheme"
+    },
+    {
+      "components": [
+        {
+          "x": 427.90652,
+          "y": 16.931425,
+          "scaleX": 1.0,
+          "scaleY": 1.0,
+          "rotation": 0.0,
+          "@class": "Transform"
+        },
+        {
+          "asset": {
+            "imageScale": 1.0,
+            "relativePath": "spriter/yellowStar/StarAnimation.scml",
+            "@class": "SpriterAsset"
+          },
+          "@class": "AssetReference"
+        },
+        {
+          "scale": 0.02,
+          "flipX": false,
+          "flipY": false,
+          "playOnStart": true,
+          "defaultAnimation": 0,
+          "@class": "ProtoVisSpriter"
+        },
+        {
+          "layerId": 2,
+          "@class": "Layer"
+        },
+        {
+          "uuid": "3b5093d5-ce7e-4ea4-9579-7e71a82873d7",
+          "@class": "VisUUID"
+        },
+        {
+          "scale": 0.02,
+          "animation": 0,
+          "playOnStart": true,
+          "previewInEditor": true,
+          "@class": "SpriterProperties"
+        },
+        {
+          "zIndex": 0,
+          "@class": "Renderable"
+        },
+        {
+          "id": "idAnimStar",
+          "@class": "VisID"
+        },
+        {
+          "vertices": [
+            {
+              "x": 426.65875,
+              "y": 15.795776,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 429.21878,
+              "y": 15.795776,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 429.21878,
+              "y": 18.295778,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            },
+            {
+              "x": 426.65875,
+              "y": 18.295778,
+              "@class": "com.badlogic.gdx.math.Vector2"
+            }
+          ],
+          "faces": [
+            [
+              {
+                "x": 426.65875,
+                "y": 18.295778
+              },
+              {
+                "x": 426.65875,
+                "y": 15.795776
+              },
+              {
+                "x": 429.21878,
+                "y": 15.795776
+              },
+              {
+                "x": 429.21878,
+                "y": 18.295778
               }
             ]
           ],

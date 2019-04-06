@@ -41,14 +41,14 @@ public class LoadingScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0, 1f);
+        Gdx.gl.glClearColor(0.17f, 0.17f, 0.17f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         spriteBatch.setProjectionMatrix(camera.combined);
 
         if (isLoading()) {
             spriteBatch.begin();
-            Own.text.showProgress(spriteBatch, "Loading... " + (int) (manager.getProgress() * 100) + " %", new Vector2(Own.device.getScreenWidth() / 2, Own.device.getScreenHeight() / 2));
+            Own.text.showProgress(spriteBatch, "Loading... " + (int) (manager.getProgress() * 100) + " %", new Vector2(Own.device.getScreenWidth() / 2.1f, Own.device.getScreenHeight() / 2));
             spriteBatch.end();
         } else {
             Gdx.app.postRunnable(new Runnable() {

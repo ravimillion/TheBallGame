@@ -26,9 +26,9 @@ public class Text {
     }
 
     public void createFontForSplash(Color color) {
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/SF Atarian System.ttf"));
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/zorque.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 32;
+        parameter.size = 36;
         parameter.color = color;
         splashFont = generator.generateFont(parameter); // font size 12 pixels
         generator.dispose();

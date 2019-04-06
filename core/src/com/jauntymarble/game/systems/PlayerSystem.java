@@ -28,7 +28,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     public Body body;
     public int state = GameData.RUNNING;
     // ball parameters
-    float radius = 2f, restitution = 0.3f, density = 1f, friction = 2.5f;
+    float radius = 2.5f, restitution = 0.3f, density = 1f, friction = 2.5f;
     private ComponentMapper<VisID> visIDCm;
     private ComponentMapper<PhysicsBody> physicsCm;
     private ComponentMapper<Transform> transformCm;
@@ -48,7 +48,7 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
     private Origin origin;
     private World physicsWorld;
 
-    private int BALL_FORCE = 1500;
+    private int BALL_FORCE = 2500;
     private float TOP_LIN_VELOCITY = 35f;
     private float TOP_ANG_VELOCITY = 20f;
 
@@ -75,12 +75,10 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         body = Own.box2d.factory.getCircleBody(BodyDef.BodyType.DynamicBody, loadPlayerPosition(), 0, radius, density, friction, restitution, "ball");
         body.setUserData("ball");
 
-
         state = GameData.RUNNING;
         if (gameSaverSystem.isLevelFinished(GameController.CURRENT_LEVEL) || gameSaverSystem.isLevelNotPlayed(GameController.CURRENT_LEVEL)) {
             gameSaverSystem.updatePlayingStatus(gameController.CURRENT_LEVEL, GameData.LEVEL_IN_PROGRESS);
         }
-
     }
 
     @Override

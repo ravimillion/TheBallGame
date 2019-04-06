@@ -20,19 +20,18 @@ import ownLib.Own;
 public class Splash implements Screen {
     private SpriteBatch spriteBatch;
 
-    private float LOGO_WIDTH = Own.device.getScreenHeight() / 2.5f;
-    private float LOGO_HEIGHT = LOGO_WIDTH;
+    private float LOGO_WIDTH = Own.device.getScreenWidth();
+    private float LOGO_HEIGHT = Own.device.getScreenHeight();
 
-    private Vector2 LOGO_POSITION = new Vector2(Own.device.getScreenWidth() / 2 - LOGO_WIDTH / 2, Own.device.getScreenHeight() / 2 - LOGO_HEIGHT * 0.3f);
+    private Vector2 LOGO_POSITION = new Vector2(0, 0);
     private TweenManager tweenManager;
     private GameEntry gameEntry;
-    private Texture logo;
     private Sprite splashSprite;
 
     public Splash(GameEntry gameEntry, SpriteBatch spriteBatch) {
         this.gameEntry = gameEntry;
         this.spriteBatch = spriteBatch;
-        Own.text.createFontForSplash(Color.FIREBRICK);
+        Own.text.createFontForSplash(Color.WHITE);
         splashSprite = new Sprite(new Texture(Gdx.files.internal("images/splash.png")));
         splashSprite.setSize(LOGO_WIDTH, LOGO_HEIGHT);
         splashSprite.setPosition(LOGO_POSITION.x, LOGO_POSITION.y);
@@ -81,7 +80,7 @@ public class Splash implements Screen {
     @Override
     public void render(float delta) {
         GL20 gl = Gdx.gl;
-        gl.glClearColor(1, 1, 1, 1f);
+        gl.glClearColor(0, 0, 0, 1f);
         gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         tweenManager.update(delta);

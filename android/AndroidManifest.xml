@@ -2,12 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.jauntymarble.game"
-    android:versionCode="1914081"
-    android:versionName="1914081">
+    android:versionCode="1914082"
+    android:versionName="1914082">
 
-    <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="26" />
+    <uses-sdk android:targetSdkVersion="26" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
