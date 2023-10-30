@@ -132,7 +132,6 @@ public class PlayerSystem extends BaseSystem implements AfterSceneInit {
         return true;
     }
 
-
     private void limitVelocity() {
         float aVel = body.getAngularVelocity();
 
